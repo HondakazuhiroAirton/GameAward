@@ -11,7 +11,8 @@ public class Enemy : MonoBehaviour
     public int State = 1; // エネミーの状態を入れる変数。初期値は敵として襲いかかってくる状態
     public float MoveTime = 10f;  // 行動が変わる時間
     float time = 0f;
-    float movex = 0.001f;   // 移動量
+    float movex = 1.0f;   // 移動量
+    float movey = 3.0f;   // 移動量
                             // 現在のポジション取得
     Vector3 MoveValue;
     void Start()
@@ -23,8 +24,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
 
-
-
         // 使ってみたはいいが、使い方がわからない！！
         time += Time.deltaTime;
 
@@ -34,11 +33,12 @@ public class Enemy : MonoBehaviour
             if (MoveTime < time)
             {
                 time = 0f;
+                MoveValue.y = movey * Time.deltaTime;
                 movex *= -1;
             }
 
 
-
+            MoveValue.x = movex * Time.deltaTime;
             // この辺に地面と一定の距離検知したら、上に力を加える処理書いたら、落ちなそう
 
 
