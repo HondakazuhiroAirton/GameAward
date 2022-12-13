@@ -1,14 +1,16 @@
 using System.Collections;
-//using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    /*void Start()
+    Rigidbody2D rb;
+    void Start()
     {
-        
-    }*/
+        // 同一のGameObjectが持つRigidbodyコンポーネントを取得
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -16,10 +18,11 @@ public class PlayerController : MonoBehaviour
         // 入力をxに代入
         float x = Input.GetAxis("Horizontal");
 
-        // 同一のGameObjectが持つRigidbodyコンポーネントを取得
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
 
-        // rigidbodyのx軸に力を加える
-        rigidbody.AddForce(x, 0, 0);
+        //x軸に加わる力を格納
+        Vector2 force = new Vector2(x * 10, 0);
+
+        // Rigidbody2Dに力を加える
+        rb.AddForce(force);
     }
 }
