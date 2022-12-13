@@ -5,13 +5,13 @@ using TMPro;
 
 public class ScoreScript : MonoBehaviour
 {
-    int Score;
+    int Score = 0;
     public TextMeshProUGUI ScoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        Score = 0;
+        this.ScoreText.text = "Score" + 0.ToString();
     }
 
     // Update is called once per frame
@@ -19,9 +19,15 @@ public class ScoreScript : MonoBehaviour
     {
         ScoreText.text = "Score:" + Score.ToString();
 
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Score += 100;
+            GameObject.Find("Canvas").GetComponent<ScoreScript>().AddScore();
         }
+    }
+
+    public void AddScore()
+    {
+        this.Score += 10;
+        this.ScoreText.text = "Score" + Score.ToString();
     }
 }
