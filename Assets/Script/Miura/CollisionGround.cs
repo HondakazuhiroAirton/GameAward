@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class CollisionGround : MonoBehaviour
 {
-    public Enemy EnemyScript;
-
-
+    public bool GroundCollision; 
     void Start()
     {
-        EnemyScript = EnemyScript.GetComponent<Enemy>();
+        GroundCollision = false;
     }
     void Update()
     {
+        GroundCollision = false;
     }
 
     private void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject.tag == "Groud")  // °‚É‚ ‚½‚Á‚½‚çeEnemy‚ÌGroundCollision = true‚É‚µ‚ÄƒWƒƒƒ“ƒv‚³‚¹‚é
+        if (other.gameObject.tag == "Groud")  // °‚É‚ ‚½‚Á‚½
         {
-
-            EnemyScript.SetJump();
+            GroundCollision = true;
         }
     }
 
