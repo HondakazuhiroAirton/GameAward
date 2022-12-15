@@ -19,7 +19,7 @@ public class cloud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             createPosition = transform.position;
             createPosition.y -= 1.0f; // ‰_‚ÌyÀ•W - 1‚ÌˆÊ’u‚É—‹‚ğ¶¬‚·‚é
