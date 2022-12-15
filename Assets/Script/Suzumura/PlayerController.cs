@@ -33,5 +33,7 @@ public class PlayerController : MonoBehaviour
 
         // Rigidbody2D‚É—Í‚ð‰Á‚¦‚é
         rb.AddForce(force);
+
+        // ‰æ–ÊŠO”»’è
     }
 }
