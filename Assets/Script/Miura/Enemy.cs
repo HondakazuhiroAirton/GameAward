@@ -16,12 +16,14 @@ public class Enemy : MonoBehaviour
     int StartCount; // 最初にパタパタする回数
     float StartPataPataTime = 1.0f; // 最初にパタパタする時間間隔
     Vector3 MoveValue;
-    public CollisionGround CollisionGroundScript;
+    public bool GroundCollision;
+
     void Start()
     {
         time = 0f;
         State = 0;
         StartCount = 0;
+        GroundCollision = false;
     }
 
     void Update()
@@ -60,9 +62,11 @@ public class Enemy : MonoBehaviour
             MoveValue.x = movex * Time.deltaTime;
             // この辺に地面と一定の距離検知したら、上に力を加える処理書いたら、落ちなそう
 
-            if (CollisionGroundScript.GroundCollision == true)// もし、Groundと当たったら
+
+            if (GroundCollision == true)// もし、Groundと当たったら
             {
                 MoveValue.y = movey * Time.deltaTime;
+                GroundCollision = false;
             }
 
 
@@ -98,5 +102,10 @@ public class Enemy : MonoBehaviour
 
         // 画面外判定どうする？？
 
+    }
+
+    public void SetJump()
+    {
+        GroundCollision = true;
     }
 }
