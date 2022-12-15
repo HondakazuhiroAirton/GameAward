@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CollisionGround : MonoBehaviour
 {
-    public CollisionGround EnemyScript;
+    public Enemy EnemyScript;
+
 
     void Start()
     {
+        EnemyScript = EnemyScript.GetComponent<Enemy>();
     }
     void Update()
     {
@@ -15,11 +17,10 @@ public class CollisionGround : MonoBehaviour
 
     private void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject.tag == "Groud")  // è∞Ç…Ç†ÇΩÇ¡ÇΩ
+        if (other.gameObject.tag == "Groud")  // è∞Ç…Ç†ÇΩÇ¡ÇΩÇÁêeEnemyÇÃGroundCollision = trueÇ…ÇµÇƒÉWÉÉÉìÉvÇ≥ÇπÇÈ
         {
-            EnemyScript = GameObject.Find("Enemy");
-            EnemyScript = sphereObject.GetComponent<SphereScript>();
-            EnemyScript.GroundCollision = true;
+
+            EnemyScript.SetJump();
         }
     }
 
