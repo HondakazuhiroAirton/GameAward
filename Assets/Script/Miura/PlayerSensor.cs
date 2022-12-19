@@ -23,9 +23,9 @@ public class PlayerSensor : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        transform.parent.GetComponent<Enemy>().SetEnemyState(0);
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    transform.parent.GetComponent<Enemy>().SetEnemyState(0);
+    //}
 
 }

@@ -66,6 +66,7 @@ public class Enemy : MonoBehaviour
         {
             // “G‚ÆŽ©•ª‚ÌˆÊ’u‚ð”äŠr
             EnemyPos = this.transform.position;
+            PlayerPos = Player.transform.position;
             Vector2 Compare = new Vector2(EnemyPos.x - PlayerPos.x, EnemyPos.y - PlayerPos.y);
 
 
@@ -125,5 +126,27 @@ public class Enemy : MonoBehaviour
     public void SetEnemyState(int StateID)
     {
         State = StateID;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("ƒvƒŒƒCƒ„[‚Æ‚ ‚½‚Á‚½‚æ");
+            EnemyPos = this.transform.position;
+            PlayerPos = Player.transform.position;
+            Vector2 Compare = new Vector2(EnemyPos.x - PlayerPos.x, EnemyPos.y - PlayerPos.y);
+
+            if (Compare.x > 0)
+            {
+                rb.AddForce(new Vector2( 1000f, 0f));
+            }
+            else if (Compare.x <= 0)
+            {
+                rb.AddForce(new Vector2( -1000f, 0f));
+            }
+
+        }
+
     }
 }
