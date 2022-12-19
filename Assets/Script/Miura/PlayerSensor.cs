@@ -13,14 +13,19 @@ public class PlayerSensor : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("“–‚½‚è”»’è");
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("ŽË’öŒ—“à‚¾‚æ");
-            GetComponent<Enemy>().SetEnemyState(1);
+            transform.parent.GetComponent<Enemy>().SetEnemyState(1);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        transform.parent.GetComponent<Enemy>().SetEnemyState(0);
     }
 
 }
