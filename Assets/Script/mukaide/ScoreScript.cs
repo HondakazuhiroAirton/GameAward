@@ -7,19 +7,23 @@ public class ScoreScript : MonoBehaviour
 {
     public TextMeshProUGUI ScoreText;
     int Score = 0;
-    int highScore = 0; // ハイスコアを保持
+    public int highScore = 0; // ハイスコアを保持
 
     // Start is called before the first frame update
     void Start()
     {
         Score = PlayerPrefs.GetInt("Score",0);
+        highScore = PlayerPrefs.GetInt("highScore", 0);
         this.ScoreText.text = "Score" + 0.ToString();
     }
-
+    
     void OnDestroy()
     {
         // スコアを保存
         PlayerPrefs.SetInt("Score", Score);
+        PlayerPrefs.Save();
+        // スコアを保存
+        PlayerPrefs.SetInt("highScore", highScore);
         PlayerPrefs.Save();
     }
 
@@ -39,6 +43,11 @@ public class ScoreScript : MonoBehaviour
             Score = 0;
         }
 
+        //ハイスコア保存
+        if(highScore < Score)
+        {
+            highScore = Score;
+        }
     }
 
     public void AddScore()
@@ -47,5 +56,8 @@ public class ScoreScript : MonoBehaviour
         this.ScoreText.text = "Score" + Score.ToString();
     }
 
-  
+    public int Hiscore()
+    {
+        return highScore;
+    }
 }
