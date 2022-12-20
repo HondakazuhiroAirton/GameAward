@@ -21,11 +21,15 @@ public class Enemy : MonoBehaviour
     static GameObject Player;
     Vector2 PlayerPos;
     Vector2 EnemyPos;
+    Vector2 Screen;
     Rigidbody2D rb;
     float valuex;
     float valuey;
     float clampMin;
     float clampMax;
+
+    Vector3 ViewportLeftBottom;
+    Vector3 ViewportRightTop;
     // プレイヤーのオブジェクトを取得
 
 
@@ -44,28 +48,25 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        // 毎フレームenemyのポジションを取得
+        EnemyPos = this.transform.position;
 
-        //if (State == 0) // 最初0
-        //{
-        //    if (StartPataPataTime < time)
-        //    {
-        //        time = 0f;
-        //        MoveValue.y = movey * Time.deltaTime;
-        //        StartCount++;
-        //    }
+        if (State == 1) // 1:ひとりで自由に動いてる
+        {
+            rb.AddForce(new Vector2(-0.1f, 0.0f));
 
+            if (EnemyPos.y < -2.0)
+            {
+                rb.AddForce(new Vector2(0.0f, 5.0f));
+            }
 
-        //    if (StartCount > 5) // 5回パタパタしたら
-        //    {
-        //        State = 1; // 次の状態へ
-        //    }
-
-        //}
-        //else 
-        if (State == 1)// 0:敵として襲いかかってくる状態
+            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
+                          Mathf.Clamp(rb.velocity.y, clampMin, clampMax));
+        }
+        else if (State == 2)// 2:プレイヤーを発見して追いかける状態
         {
             // 敵と自分の位置を比較
-            EnemyPos = this.transform.position;
+           
             PlayerPos = Player.transform.position;
             Vector2 Compare = new Vector2(EnemyPos.x - PlayerPos.x, EnemyPos.y - PlayerPos.y);
 
@@ -91,35 +92,40 @@ public class Enemy : MonoBehaviour
             rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
                                       Mathf.Clamp(rb.velocity.y, clampMin, clampMax));
 
-            // Playerの当たり判定を検知したら、状態(State)を2(持ち運ばれ状態)に変更
-            //if ()
-            //{ 
-            //    State == 2
-            //}
         }
-        else if (State == 2)// 2:運ばれている状態
-        {
-            // 運ばれている状態の動き
-
-
-
-
-            // かごの当たり判定を検知したら、状態(State)を変更
-            //if ()
-            //{ 
-            //    State == 3
-            //}
-        }
-        else // かごに入れられて出れない状態を下に書いたら良さそう
+        else if (State == 3)// 3:運ばれている状態
         {
 
 
         }
+        else // かごの中の動き
+        {
 
-        // 移動を反映する前にふわふわした慣性をつけるといいのかな？？
 
+        }
 
         // 画面外判定どうする？？
+
+        // ビューポート取得
+        ViewportLeftBottom =  Camera.main.ViewportToWorldPoint(new Vector3(0, 0));
+        ViewportRightTop =  Camera.main.ViewportToWorldPoint(new Vector3(1, 1));
+
+        // 左端超えたら
+        if (ViewportLeftBottom.x > EnemyPos.x)
+        { // 右端に戻す
+            transform.position = new Vector2 (ViewportRightTop.x,EnemyPos.y);
+        }
+        // 右端超えたら
+        else if (ViewportRightTop.x < EnemyPos.x)
+        { // 左端に戻す
+            transform.position = new Vector2(ViewportLeftBottom.x, EnemyPos.y);
+        }
+
+        if (ViewportRightTop.y <= EnemyPos.y)
+        {
+            transform.position = new Vector2(EnemyPos.x, ViewportRightTop.y);
+        }
+        
 
     }
 
