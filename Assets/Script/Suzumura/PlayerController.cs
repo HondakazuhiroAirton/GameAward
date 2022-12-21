@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     float buoyancy;
 
-    readonly float clampMinX = -1.0f;
-    readonly float clampMaxX = 1.0f;
+    readonly float clampMinX = -5.0f;
+    readonly float clampMaxX = 5.0f;
     readonly float clampMinY = -200.0f;
     readonly float clampMaxY = 200.0f;
 
@@ -64,12 +64,12 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector2(PlayerPos.x, ViewportRT.y);
             force.y = -30;
         }
-
-        // à⁄ìÆë¨ìxÇÃêßå¿
-        force.x = Mathf.Clamp(force.x, clampMinX, clampMaxX);
-        force.y = Mathf.Clamp(force.y, clampMinY, clampMaxY);
-
+        
         // Rigidbody2DÇ…óÕÇâ¡Ç¶ÇÈ
         rb.AddForce(force);
+
+        // à⁄ìÆë¨ìxÇÃêßå¿
+        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, clampMinX, clampMaxX), Mathf.Clamp(rb.velocity.y, clampMinY, clampMaxY), 0);
+
     }
 }
