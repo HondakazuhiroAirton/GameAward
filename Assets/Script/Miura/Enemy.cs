@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
     {
         //time = 0f;
         //StartCount = 0;
-        State = 0;
+        State = 1;
  
         Player = GameObject.Find("Player");
         PlayerPos = Player.transform.position ;
@@ -104,9 +104,9 @@ public class Enemy : MonoBehaviour
 
         }
 
-        // 画面外判定どうする？？
+        // 画面外判定
 
-        // ビューポート取得
+        // ビューポート取得（カメラの端っこをワールド座標に変換してる）
         ViewportLeftBottom =  Camera.main.ViewportToWorldPoint(new Vector3(0, 0));
         ViewportRightTop =  Camera.main.ViewportToWorldPoint(new Vector3(1, 1));
 
@@ -121,8 +121,9 @@ public class Enemy : MonoBehaviour
             transform.position = new Vector2(ViewportLeftBottom.x, EnemyPos.y);
         }
 
+        // 上端超えたら
         if (ViewportRightTop.y <= EnemyPos.y)
-        {
+        { // ずっと頭ぶつける
             transform.position = new Vector2(EnemyPos.x, ViewportRightTop.y);
         }
         
