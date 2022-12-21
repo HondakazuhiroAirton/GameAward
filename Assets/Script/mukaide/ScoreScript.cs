@@ -22,9 +22,14 @@ public class ScoreScript : MonoBehaviour
         // スコアを保存
         PlayerPrefs.SetInt("Score", Score);
         PlayerPrefs.Save();
-        // スコアを保存
-        PlayerPrefs.SetInt("highScore", highScore);
-        PlayerPrefs.Save();
+
+        if (highScore < Score)
+        {
+            highScore = Score;
+            // スコアを保存
+            PlayerPrefs.SetInt("highScore", highScore);
+            PlayerPrefs.Save();
+        }
     }
 
     // Update is called once per frame
@@ -43,11 +48,11 @@ public class ScoreScript : MonoBehaviour
             Score = 0;
         }
 
-        //ハイスコア保存
-        if(highScore < Score)
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            highScore = Score;
+            highScore = 0;
         }
+
     }
 
     public void AddScore()
