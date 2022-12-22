@@ -358,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HiScoreText: {fileID: 204388475}
+  hiscoreObj: {fileID: 129183594}
 --- !u!114 &129183600
 MonoBehaviour:
   m_ObjectHideFlags: 0
