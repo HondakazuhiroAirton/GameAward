@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     Vector3 ViewportRightTop;
     // プレイヤーのオブジェクトを取得
 
+    public GameObject ScoreObj;
 
     void Start()
     {
@@ -153,6 +154,8 @@ public class Enemy : MonoBehaviour
                 rb.AddForce(new Vector2( -1000f, 0f));
             }
 
+
+            ScoreObj.GetComponent<ScoreScript>().AddScore();
         }
 
     }

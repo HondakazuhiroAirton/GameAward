@@ -6,12 +6,15 @@ public class thunder : MonoBehaviour
 {
     
 
+    
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.down * Time.deltaTime);
     }
 
+
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
