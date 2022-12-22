@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector2(PlayerPos.x, ViewportRT.y);
             force.y = -30;
         }
-        
+
         // Rigidbody2D‚É—Í‚ð‰Á‚¦‚é
         rb.AddForce(force);
 
