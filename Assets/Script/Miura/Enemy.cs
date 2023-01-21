@@ -9,94 +9,154 @@ public class Enemy : MonoBehaviour
 {
     // グローバル変数みたいにフィールドを使います
     public int State = 1; // エネミーの状態を入れる変数。初期値は敵として襲いかかってくる状態
-    public float MoveTime = 10f;  // 行動が変わる時間
-    float time = 0f;
-    float movex = 1.0f;   // 移動量
-    float movey = 5.0f;   // 移動量 上にいっかいパタッとしたときに動く量
-    int StartCount; // 最初にパタパタする回数
-    float StartPataPataTime = 1.0f; // 最初にパタパタする時間間隔
-    Vector3 MoveValue;
-    public CollisionGround CollisionGroundScript;
+    //public float MoveTime = 10f;  // 行動が変わる時間
+    //float time = 0f;
+    //float movex = 1.0f;   // 移動量
+    //float movey = 5.0f;   // 移動量 上にいっかいパタッとしたときに動く量
+    //int StartCount; // 最初にパタパタする回数
+    //float StartPataPataTime = 1.0f; // 最初にパタパタする時間間隔
+    //Vector3 MoveValue;
+
+
+    static GameObject Player;
+    Vector2 PlayerPos;
+    Vector2 EnemyPos;
+    Vector2 Screen;
+    Rigidbody2D rb;
+    float valuex;
+    float valuey;
+    float clampMin;
+    float clampMax;
+
+    Vector3 ViewportLeftBottom;
+    Vector3 ViewportRightTop;
+    // プレイヤーのオブジェクトを取得
+
+    public GameObject ScoreObj;
+
     void Start()
     {
-        time = 0f;
-        State = 0;
-        StartCount = 0;
+        //time = 0f;
+        //StartCount = 0;
+        State = 1;
+ 
+        Player = GameObject.Find("Player");
+        PlayerPos = Player.transform.position ;
+        rb = this.GetComponent<Rigidbody2D>();  // rigidbodyを取得
+        clampMin = -50;
+        clampMax = 50;
     }
 
     void Update()
     {
+        // 毎フレームenemyのポジションを取得
+        EnemyPos = this.transform.position;
 
-        // 使ってみたはいいが、使い方がわからない！！
-        time += Time.deltaTime;
-
-        if(State == 0) // 最初0
+        if (State == 1) // 1:ひとりで自由に動いてる
         {
-            if (StartPataPataTime < time)
+            rb.AddForce(new Vector2(-0.1f, 0.0f));
+
+            if (EnemyPos.y < -2.0)
             {
-                time = 0f;
-                MoveValue.y = movey * Time.deltaTime;
-                StartCount++;
+                rb.AddForce(new Vector2(0.0f, 5.0f));
             }
 
+            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
+                          Mathf.Clamp(rb.velocity.y, clampMin, clampMax));
+        }
+        else if (State == 2)// 2:プレイヤーを発見して追いかける状態
+        {
+            // 敵と自分の位置を比較
+           
+            PlayerPos = Player.transform.position;
+            Vector2 Compare = new Vector2(EnemyPos.x - PlayerPos.x, EnemyPos.y - PlayerPos.y);
 
-            if (StartCount > 5) // 5回パタパタしたら
+
+            if (Compare.x >= 0.5)
             {
-                State = 1; // 次の状態へ
+                rb.AddForce(new Vector2(-0.1f,0f));
             }
+            else if (Compare.x <= -0.05)
+            {
+                rb.AddForce(new Vector2(0.1f,0f));
+            }
+
+            if (Compare.y >= 0.2)
+            {
+                //rb.AddForce(new Vector2(0,-30));
+            }
+            else if (Compare.y <= -0.2)
+            {
+                rb.AddForce(new Vector2(0, 5));
+            }
+
+            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
+                                      Mathf.Clamp(rb.velocity.y, clampMin, clampMax));
 
         }
-        else if (State == 1)// 1:敵として襲いかかってくる状態
+        else if (State == 3)// 3:運ばれている状態
         {
-            // 襲いかかってくる動き,一定時間経過でPOS動かしたい。
-            if (MoveTime < time)
-            {
-                time = 0f;
-                MoveValue.y = movey * Time.deltaTime;
-                movex *= -1;
-            }
 
 
-            MoveValue.x = movex * Time.deltaTime;
-            // この辺に地面と一定の距離検知したら、上に力を加える処理書いたら、落ちなそう
-
-            if (CollisionGroundScript.GroundCollision == true)// もし、Groundと当たったら
-            {
-                MoveValue.y = movey * Time.deltaTime;
-            }
-
-
-            // Playerの当たり判定を検知したら、状態(State)を2(持ち運ばれ状態)に変更
-            //if ()
-            //{ 
-            //    State == 2
-            //}
         }
-        else if (State == 2)// 2:運ばれている状態
-        {
-            // 運ばれている状態の動き
-
-
-
-
-            // かごの当たり判定を検知したら、状態(State)を変更
-            //if ()
-            //{ 
-            //    State == 3
-            //}
-        }
-        else // かごに入れられて出れない状態を下に書いたら良さそう
+        else // かごの中の動き
         {
 
 
         }
 
-        // 移動を反映する前にふわふわした慣性をつけるといいのかな？？
+        // 画面外判定
 
-        // 移動を反映
-        transform.Translate(MoveValue);
+        // ビューポート取得（カメラの端っこをワールド座標に変換してる）
+        ViewportLeftBottom =  Camera.main.ViewportToWorldPoint(new Vector3(0, 0));
+        ViewportRightTop =  Camera.main.ViewportToWorldPoint(new Vector3(1, 1));
 
-        // 画面外判定どうする？？
+        // 左端超えたら
+        if (ViewportLeftBottom.x > EnemyPos.x)
+        { // 右端に戻す
+            transform.position = new Vector2 (ViewportRightTop.x,EnemyPos.y);
+        }
+        // 右端超えたら
+        else if (ViewportRightTop.x < EnemyPos.x)
+        { // 左端に戻す
+            transform.position = new Vector2(ViewportLeftBottom.x, EnemyPos.y);
+        }
+
+        // 上端超えたら
+        if (ViewportRightTop.y <= EnemyPos.y)
+        { // ずっと頭ぶつける
+            transform.position = new Vector2(EnemyPos.x, ViewportRightTop.y);
+        }
+        
+
+    }
+
+    public void SetEnemyState(int StateID)
+    {
+        State = StateID;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("プレイヤーとあたったよ");
+            EnemyPos = this.transform.position;
+            PlayerPos = Player.transform.position;
+            Vector2 Compare = new Vector2(EnemyPos.x - PlayerPos.x, EnemyPos.y - PlayerPos.y);
+
+            if (Compare.x > 0)
+            {
+                rb.AddForce(new Vector2( 1000f, 0f));
+            }
+            else if (Compare.x <= 0)
+            {
+                rb.AddForce(new Vector2( -1000f, 0f));
+            }
+
+
+            ScoreObj.GetComponent<ScoreScript>().AddScore();
+        }
 
     }
 }

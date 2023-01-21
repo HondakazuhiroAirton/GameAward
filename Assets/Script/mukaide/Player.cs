@@ -15,7 +15,11 @@ public class Player : MonoBehaviour
     {
         Transform mytransform = this.transform;
         Vector2 pos = mytransform.position;
+<<<<<<< HEAD
         pos.x -= 0.1f;
+=======
+        pos.x -= 0.01f;
+>>>>>>> develop
         mytransform.position = pos;
     }
 }
