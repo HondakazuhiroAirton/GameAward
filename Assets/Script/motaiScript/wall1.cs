@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wall : MonoBehaviour
+public class wall1 : MonoBehaviour
 {
     public GameObject meteor;
     Vector2 createPosition;
@@ -11,11 +11,10 @@ public class wall : MonoBehaviour
     public float maxTime = 6.0f;
     public float interval;
     public float time = 0.0f;
-    public float xMinPosition = -9f;
-    public float xMaxPosition = -9f;
+    public float xMinPosition = 9f;
+    public float xMaxPosition = 9f;
     public float yMinPosition = -5f;
     public float yMaxPosition = 5f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +29,7 @@ public class wall : MonoBehaviour
         if (time > interval)
         {
             createPosition = transform.position;
-            createPosition.x += 1.0f;
+            createPosition.x -= 1.0f;
             createPosition = GetRandomPossition();
             Instantiate(meteor, createPosition, Quaternion.identity);
             time = 0.0f;
