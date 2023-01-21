@@ -6,15 +6,17 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     float buoyancy;
-
-    readonly float clampMinX = -5.0f;
-    readonly float clampMaxX = 5.0f;
-    readonly float clampMinY = -200.0f;
-    readonly float clampMaxY = 200.0f;
+    float clampMinX = -5.0f;
+    float clampMaxX = 5.0f;
+    float clampMinY = -200.0f;
+    float clampMaxY = 200.0f;
 
     Vector2 PlayerPos;
     Vector2 ViewportLB;     // 左下
     Vector2 ViewportRT;     // 右上
+
+    bool dashflug = false;
+    int dashcount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -33,16 +35,38 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float dash = 10.0f;
+        if (Input.GetKeyDown("b"))  // ダッシュ
+        {
+            dashflug = true;
+            dash = 1000.0f;
+            clampMinX = -60.0f;     // 速度の上限解放
+            clampMaxX = 60.0f;      // 速度の下限解放
+            dashcount = 100;
+        }
+
+        // 数フレーム後にダッシュ状態解除
+        dashcount--;
+        if (dashcount <= 0)
+        {
+            dashcount = 0;
+            // 元に戻す
+            dashflug = false;
+            dash = 10.0f;
+            clampMinX = -5.0f;
+            clampMaxX = 5.0f;
+        }
+
         // 入力をxに代入
         float x = Input.GetAxis("Horizontal");
 
         //x軸に加わる力を格納
-        Vector2 force = new Vector2(x * 10, 0);
+        Vector2 force = new Vector2(x * dash, 0);
 
         // ジャンプ入力
         if (Input.GetKeyDown("space"))
         {
-            force = new Vector2(x * 10, buoyancy);
+            force = new Vector2(x * dash, buoyancy);
         }
 
         // 画面外判定
