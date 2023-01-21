@@ -11,10 +11,10 @@ public class wall2 : MonoBehaviour
     public float maxTime = 6.0f;
     public float interval;
     public float time = 0.0f;
-    public float xMinPosition = -9f;
-    public float xMaxPosition = 9f;
-    public float yMinPosition = 5f;
-    public float yMaxPosition = 5f;
+    public float xMinPosition = -Screen.width;
+    public float xMaxPosition = Screen.width;
+    public float yMinPosition = Screen.height;
+    public float yMaxPosition = Screen.height;
     // Start is called before the first frame update
     void Start()
     {

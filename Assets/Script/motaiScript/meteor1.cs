@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class meteor1 : MonoBehaviour
 {
-    //int frameCount = 0;
-    //const int deleteFrame = 180;
     private float speed = -0.5f;
 
     // Start is called before the first frame update
@@ -18,8 +16,20 @@ public class meteor1 : MonoBehaviour
     void Update()
     {
         // à íuÇÃçXêV
-        //transform.Translate(Time.deltaTime * speed, 0,0);
         transform.Translate(0,Time.deltaTime * speed,0);
     }
 
+    /*void OnBecameInvisible()
+    {
+        GameObject.Destroy(this.gameObject);
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy" || collision.tag == "Player")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
 }
