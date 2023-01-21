@@ -18,13 +18,8 @@ public class meteor1 : MonoBehaviour
     void Update()
     {
         // ˆÊ’u‚ÌXV
-        transform.Translate(Time.deltaTime * speed, 0,0);
+        //transform.Translate(Time.deltaTime * speed, 0,0);
         transform.Translate(0,Time.deltaTime * speed,0);
-
-
-        //if (++frameCount > deleteFrame)
-        //{
-        //    Destroy(gameObject);
-        //}
     }
+
 }
