@@ -21,12 +21,14 @@ public class Enemy : MonoBehaviour
     static GameObject Player;
     Vector2 PlayerPos;
     Vector2 EnemyPos;
+    Vector2 CollisionEnemyPos;
     Vector2 Screen;
-    Rigidbody2D rb;
+   public Rigidbody2D rb;
     float valuex;
     float valuey;
     float clampMin;
     float clampMax;
+    bool EnemyCollision = false;
 
     Vector3 ViewportLeftBottom;
     Vector3 ViewportRightTop;
@@ -54,7 +56,7 @@ public class Enemy : MonoBehaviour
 
         if (State == 1) // 1:‚Ð‚Æ‚è‚ÅŽ©—R‚É“®‚¢‚Ä‚é
         {
-            rb.AddForce(new Vector2(-0.1f, 0.0f));
+            //rb.AddForce(new Vector2(-0.1f, 0.0f));
 
             if (EnemyPos.y < -2.0)
             {
@@ -104,6 +106,7 @@ public class Enemy : MonoBehaviour
 
 
         }
+
 
         // ‰æ–ÊŠO”»’è
 
@@ -155,8 +158,9 @@ public class Enemy : MonoBehaviour
             }
 
 
-            ScoreObj.GetComponent<ScoreScript>().AddScore();
+           // ScoreObj.GetComponent<ScoreScript>().AddScore();
         }
+ 
 
     }
 }
