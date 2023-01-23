@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     bool dashflug = false;
     int dashcount = 0;
+    int cooltime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -36,17 +37,20 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float dash = 10.0f;
-        if (Input.GetKeyDown("b"))  // ダッシュ
+        if ((Input.GetKeyDown("b")) && (cooltime == 0))  // ダッシュ
         {
             dashflug = true;
             dash = 1000.0f;
             clampMinX = -60.0f;     // 速度の上限解放
             clampMaxX = 60.0f;      // 速度の下限解放
             dashcount = 100;
+            cooltime = 500;         // クールタイム
         }
 
-        // 数フレーム後にダッシュ状態解除
         dashcount--;
+        cooltime--;
+
+        // 数フレーム後にダッシュ状態解除
         if (dashcount <= 0)
         {
             dashcount = 0;
@@ -55,6 +59,12 @@ public class PlayerController : MonoBehaviour
             dash = 10.0f;
             clampMinX = -5.0f;
             clampMaxX = 5.0f;
+        }
+
+        // クールタイムが0以下にならないようにする
+        if (cooltime <= 0)
+        {
+            cooltime = 0;
         }
 
         // 入力をxに代入
