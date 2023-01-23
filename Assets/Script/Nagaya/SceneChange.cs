@@ -11,25 +11,33 @@ public class SceneChange : MonoBehaviour
     void Update()
     {
         //もし入力されたキーがspaceキーなら中の処理を実行する
+<<<<<<< HEAD
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    //TitleSceneに切り替え
         //    SceneManager.LoadScene("TitleScene(Nagaya)");
         //}
+=======
+       // if (Input.GetKeyDown(KeyCode.Space))
+       // {
+       //     //TitleSceneに切り替え
+       //     SceneManager.LoadScene("TitleScene(Nagaya)");
+       // }
+>>>>>>> feature/nagaya
 
-        //もし入力されたキーがWキーなら
-        if (Input.GetKeyDown(KeyCode.W))
+        //もし入力されたキーがEnterキーなら
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             //TitleSceneに切り替え
             SceneManager.LoadScene("debugScene");
         }
 
         //もし入力されたキーがEnterKeyなら
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            //EndSceneに切り替え
-            SceneManager.LoadScene("EndScene");
-        }
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    //EndSceneに切り替え
+        //    SceneManager.LoadScene("GameOverScene");
+        //}
     }
 
     
