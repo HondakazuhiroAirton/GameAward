@@ -1,27 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CircleCollision : MonoBehaviour
 {
     public TextMeshProUGUI text;
-    public int addText = 1;
     
 
     // Start is called before the first frame update
     void Start()
     {
-
-        addText = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //変数addTextを文字列に変換し、text.textに代入＝表示する文章を変更
-        text.text = addText.ToString();
     }
 
 
@@ -29,25 +25,18 @@ public class CircleCollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cage"))
         {
-         
-        //変数addTextを1加算
-        addText = addText + 1;
+            
 
-
-         //カゴにぶつかったら消える
-         //          Destroy(this.gameObject);
-
-
-             if (addText == 5)
-             {
-                 SceneManager.LoadScene("EndScene");   //５回当たったらクリア
-             }
+            //Cage(壁)にぶつかったらCircle（プレイヤー）消える
+            this.gameObject.SetActive(false);
+            Invoke("GoToGameOver",1.0f);
         }
-
-       
     }
     
-
+    void GoToGameOver()
+    {
+        SceneManager.LoadScene("EndScene");
+    }
 
    
 
