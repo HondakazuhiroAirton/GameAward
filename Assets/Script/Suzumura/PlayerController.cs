@@ -5,19 +5,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-    float buoyancy;
-    float clampMinX = -5.0f;
-    float clampMaxX = 5.0f;
+    float buoyancy;             // 浮力
+    float clampMinX = -5.0f;    // 下限
+    float clampMaxX = 5.0f;     // 上限
     float clampMinY = -200.0f;
     float clampMaxY = 200.0f;
 
-    Vector2 PlayerPos;
-    Vector2 ViewportLB;     // 左下
-    Vector2 ViewportRT;     // 右上
+    Vector2 PlayerPos;      // プレイヤーの位置
+    Vector2 ViewportLB;     // 画面の左下座標
+    Vector2 ViewportRT;     // 右上の右上座標
 
-    bool dashflug = false;
-    int dashcount = 0;
-    int cooltime = 0;
+    bool isGround = false;  // 接地判定
+    bool dashflug = false;  // ダッシュフラグ
+    int dashcount = 0;      // ダッシュカウント
+    int cooltime = 0;       // クールタイム
 
     // Start is called before the first frame update
     void Start()
@@ -37,14 +38,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float dash = 10.0f;
-        if ((Input.GetKeyDown("b")) && (cooltime == 0))  // ダッシュ
+        // ダッシュ
+        // 条件: Bボタン　クールタイムなし　空中にいる
+        if ((Input.GetKeyDown("b")) && (cooltime == 0) && (!isGround))
         {
             dashflug = true;
             dash = 1000.0f;
             clampMinX = -60.0f;     // 速度の上限解放
             clampMaxX = 60.0f;      // 速度の下限解放
             dashcount = 100;
-            cooltime = 500;         // クールタイム
+            cooltime = 500;         // クールタイム設定
         }
 
         dashcount--;
@@ -105,5 +108,23 @@ public class PlayerController : MonoBehaviour
         // 移動速度の制限
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, clampMinX, clampMaxX), Mathf.Clamp(rb.velocity.y, clampMinY, clampMaxY), 0);
 
+    }
+
+    //地面に触れているときに呼び出される関数
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGround = true;
+        }
+    }
+
+    //地面から離れたときに呼び出される関数
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGround = false;
+        }
     }
 }
