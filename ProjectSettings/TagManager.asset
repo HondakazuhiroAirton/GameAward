@@ -7,7 +7,7 @@ TagManager:
   - Enemy
   - Cage
   - Circle
-  - Triangle
+  - Ground
   layers:
   - Default
   - TransparentFX

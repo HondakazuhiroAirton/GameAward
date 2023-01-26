@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NagayaScene/TitleScene(Nagaya).unity
     guid: 32dea270379686e41a4b47171db6811d
   - enabled: 1
-    path: Assets/Scenes/NagayaScene/MainScene.unity
+    path: Assets/Scenes/NagayaScene/NagayaScene.unity
     guid: 451b2fab3b6b95640a0ced4be8af004c
   - enabled: 1
     path: Assets/Scenes/NagayaScene/EndScene.unity
-    guid: 3fda196904ba6b34f87d14d2755c2adc
+    guid: c35c8dfb63f9e44499bce348859d0932
   m_configObjects: {}
