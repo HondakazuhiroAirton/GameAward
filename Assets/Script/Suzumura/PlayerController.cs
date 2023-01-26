@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     float clampMaxY = 200.0f;
 
     Vector2 PlayerPos;      // プレイヤーの位置
+    Vector2 EnemyPos;       // 敵の位置
     Vector2 ViewportLB;     // 画面の左下座標
     Vector2 ViewportRT;     // 右上の右上座標
 
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     int dashcount = 0;      // ダッシュカウント
     int cooltime = 0;       // クールタイム
 
+    float PlayerandEnemyradius;
     // Start is called before the first frame update
     void Start()
     {
@@ -129,4 +131,35 @@ public class PlayerController : MonoBehaviour
             Debug.Log("空中にいる");
         }
     }
+
+    private void OnTrrigerEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            PlayerandEnemyradius = collision.gameObject.transform.localScale.x / 2 + gameObject.transform.localScale.x / 2;
+            Debug.Log("接敵");
+            PlayerPos = this.transform.position;
+            EnemyPos = collision.transform.position;
+            Vector2 Compare = new Vector2(PlayerPos.x - EnemyPos.x, PlayerPos.y - EnemyPos.y);
+            float slash = Compare.x * Compare.x + Compare.y * Compare.y;
+            float sqrt = Mathf.Sqrt(slash);
+            float diameter = sqrt - PlayerandEnemyradius;
+            if (Compare.x > 0)
+            {
+                rb.AddForce(new Vector2(1000f * diameter, 0f));
+            }
+            else if (Compare.x <= 0)
+            {
+                rb.AddForce(new Vector2(-1000f * diameter, 0f));
+            }
+
+        }
+
+
+
+    }
+    
+
+
+
 }

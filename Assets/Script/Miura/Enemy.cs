@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     float valuey;
     float clampMin;
     float clampMax;
+    float PlayerandEnemyradius;
 
     Vector3 ViewportLeftBottom;
     Vector3 ViewportRightTop;
@@ -54,15 +55,18 @@ public class Enemy : MonoBehaviour
 
         if (State == 1) // 1:ひとりで自由に動いてる
         {
-            rb.AddForce(new Vector2(-0.1f, 0.0f));
+            rb.AddForce(new Vector2(-5f, 0.0f));
 
-            if (EnemyPos.y < -2.0)
+            Debug.Log(rb.velocity);
+
+            if (EnemyPos.y < 0.0)
             {
-                rb.AddForce(new Vector2(0.0f, 5.0f));
+                rb.AddForce(new Vector2(0.0f, 50.0f));
             }
 
             rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
                           Mathf.Clamp(rb.velocity.y, clampMin, clampMax));
+           // Debug.Log(Mathf.Clamp(rb.velocity.x, clampMin, clampMax));
         }
         else if (State == 2)// 2:プレイヤーを発見して追いかける状態
         {
@@ -74,11 +78,11 @@ public class Enemy : MonoBehaviour
 
             if (Compare.x >= 0.5)
             {
-                rb.AddForce(new Vector2(-0.1f,0f));
+                rb.AddForce(new Vector2(-5f,0f));
             }
             else if (Compare.x <= -0.05)
             {
-                rb.AddForce(new Vector2(0.1f,0f));
+                rb.AddForce(new Vector2(5f,0f));
             }
 
             if (Compare.y >= 0.2)
@@ -87,11 +91,12 @@ public class Enemy : MonoBehaviour
             }
             else if (Compare.y <= -0.2)
             {
-                rb.AddForce(new Vector2(0, 5));
+                rb.AddForce(new Vector2(0, 50));
             }
 
             rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
                                       Mathf.Clamp(rb.velocity.y, clampMin, clampMax));
+
 
         }
         else if (State == 3)// 3:運ばれている状態
@@ -99,11 +104,8 @@ public class Enemy : MonoBehaviour
 
 
         }
-        else // かごの中の動き
-        {
+       
 
-
-        }
 
         // 画面外判定
 
@@ -140,18 +142,23 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            PlayerandEnemyradius = collision.gameObject.transform.localScale.x / 2 + gameObject.transform.localScale.x / 2;
             Debug.Log("プレイヤーとあたったよ");
             EnemyPos = this.transform.position;
             PlayerPos = Player.transform.position;
             Vector2 Compare = new Vector2(EnemyPos.x - PlayerPos.x, EnemyPos.y - PlayerPos.y);
+            float slash = Compare.x * Compare.x + Compare.y * Compare.y;
+            float sqrt = Mathf.Sqrt(slash);
+            Debug.Log(sqrt);
+            float diameter = sqrt - PlayerandEnemyradius;
 
             if (Compare.x > 0)
             {
-                rb.AddForce(new Vector2( 1000f, 0f));
+                rb.AddForce(new Vector2(1000f * diameter, 0f));
             }
             else if (Compare.x <= 0)
             {
-                rb.AddForce(new Vector2( -1000f, 0f));
+                rb.AddForce(new Vector2( -1000f * diameter, 0f));
             }
 
 
