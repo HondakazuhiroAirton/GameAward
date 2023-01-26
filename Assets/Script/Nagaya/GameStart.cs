@@ -1,26 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;  //SceneManagementの機能を使用
+using UnityEngine.SceneManagement;
 
-public class SceneChange : MonoBehaviour
+public class GameStart : MonoBehaviour
 {
-
-
     // Update is called once per frame
     void Update()
     {
-
-
-        //もし入力されたキーがEnterキーなら
         if (Input.GetKeyDown(KeyCode.Return))
         {
             //TitleSceneに切り替え
             SceneManager.LoadScene("MainScene");
         }
-
     }
-
-    
 }
-

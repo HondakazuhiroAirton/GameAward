@@ -8,6 +8,7 @@ TagManager:
   - Cage
   - Circle
   - Ground
+  - Triangle
   layers:
   - Default
   - TransparentFX

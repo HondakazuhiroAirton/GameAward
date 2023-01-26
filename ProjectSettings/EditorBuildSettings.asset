@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/NagayaScene/TitleScene(Nagaya).unity
     guid: 32dea270379686e41a4b47171db6811d
   - enabled: 1
-    path: Assets/Scenes/NagayaScene/NagayaScene.unity
+    path: Assets/Scenes/NagayaScene/MainScene.unity
     guid: 451b2fab3b6b95640a0ced4be8af004c
   - enabled: 1
+    path: Assets/Scenes/NagayaScene/SecondStage.unity
+    guid: 52487f704b9bdb0499dc3ce6fb74ba59
+  - enabled: 1
+    path: Assets/Scenes/NagayaScene/ThirdStage.unity
+    guid: a2026532f8e633f49aa266566ea78ad2
+  - enabled: 1
     path: Assets/Scenes/NagayaScene/EndScene.unity
-    guid: c35c8dfb63f9e44499bce348859d0932
+    guid: 3fda196904ba6b34f87d14d2755c2adc
+  - enabled: 1
+    path: Assets/Scenes/NagayaScene/GameOverScene.unity
+    guid: 9bdfc39f774db9546a4a7fecd46f6afd
   m_configObjects: {}

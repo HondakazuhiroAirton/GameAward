@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
     float buoyancy;             // 浮力
-    float dash;                 // 速度
     float clampMinX = -5.0f;    // 下限
     float clampMaxX = 5.0f;     // 上限
     float clampMinY = -200.0f;
@@ -27,6 +26,8 @@ public class PlayerController : MonoBehaviour
         // Rigidbodyコンポーネントを取得
         rb = GetComponent<Rigidbody2D>();
 
+        buoyancy = 200;
+
         // ビューポート取得
         ViewportLB = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
         ViewportRT = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
@@ -36,8 +37,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        buoyancy = 0.0f;
-        dash = 10.0f;
+        float dash = 10.0f;
         // ダッシュ
         // 条件: Bボタン　クールタイムなし　空中にいる
         if ((Input.GetKeyDown("b")) && (cooltime == 0) && (!isGround))
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
             dash = 1000.0f;
             clampMinX = -60.0f;     // 速度の上限解放
             clampMaxX = 60.0f;      // 速度の下限解放
-            dashcount = 100;        // ダッシュ時間設定
+            dashcount = 100;
             cooltime = 500;         // クールタイム設定
         }
 
@@ -73,14 +73,14 @@ public class PlayerController : MonoBehaviour
         // 入力をxに代入
         float x = Input.GetAxis("Horizontal");
 
+        //x軸に加わる力を格納
+        Vector2 force = new Vector2(x * dash, 0);
+
         // ジャンプ入力
         if (Input.GetKeyDown("space"))
         {
-            buoyancy = 200;     // 浮力設定
+            force = new Vector2(x * dash, buoyancy);
         }
-
-        //x軸に加わる力を格納
-        Vector2 force = new Vector2(x * dash, buoyancy);
 
         // 画面外判定
         PlayerPos = this.transform.position;
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         // 右端
         else if (PlayerPos.x >= ViewportRT.x)
         {
-            transform.position = new Vector2(ViewportLB.x, PlayerPos.y);       // 左側に移動
+            transform.position = new Vector2(ViewportLB.x, PlayerPos.y);       // 右側に移動
         }
 
         // 上端
@@ -116,7 +116,6 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.CompareTag("Ground"))
         {
             isGround = true;
-            Debug.Log("地面に立っている");
         }
     }
 
@@ -126,7 +125,6 @@ public class PlayerController : MonoBehaviour
         if (collision.collider.CompareTag("Ground"))
         {
             isGround = false;
-            Debug.Log("空中にいる");
         }
     }
 }
