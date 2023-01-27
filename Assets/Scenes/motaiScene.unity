@@ -227,7 +227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48404431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.54, y: -2.95, z: 0}
+  m_LocalPosition: {x: -4.96, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251,6 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7e98b98a841df4e8a3b00f7a6d29ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  createPosition: 0
+  yPosition: -480
 --- !u!58 &120106576
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -373,6 +375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e65c10f98c48284fb94e3421d864d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  createPosition: 0
+  xPosition: -640
 --- !u!58 &377664539
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -595,7 +599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655703702786205901, guid: add12b24f0491db44af7944f6bbc4701, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1655703702786205903, guid: add12b24f0491db44af7944f6bbc4701, type: 3}
       propertyPath: m_RootOrder
@@ -747,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4a3c8f8e88974408ea05ebd007cb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteor: {fileID: 1913469788}
+  meteor: {fileID: 1645641916}
   minTime: 10
   maxTime: 15
   interval: 0
@@ -899,7 +903,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645641916}
   m_LocalRotation: {x: 0, y: 0, z: 0.5, w: 0.8660254}
-  m_LocalPosition: {x: 8.200001, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1036,7 +1040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703453147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.94, y: -2.93, z: 0}
+  m_LocalPosition: {x: -0.04, y: 1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1192,7 +1196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655703702786205901, guid: add12b24f0491db44af7944f6bbc4701, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1655703702786205903, guid: add12b24f0491db44af7944f6bbc4701, type: 3}
       propertyPath: m_RootOrder
@@ -1208,11 +1212,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655703702786205903, guid: add12b24f0491db44af7944f6bbc4701, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.1
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 1655703702786205903, guid: add12b24f0491db44af7944f6bbc4701, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.65
+      value: 5.56
       objectReference: {fileID: 0}
     - target: {fileID: 1655703702786205903, guid: add12b24f0491db44af7944f6bbc4701, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1266,7 +1270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655703702786205901, guid: add12b24f0491db44af7944f6bbc4701, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1655703702786205903, guid: add12b24f0491db44af7944f6bbc4701, type: 3}
       propertyPath: m_RootOrder
