@@ -26,8 +26,7 @@ public class meteor : MonoBehaviour
         // ƒQ[ƒ€‰æ–Ê‚©‚çŠO‚ê‚é‚ÆÁ‚¦‚é
         if (xPosition < createPosition)
         {
-            GameObject.Destroy(this.gameObject);
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 
