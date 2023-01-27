@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         {
             rb.AddForce(new Vector2(-0.1f, 0.0f));
 
-            Debug.Log(rb.velocity);
+            //Debug.Log(rb.velocity);
 
             if (EnemyPos.y < 0.0)
             {
@@ -138,7 +138,7 @@ public class Enemy : MonoBehaviour
         State = StateID;
     }
 
-    private void OnTriggerEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -149,14 +149,20 @@ public class Enemy : MonoBehaviour
             Vector2 Compare = new Vector2(EnemyPos.x - PlayerPos.x, EnemyPos.y - PlayerPos.y);
             float slash = Compare.x * Compare.x + Compare.y * Compare.y;
             float sqrt = Mathf.Sqrt(slash);
-            Debug.Log(sqrt);
-            float diameter = sqrt - PlayerandEnemyradius;
-            Rigidbody2D playerrb = collision.gameObject.GetComponent<Rigidbody2D>();
-            playerrb.velocity = Vector3.zero;
-            Rigidbody2D enemyrb = gameObject.GetComponent<Rigidbody2D>();
-            enemyrb.velocity = Vector3.zero;
+            float diameter = PlayerandEnemyradius - sqrt;
+            //Rigidbody2D playerrb = collision.gameObject.GetComponent<Rigidbody2D>();
+            //playerrb.velocity = Vector3.zero;
+            //Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+            rb.velocity = Vector2.zero;
 
-            rb.AddForce(new Vector2(1000f * diameter, 0f));
+            if (Compare.x > 0)
+            {
+                rb.AddForce(new Vector2(1000f * diameter, 0f));
+            }
+            else if (Compare.x <= 0)
+            {
+                rb.AddForce(new Vector2(-1000f * diameter, 0f));
+            }
 
             ScoreObj.GetComponent<ScoreScript>().AddScore();
         }
