@@ -22,7 +22,7 @@ public class PlayerSensor : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("ŽË’öŒ—“à‚¾‚æ");
-            transform.parent.GetComponent<Enemy>().SetEnemyState(2);
+            transform.parent.GetComponent<Enemy>().SetEnemyState(3);
         }
         else if (collision.gameObject.tag == "Enemy")
         {

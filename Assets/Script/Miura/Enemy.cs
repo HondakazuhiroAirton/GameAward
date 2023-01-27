@@ -28,9 +28,11 @@ public class Enemy : MonoBehaviour
     float clampMin;
     float clampMax;
     float PlayerandEnemyradius;
-
+    float fTime;
+    float Intarval = 6;
     Vector3 ViewportLeftBottom;
     Vector3 ViewportRightTop;
+    Vector2 NowPos;
     // プレイヤーのオブジェクトを取得
 
     public GameObject ScoreObj;
@@ -52,7 +54,7 @@ public class Enemy : MonoBehaviour
     {
         // 毎フレームenemyのポジションを取得
         EnemyPos = this.transform.position;
-
+        fTime += Time.deltaTime; // 時間計測を変数に取得
         if (State == 1) // 1:ひとりで自由に動いてる
         {
             rb.AddForce(new Vector2(-0.1f, 0.0f));
@@ -61,7 +63,7 @@ public class Enemy : MonoBehaviour
 
             if (EnemyPos.y < 0.0)
             {
-                rb.AddForce(new Vector2(0.0f, 50.0f));
+                rb.AddForce(new Vector2(0.0f, 0.1f), ForceMode2D.Impulse);
             }
 
             rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
@@ -91,7 +93,7 @@ public class Enemy : MonoBehaviour
             }
             else if (Compare.y <= -0.2)
             {
-                rb.AddForce(new Vector2(0, 50));
+                rb.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
             }
 
             rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
@@ -99,12 +101,37 @@ public class Enemy : MonoBehaviour
 
 
         }
-        else if (State == 3)// 3:運ばれている状態
+        else if (State == 3)// 3:敵タックル待機
         {
 
+            this.transform.position = NowPos;
 
+            if (fTime > Intarval) // 一定時間経過後に
+            {
+                State = 4;
+                fTime = 0;
+            }
+
+            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
+                                      Mathf.Clamp(rb.velocity.y, clampMin, clampMax));
         }
-       
+        else if (State == 4)// 3:敵タックル待機
+        {
+            if (fTime < 3)
+            {
+                // タックルする
+                PlayerPos = Player.transform.position;
+                Vector2 Compare = new Vector2(PlayerPos.x - EnemyPos.x, PlayerPos.y - EnemyPos.y); // ベクトルを求める
+                Compare.x = Compare.x / 100;
+                Compare.y = Compare.y / 100;
+                this.gameObject.transform.Translate(Compare);
+            }
+            else if (fTime > 3)
+            {
+                State = 1;
+            }
+        }
+
 
 
         // 画面外判定
@@ -136,6 +163,7 @@ public class Enemy : MonoBehaviour
     public void SetEnemyState(int StateID)
     {
         State = StateID;
+        NowPos = this.transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
