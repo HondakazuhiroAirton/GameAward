@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;  //SceneManagementの機能を使用
 public class SceneChange : MonoBehaviour
 {
 
+    
+
 
     // Update is called once per frame
     void Update()
