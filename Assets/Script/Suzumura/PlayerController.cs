@@ -142,14 +142,8 @@ public class PlayerController : MonoBehaviour
             float slash = Compare.x * Compare.x + Compare.y * Compare.y;
             float sqrt = Mathf.Sqrt(slash);
             float diameter = sqrt - PlayerandEnemyradius;
-            if (Compare.x > 0)
-            {
-                rb.AddForce(new Vector2(1000f * diameter, 0f));
-            }
-            else if (Compare.x <= 0)
-            {
-                rb.AddForce(new Vector2(-1000f * diameter, 0f));
-            }
+            
+            rb.AddForce(new Vector2(1000f * diameter, 0f));
 
         }
 

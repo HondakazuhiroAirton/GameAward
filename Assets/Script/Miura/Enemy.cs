@@ -21,18 +21,13 @@ public class Enemy : MonoBehaviour
     static GameObject Player;
     Vector2 PlayerPos;
     Vector2 EnemyPos;
-    Vector2 CollisionEnemyPos;
     Vector2 Screen;
-   public Rigidbody2D rb;
+    Rigidbody2D rb;
     float valuex;
     float valuey;
     float clampMin;
     float clampMax;
-<<<<<<< HEAD
-    bool EnemyCollision = false;
-=======
     float PlayerandEnemyradius;
->>>>>>> feature/suzumura
 
     Vector3 ViewportLeftBottom;
     Vector3 ViewportRightTop;
@@ -60,11 +55,7 @@ public class Enemy : MonoBehaviour
 
         if (State == 1) // 1:ひとりで自由に動いてる
         {
-<<<<<<< HEAD
-            //rb.AddForce(new Vector2(-0.1f, 0.0f));
-=======
-            rb.AddForce(new Vector2(-5f, 0.0f));
->>>>>>> feature/suzumura
+            rb.AddForce(new Vector2(-0.1f, 0.0f));
 
             Debug.Log(rb.velocity);
 
@@ -87,11 +78,11 @@ public class Enemy : MonoBehaviour
 
             if (Compare.x >= 0.5)
             {
-                rb.AddForce(new Vector2(-5f,0f));
+                rb.AddForce(new Vector2(-0.1f,0f));
             }
             else if (Compare.x <= -0.05)
             {
-                rb.AddForce(new Vector2(5f,0f));
+                rb.AddForce(new Vector2(0.1f,0f));
             }
 
             if (Compare.y >= 0.2)
@@ -116,12 +107,6 @@ public class Enemy : MonoBehaviour
        
 
 
-<<<<<<< HEAD
-        }
-
-
-=======
->>>>>>> feature/suzumura
         // 画面外判定
 
         // ビューポート取得（カメラの端っこをワールド座標に変換してる）
@@ -153,7 +138,7 @@ public class Enemy : MonoBehaviour
         State = StateID;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -166,20 +151,15 @@ public class Enemy : MonoBehaviour
             float sqrt = Mathf.Sqrt(slash);
             Debug.Log(sqrt);
             float diameter = sqrt - PlayerandEnemyradius;
+            Rigidbody2D playerrb = collision.gameObject.GetComponent<Rigidbody2D>();
+            playerrb.velocity = Vector3.zero;
+            Rigidbody2D enemyrb = gameObject.GetComponent<Rigidbody2D>();
+            enemyrb.velocity = Vector3.zero;
 
-            if (Compare.x > 0)
-            {
-                rb.AddForce(new Vector2(1000f * diameter, 0f));
-            }
-            else if (Compare.x <= 0)
-            {
-                rb.AddForce(new Vector2( -1000f * diameter, 0f));
-            }
+            rb.AddForce(new Vector2(1000f * diameter, 0f));
 
-
-           // ScoreObj.GetComponent<ScoreScript>().AddScore();
+            ScoreObj.GetComponent<ScoreScript>().AddScore();
         }
- 
 
     }
 }
