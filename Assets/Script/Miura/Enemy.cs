@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     float clampMax;
     float PlayerandEnemyradius;
     float fTime;
+    int CoolTime = 0;
     float Intarval = 6;
     Vector3 ViewportLeftBottom;
     Vector3 ViewportRightTop;
@@ -48,10 +49,12 @@ public class Enemy : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();  // rigidbodyを取得
         clampMin = -50;
         clampMax = 50;
+        CoolTime = 0;
     }
 
     void Update()
     {
+        CoolTime--; // クールタイムを毎フレーム引く
         // 毎フレームenemyのポジションを取得
         EnemyPos = this.transform.position;
         fTime += Time.deltaTime; // 時間計測を変数に取得
@@ -103,6 +106,10 @@ public class Enemy : MonoBehaviour
         }
         else if (State == 3)// 3:敵タックル待機
         {
+            if (CoolTime > 0)
+            {
+                State = 1;
+            }
 
             this.transform.position = NowPos;
 
@@ -114,6 +121,7 @@ public class Enemy : MonoBehaviour
 
             rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, clampMin, clampMax),
                                       Mathf.Clamp(rb.velocity.y, clampMin, clampMax));
+
         }
         else if (State == 4)// 3:敵タックル待機
         {
@@ -122,13 +130,15 @@ public class Enemy : MonoBehaviour
                 // タックルする
                 PlayerPos = Player.transform.position;
                 Vector2 Compare = new Vector2(PlayerPos.x - EnemyPos.x, PlayerPos.y - EnemyPos.y); // ベクトルを求める
-                Compare.x = Compare.x / 100;
-                Compare.y = Compare.y / 100;
+                Compare.x = Compare.x / 10000;
+                Compare.y = Compare.y / 10000;
                 this.gameObject.transform.Translate(Compare);
             }
             else if (fTime > 3)
             {
                 State = 1;
+                fTime = 0.0f;
+                CoolTime = 180;
             }
         }
 
@@ -192,7 +202,7 @@ public class Enemy : MonoBehaviour
                 rb.AddForce(new Vector2(-1000f * diameter, 0f));
             }
 
-            ScoreObj.GetComponent<ScoreScript>().AddScore();
+           // ScoreObj.GetComponent<ScoreScript>().AddScore();
         }
 
     }
