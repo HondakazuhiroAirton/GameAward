@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
             float slash = Compare.x * Compare.x + Compare.y * Compare.y;
             float sqrt = Mathf.Sqrt(slash);
             float diameter = PlayerandEnemyradius - sqrt;
-            //Rigidbody2D enemyrb = collision.gameObject.GetComponent<Rigidbody2D>();
+            Rigidbody2D enemyrb = collision.gameObject.GetComponent<Rigidbody2D>();
             //enemyrb.velocity = Vector3.zero;
             //Rigidbody2D playerrb = gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = Vector2.zero;
