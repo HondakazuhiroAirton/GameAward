@@ -5,6 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Enemy : MonoBehaviour
 {
     // グローバル変数みたいにフィールドを使います
@@ -204,6 +206,5 @@ public class Enemy : MonoBehaviour
 
            // ScoreObj.GetComponent<ScoreScript>().AddScore();
         }
-
     }
 }

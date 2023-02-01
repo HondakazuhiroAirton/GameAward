@@ -8,6 +8,8 @@ public class meteor : MonoBehaviour
     public float createPosition;
     public float xPosition;
 
+    int a;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class meteor : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
