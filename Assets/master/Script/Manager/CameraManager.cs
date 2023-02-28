@@ -26,6 +26,16 @@ public struct ViewportIsOverRect
     public bool Bottom;
 }
 
+
+public enum RectNo : int
+{
+    Left,
+    Right,
+    Top,
+    Bottom,
+}
+
+
 public class CameraManager : MonoBehaviour
 {
     protected static CameraManager instance;

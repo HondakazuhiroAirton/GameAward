@@ -2,11 +2,7 @@
     "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.GraphData",
     "m_ObjectId": "ec24c168fc0a41e0a19b982623747299",
-    "m_Properties": [
-        {
-            "m_Id": "6b9acce1ddec405595cfa2d5949e8e87"
-        }
-    ],
+    "m_Properties": [],
     "m_Keywords": [],
     "m_Dropdowns": [],
     "m_CategoryData": [
@@ -618,35 +614,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
-    "m_ObjectId": "6b9acce1ddec405595cfa2d5949e8e87",
-    "m_Guid": {
-        "m_GuidSerialized": "64c9eb45-629d-4c94-841b-1ace44dc78c3"
-    },
-    "m_Name": "TransitionTexture",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "TransitionTexture",
-    "m_DefaultReferenceName": "_TransitionTexture",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
-        "m_Guid": ""
-    },
-    "isMainTexture": true,
-    "useTilingAndOffset": false,
-    "m_Modifiable": true,
-    "m_DefaultType": 0
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "749d07f9121847579a51e4d19e0151d6",
     "m_Id": 2,
@@ -752,11 +719,7 @@
     "m_Type": "UnityEditor.ShaderGraph.CategoryData",
     "m_ObjectId": "8b6bc0fb0e164d038c4196674fc4be42",
     "m_Name": "",
-    "m_ChildObjectList": [
-        {
-            "m_Id": "6b9acce1ddec405595cfa2d5949e8e87"
-        }
-    ]
+    "m_ChildObjectList": []
 }
 
 {
