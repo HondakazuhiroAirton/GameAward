@@ -9,6 +9,8 @@ TagManager:
   - Circle
   - Ground
   - Triangle
+  - Wall
+  - Beam
   layers:
   - Default
   - TransparentFX
