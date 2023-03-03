@@ -1,11 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Fade : MonoBehaviour
+public class StageSelect : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-    
         
     }
 
