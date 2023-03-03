@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class beams : MonoBehaviour
 {
-    private float speed = 10.0f;
+    private float speed = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,14 +16,17 @@ public class beams : MonoBehaviour
     void Update()
     {
         Vector2 beamsPos = transform.position;
-
-
+        Vector2 right = transform.right;
 
         if (Input.GetKey(KeyCode.A))
         {
-            beamsPos.x += speed * Time.deltaTime;// xÀ•W‚Éspeed‚ğ‰ÁZ
-            
+            //beamsPos.x += speed * Time.deltaTime;// xÀ•W‚Éspeed‚ğ‰ÁZ
+            //beamsPos.x = transform.forward.x;
+
+            //beamsPos.x += speed * Time.deltaTime;
+
+            transform.position += transform.right;
         }
-        transform.position = beamsPos;//Œ»İ‚ÌˆÊ’uî•ñ‚É”½‰f‚³‚¹‚é
+        
     }
 }
