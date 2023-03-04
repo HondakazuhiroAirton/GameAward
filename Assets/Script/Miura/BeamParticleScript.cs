@@ -31,30 +31,15 @@ public class BeamParticleScript : MonoBehaviour
         transform.position += moveDir;
 
     }
-    public void ParticleCollision()
-    {
-
-
-    }
 
     public void CollisionEvent(GameObject obj)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        //collisionObject = collision.gameObject; // ぶつかったオブジェクトを取得
-
-        //if (collisionObject.tag == "wall") // 衝突物が反射物だったら
-        //{
-        //    // 反射させる
-        //    
-        //    GameObject beamParticle = transform.parent.gameObject; // パーティクル1個のゲームオブジェクトを取得する
-        //    //beamParticle.gameObject.ParticleCollision();
-        //}
-        Debug.Log("反射するよ");
-        // なんやねんこれ
+        Debug.Log("反射するよ"); 
         collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
     }
 }
