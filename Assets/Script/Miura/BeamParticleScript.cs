@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BeamParticleScript : MonoBehaviour
 {
-    public GameObject plane;
-    Vector3 moveDir;           // 移動方向ベクトル
     // 移動する方向
     public float XMove = 1;
     public float YMove = -1;
@@ -14,6 +12,7 @@ public class BeamParticleScript : MonoBehaviour
 
     // スタート位置保存
     public Vector3 StartPosition;
+    public Vector3 moveDir;
 
     // Start is called before the first frame update
     void Start()
@@ -31,22 +30,33 @@ public class BeamParticleScript : MonoBehaviour
         // 移動
         transform.position += moveDir;
 
-         // パーティクルと平面の距離
-         Vector3 d = transform.position - plane.transform.position;
-        // 移動ベクトルと法線ベクトルの内積
-         float h = Vector3.Dot(d, plane.transform.up);
-
     }
     public void ParticleCollision()
     {
-        // 反射ベクトルを計算する
-        Vector3 n = plane.transform.up; // 地面の法線ベクトルを入れる
-        float h = Mathf.Abs(Vector3.Dot(moveDir, n)); // 絶対値を取る,移動ベクトルと地面の法線ベクトルの内積を取る
-        Vector3 r = moveDir + 2 * n * h; // 下に2倍伸ばす
-        moveDir = r;
+
 
     }
 
+    public void CollisionEvent(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //collisionObject = collision.gameObject; // ぶつかったオブジェクトを取得
+
+        //if (collisionObject.tag == "wall") // 衝突物が反射物だったら
+        //{
+        //    // 反射させる
+        //    
+        //    GameObject beamParticle = transform.parent.gameObject; // パーティクル1個のゲームオブジェクトを取得する
+        //    //beamParticle.gameObject.ParticleCollision();
+        //}
+        Debug.Log("反射するよ");
+        // なんやねんこれ
+        collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
+    }
 }
 
 // 0301 三浦瞬
@@ -57,3 +67,10 @@ public class BeamParticleScript : MonoBehaviour
 // ④反射カウント+1
 // これでできそうじゃない??
 // 当たるゲームオブジェクト全部格納??
+
+
+
+// メモ
+// 親子関係取得のアレコレ
+//“transform.root.gameObject”は一番親のオブジェクトを取得
+//“transform.parent.gameObject”は一つ上のオブジェクトを取得

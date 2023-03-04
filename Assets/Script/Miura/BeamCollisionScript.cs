@@ -19,22 +19,7 @@ public class BeamCollisionScript : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        collisionObject = collision.gameObject; // ぶつかったオブジェクトを取得
 
-        if (collisionObject.tag == "wall") // 衝突物が反射物だったら
-        {
-            // 反射させる
-            Debug.Log("反射処理開始");
-            GameObject beamParticle = transform.parent.gameObject; // パーティクル1個のゲームオブジェクトを取得する
-            //beamParticle.gameObject.ParticleCollision();
-        }
-    }
 }
 
 
-// メモ
-// 親子関係取得のアレコレ
-//“transform.root.gameObject”は一番親のオブジェクトを取得
-//“transform.parent.gameObject”は一つ上のオブジェクトを取得
