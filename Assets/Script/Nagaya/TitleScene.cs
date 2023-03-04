@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class TitleScene : MonoBehaviour
 {
-    public GameObject fade;
+    public GameObject Panel;
+    
+   
 
     // Start is called before the first frame update
     void Start()
     {
-        fade = GameObject.Find("Panel");
+    //    Fadeout = GameObject.Find("Panel");
     }
 
     // Update is called once per frame
@@ -18,13 +20,13 @@ public class TitleScene : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            fade.GetComponent<Fade>().Color_FadeOut();
-            Invoke("ChangeScene", 2.0f);
+//          Invoke("ChangeScene", 2.0f);
+            Panel.GetComponent<Fade>().SceneMove(0);
         }
     }
 
-    public void ChangeScene()
-    {
-        SceneManager.LoadScene("StageSelect");
-    }
+     public void ChangeScene()
+     {
+//         SceneManager.LoadScene(1);
+     }
 }

@@ -2,92 +2,106 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
+    [SerializeField]    
+    private GameObject  panelFade;   //フェードパネル
+
+    [SerializeField, Range(0, 1)]
+    private float alpha;            //アルファ値、0～1にRangeを設定
+
+    private Image panel_fadeImage;  //フェードパネルのImage
+
+    private bool fadeout, fadein;   //フェードのフラグ
+
+    private int scenNumber;         //シーンナンバー
+
 
     // Start is called before the first frame update
     void Start()
     {
+        panel_fadeImage = panelFade.GetComponent<Image>();
+        PanelEnabled();
 
-        StartCoroutine("Color_FadeIn");
+        FadeIn();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (fadein)
+            FadeInOperation();
+
+        if (fadeout)
+            FadeOutOperation();
     }
 
-    public IEnumerator Color_FadeIn()
+    //フェードイン呼び出し
+    private void FadeIn()
     {
-        // 画面をフェードインさせるコールチン
-        // 前提：画面を覆うPanelにアタッチしている
+        if (alpha != 1)
+            alpha = 1f;
 
-        // 色を変えるゲームオブジェクトからImageコンポーネントを取得
-        Image fade = GetComponent<Image>();
+        fadein = true;
+    }
 
-        // フェード元の色を設定（黒）★変更可
-        fade.color = new Color((0.0f / 255.0f), (0.0f / 255.0f), (0.0f / 0.0f), (255.0f / 255.0f));
+    //フェードアウト呼び出し
+    private void FadeOut()
+    {
+        if (alpha != 0)
+            alpha = 0f;
 
-        // フェードインにかかる時間（秒）★変更可
-        const float fade_time = 1.0f;
+        fadeout = true;
+    }
 
-        // ループ回数（0はエラー）★変更可
-        const int loop_count = 50;
+    //フェードイン操作
+    private void FadeInOperation()
+    {
+        alpha -= 0.01f;
 
-        // ウェイト時間算出
-        float wait_time = fade_time / loop_count;
+        var tempColor = panel_fadeImage.color;
 
-        // 色の間隔を算出
-        float alpha_interval = 255.0f / loop_count;
+        tempColor.a = alpha;
+        panel_fadeImage.color = tempColor;
 
-        // 色を徐々に変えるループ
-        for (float alpha = 255.0f; alpha >= 0.0f; alpha -= alpha_interval)
+        PanelEnabled();
+
+        if (alpha <= 0)
+            fadein = false;
+
+    }
+
+    //フェードアウト操作とシーン遷移
+    private void FadeOutOperation()
+    {
+        alpha += 0.01f;
+
+        var tempColor = panel_fadeImage.color;
+
+        tempColor.a = alpha;
+        panel_fadeImage.color = tempColor;
+
+        PanelEnabled();
+
+        if (alpha >= 1)
         {
-            // 待ち時間
-            yield return new WaitForSeconds(wait_time);
-
-            // Alpha値を少しずつ下げる
-            Color new_color = fade.color;
-            new_color.a = alpha / 255.0f;
-            fade.color = new_color;
+            fadeout = false;
+            SceneManager.LoadScene(scenNumber);
         }
     }
 
-    public IEnumerator Color_FadeOut()
+    //フェードパネルの表示状態管理
+    private void PanelEnabled()
     {
-        // 画面をフェードインさせるコールチン
-        // 前提：画面を覆うPanelにアタッチしている
+       
+    }
 
-        // 色を変えるゲームオブジェクトからImageコンポーネントを取得
-        Image fade = GetComponent<Image>();
-
-        // フェード後の色を設定（黒）★変更可
-        fade.color = new Color((0.0f / 255.0f), (0.0f / 255.0f), (0.0f / 0.0f), (0.0f / 255.0f));
-
-        // フェードインにかかる時間（秒）★変更可
-        const float fade_time = 1.0f;
-
-        // ループ回数（0はエラー）★変更可
-        const int loop_count = 50;
-
-        // ウェイト時間算出
-        float wait_time = fade_time / loop_count;
-
-        // 色の間隔を算出
-        float alpha_interval = 255.0f / loop_count;
-
-        // 色を徐々に変えるループ
-        for (float alpha = 0.0f; alpha <= 255.0f; alpha += alpha_interval)
-        {
-            // 待ち時間
-            yield return new WaitForSeconds(wait_time);
-
-            // Alpha値を少しずつ上げる
-            Color new_color = fade.color;
-            new_color.a = alpha / 255.0f;
-            fade.color = new_color;
-        }
+    //シーン遷移時のボタン操作
+    public void SceneMove(int num)
+    { 
+        scenNumber = num;
+        FadeOut();
     }
 }
