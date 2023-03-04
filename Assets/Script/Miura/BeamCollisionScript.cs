@@ -23,13 +23,12 @@ public class BeamCollisionScript : MonoBehaviour
     {
         collisionObject = collision.gameObject; // ぶつかったオブジェクトを取得
 
-        if (collisionObject.tag == "Wall") // 衝突物が壁だったら
+        if (collisionObject.tag == "wall") // 衝突物が反射物だったら
         {
-            // レーザーパーティクルマネージャーを取得
-            GameObject beamParticleManager = transform.parent.gameObject;
-
             // 反射させる
-            Debug.Log("反射するよ");
+            Debug.Log("反射処理開始");
+            GameObject beamParticle = transform.parent.gameObject; // パーティクル1個のゲームオブジェクトを取得する
+            //beamParticle.gameObject.ParticleCollision();
         }
     }
 }
