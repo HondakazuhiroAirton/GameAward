@@ -11,27 +11,34 @@ public class Wall : MonoBehaviour,CollisionAction
 
         Vector3 StartPosition = obj.GetComponent<BeamParticleScript>().StartPosition;
         // パーティクルと平面の距離(入射ベクトルを求める)
-        Vector3 AngleOfIncidence = StartPosition - this.transform.position;
-        AngleOfIncidence = AngleOfIncidence.normalized;
+        Vector3 inDirection =  this.transform.position - StartPosition;
+        // 単位ベクトル化
+        inDirection = inDirection.normalized;
+    
+        // 法線ベクトル ここをBB3Dとか使ったら行けそうか？？
+        Vector3 inNormal = transform.up.normalized;
 
-        //if (AngleOfIncidence)
-        //{
+        // 反射ベクトル
+        Vector3 result = Vector3.Reflect(inDirection, inNormal);
 
-        //}
+        // 反射ベクトルを移動量としてビームパーティクルにわたす
+        obj.GetComponent<BeamParticleScript>().moveDir = result * obj.GetComponent<BeamParticleScript>().Speed;
 
-
-        // 入射ベクトルと法線ベクトルの内積
-        float h = Vector3.Dot(AngleOfIncidence, this.transform.up);
-        
-        // 反射ベクトルを計算する
-        Vector3 n = this.transform.up; // 地面の法線ベクトルを入れる
-        float Naiseki = Mathf.Abs(Vector3.Dot(moveDir,n)); // 絶対値を取る,移動ベクトルと地面の法線ベクトルの内積を取る
-
-        Vector3 r = moveDir + 2 * n * h; // 下に2倍伸ばす
-        obj.GetComponent<BeamParticleScript>().moveDir = r.normalized * obj.GetComponent<BeamParticleScript>().Speed;
+        // ビームパーティクルのスタートポジションを更新する
         obj.GetComponent<BeamParticleScript>().StartPosition = this.transform.position;
 
-        // 反射制限のカウント増やす
+
+        // 昔考えたプログラム******************************
+        //// 入射ベクトルと法線ベクトルの内積←法線ベクトルの取得がおかしいの？？？？
+        //Vector3 n = this.transform.up.normalized; // 地面の法線ベクトルを入れる
+        //float h = Vector3.Dot(AngleOfIncidence, n);
+        //// 反射ベクトルを計算する
+        //float Naiseki = Mathf.Abs(Vector3.Dot(moveDir,n)); // 絶対値を取る,移動ベクトルと地面の法線ベクトルの内積を取る
+        //Vector3 r = moveDir + 2 * n * h; // 下に2倍伸ばす
+        //obj.GetComponent<BeamParticleScript>().moveDir = r.normalized * obj.GetComponent<BeamParticleScript>().Speed;
+        // ************************************************
+
+
     }
 
     // Start is called before the first frame update
