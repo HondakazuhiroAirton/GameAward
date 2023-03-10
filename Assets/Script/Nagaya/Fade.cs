@@ -1,107 +1,89 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; //パネルのイメージを操作するのに必要
 using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
-    [SerializeField]    
-    private GameObject  panelFade;   //フェードパネル
 
-    [SerializeField, Range(0, 1)]
-    private float alpha;            //アルファ値、0～1にRangeを設定
+    float fadeSpeed = 0.01f;        //透明度が変わるスピードを管理
+    float red, green, blue, alfa;   //パネルの色、不透明度を管理
 
-    private Image panel_fadeImage;  //フェードパネルのImage
+    public bool isFadeOut = false;  //フェードアウト処理の開始、完了を管理するフラグ
+    public bool isFadeIn = false;   //フェードイン処理の開始、完了を管理するフラグ
+    public string changeSceneName; // フェードアウト処理後、シーン遷移する場合のシーン名
 
-    private bool fadeout, fadein;   //フェードのフラグ
+    Image fadeImage;                //透明度を変更するパネルのイメージ
 
-    private int scenNumber;         //シーンナンバー
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        panel_fadeImage = panelFade.GetComponent<Image>();
-        PanelEnabled();
-
-        FadeIn();
+        fadeImage = GetComponent<Image>();
+        red = fadeImage.color.r;
+        green = fadeImage.color.g;
+        blue = fadeImage.color.b;
+        alfa = fadeImage.color.a;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (fadein)
-            FadeInOperation();
 
-        if (fadeout)
-            FadeOutOperation();
-    }
-
-    //フェードイン呼び出し
-    private void FadeIn()
-    {
-        if (alpha != 1)
-            alpha = 1f;
-
-        fadein = true;
-    }
-
-    //フェードアウト呼び出し
-    private void FadeOut()
-    {
-        if (alpha != 0)
-            alpha = 0f;
-
-        fadeout = true;
-    }
-
-    //フェードイン操作
-    private void FadeInOperation()
-    {
-        alpha -= 0.01f;
-
-        var tempColor = panel_fadeImage.color;
-
-        tempColor.a = alpha;
-        panel_fadeImage.color = tempColor;
-
-        PanelEnabled();
-
-        if (alpha <= 0)
-            fadein = false;
-
-    }
-
-    //フェードアウト操作とシーン遷移
-    private void FadeOutOperation()
-    {
-        alpha += 0.01f;
-
-        var tempColor = panel_fadeImage.color;
-
-        tempColor.a = alpha;
-        panel_fadeImage.color = tempColor;
-
-        PanelEnabled();
-
-        if (alpha >= 1)
+        if (isFadeIn)
         {
-            fadeout = false;
-            SceneManager.LoadScene(scenNumber);
+            StartFadeIn();
+        }
+
+        if (isFadeOut)
+        {
+            StartFadeOut();
         }
     }
 
-    //フェードパネルの表示状態管理
-    private void PanelEnabled()
+    void StartFadeIn()
     {
-       
+        alfa -= fadeSpeed;                //a)不透明度を徐々に下げる
+        SetAlpha();                      //b)変更した不透明度パネルに反映する
+        if (alfa <= 0)
+        {                    //c)完全に透明になったら処理を抜ける
+            isFadeIn = false;
+            fadeImage.enabled = false;    //d)パネルの表示をオフにする
+
+        }
     }
 
-    //シーン遷移時のボタン操作
-    public void SceneMove(int num)
-    { 
-        scenNumber = num;
-        FadeOut();
+    void StartFadeOut()
+    {
+        fadeImage.enabled = true;  // a)パネルの表示をオンにする
+        alfa += fadeSpeed;         // b)不透明度を徐々にあげる
+        SetAlpha();               // c)変更した透明度をパネルに反映する
+        if (alfa >= 1.5)
+        {             // d)完全に不透明になったら処理を抜ける
+            isFadeOut = false;
+            isFadeIn = true;
+            if (changeSceneName != "")
+            {
+                Debug.Log(changeSceneName + "に遷移します。");
+                SceneManager.LoadScene(changeSceneName);
+            }
+
+        }
+    }
+
+    void SetAlpha()
+    {
+        fadeImage.color = new Color(red, green, blue, alfa);
+    }
+
+    //　スタートボタンを押したら実行する
+    public void GameStart()
+    {
+        isFadeOut = true;
+        changeSceneName = "GameScene";
+    }
+
+    public void GameSelect()
+    {
+        isFadeOut = true;
+        changeSceneName = "StageSelect";
     }
 }

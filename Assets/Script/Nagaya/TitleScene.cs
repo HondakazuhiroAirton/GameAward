@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleScene : MonoBehaviour
 {
-    public GameObject Panel;
-    
-   
+    public GameObject Image;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +16,14 @@ public class TitleScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKey("return"))
         {
-//          Invoke("ChangeScene", 2.0f);
-            Panel.GetComponent<Fade>().SceneMove(0);
+            Image.GetComponent<Fade>().GameStart();
+        }
+
+        if (Input.GetKey("b"))
+        {
+            Image.GetComponent<Fade>().GameSelect();
         }
     }
 
