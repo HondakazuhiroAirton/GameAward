@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class beams : MonoBehaviour
 {
-    private float speed = 1.0f;
+    private Vector3 mousePosition;
+    private Vector3 objPosition;
+    [SerializeField] GameObject particle;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,18 +19,19 @@ public class beams : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 beamsPos = transform.position;
-        Vector2 right = transform.right;
-
-        if (Input.GetKey(KeyCode.A))
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    obj.SetActive(true);
+        //    ps.Play();
+        //}
+        if (Input.GetMouseButtonDown(0))
         {
-            //beamsPos.x += speed * Time.deltaTime;// xç¿ïWÇ…speedÇâ¡éZ
-            //beamsPos.x = transform.forward.x;
-
-            //beamsPos.x += speed * Time.deltaTime;
-
-            transform.position += transform.right;
-        }
+            mousePosition = Input.mousePosition;
+            mousePosition.z = 3f;
+            objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Instantiate(particle, objPosition, Quaternion.identity);
         
+            
+        }
     }
 }
