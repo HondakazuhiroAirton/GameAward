@@ -11,12 +11,15 @@ public class Wall : MonoBehaviour,CollisionAction
 
         Vector3 StartPosition = obj.GetComponent<BeamParticleScript>().StartPosition;
         // パーティクルと平面の距離(入射ベクトルを求める)
-        Vector3 inDirection =  this.transform.position - StartPosition;
+        Vector3 inDirection =  obj.transform.position - StartPosition;
         // 単位ベクトル化
         inDirection = inDirection.normalized;
     
         // 法線ベクトル ここをBB3Dとか使ったら行けそうか？？
         Vector3 inNormal = transform.up.normalized;
+
+
+
 
         // 反射ベクトル
         Vector3 result = Vector3.Reflect(inDirection, inNormal);
@@ -25,7 +28,7 @@ public class Wall : MonoBehaviour,CollisionAction
         obj.GetComponent<BeamParticleScript>().moveDir = result * obj.GetComponent<BeamParticleScript>().Speed;
 
         // ビームパーティクルのスタートポジションを更新する
-        obj.GetComponent<BeamParticleScript>().StartPosition = this.transform.position;
+        obj.GetComponent<BeamParticleScript>().StartPosition = obj.transform.position;
 
 
         // 昔考えたプログラム******************************
