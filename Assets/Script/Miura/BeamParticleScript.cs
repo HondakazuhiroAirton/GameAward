@@ -2,21 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BeamParticleScript : MonoBehaviour
 {
+    // 移動する角度
+    public float Angle = 1.0f;
+
     // 移動する方向
-    public float XMove = 1;
-    public float YMove = -1;
+    public float XMove = 1.0f;
+    public float YMove = 0.0f;
     public float ZMove = 0.0f;
     public float Speed = 0.1f; // 移動速度はここで変更してね
+    // 反射回数
+    public int ReflectMax = 1000; // 10000で反射制限なし
 
     // スタート位置保存
     public Vector3 StartPosition;
     public Vector3 moveDir;
 
+    // 今の反射回数
+    protected int reflectCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        // 角度から移動方向を計算
+        
         // 移動量を最初に代入
         moveDir = new Vector3(XMove, YMove, ZMove).normalized * Speed;
 
@@ -39,8 +50,21 @@ public class BeamParticleScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("反射するよ"); 
-        collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
+        if (ReflectMax > reflectCount)
+        {
+            // 反射回数が設定されていれば1減らす
+            if(ReflectMax < 1000)reflectCount--;
+
+            // 以下、反射
+            Debug.Log("反射するよ");
+            collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
+
+        }
+        //else
+        //{
+        //    // ここで反射回数が終わったら、Destroy的な処理
+        //    // 考え中
+        //}
     }
 }
 
