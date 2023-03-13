@@ -92,4 +92,10 @@ public class Fade : MonoBehaviour
         isFadeOut = true;
         changeSceneName = "Title";
     }
+
+    public void GameOver()
+    {
+        isFadeOut = true;
+        changeSceneName = "GameOver";
+    }
 }
