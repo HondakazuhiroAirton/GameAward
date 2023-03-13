@@ -46,7 +46,7 @@ public class Fade : MonoBehaviour
         if (alfa <= 0)
         {                    //c)完全に透明になったら処理を抜ける
             isFadeIn = false;
-            fadeImage.enabled = false;    //d)パネルの表示をオフにする
+            
 
         }
     }

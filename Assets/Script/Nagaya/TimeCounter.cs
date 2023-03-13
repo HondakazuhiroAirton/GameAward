@@ -18,6 +18,7 @@ public class TimeCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       Image = GameObject.Find("Image");
         this.timeText = GameObject.Find("timeText").GetComponent<TextMeshProUGUI>();
     }
 
@@ -34,6 +35,7 @@ public class TimeCounter : MonoBehaviour
         if (countdown <= 0)
         {
             countdown = 0;
+            timeText.enabled = false;    //d)パネルの表示をオフにする
             Image.GetComponent<Fade>().GameOver();
         }
 
