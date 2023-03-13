@@ -4,34 +4,35 @@ using UnityEngine;
 
 public class beams : MonoBehaviour
 {
-    private Vector3 mousePosition;
-    private Vector3 objPosition;
+    //public ParticleSystem ps;
+    //GameObject obj;
+    //private Vector3 mousePosition;
+
     [SerializeField] GameObject particle;
+    private Vector3 objPosition;
     
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //ps.Stop();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    obj.SetActive(true);
-        //    ps.Play();
-        //}
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetKey(KeyCode.A))
         {
-            mousePosition = Input.mousePosition;
-            mousePosition.z = 3f;
-            objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            Instantiate(particle, objPosition, Quaternion.identity);
-        
-            
+            //mousePosition = Input.mousePosition;
+            //mousePosition.z = 3f;
+            //Instantiate(ps, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
+            //ps.Play();
+        }*/
+        if (Input.GetKey(KeyCode.A))
+        {
+            objPosition = this.gameObject.transform.position;
+            Instantiate(particle,objPosition, Quaternion.identity);   
         }
     }
 }
