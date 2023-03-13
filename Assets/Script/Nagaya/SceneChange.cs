@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleScene : MonoBehaviour
+public class SceneChange: MonoBehaviour
 {
     public GameObject Image;
 
@@ -24,6 +24,11 @@ public class TitleScene : MonoBehaviour
         if (Input.GetKey("b"))
         {
             Image.GetComponent<Fade>().GameSelect();
+        }
+
+        if(Input.GetKey("space"))
+        {
+            Image.GetComponent<Fade>().GameTitle();
         }
     }
 

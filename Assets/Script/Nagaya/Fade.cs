@@ -86,4 +86,10 @@ public class Fade : MonoBehaviour
         isFadeOut = true;
         changeSceneName = "StageSelect";
     }
+
+    public void GameTitle()
+    {
+        isFadeOut = true;
+        changeSceneName = "Title";
+    }
 }
