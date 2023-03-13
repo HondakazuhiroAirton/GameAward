@@ -29,7 +29,7 @@ public class beams : MonoBehaviour
             //Instantiate(ps, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
             //ps.Play();
         }*/
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             objPosition = this.gameObject.transform.position;
             Instantiate(particle,objPosition, Quaternion.identity);   
