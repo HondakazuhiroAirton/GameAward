@@ -6,33 +6,43 @@ using UnityEngine;
 public class BeamParticleScript : MonoBehaviour
 {
     // 移動する角度
-    public float Angle = 1.0f;
-
-    // 移動する方向
-    public float XMove = 1.0f;
-    public float YMove = 0.0f;
-    public float ZMove = 0.0f;
+    public float Angle = 0.0f; // 親の回転角度指定
     public float Speed = 0.1f; // 移動速度はここで変更してね
     // 反射回数
     public int ReflectMax = 1000; // 10000で反射制限なし
-
+    //親のManagerを取得
+    public GameObject ParticleManager;
     // スタート位置保存
     public Vector3 StartPosition;
     public Vector3 moveDir;
 
     // 今の反射回数
     protected int reflectCount = 0;
+    // 移動する方向
+    protected float XMove = 1.0f;
+    protected float YMove = 0.0f;
+    protected float ZMove = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        // 角度から移動方向を計算
+      // Angleから移動量を求める処理
         
+        // Angle(度)をラジアンに変更
+        Angle = Mathf.Deg2Rad * Angle;
+
+        // XMoveとYMoveにCos/Sinで移動量を求める
+        XMove = Mathf.Cos(Angle);
+        YMove = Mathf.Sin(Angle);
+
         // 移動量を最初に代入
         moveDir = new Vector3(XMove, YMove, ZMove).normalized * Speed;
 
         // 開始時に初期位置を格納
         StartPosition = this.gameObject.transform.position;
+
+        // 角度から移動方向を計算
+        //ParticleManager.transform.rotation = Quaternion.Euler(0.0f, 0.0f, Angle);
     }
 
     // Update is called once per frame
