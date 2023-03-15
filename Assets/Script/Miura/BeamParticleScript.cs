@@ -40,9 +40,6 @@ public class BeamParticleScript : MonoBehaviour
 
         // ŠJn‚É‰ŠúˆÊ’u‚ğŠi”[
         StartPosition = this.gameObject.transform.position;
-
-        // Šp“x‚©‚çˆÚ“®•ûŒü‚ğŒvZ
-        //ParticleManager.transform.rotation = Quaternion.Euler(0.0f, 0.0f, Angle);
     }
 
     // Update is called once per frame

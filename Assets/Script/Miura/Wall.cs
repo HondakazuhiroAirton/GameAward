@@ -15,7 +15,7 @@ public class Wall : MonoBehaviour,CollisionAction
         // 単位ベクトル化
         inDirection = inDirection.normalized;
     
-        // 法線ベクトル ここをBB3Dとか使ったら行けそうか？？
+        // 法線ベクトル 取得が難しいのでバグの原因かもしれない
         Vector3 inNormal = transform.up.normalized;
 
 
@@ -30,6 +30,15 @@ public class Wall : MonoBehaviour,CollisionAction
         // ビームパーティクルのスタートポジションを更新する
         obj.GetComponent<BeamParticleScript>().StartPosition = obj.transform.position;
 
+        // 反射アングルを更新する(ベクトルから角度を求める) <- ラジアン値だった。
+        float Angle = Mathf.Atan2(result.y, result.x);
+
+        // ラジアン値をディグリー値に変換
+        Angle = Angle * Mathf.Rad2Deg;
+        Debug.Log("次は"+Angle+"度に進みます。");
+
+        // ビームパーティクルのアングルを更新する
+        obj.GetComponent<BeamParticleScript>().Angle = Angle;
 
         // 昔考えたプログラム******************************
         //// 入射ベクトルと法線ベクトルの内積←法線ベクトルの取得がおかしいの？？？？
