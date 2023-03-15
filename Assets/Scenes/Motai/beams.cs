@@ -7,8 +7,7 @@ public class beams : MonoBehaviour
     [SerializeField] GameObject particle;
     private Vector3 objPosition;
     private Quaternion objAng;
-    private Quaternion psAng;
-    public ParticleSystem ps;
+    private Vector3 Position;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +20,10 @@ public class beams : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
+            //Vector3 right = transform.right;
+            //particle.transform.position += particle.transform.right;
             objPosition = this.gameObject.transform.position;
             objAng = this.gameObject.transform.rotation;
-            psAng = particle.transform.rotation;
 
             Instantiate(particle,objPosition,objAng);   
         }
