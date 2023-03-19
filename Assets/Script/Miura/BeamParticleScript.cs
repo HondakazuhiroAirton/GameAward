@@ -17,11 +17,11 @@ public class BeamParticleScript : MonoBehaviour
     public Vector3 moveDir;
 
     // ¡‚Ì”½Ë‰ñ”
-    protected int reflectCount = 0;
+    private int reflectCount = 0;
     // ˆÚ“®‚·‚é•ûŒü
-    protected float XMove = 1.0f;
-    protected float YMove = 0.0f;
-    protected float ZMove = 0.0f;
+    private float XMove = 1.0f;
+    private float YMove = 0.0f;
+    private float ZMove = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +65,8 @@ public class BeamParticleScript : MonoBehaviour
             // ˆÈ‰ºA”½Ë
             Debug.Log("”½Ë‚·‚é‚æ");
             collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
+
+            // ”½Ë‚Ì“–‚½‚è”»’è‚ğXV‚·‚éˆ—
 
         }
         //else
