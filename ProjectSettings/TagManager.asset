@@ -11,7 +11,11 @@ TagManager:
   - Triangle
   - Wall
   - Beam
+<<<<<<< HEAD
   - Reflector
+=======
+  - beams
+>>>>>>> feature/KoutaMotai
   layers:
   - Default
   - TransparentFX
