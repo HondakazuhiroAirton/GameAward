@@ -18,7 +18,7 @@ public class TimeCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       Image = GameObject.Find("Image");
+        Image = GameObject.Find("Image");
         this.timeText = GameObject.Find("timeText").GetComponent<TextMeshProUGUI>();
     }
 
