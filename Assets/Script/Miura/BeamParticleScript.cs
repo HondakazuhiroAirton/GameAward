@@ -16,10 +16,14 @@ public class BeamParticleScript : MonoBehaviour
     public int ReflectMax = 1000; // 10000で反射制限なし
     //親のManagerを取得
     public GameObject ParticleManager;
+    // プレハブ格納用
+    public GameObject BeamParticleManagerPrefab;
     // スタート位置保存
     public Vector3 StartPosition;
     // 移動量保存
     public Vector3 moveDir;
+    // BeamCollisionのAngleHoseiを向こうから入れる
+    public float AngleHosei;
 
     // 今の反射回数
     private int reflectCount = 0;
@@ -27,6 +31,8 @@ public class BeamParticleScript : MonoBehaviour
     private float XMove = 1.0f;
     private float YMove = 0.0f;
     private float ZMove = 0.0f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +51,7 @@ public class BeamParticleScript : MonoBehaviour
 
         // 開始時に初期位置を格納
         StartPosition = this.gameObject.transform.position;
+
     }
 
     // Update is called once per frame
@@ -69,10 +76,27 @@ public class BeamParticleScript : MonoBehaviour
 
             // 以下、反射
             Debug.Log("反射するよ");
+            // ※1 ここで先にAngleの反射更新がWall側から入る
             collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
 
             // 反射の当たり判定を更新する処理
-            //CreateParticleCollision();
+
+            // ビーム当たり判定をプレハブから取ってくる
+            var BeamCollision = BeamParticleManagerPrefab.gameObject.transform.GetChild(1);
+            // プレハブの中身キレイにする
+            // xの拡大率を取っておく
+            float xSize = BeamCollision.transform.localScale.x;
+            // 初期化する
+            BeamCollision.GetComponent<BeamCollision>().Start();
+
+            // スケールをもとに戻す
+            BeamCollision.transform.localScale = new Vector3(xSize,1.0f,1.0f);
+
+
+            // 角度を入れる(補正値はBeamCollision側から変更)
+            // ※2 Wall側から変更された角度を使って新しい当たり判定を作る
+            Instantiate(BeamCollision, this.transform.position, Quaternion.Euler(0.0f, 0.0f, Angle - AngleHosei));
+            
         }
         else
         {

@@ -11,6 +11,7 @@ public class SceneChange: MonoBehaviour
     void Start()
     {
     //    Fadeout = GameObject.Find("Panel");
+
     }
 
     // Update is called once per frame
