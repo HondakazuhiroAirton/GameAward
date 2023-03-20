@@ -1,3 +1,7 @@
+// ビームの先頭で動きを決めるスクリプト
+// 角度操作はプレイヤー側でAngleを更新してください
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +18,7 @@ public class BeamParticleScript : MonoBehaviour
     public GameObject ParticleManager;
     // スタート位置保存
     public Vector3 StartPosition;
+    // 移動量保存
     public Vector3 moveDir;
 
     // 今の反射回数
@@ -67,13 +72,13 @@ public class BeamParticleScript : MonoBehaviour
             collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
 
             // 反射の当たり判定を更新する処理
-
+            //CreateParticleCollision();
         }
-        //else
-        //{
-        //    // ここで反射回数が終わったら、Destroy的な処理
-        //    // 考え中
-        //}
+        else
+        {
+            // 反射回数がなくなったら、Destroyする
+            Destroy(this.gameObject);
+        }
     }
 }
 
