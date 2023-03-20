@@ -15,7 +15,7 @@ public class Wall : MonoBehaviour,CollisionAction
         // 単位ベクトル化
         inDirection = inDirection.normalized;
     
-        // 法線ベクトル 取得が難しいのでバグの原因かもしれない
+        // 法線ベクトル (取得が難しい。がんばる!!)
         Vector3 inNormal = transform.up.normalized;
 
 
@@ -39,6 +39,8 @@ public class Wall : MonoBehaviour,CollisionAction
 
         // ビームパーティクルのアングルを更新する
         obj.GetComponent<BeamParticleScript>().Angle = Angle;
+
+        // 次の反射当たり判定を作成
 
         // 昔考えたプログラム******************************
         //// 入射ベクトルと法線ベクトルの内積←法線ベクトルの取得がおかしいの？？？？
