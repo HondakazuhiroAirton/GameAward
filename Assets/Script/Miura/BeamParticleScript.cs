@@ -1,11 +1,9 @@
 // ビームの先頭で動きを決めるスクリプト
 // 角度操作はプレイヤー側でAngleを更新してください
 
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 
 public class BeamParticleScript : MonoBehaviour
 {
@@ -59,7 +57,6 @@ public class BeamParticleScript : MonoBehaviour
     {
         // 移動
         transform.position += moveDir;
-
     }
 
     public void CollisionEvent(GameObject obj)
@@ -79,7 +76,7 @@ public class BeamParticleScript : MonoBehaviour
             // ※1 ここで先にAngleの反射更新がWall側から入る
             collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
 
-            // 反射の当たり判定を更新する処理
+            // 反射の当たり判定を更新する処理************************************************
 
             // ビーム当たり判定をプレハブから取ってくる
             var BeamCollision = BeamParticleManagerPrefab.gameObject.transform.GetChild(1);
@@ -92,6 +89,7 @@ public class BeamParticleScript : MonoBehaviour
             // スケールをもとに戻す
             BeamCollision.transform.localScale = new Vector3(xSize,1.0f,1.0f);
 
+            Debug.Log("複製するよ");
 
             // 角度を入れる(補正値はBeamCollision側から変更)
             // ※2 Wall側から変更された角度を使って新しい当たり判定を作る
