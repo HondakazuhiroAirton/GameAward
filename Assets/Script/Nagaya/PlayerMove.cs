@@ -40,7 +40,8 @@ public class PlayerMove : MonoBehaviour
         WallUp = GameObject.Find("WallUp");
         WallLeft = GameObject.Find("WallLeft");
         WallDown = GameObject.Find("WallDown");
-        WallRight = GameObject.Find("WallRight");
+        WallRight = GameObject.Find("WallRight");  
+        
 
         //プレイヤースピード
         speed = 1f;
@@ -66,8 +67,9 @@ public class PlayerMove : MonoBehaviour
         //WallRightの端取得
         Vector3 Rpos = WallRight.gameObject.transform.position;
         Vector3 RScale = WallRight.gameObject.transform.localScale;
-        RRpos = Rpos.y + RScale.y / 2;
+        RRpos = Rpos.y + RScale.y / 2;  //unityの中のpos使えないかなあって示してただけ
         RLpos = Rpos.y - RScale.y / 2;
+
 
 
     }
@@ -82,7 +84,7 @@ public class PlayerMove : MonoBehaviour
         
 
         //<<<上のライン移動>>> 
-        if (pos.x == Rpos.x && pos.x == Lpos.x)
+        if (pos.y == Upos.y)
         {
             //ライン外にいかない処理       
             if (pos.x >= URpos - Scale.x / 2)
@@ -109,7 +111,7 @@ public class PlayerMove : MonoBehaviour
                 rb.velocity = new Vector3(0, 0, 0);
             }
         }
-        else if(pos.y == Upos.y)  
+        else if(pos.x == Rpos.x && pos.x == Lpos.x)  
         {
             if (Input.GetKey("w"))
             {
