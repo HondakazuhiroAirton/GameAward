@@ -32,6 +32,11 @@ public class HP : MonoBehaviour
             slider0.value += 0.2f;
             slider1.value += 0.2f;
         }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            slider0.value = 100.0f;
+            slider1.value = 100.0f;
+        }
 
 
         if (Input.GetKey(KeyCode.A))
