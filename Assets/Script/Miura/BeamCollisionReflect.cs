@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class BeamCollision : MonoBehaviour
+public class BeamCollisionReflect : MonoBehaviour
 {
 
     // 状態を表す列挙体
@@ -23,8 +22,6 @@ public class BeamCollision : MonoBehaviour
     public float ParticleAngle;
     // ビームの移動スピード
     public float ParticleSpeed = 0.1f;
-    // 現在の状態保存(大きくなる状態か/小さくなる状態か)
-    public State CollisionState;
 
     // 当たり判定の初期位置保存
     private Vector3 startPosition;
@@ -32,10 +29,11 @@ public class BeamCollision : MonoBehaviour
     private Vector3 beamParticlePosition;
     // 回転補正値
     private float AngleHosei = 90;
-
+    // 現在の状態保存(大きくなる状態か/小さくなる状態か)
+    private State collisionState;
 
     // Start is called before the first frame update
-    public void Start()
+    void Start()
     {
         // ビームパーティクルのスクリプトを取得
         var beamParticleScript = BeamParticle.GetComponent<BeamParticleScript>();
@@ -59,7 +57,7 @@ public class BeamCollision : MonoBehaviour
         startPosition = this.transform.position;
 
         // 最初は拡大状態
-        CollisionState = State.SCALE_UP;
+        collisionState = State.SCALE_UP;
 
         // BeamParticleScriptの補正値を合わせる
         BeamParticle.GetComponent<BeamParticleScript>().AngleHosei = AngleHosei;
@@ -77,7 +75,7 @@ public class BeamCollision : MonoBehaviour
 
 
 
-        switch (CollisionState)
+        switch (collisionState)
         {
             case State.SCALE_UP:
                 // 少しずつ大きくなる
@@ -103,7 +101,7 @@ public class BeamCollision : MonoBehaviour
                 startPosition = startPosition + ParticlemoveDir;
 
                 // 開始位置とビームのポジションが一緒になったら
-                if ( (startPosition.x >= beamParticlePosition.x) && (startPosition.y >= beamParticlePosition.y) )
+                if ((startPosition.x >= beamParticlePosition.x) && (startPosition.y >= beamParticlePosition.y))
                 {
                     // このオブジェクトをデストロイする
                     Destroy(this.gameObject);
@@ -128,11 +126,10 @@ public class BeamCollision : MonoBehaviour
         {
             Debug.Log("縮むよ");
             // 縮む状態にする
-            CollisionState = State.SCALE_DOWN;
+            collisionState = State.SCALE_DOWN;
             // ビームパーティクルからビームの進行方向をもらう
             ParticlemoveDir = BeamParticle.GetComponent<BeamParticleScript>().moveDir;
         }
 
     }
-
 }

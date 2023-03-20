@@ -3,19 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - Cage
-  - Circle
-  - Ground
-  - Triangle
-  - Wall
-  - Beam
-<<<<<<< HEAD
-  - Reflector
-=======
-  - beams
->>>>>>> feature/KoutaMotai
+  tags: []
   layers:
   - Default
   - TransparentFX
