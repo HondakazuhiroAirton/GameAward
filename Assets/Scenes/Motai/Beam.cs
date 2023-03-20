@@ -5,42 +5,46 @@ using UnityEngine;
 public class Beam : MonoBehaviour
 {
     //private Vector3 objPosition;
-    Rigidbody2D m_Rigidbody;
-    float m_Speed;
-    // Start is called before the first frame update
+    public ParticleSystem ps;
+
+
     void Start()
     {
-
-        m_Rigidbody = GetComponent<Rigidbody2D>();
-
-        m_Speed = 10.0f;
+        ps.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            //Move the Rigidbody to the right constantly at speed you define (the red arrow axis in Scene view)
-            m_Rigidbody.velocity = transform.right * m_Speed;
+            transform.position += transform.right * 100f * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.position -= transform.right * 100f * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.position += transform.forward * 100f * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.position -= transform.forward * 100f * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.Q))//ç∂âÒì]
         {
-            //Move the Rigidbody to the left constantly at the speed you define (the red arrow axis in Scene view)
-            m_Rigidbody.velocity = -transform.right * m_Speed;
+            transform.Rotate(Vector3.down * 10);
+        }
+        if (Input.GetKeyDown(KeyCode.E))//âEâÒì]
+        {
+            transform.Rotate(Vector3.up * 10);
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            //rotate the sprite about the Z axis in the positive direction
-            transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * m_Speed, Space.World);
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            //rotate the sprite about the Z axis in the negative direction
-            transform.Rotate(new Vector3(0, 0, -1) * Time.deltaTime * m_Speed, Space.World);
+            ps.Play();
         }
     }
 }
