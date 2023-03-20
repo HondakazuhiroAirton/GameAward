@@ -16,7 +16,7 @@ public class Player_kari : MonoBehaviour
     // チャージした時間を格納する変数(必要)
     private float chargeTime = 0.0f;
     // ビームが1秒間に大きくなる基準
-    public float BeamExpansion = 500.0f;
+    public float BeamExpansion = 30.0f;
     // ビームに使用している変数達(ここまで)******************************************************************************
 
 
@@ -45,8 +45,7 @@ public class Player_kari : MonoBehaviour
         {
            
             // サイズを更新する
-            ParticleSize = chargeTime; // あとでなんか補正
-            Debug.Log("ビーム発射サイズ" + ParticleSize);
+            ParticleSize = chargeTime; 
 
             // ビームマネージャーの中のBeamCollisionを取得
             BeamParticleManagerPrefab.gameObject.transform.GetChild(1).localScale 
@@ -57,10 +56,6 @@ public class Player_kari : MonoBehaviour
             chargeTime = 0.0f;
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("今のビームの横幅は" + chargeTime);
-        }
         // ビーム発射処理(ここまで)*************************************************************
 
 
