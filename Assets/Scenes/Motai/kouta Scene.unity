@@ -347,6 +347,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4735100903435849476, guid: 6874c204227b6cd44875c27c8b6a180c, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735100903435849476, guid: 6874c204227b6cd44875c27c8b6a180c, type: 3}
       propertyPath: CollisionModule.enabled
       value: 1
       objectReference: {fileID: 0}
@@ -377,6 +381,10 @@ PrefabInstance:
     - target: {fileID: 4735100903435849476, guid: 6874c204227b6cd44875c27c8b6a180c, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735100903435849476, guid: 6874c204227b6cd44875c27c8b6a180c, type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4735100903435849478, guid: 6874c204227b6cd44875c27c8b6a180c, type: 3}
       propertyPath: m_RootOrder
@@ -938,7 +946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503975, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503976, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_RootOrder
@@ -1281,7 +1289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503975, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503976, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_RootOrder

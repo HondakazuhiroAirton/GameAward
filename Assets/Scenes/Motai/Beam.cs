@@ -6,8 +6,9 @@ public class Beam : MonoBehaviour
 {
     //private Vector3 objPosition;
     public ParticleSystem ps;
-
-
+    private Vector3 Position;
+    private ParticleSystemTriggerEventType type;
+    System.Collections.Generic.List<UnityEngine.ParticleSystem.Particle> psa;
     void Start()
     {
         ps.Stop();
@@ -46,5 +47,15 @@ public class Beam : MonoBehaviour
         {
             ps.Play();
         }
+    }
+    /*private void OnTriggerEnter(Collider other)
+    {
+        ps.GetTriggerParticles(type,psa);
+        Debug.Log("Hit1");
+    }*/
+    private void OnCollisionEnter(Collision collision)
+    {
+        ps.GetTriggerParticles(type, psa);
+        Debug.Log("Hit2");
     }
 }
