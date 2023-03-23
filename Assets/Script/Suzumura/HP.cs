@@ -8,7 +8,7 @@ public class HP : MonoBehaviour
     public Slider slider0;
     public Slider slider1;
     private float charge;
-    float clampMin = 4.0f;      // â∫å¿
+    //float clampMin = 4.0f;      // â∫å¿
     float clampMax = 20.0f / 2;     // è„å¿
 
     // Start is called before the first frame update
@@ -39,7 +39,8 @@ public class HP : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.A))
+
+        if (Input.GetKey(KeyCode.Space))
         {
             if (charge <= clampMax)
             {
@@ -47,7 +48,7 @@ public class HP : MonoBehaviour
                 slider1.value -= 0.1f;
             }
         }
-        else if(Input.GetKeyUp(KeyCode.A))
+        else if(Input.GetKeyUp(KeyCode.Space))
         {
             slider0.value -= charge;
         }
