@@ -79,12 +79,10 @@ public class BeamParticleScript : MonoBehaviour
             // 反射の当たり判定を更新する処理************************************************
 
             // ビーム当たり判定をプレハブから取ってくる
-            var BeamCollision = BeamParticleManagerPrefab.gameObject.transform.GetChild(1);
+            var BeamCollision = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
             // プレハブの中身キレイにする
             // xの拡大率を取っておく
             float xSize = BeamCollision.transform.localScale.x;
-            // 初期化する
-            BeamCollision.GetComponent<BeamCollision>().Start();
 
             // スケールをもとに戻す
             BeamCollision.transform.localScale = new Vector3(xSize,1.0f,1.0f);
