@@ -702,6 +702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u53CD\u5C04\u677F2"
       objectReference: {fileID: 0}
+    - target: {fileID: 3119377859307503972, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
+      propertyPath: m_TagString
+      value: board
+      objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503975, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -785,6 +789,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u56DE\u8EE2\u8EF81"
       objectReference: {fileID: 0}
+    - target: {fileID: 3119377859307503972, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
+      propertyPath: m_TagString
+      value: shaft
+      objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503975, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -852,7 +860,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4735100903435849481, guid: 6874c204227b6cd44875c27c8b6a180c, type: 3}
   m_PrefabInstance: {fileID: 360495659}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1682416188
+--- !u!114 &1682416190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -877,7 +885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503972, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503975, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_IsTrigger
@@ -1041,6 +1049,10 @@ PrefabInstance:
     - target: {fileID: 3119377859307503972, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_Name
       value: "\u56DE\u8EE2\u8EF82"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119377859307503972, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
+      propertyPath: m_TagString
+      value: shaft
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503975, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_IsTrigger
@@ -1269,7 +1281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503972, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503975, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_IsTrigger
@@ -1461,6 +1473,10 @@ PrefabInstance:
     - target: {fileID: 3119377859307503972, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_Name
       value: "\u53CD\u5C04\u677F1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119377859307503972, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
+      propertyPath: m_TagString
+      value: board
       objectReference: {fileID: 0}
     - target: {fileID: 3119377859307503975, guid: f91f8623cc942974297c554d13fcc9b5, type: 3}
       propertyPath: m_IsTrigger
