@@ -6,12 +6,18 @@ public class Beam : MonoBehaviour
 {
     //private Vector3 objPosition;
     public ParticleSystem ps;
+    public Ray ray;
     private Vector3 Position;
-    private ParticleSystemTriggerEventType type;
-    System.Collections.Generic.List<UnityEngine.ParticleSystem.Particle> psa;
+
     void Start()
     {
         ps.Stop();
+
+        ray.GetPoint(10000f);
+        ray.ToString();
+
+        //ray.GetPoint(100f);
+        //ray.ToString();
     }
 
     // Update is called once per frame
@@ -48,14 +54,18 @@ public class Beam : MonoBehaviour
             ps.Play();
         }
     }
-    /*private void OnTriggerEnter(Collider other)
+    private void OnParticleCollision(GameObject other)
     {
-        ps.GetTriggerParticles(type,psa);
-        Debug.Log("Hit1");
-    }*/
-    private void OnCollisionEnter(Collision collision)
-    {
-        ps.GetTriggerParticles(type, psa);
-        Debug.Log("Hit2");
+
+        GameObject obj = GameObject.Find("Cube");
+        //GameObject obj2 = GameObject.Find("Cube(1)");
+        Destroy(obj);
+        //Destroy(obj2);
+        // もし衝突した相手オブジェクトの名前が"Cube"ならば
+        /*if (gameObject.tag == "Enemy")
+        {
+            // 衝突した相手オブジェクトを削除する
+            Destroy(gameObject);
+        }*/
     }
 }
