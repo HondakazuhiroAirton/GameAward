@@ -88,7 +88,7 @@ public class BeamCollision : MonoBehaviour
                 beamParticlePosition = BeamParticle.transform.position;
 
                 // 開始位置とビームの現在値を/2して移動量を出す
-                collisionPosition = beamParticlePosition - startPosition;
+                collisionPosition = beamParticlePosition + startPosition;
                 collisionPosition = collisionPosition / 2;
                 break;
 
@@ -97,13 +97,13 @@ public class BeamCollision : MonoBehaviour
                 this.GetComponent<BoxCollider>().size -= new Vector3(0.0f, ParticleSpeed, 0.0f);
 
                 // 開始位置とビームの現在値を/2して移動量を出す
-                collisionPosition = beamParticlePosition - startPosition;
+                collisionPosition = beamParticlePosition + startPosition;
                 collisionPosition = collisionPosition / 2;
                 // 開始位置を引っ張る
                 startPosition = startPosition + ParticlemoveDir;
 
                 // 開始位置とビームのポジションが一緒になったら
-                if ( (startPosition.x >= beamParticlePosition.x) && (startPosition.y >= beamParticlePosition.y) )
+                if (Vector3.Distance(startPosition, collisionPosition) <= 1.0f)
                 {
                     // このオブジェクトをデストロイする
                     Destroy(this.gameObject);
@@ -112,8 +112,6 @@ public class BeamCollision : MonoBehaviour
                 break;
         }
 
-        // スタートポジションに移動量を足してポジションを出す
-        collisionPosition = startPosition + collisionPosition;
         // 位置を反映
         this.transform.position = collisionPosition;
 
