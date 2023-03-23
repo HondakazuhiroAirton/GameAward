@@ -14,7 +14,10 @@ public class ParticleCollision : MonoBehaviour
         //other.gameObject.GetComponent<Renderer>().material.color = Random.ColorHSV();
 
         // ‚±‚±‚É“G‚ªƒr[ƒ€‚É“–‚½‚Á‚½‚Æ‚«‚Ìˆ—‚ğ‘‚­‚Æ‚æ‚³‚»‚¤
-        GameObject obj = GameObject.Find("Cylinder");
-        Destroy(obj);
+        if (other.gameObject.tag == "Enemy")
+        {
+            GameObject obj = GameObject.FindGameObjectWithTag("Enemy");
+            Destroy(obj);
+        }
     }
 }
