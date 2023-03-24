@@ -26,6 +26,9 @@ public class BeamCollision : MonoBehaviour
     // 現在の状態保存(大きくなる状態か/小さくなる状態か)
     public State CollisionState;
 
+    // BeamParticleスクリプトの保存
+    BeamParticleScript beamParticleScript;
+
     // 当たり判定の初期位置保存
     private Vector3 startPosition;
     // パーティクルのポジション保存
@@ -38,7 +41,7 @@ public class BeamCollision : MonoBehaviour
     public void Start()
     {
         // ビームパーティクルのスクリプトを取得
-        var beamParticleScript = BeamParticle.GetComponent<BeamParticleScript>();
+        beamParticleScript = BeamParticle.GetComponent<BeamParticleScript>();
 
         // ビームパーティクルからビームの進行方向をもらう
         ParticlemoveDir = beamParticleScript.moveDir;
@@ -105,8 +108,9 @@ public class BeamCollision : MonoBehaviour
                 // 開始位置とビームのポジションが一緒になったら
                 if (Vector3.Distance(startPosition, collisionPosition) <= 1.0f)
                 {
+                    Debug.Log("判定消えます");
                     // このオブジェクトをデストロイする
-                    Destroy(this.gameObject);
+                    //Destroy(this.gameObject);
                 }
 
                 break;
@@ -128,7 +132,7 @@ public class BeamCollision : MonoBehaviour
             // 縮む状態にする
             CollisionState = State.SCALE_DOWN;
             // ビームパーティクルからビームの進行方向をもらう
-            ParticlemoveDir = BeamParticle.GetComponent<BeamParticleScript>().moveDir;
+            //ParticlemoveDir = BeamParticle.GetComponent<BeamParticleScript>().moveDir;
         }
 
     }

@@ -16,6 +16,10 @@ public class BeamParticleScript : MonoBehaviour
     public GameObject ParticleManager;
     // プレハブ格納用
     public GameObject BeamParticleManagerPrefab;
+    // 反射用当たり判定プレハブ格納
+    public GameObject BeamCollisionReflect;
+
+
     // スタート位置保存
     public Vector3 StartPosition;
     // 移動量保存
@@ -29,10 +33,9 @@ public class BeamParticleScript : MonoBehaviour
     private float XMove = 1.0f;
     private float YMove = 0.0f;
     private float ZMove = 0.0f;
+    private float xCollisionSize = 1.0f;
 
 
-
-    // Start is called before the first frame update
     void Start()
     {
       // Angleから移動量を求める処理
@@ -50,12 +53,16 @@ public class BeamParticleScript : MonoBehaviour
         // 開始時に初期位置を格納
         StartPosition = this.gameObject.transform.position;
 
+        // 開始時にビーム当たり判定オブジェクトを取ってくる
+        GameObject BeamCollision = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
+        //  xの拡大率を取っておく
+        xCollisionSize = BeamCollision.transform.localScale.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // 移動
+        // 移動処理
         transform.position += moveDir;
     }
 
@@ -71,27 +78,21 @@ public class BeamParticleScript : MonoBehaviour
             // 反射回数が設定されていれば1減らす
             if(ReflectMax < 1000)reflectCount--;
 
+            //reflectCount++;
+
             // 以下、反射
             Debug.Log("反射するよ");
             // ※1 ここで先にAngleの反射更新がWall側から入る
             collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
 
-            // 反射の当たり判定を更新する処理************************************************
+            // 反射の当たり判定を生み出す処理************************************************
 
-            // ビーム当たり判定をプレハブから取ってくる
-            var BeamCollision = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
-            // プレハブの中身キレイにする
-            // xの拡大率を取っておく
-            float xSize = BeamCollision.transform.localScale.x;
-
-            // スケールをもとに戻す
-            BeamCollision.transform.localScale = new Vector3(xSize,1.0f,1.0f);
-
-            Debug.Log("複製するよ");
+            // 反射当たり判定の横幅を元のCollisionと同じにする
+            BeamCollisionReflect.transform.localScale = new Vector3(xCollisionSize,1.0f,1.0f);
 
             // 角度を入れる(補正値はBeamCollision側から変更)
             // ※2 Wall側から変更された角度を使って新しい当たり判定を作る
-            Instantiate(BeamCollision, this.transform.position, Quaternion.Euler(0.0f, 0.0f, Angle - AngleHosei));
+            Instantiate(BeamCollisionReflect, this.transform.position, Quaternion.Euler(0.0f, 0.0f, Angle - AngleHosei), ParticleManager.transform);
             
         }
         else

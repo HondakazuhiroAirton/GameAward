@@ -35,11 +35,11 @@ public class Player_kari : MonoBehaviour
             chargeTime += BeamExpansion * Time.deltaTime ;
 
             // 最大値は多分こんな感じでつくる
-            //if (chargeTime >= マックスサイズ)
-            //{
-            //    マックスサイズにする
-            //}
-            
+            if (chargeTime >= 30.0f)
+            {
+                chargeTime = 30.0f;
+            }
+
         }
         if (Input.GetKeyUp(KeyCode.Space)) // Downと同じキーコードにしてね
         {
