@@ -35,6 +35,6 @@ public class SceneChange: MonoBehaviour
 
      public void ChangeScene()
      {
-//         SceneManager.LoadScene(1);
+        Image.GetComponent<Fade>().GameSelect();
      }
 }
