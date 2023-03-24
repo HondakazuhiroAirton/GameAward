@@ -7,32 +7,51 @@ using UnityEngine;
 
 public class BeamParticleScript : MonoBehaviour
 {
+    //publicゾーン***********************************************************
+
+    // ゲーム中の変数属性***********************
     // 移動する角度
     public float Angle = 0.0f; // 親の回転角度指定
     public float Speed = 0.1f; // 移動速度はここで変更してね
-    // 反射回数
-    public int ReflectMax = 1000; // 10000で反射制限なし
-    //親のManagerを取得
-    public GameObject ParticleManager;
-    // プレハブ格納用
-    public GameObject BeamParticleManagerPrefab;
-    // 反射用当たり判定プレハブ格納
-    public GameObject BeamCollisionReflect;
 
+    // 反射回数
+    public int ReflectMax = 1000; // 1000で反射制限なし
+
+    // ParticleManager
+    public GameObject ParticleManager;
+
+    // 今のボックスキャスト(State変更時に使用)
+    public GameObject NowBoxCast;
 
     // スタート位置保存
     public Vector3 StartPosition;
+
     // 移動量保存
     public Vector3 moveDir;
-    // BeamCollisionのAngleHoseiを向こうから入れる
+
+    // 角度の補正値(BeamCollisionのAngleHoseiをWall側から代入する)
     public float AngleHosei;
 
+    // プレハブ属性*****************************
+    // 反射用当たり判定プレハブ格納
+    public GameObject BeamBoxCastReflect;
+
+
+
+    
+    // privateゾーン********************************************
     // 今の反射回数
     private int reflectCount = 0;
+
+    // 反射の子供管理変数
+    private int child = 0;
+
     // 移動する方向
     private float XMove = 1.0f;
     private float YMove = 0.0f;
     private float ZMove = 0.0f;
+
+    // 当たり判定の拡大率を保存
     private float xCollisionSize = 1.0f;
 
 
@@ -53,13 +72,11 @@ public class BeamParticleScript : MonoBehaviour
         // 開始時に初期位置を格納
         StartPosition = this.gameObject.transform.position;
 
-        // 開始時にビーム当たり判定オブジェクトを取ってくる
-        GameObject BeamCollision = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
-        //  xの拡大率を取っておく
-        xCollisionSize = BeamCollision.transform.localScale.x;
+        // ParticleManagerを取得
+        ParticleManager = transform.root.gameObject;
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         // 移動処理
@@ -73,32 +90,37 @@ public class BeamParticleScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (ReflectMax > reflectCount)
+        if (collision.gameObject.tag == "Reflector") // 反射するオブジェクトにあたったら発動
         {
-            // 反射回数が設定されていれば1減らす
-            if(ReflectMax < 1000)reflectCount--;
+            if (ReflectMax > reflectCount)
+            {
+                // 反射回数が設定されていれば1減らす
+                if (ReflectMax < 1000) reflectCount--;
 
-            //reflectCount++;
+                //reflectCount++;
 
-            // 以下、反射
-            Debug.Log("反射するよ");
-            // ※1 ここで先にAngleの反射更新がWall側から入る
-            collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
+                // 子供の変数を1進める
+                child++;
 
-            // 反射の当たり判定を生み出す処理************************************************
+                // 伸びてたBoxCastを縮小状態にする
+                // BoxCastを取得
+                NowBoxCast = ParticleManager.transform.GetChild(child).gameObject;
 
-            // 反射当たり判定の横幅を元のCollisionと同じにする
-            BeamCollisionReflect.transform.localScale = new Vector3(xCollisionSize,1.0f,1.0f);
+                // BoxCastの状態を縮小状態にする
+                NowBoxCast.GetComponent<BoxCastScript>().NowState = BoxCastScript.State.SCALE_DOWN;
 
-            // 角度を入れる(補正値はBeamCollision側から変更)
-            // ※2 Wall側から変更された角度を使って新しい当たり判定を作る
-            Instantiate(BeamCollisionReflect, this.transform.position, Quaternion.Euler(0.0f, 0.0f, Angle - AngleHosei), ParticleManager.transform);
-            
-        }
-        else
-        {
-            // 反射回数がなくなったら、Destroyする
-            Destroy(this.gameObject);
+                // Wallの反射アクションを起こす
+                collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
+
+                // つぎの反射の当たり判定を生み出す処理
+                Instantiate(BeamBoxCastReflect, this.transform.position, Quaternion.identity, ParticleManager.transform);
+
+            }
+            else
+            {
+                // 反射回数がなくなったら、Destroyする
+                Destroy(this.gameObject);
+            }
         }
     }
 }
@@ -118,3 +140,35 @@ public class BeamParticleScript : MonoBehaviour
 // 親子関係取得のアレコレ
 //“transform.root.gameObject”は一番親のオブジェクトを取得
 //“transform.parent.gameObject”は一つ上のオブジェクトを取得
+
+
+/*
+// Boxを伸ばしていたときのスクリプト
+     if (ReflectMax > reflectCount)
+       {
+           // 反射回数が設定されていれば1減らす
+           if(ReflectMax < 1000)reflectCount--;
+
+           //reflectCount++;
+
+           // 以下、反射
+           Debug.Log("反射するよ");
+           // ※1 ここで先にAngleの反射更新がWall側から入る
+           collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
+
+           // 反射の当たり判定を生み出す処理************************************************
+
+           // 反射当たり判定の横幅を元のCollisionと同じにする
+           BeamCollisionReflect.transform.localScale = new Vector3(xCollisionSize,1.0f,1.0f);
+
+           // 角度を入れる(補正値はBeamCollision側から変更)
+           // ※2 Wall側から変更された角度を使って新しい当たり判定を作る
+           Instantiate(BeamCollisionReflect, this.transform.position, Quaternion.Euler(0.0f, 0.0f, Angle - AngleHosei), ParticleManager.transform);
+
+       }
+       else
+       {
+           // 反射回数がなくなったら、Destroyする
+           Destroy(this.gameObject);
+       }
+    */

@@ -2,21 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxCast : MonoBehaviour
+public class BoxCastScript : MonoBehaviour
 {
+    // 列挙体状態制御
+    public enum State
+    {
+        SCALE_UP = 0,
+        SCALE_DOWN,
+
+        SCALE_STATE_MAX
+    }
+
+
     // publicゾーン*****************************************************
     // BeamParticleManager取得
     public GameObject ParticleManager;
+
     // BeamParticle取得
     public GameObject BeamParticle;
+
     // パーティクルの位置取得
     public Vector3 ParticlePosition;
+
     // パーティクルの移動ベクトル取得
     public Vector3 ParticleVector;
 
+    // 現在の状態保存(大きくなる状態か/小さくなる状態か)
+    public State NowState;
 
     // privateゾーン*****************************************************
-
     // BoxCast情報を格納
     private RaycastHit hit;
 
@@ -31,6 +45,9 @@ public class BoxCast : MonoBehaviour
 
     void Start()
     {
+        // 最初は拡大状態
+        NowState = State.SCALE_UP;
+
         // (BeamParticleManager)親のオブジェクトを取得
         ParticleManager = transform.root.gameObject;
         // BeamParticleオブジェクトを取得Managerから見て1番上の子
@@ -39,20 +56,45 @@ public class BoxCast : MonoBehaviour
 
     void Update()
     {
-        // BeamParticleのポジションを取得する
-        ParticlePosition = BeamParticle.transform.position;
-        ParticleVector = ParticlePosition - this.transform.position;
-        // 単位ベクトルにする
-        ParticleVector = ParticleVector.normalized;
-
         // BoxCast計算ゾーン*************************************************************************
         // 当たり判定の大きさ->箱の大きさの半分の引数を渡す必要があるため*0.5している
         scale = transform.lossyScale.x * 0.5f;
 
-        // BoxCastを飛ばしてる　　　　場所                  大きさ             方向(ベクトル)              回転方向?  
-        isHit = Physics.BoxCast(transform.position, Vector3.one * scale, ParticleVector, out hit);
-        //                                                                                      ↑あたったオブジェクトをここに格納  
 
+        switch (NowState)
+        {
+            // 拡大状態の時
+            case State.SCALE_UP:
+
+                // 拡大状態の時はBeamParticleのポジションを取得する
+                ParticlePosition = BeamParticle.transform.position;
+                
+                // ベクトルを計算する
+                ParticleVector = ParticlePosition - this.transform.position;
+
+                // 単位ベクトルにする
+                ParticleVector = ParticleVector.normalized;
+
+               
+                break;
+
+            // 縮小状態の時
+            case State.SCALE_DOWN:
+
+                // 縮小状態の時はBeamParticleのポジションを貰わない(最後のポジションを参照する)
+
+         
+                
+                // この辺でデリートしたいよねー
+
+
+                break;
+
+        }
+
+        // BoxCastを飛ばす 　　　　場所                  大きさ             方向(ベクトル)              回転方向?  
+        isHit = Physics.BoxCast(transform.position, Vector3.one * scale, ParticleVector, out hit);
+        //                                                                                ↑あたったオブジェクトをここに格納  
     }
 
     void OnDrawGizmos()
