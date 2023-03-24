@@ -40,8 +40,6 @@ public class Wall : MonoBehaviour,CollisionAction
         // ビームパーティクルのアングルを更新する
         obj.GetComponent<BeamParticleScript>().Angle = Angle;
 
-        // 次の反射当たり判定を作成
-
         // 昔考えたプログラム******************************
         //// 入射ベクトルと法線ベクトルの内積←法線ベクトルの取得がおかしいの？？？？
         //Vector3 n = this.transform.up.normalized; // 地面の法線ベクトルを入れる
