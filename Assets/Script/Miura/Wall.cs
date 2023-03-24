@@ -35,7 +35,6 @@ public class Wall : MonoBehaviour,CollisionAction
 
         // ラジアン値をディグリー値に変換
         Angle = Angle * Mathf.Rad2Deg;
-        Debug.Log("次は"+Angle+"度に進みます。");
 
         // ビームパーティクルのアングルを更新する
         obj.GetComponent<BeamParticleScript>().Angle = Angle;

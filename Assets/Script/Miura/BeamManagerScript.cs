@@ -13,6 +13,6 @@ public class BeamManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // 子オブジェクトが全部なくなったらマネージャーデリート
     }
 }

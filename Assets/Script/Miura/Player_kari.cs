@@ -12,7 +12,7 @@ public class Player_kari : MonoBehaviour
     // プレハブ格納用
     public GameObject BeamParticleManagerPrefab;
     // チャージした時間によってビームの大きさが変わるサイズ変更用の変数
-    public float ParticleSize = 0.0f;
+    public float BoxCastScale = 0.0f;
     // チャージした時間を格納する変数(必要)
     private float chargeTime = 0.0f;
     // ビームが1秒間に大きくなる基準
@@ -45,11 +45,14 @@ public class Player_kari : MonoBehaviour
         {
            
             // サイズを更新する
-            ParticleSize = chargeTime; 
+            BoxCastScale = chargeTime;
 
-            // ビームマネージャーの中のBeamCollisionを取得
-            BeamParticleManagerPrefab.gameObject.transform.GetChild(1).localScale 
-                                                                    = new Vector3 (ParticleSize,1.0f,1.0f);
+            // ビームマネージャーの中のBoxCastを取得
+            GameObject BoxCast = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
+
+            // 取得したBoxCastのBoxCastスクリプト内(Scale)の大きさを変更する
+            BoxCast.transform.localScale = new Vector3 (BoxCastScale, BoxCastScale, BoxCastScale);
+     
             // プレハブを指定位置に生成
             Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);
             // チャージ時間を戻す
