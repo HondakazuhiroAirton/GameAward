@@ -6,8 +6,10 @@ public class Beam_SC : MonoBehaviour
 {
     CapsuleCollider2D capsuleCollider;
 
+    
     void Start()
     {
+       
         capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
