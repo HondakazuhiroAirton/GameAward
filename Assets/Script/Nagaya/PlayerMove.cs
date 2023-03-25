@@ -12,6 +12,8 @@ public class PlayerMove : MonoBehaviour
     public GameObject WallRight;
 
     public float speed; //プレイヤーのスピード 
+    public Vector3 pos;
+    public Vector3 Scale;
 
     public Vector3 Upos;        //上の位置
     public Vector3 UScale;      //上のスケール
@@ -37,7 +39,7 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         //プレイヤースピード
-        speed = 1f;
+        speed = 0.1f;
 
         //WallUpの端取得
         Upos = WallUp.gameObject.transform.position;
@@ -63,15 +65,17 @@ public class PlayerMove : MonoBehaviour
         LRpos = Lpos.y + LScale.y / 2;
         LLpos = Lpos.y - LScale.y / 2;
 
+        this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //プレイヤーの座標取得
-        Vector3 pos = this.gameObject.transform.position;
+        pos = this.gameObject.transform.position;
         //プレイヤーのスケール取得
-        Vector3 Scale = this.gameObject.transform.localScale;
+        Scale = this.gameObject.transform.localScale;
 
         //<<<上のライン移動>>>
         if (pos.y == Upos.y)
@@ -191,18 +195,22 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey("1"))//上
         {
             this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Input.GetKey("2"))//下
         {
             this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z - 1);
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
         if (Input.GetKey("3"))//右
         {
             this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z - 1);
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
         if (Input.GetKey("4"))//左
         {
             this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z - 1);
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
         }
 
     }

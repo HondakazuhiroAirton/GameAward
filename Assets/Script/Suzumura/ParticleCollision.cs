@@ -8,6 +8,7 @@ public class ParticleCollision : MonoBehaviour
     /// パーティクルが他のGameObject(Collider)に当たると呼び出される
     /// </summary>
     /// <param name="other"></param>
+
     private void OnParticleCollision(GameObject other)
     {
         // 当たった相手の色をランダムに変える
@@ -19,5 +20,12 @@ public class ParticleCollision : MonoBehaviour
             GameObject obj = GameObject.FindGameObjectWithTag("Enemy");
             Destroy(obj);
         }
+
+        // 回転させる板に当たった時の処理
+        if (other.gameObject.tag == "shaft")
+        {
+            BoardCollision.instance.CollisionBoard();
+        }
     }
+
 }

@@ -35,12 +35,9 @@ public class Wall : MonoBehaviour,CollisionAction
 
         // ラジアン値をディグリー値に変換
         Angle = Angle * Mathf.Rad2Deg;
-        Debug.Log("次は"+Angle+"度に進みます。");
 
         // ビームパーティクルのアングルを更新する
         obj.GetComponent<BeamParticleScript>().Angle = Angle;
-
-        // 次の反射当たり判定を作成
 
         // 昔考えたプログラム******************************
         //// 入射ベクトルと法線ベクトルの内積←法線ベクトルの取得がおかしいの？？？？
