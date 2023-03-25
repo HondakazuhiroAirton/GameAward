@@ -14,30 +14,30 @@ public class Player_kari : MonoBehaviour
     // チャージした時間によってビームの大きさが変わるサイズ変更用の変数
     public float BoxCastScale = 0.0f;
     // チャージした時間を格納する変数(必要)
-    private float chargeTime = 0.0f;
+    public float ChargeTime = 0.0f;
     // ビームが1秒間に大きくなる基準
-    public float BeamExpansion = 30.0f;
+    public float BeamExpansion = 1.0f;
     // ビームに使用している変数達(ここまで)******************************************************************************
 
 
     // Start is called before the first frame update
     void Start()
     {
-        chargeTime = 0.0f;
+        ChargeTime = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
         // ビーム発射処理*************************************************************
-        if (Input.GetKeyDown(KeyCode.Space)) // キーコードは変更してね(*^^*)
+        if (Input.GetKey(KeyCode.Space)) // キーコードは変更してね(*^^*)
         {
-            chargeTime += BeamExpansion * Time.deltaTime ;
+            ChargeTime = ChargeTime + BeamExpansion * Time.deltaTime ;
 
             // 最大値は多分こんな感じでつくる
-            if (chargeTime >= 30.0f)
+            if (ChargeTime >= 30.0f)
             {
-                chargeTime = 30.0f;
+                ChargeTime = 30.0f;
             }
 
         }
@@ -45,7 +45,7 @@ public class Player_kari : MonoBehaviour
         {
            
             // サイズを更新する
-            BoxCastScale = chargeTime;
+            BoxCastScale = ChargeTime;
 
             // ビームマネージャーの中のBoxCastを取得
             GameObject BoxCast = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
@@ -56,7 +56,7 @@ public class Player_kari : MonoBehaviour
             // プレハブを指定位置に生成
             Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);
             // チャージ時間を戻す
-            chargeTime = 0.0f;
+            ChargeTime = 0.0f;
         }
 
         // ビーム発射処理(ここまで)*************************************************************
