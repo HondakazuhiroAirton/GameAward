@@ -36,8 +36,6 @@ public class BeamParticleScript : MonoBehaviour
     // 反射用当たり判定プレハブ格納
     public GameObject BeamBoxCastReflect;
 
-
-
     
     // privateゾーン********************************************
     // 今の反射回数
@@ -117,6 +115,9 @@ public class BeamParticleScript : MonoBehaviour
 
                 // 前もってプレハブの大きさを変更しておく
                 BeamBoxCastReflect.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
+
+                // 次のプレハブのBoxCastのNoを設定する
+                BeamBoxCastReflect.GetComponent<BoxCastScript>().ChildNo = child + 1;
 
                 // つぎの反射の当たり判定を生み出す処理
                 Instantiate(BeamBoxCastReflect, this.transform.position, Quaternion.identity, ParticleManager.transform);
