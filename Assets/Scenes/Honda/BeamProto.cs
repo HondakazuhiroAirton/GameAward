@@ -4,73 +4,76 @@ using UnityEngine;
 
 public class BeamProto : MonoBehaviour
 {
-    [SerializeField]
-    LayerMask hitLayer; // 衝突するレイヤー
-    [SerializeField]
-    float speed;        // ビームの移動速度
-    [SerializeField]
-    float maxDistance;  // ビームの長さ
 
+    public class Beamline
+    {
+        public Vector3 startPos;
+        public Vector3 direction;
+        public float distance;
+    }
+
+
+    // 共通変数
+    [SerializeField]
+    LayerMask hitLayer;     // 衝突するレイヤー
+
+    float speed;            // ビームの移動速度
+    bool useFlag;
+    bool isHit;             // 接触フラグ
+
+    float maxDistance;      // ビームの長さ
     float radius = 0.2f;
-    private int layerMask; // 衝突するレイヤーのマスク
+    private int layerMask;  // 衝突するレイヤーのマスク
     RaycastHit hit;
 
-    bool isHit;
+
+    Vector3 startPos;       // ビームの開始位置
+    Vector3 headPos;
+    Vector3 tailPos;
+
 
     float time;
+    float maxTime;
 
-    [SerializeField]
-    float maxtime;
+    List<Beamline> beamlines = new List<Beamline>();
 
-    Vector3 tailPos; // ビームの終端
-    Vector3 headPos; // ビームの始端
-
-    //List<BeamProto>
     // Start is called before the first frame update
     void Start()
     {
+        Beamline fastBeamLine = new Beamline();
+
+        fastBeamLine.startPos = tailPos = transform.position;
+        fastBeamLine.direction = transform.forward;
+        fastBeamLine.distance = 10f;
+        beamlines.Add(fastBeamLine);
         layerMask = hitLayer;
         speed = 10;
-        tailPos = transform.position;
-        maxDistance = 10;
-        maxtime = 0.2f;
-        isHit = false;
-        time = 0;
+     
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool Hit;
+        // bool isHit;
         // RaycastHit hit;
-        tailPos += transform.forward * speed * Time.deltaTime;
 
-        if (!isHit)
+        foreach (var line in  beamlines)
         {
-            Hit = Physics.SphereCast(tailPos, radius, transform.forward, out hit, maxDistance, layerMask);
-            if (Hit)
+
+            line.startPos += line.direction * speed * Time.deltaTime;
+            Debug.Log(line.startPos);
+            var Hit = Physics.SphereCast(line.startPos, radius, line.direction, out hit, line.distance, layerMask);
+
+
+            if (Hit) isHit = true;
+
+            if (isHit)
             {
-                isHit = true;
-                Debug.Log("hit");
-            }
-        }
-        else if (isHit)
-        {
-            if (time <= maxtime)
-            {
-                time += Time.deltaTime;
-                maxDistance -= speed * Time.deltaTime;
-                if (maxDistance <= 0)
+                line.distance -= speed * Time.deltaTime;
+                //time += Time.deltaTime;
+                if (line.distance <= 0)
                 {
-                    maxDistance = 0;
-                }
-            }
-            else
-            {
-                time = 0;
-                Hit = Physics.SphereCast(tailPos, radius, transform.forward, out hit, maxDistance, layerMask);
-                if (!Hit)
-                {
+                    line.distance = 0;
                     isHit = false;
                 }
             }
@@ -79,12 +82,24 @@ public class BeamProto : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.white;
-        Gizmos.DrawRay(tailPos, transform.forward * maxDistance);
+        if (beamlines.Count == 0) return;
 
+        foreach (var line in beamlines)
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawRay(line.startPos, line.direction * line.distance);
+        }
+
+        
         if (isHit) Gizmos.color = Color.red;
         else Gizmos.color = Color.white;
-        
-        Gizmos.DrawSphere(tailPos + transform.forward * maxDistance, radius);
+
+        Gizmos.DrawSphere(startPos + transform.forward * maxDistance, radius);
+    }
+
+
+    public void CreateBeamLine()
+    {
+
     }
 }
