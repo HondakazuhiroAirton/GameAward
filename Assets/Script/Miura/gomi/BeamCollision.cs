@@ -37,7 +37,6 @@ public class BeamCollision : MonoBehaviour
     private float AngleHosei = 90;
 
 
-    // Start is called before the first frame update
     public void Start()
     {
         // ビームパーティクルのスクリプトを取得
@@ -68,7 +67,6 @@ public class BeamCollision : MonoBehaviour
         BeamParticle.GetComponent<BeamParticleScript>().AngleHosei = AngleHosei;
     }
 
-    // Update is called once per frame
     void Update()
     {
         // 当たり判定の位置を計算するための変数

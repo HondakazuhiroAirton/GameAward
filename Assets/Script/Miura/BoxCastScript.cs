@@ -27,8 +27,15 @@ public class BoxCastScript : MonoBehaviour
     // パーティクルの移動ベクトル取得
     public Vector3 ParticleVector;
 
+    // パーティクルの移動量(Vector x Speed)を取得
+    public Vector3 moveDir;
+
     // 現在の状態保存(大きくなる状態か/小さくなる状態か)
     public State NowState;
+
+    // 何番目の子供か
+    public int ChildNo = 1;
+
 
     // privateゾーン*****************************************************
     // BoxCast情報を格納
@@ -55,6 +62,9 @@ public class BoxCastScript : MonoBehaviour
         ParticleManager = transform.root.gameObject;
         // BeamParticleオブジェクトを取得Managerから見て1番上の子
         BeamParticle = ParticleManager.transform.GetChild(0).gameObject;
+
+        // BeamParticleのスピードを取得する
+        moveDir = BeamParticle.GetComponent<BeamParticleScript>().moveDir;
     }
 
     void Update()
@@ -85,20 +95,31 @@ public class BoxCastScript : MonoBehaviour
             case State.SCALE_STAY:
 
                 // 常に前の当たり判定のチェックボックスを見てる
-
-                // 前のチェックが消えたら自分をScale_Downに変更
-
+                GameObject BeforeChild = ParticleManager.transform.GetChild(ChildNo - 1).gameObject;
+                
+                // 前当たり判定のチェックボックスを見る
+                if (BeforeChild.activeSelf == false || ChildNo == 1) // 前のチェックが消えたら自分をScale_Downに変更
+                {
+                    NowState = State.SCALE_DOWN;
+                    Debug.Log(ChildNo+"は縮小を開始します");
+                }
+                
                 break;
 
             // 縮小状態の時
             case State.SCALE_DOWN:
 
                 // だんだん縮小
-
+                transform.position += moveDir;
 
 
                 // 長さがちいさくなったら自分のチェックボックスを消す
-
+                if (Vector3.Distance(ParticlePosition, transform.position) <= 1.0f)
+                {
+                    Debug.Log("判定消えます");
+                    // このオブジェクトを非アクティプにする
+                    this.gameObject.SetActive(false);
+                }
 
                 break;
 
