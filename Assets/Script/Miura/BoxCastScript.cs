@@ -8,11 +8,11 @@ public class BoxCastScript : MonoBehaviour
     public enum State
     {
         SCALE_UP = 0,
+        SCALE_STAY,
         SCALE_DOWN,
 
         SCALE_STATE_MAX
     }
-
 
     // publicゾーン*****************************************************
     // BeamParticleManager取得
@@ -27,8 +27,15 @@ public class BoxCastScript : MonoBehaviour
     // パーティクルの移動ベクトル取得
     public Vector3 ParticleVector;
 
+    // パーティクルの移動量(Vector x Speed)を取得
+    public Vector3 moveDir;
+
     // 現在の状態保存(大きくなる状態か/小さくなる状態か)
     public State NowState;
+
+    // 何番目の子供か
+    public int ChildNo = 1;
+
 
     // privateゾーン*****************************************************
     // BoxCast情報を格納
@@ -36,6 +43,9 @@ public class BoxCastScript : MonoBehaviour
 
     // BoxCastの大きさを入れる変数
     private float scale;
+
+    // BoxCastのMaxの長さ
+    private float maxDistance = 1.0f;
 
     // 何かオブジェクトにぶつかっているかどうか
     bool isHit;
@@ -52,6 +62,9 @@ public class BoxCastScript : MonoBehaviour
         ParticleManager = transform.root.gameObject;
         // BeamParticleオブジェクトを取得Managerから見て1番上の子
         BeamParticle = ParticleManager.transform.GetChild(0).gameObject;
+
+        // BeamParticleのスピードを取得する
+        moveDir = BeamParticle.GetComponent<BeamParticleScript>().moveDir;
     }
 
     void Update()
@@ -59,7 +72,7 @@ public class BoxCastScript : MonoBehaviour
         // BoxCast計算ゾーン*************************************************************************
         // 当たり判定の大きさ->箱の大きさの半分の引数を渡す必要があるため*0.5している
         scale = transform.lossyScale.x * 0.5f;
-
+        Vector3 BoxCastPosition = this.transform.position;
 
         switch (NowState)
         {
@@ -70,7 +83,7 @@ public class BoxCastScript : MonoBehaviour
                 ParticlePosition = BeamParticle.transform.position;
                 
                 // ベクトルを計算する
-                ParticleVector = ParticlePosition - this.transform.position;
+                ParticleVector = ParticlePosition - BoxCastPosition;
 
                 // 単位ベクトルにする
                 ParticleVector = ParticleVector.normalized;
@@ -78,22 +91,50 @@ public class BoxCastScript : MonoBehaviour
                
                 break;
 
+            // 状態維持の時
+            case State.SCALE_STAY:
+
+                // 常に前の当たり判定のチェックボックスを見てる
+                GameObject BeforeChild = ParticleManager.transform.GetChild(ChildNo - 1).gameObject;
+                
+                // 前当たり判定のチェックボックスを見る
+                if (BeforeChild.activeSelf == false || ChildNo == 1) // 前のチェックが消えたら自分をScale_Downに変更
+                {
+                    NowState = State.SCALE_DOWN;
+                    Debug.Log(ChildNo+"は縮小を開始します");
+                }
+                
+                break;
+
             // 縮小状態の時
             case State.SCALE_DOWN:
 
-                // 縮小状態の時はBeamParticleのポジションを貰わない(最後のポジションを参照する)
+                // だんだん縮小
+                transform.position += moveDir;
 
-         
-                
-                // この辺でデリートしたいよねー
 
+                // 長さがちいさくなったら自分のチェックボックスを消す
+                if (Vector3.Distance(ParticlePosition, transform.position) <= 1.0f)
+                {
+                    Debug.Log("判定消えます");
+                    // このオブジェクトを非アクティプにする
+                    this.gameObject.SetActive(false);
+                }
 
                 break;
 
         }
 
+        // 2点間の距離を求める
+        maxDistance = Mathf.Pow((ParticlePosition.x - BoxCastPosition.x), 2.0f) +
+                       Mathf.Pow((ParticlePosition.y - BoxCastPosition.y), 2.0f) +
+                        Mathf.Pow((ParticlePosition.z - BoxCastPosition.z), 2.0f);
+
+        // これをルートにする
+        maxDistance = Mathf.Sqrt(maxDistance);
+
         // BoxCastを飛ばす 　　　　場所                  大きさ             方向(ベクトル)              回転方向?  
-        isHit = Physics.BoxCast(transform.position, Vector3.one * scale, ParticleVector, out hit);
+        isHit = Physics.BoxCast(transform.position, Vector3.one * scale, ParticleVector, out hit, Quaternion.identity, maxDistance);
         //                                                                                ↑あたったオブジェクトをここに格納  
     }
 
@@ -102,19 +143,11 @@ public class BoxCastScript : MonoBehaviour
         // 可視化するかどうか
         if (isEnable == false)return;
 
-        // ヒットしている場合
-        if (isHit == true)
-        {
-            // 当たるまで線を描いて
-            Gizmos.DrawRay(transform.position, ParticleVector * hit.distance);
-            // ぶつかったところにBoxを同じ大きさで描く
-            Gizmos.DrawWireCube(transform.position + ParticleVector * hit.distance, Vector3.one * scale * 2);
-        }
-        else
-        {
-            // 線を伸ばし続ける
-            Gizmos.DrawRay(transform.position, ParticleVector * 100);
-        }
+        // 当たるまで線を描いて
+        Gizmos.DrawRay(transform.position, ParticleVector * maxDistance);
+        // ぶつかったところにBoxを同じ大きさで描く
+        Gizmos.DrawWireCube(transform.position + ParticleVector * maxDistance, Vector3.one * scale * 2);
+
     }
 }
 

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7954957734673453955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.269988, y: 0.269988, z: 0.269988}
+  m_LocalScale: {x: 1.1066617, y: 1.1066617, z: 1.1066617}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7954957736179242919}
@@ -114,7 +114,9 @@ MonoBehaviour:
   BeamParticle: {fileID: 0}
   ParticlePosition: {x: 0, y: 0, z: 0}
   ParticleVector: {x: 0, y: 0, z: 0}
+  moveDir: {x: 0, y: 0, z: 0}
   NowState: 0
+  ChildNo: 1
   isEnable: 1
 --- !u!1 &7954957735459857810
 GameObject:

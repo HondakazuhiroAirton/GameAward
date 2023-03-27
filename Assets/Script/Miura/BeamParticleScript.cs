@@ -36,8 +36,6 @@ public class BeamParticleScript : MonoBehaviour
     // 反射用当たり判定プレハブ格納
     public GameObject BeamBoxCastReflect;
 
-
-
     
     // privateゾーン********************************************
     // 今の反射回数
@@ -106,14 +104,24 @@ public class BeamParticleScript : MonoBehaviour
                 // BoxCastを取得
                 NowBoxCast = ParticleManager.transform.GetChild(child).gameObject;
 
-                // BoxCastの状態を縮小状態にする
-                NowBoxCast.GetComponent<BoxCastScript>().NowState = BoxCastScript.State.SCALE_DOWN;
+                // 大きさを記録しておく
+                float BoxCastScale = NowBoxCast.transform.localScale.x;
+
+                // BoxCastの状態を現状維持状態にする
+                NowBoxCast.GetComponent<BoxCastScript>().NowState = BoxCastScript.State.SCALE_STAY;
 
                 // Wallの反射アクションを起こす
                 collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
 
+                // 前もってプレハブの大きさを変更しておく
+                BeamBoxCastReflect.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
+
+                // 次のプレハブのBoxCastのNoを設定する
+                BeamBoxCastReflect.GetComponent<BoxCastScript>().ChildNo = child + 1;
+
                 // つぎの反射の当たり判定を生み出す処理
                 Instantiate(BeamBoxCastReflect, this.transform.position, Quaternion.identity, ParticleManager.transform);
+
 
             }
             else

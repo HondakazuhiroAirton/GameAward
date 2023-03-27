@@ -697,7 +697,7 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0, z: 0}
   BeamParticleManagerPrefab: {fileID: 7954957736179242913, guid: acb9f43e6018e244b9eb83d5918a4179, type: 3}
   BoxCastScale: 0
-  BeamExpansion: 60
+  BeamExpansion: 1
 --- !u!1 &2028538678
 GameObject:
   m_ObjectHideFlags: 0

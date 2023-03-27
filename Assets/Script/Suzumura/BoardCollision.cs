@@ -14,12 +14,15 @@ public class BoardCollision : MonoBehaviour
         }
     }
 
-    public void CollisionBoard()
+    void Start()
     {
-        Debug.Log("通っている");
-        // transformを取得
-        Transform BoardTransform = GameObject.FindGameObjectWithTag("board").transform;
+
+    }
+
+    public void CollisionBoard(float rot)
+    {
         // ローカル座標基準で、現在の回転量へ加算する
-        BoardTransform.Rotate(0.0f, 0.0f, 90.0f);
+        GameObject.FindGameObjectWithTag("board").transform.Rotate(0.0f, 0.0f, rot);
+
     }
 }
