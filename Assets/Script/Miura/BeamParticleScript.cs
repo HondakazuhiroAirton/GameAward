@@ -36,7 +36,9 @@ public class BeamParticleScript : MonoBehaviour
     // 反射用当たり判定プレハブ格納
     public GameObject BeamBoxCastReflect;
 
-    
+    // ビームの見た目パーティクル格納
+    public GameObject BeamParticleSystemPrefab;
+
     // privateゾーン********************************************
     // 今の反射回数
     private int reflectCount = 0;
@@ -77,6 +79,7 @@ public class BeamParticleScript : MonoBehaviour
 
     void Update()
     {
+        Instantiate(BeamParticleSystemPrefab, this.transform.position, Quaternion.identity/*, this.transform*/);
         // 移動処理
         transform.position += moveDir;
     }
@@ -94,8 +97,6 @@ public class BeamParticleScript : MonoBehaviour
             {
                 // 反射回数が設定されていれば1減らす
                 if (ReflectMax < 1000) reflectCount--;
-
-                //reflectCount++;
 
                 // 子供の変数を1進める
                 child++;
