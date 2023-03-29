@@ -7,8 +7,6 @@ public class BeamManager : MonoBehaviour
     [SerializeField]
     private GameObject Beam;
 
-
-
     float ChargeTime;
 
     // Start is called before the first frame update
@@ -30,6 +28,6 @@ public class BeamManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
     }
 }
