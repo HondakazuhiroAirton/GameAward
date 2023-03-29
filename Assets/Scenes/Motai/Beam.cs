@@ -8,9 +8,11 @@ public class Beam : MonoBehaviour
     public ParticleSystem ps;
     public Ray ray;
     private Vector3 Position;
+    //private GameObject Player;
 
     void Start()
     {
+       
         ps.Stop();
 
         ray.GetPoint(10000f);
