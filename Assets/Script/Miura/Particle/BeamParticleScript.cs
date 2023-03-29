@@ -52,7 +52,7 @@ public class BeamParticleScript : MonoBehaviour
     private float ZMove = 0.0f;
 
     // “–‚½‚è”»’è‚ÌŠg‘å—¦‚ð•Û‘¶
-    private float xCollisionSize = 1.0f;
+   // private float xCollisionSize = 1.0f;
 
 
     void Start()
