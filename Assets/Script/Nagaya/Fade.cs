@@ -16,6 +16,7 @@ public class Fade : MonoBehaviour
 
     Image fadeImage;                //透明度を変更するパネルのイメージ
 
+
     void Start()
     {
         fadeImage = GetComponent<Image>();
@@ -46,8 +47,6 @@ public class Fade : MonoBehaviour
         if (alfa <= 0)
         {                    //c)完全に透明になったら処理を抜ける
             isFadeIn = false;
-            
-
         }
     }
 

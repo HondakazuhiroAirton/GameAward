@@ -8,7 +8,7 @@ using TMPro;
 public class TimeCounter : MonoBehaviour
 {
     //カウントダウン
-    public float countdown = 5.0f;
+    public float countdown;
 
     //時間を表示するText型の変数
     TextMeshProUGUI timeText;
@@ -18,8 +18,9 @@ public class TimeCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Image = GameObject.Find("Image");
+        Image = GameObject.Find("timeText");
         this.timeText = GameObject.Find("timeText").GetComponent<TextMeshProUGUI>();
+
     }
 
     // Update is called once per frame

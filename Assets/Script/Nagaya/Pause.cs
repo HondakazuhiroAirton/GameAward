@@ -10,25 +10,25 @@ public class Pause : MonoBehaviour
     [SerializeField]
     private GameObject pauseUI;
 
-
-    Button resume;
-    Button restart;
-    Button stageselect;
+    //ボタン設定
+    private Button resume;
+    private Button restart;
+    private Button stageselect;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        pauseUI.SetActive(false);
-
-        resume = GameObject.Find("/Canvas/Panel/PausePanel/Resume").GetComponent<Button>();
-        restart = GameObject.Find("/Canvas/Panel/PausePanel/Restart").GetComponent<Button>();
-        stageselect = GameObject.Find("/Canvas/Panel/PausePanel/StageSelect").GetComponent<Button>();
+        //ボタンの読み込み
+        resume = GameObject.Find("Resume").GetComponent<Button>();
+        restart = GameObject.Find("Restart").GetComponent<Button>();
+        stageselect = GameObject.Find("StageSelect").GetComponent<Button>();
 
         //ボタンが選択された状態になる
         resume.Select();
 
 
+        pauseUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -61,6 +61,7 @@ public class Pause : MonoBehaviour
     {
         //　ポーズUIのアクティブ、非アクティブを切り替え
         pauseUI.SetActive(!pauseUI.activeSelf);
+
 
         //　ポーズUIが表示されてる時は停止
         if (pauseUI.activeSelf)

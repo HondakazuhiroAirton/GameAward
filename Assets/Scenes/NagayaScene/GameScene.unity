@@ -533,7 +533,6 @@ GameObject:
   - component: {fileID: 304616950}
   - component: {fileID: 304616949}
   - component: {fileID: 304616951}
-  - component: {fileID: 304616952}
   m_Layer: 5
   m_Name: PausePanel
   m_TagString: Untagged
@@ -622,19 +621,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &304616952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304616947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f3a8ad6a85fc834986f725daf983570, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseUI: {fileID: 1536654266}
 --- !u!1 &551549197
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +706,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 304616952}
+      - m_Target: {fileID: 2108412109}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: ButtonRestart
         m_Mode: 1
@@ -925,11 +911,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555868424}
   m_CullTransparentMesh: 1
---- !u!1 &566541345 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5658186226989422044, guid: 67ae030a18a96bc43a47a5afa14b9bbc, type: 3}
-  m_PrefabInstance: {fileID: 1120248632}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &627262100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,19 +1053,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 5658186226989422046, guid: 67ae030a18a96bc43a47a5afa14b9bbc, type: 3}
   m_PrefabInstance: {fileID: 1120248632}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &658923212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566541345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f3a8ad6a85fc834986f725daf983570, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseUI: {fileID: 1536654266}
 --- !u!224 &924664852 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7162555224797711074, guid: 08c37032e0d65554a8892746313bcdf9, type: 3}
@@ -1535,7 +1503,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 304616952}
+      - m_Target: {fileID: 2108412109}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: ButtonStage
         m_Mode: 1
@@ -2145,7 +2113,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 304616952}
+      - m_Target: {fileID: 2108412109}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: ButtonContinue
         m_Mode: 1
@@ -2327,3 +2295,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2108412105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7162555224797711086, guid: 08c37032e0d65554a8892746313bcdf9, type: 3}
+  m_PrefabInstance: {fileID: 1032895826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2108412109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108412105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3a8ad6a85fc834986f725daf983570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 1536654266}
