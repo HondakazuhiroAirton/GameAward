@@ -36,7 +36,8 @@ public class BoxCastScript : MonoBehaviour
     // 何番目の子供か
     public int ChildNo = 1;
 
-
+    //  レイヤーマスク
+    public LayerMask LayerMask;
     // privateゾーン*****************************************************
     // BoxCast情報を格納
     private RaycastHit hit;
@@ -134,7 +135,7 @@ public class BoxCastScript : MonoBehaviour
         maxDistance = Mathf.Sqrt(maxDistance);
 
         // BoxCastを飛ばす 　　　　場所                  大きさ             方向(ベクトル)              回転方向?  
-        isHit = Physics.BoxCast(transform.position, Vector3.one * scale, ParticleVector, out hit, Quaternion.identity, maxDistance);
+        isHit = Physics.BoxCast(transform.position, Vector3.one * scale, ParticleVector, out hit, Quaternion.identity, maxDistance,LayerMask);
         //                                                                                ↑あたったオブジェクトをここに格納  
     }
 
