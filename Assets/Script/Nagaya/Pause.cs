@@ -18,6 +18,7 @@ public class Pause : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
 
         //ƒ{ƒ^ƒ“‚Ì“Ç‚İ‚İ
         resume = GameObject.Find("Resume").GetComponent<Button>();
