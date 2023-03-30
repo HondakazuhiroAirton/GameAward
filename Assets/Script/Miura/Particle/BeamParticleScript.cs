@@ -12,7 +12,7 @@ public class BeamParticleScript : MonoBehaviour
     // ゲーム中の変数属性***********************
     // 移動する角度
     public float Angle = 0.0f; // 親の回転角度指定
-    public float Speed = 0.1f; // 移動速度はここで変更してね
+    public float Speed = 2.0f; // 移動速度はここで変更してね
 
     // 反射回数
     public int ReflectMax = 1000; // 1000で反射制限なし
@@ -57,10 +57,10 @@ public class BeamParticleScript : MonoBehaviour
 
     void Start()
     {
-      // Angleから移動量を求める処理
-        
+       // Angleから移動量を求める処理
+
         // Angle(度)をラジアンに変更
-        Angle = Mathf.Deg2Rad * Angle;
+          Angle = Mathf.Deg2Rad * Angle;
 
         // XMoveとYMoveにCos/Sinで移動量を求める
         XMove = Mathf.Cos(Angle);
@@ -89,9 +89,9 @@ public class BeamParticleScript : MonoBehaviour
         //throw new System.NotImplementedException();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Reflector") // 反射するオブジェクトにあたったら発動
+        if (other.gameObject.tag == "Reflector") // 反射するオブジェクトにあたったら発動
         {
             if (ReflectMax > reflectCount)
             {
@@ -100,6 +100,8 @@ public class BeamParticleScript : MonoBehaviour
 
                 // 子供の変数を1進める
                 child++;
+
+                Debug.Log("反射物にあたったよ");
 
                 // 伸びてたBoxCastを縮小状態にする
                 // BoxCastを取得
@@ -112,7 +114,7 @@ public class BeamParticleScript : MonoBehaviour
                 NowBoxCast.GetComponent<BoxCastScript>().NowState = BoxCastScript.State.SCALE_STAY;
 
                 // Wallの反射アクションを起こす
-                collision.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
+                other.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
 
                 // 前もってプレハブの大きさを変更しておく
                 BeamBoxCastReflect.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
