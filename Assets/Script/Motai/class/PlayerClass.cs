@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerClass : MonoBehaviour
 {
-    class Player
+
+    public void GetPlayerLife()// 残機
     {
-        public int GetPlayerLife;// 残機
-        public float GetBeamAmount;// 残量
+
     }
+    public void GetBeamAmount()// 残量
+    {
+
+    }
+
 }
