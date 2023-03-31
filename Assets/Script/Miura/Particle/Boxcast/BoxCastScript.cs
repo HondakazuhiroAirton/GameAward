@@ -8,6 +8,7 @@ public class BoxCastScript : MonoBehaviour
     public enum State
     {
         SCALE_UP = 0,
+        SCALE_UPandDOWN,
         SCALE_STAY,
         SCALE_DOWN,
 
@@ -89,8 +90,34 @@ public class BoxCastScript : MonoBehaviour
                 // 単位ベクトルにする
                 ParticleVector = ParticleVector.normalized;
 
-               
+                //距離が～以上の時
+                //if ()
+                //{
+
+                //}
+
+
                 break;
+
+            // 伸びながら縮む時
+            case State.SCALE_UPandDOWN:
+
+                // 縮小
+                transform.position += moveDir;
+
+                // 拡大状態の時はBeamParticleのポジションを取得する
+                ParticlePosition = BeamParticle.transform.position;
+
+                // ベクトルを計算する
+                ParticleVector = ParticlePosition - BoxCastPosition;
+
+                // 単位ベクトルにする
+                ParticleVector = ParticleVector.normalized;
+
+
+                break;
+
+
 
             // 状態維持の時
             case State.SCALE_STAY:
@@ -124,7 +151,10 @@ public class BoxCastScript : MonoBehaviour
 
                 break;
 
+                
+
         }
+
 
         // 2点間の距離を求める
         maxDistance = Mathf.Pow((ParticlePosition.x - BoxCastPosition.x), 2.0f) +
@@ -137,6 +167,18 @@ public class BoxCastScript : MonoBehaviour
         // BoxCastを飛ばす 　　　　場所                  大きさ             方向(ベクトル)              回転方向?  
         isHit = Physics.BoxCast(transform.position, Vector3.one * scale, ParticleVector, out hit, Quaternion.identity, maxDistance,LayerMask);
         //                                                                                ↑あたったオブジェクトをここに格納  
+
+        // BoxCastにあたったオブジェクトの処理
+        if (isHit == true)
+        {
+            GameObject hitObject = hit.collider.gameObject;
+
+            // 多分この処理はインターフェスで渡してEnemy側で作った方がいい
+            Destroy(hitObject);
+            
+        }
+
+
     }
 
     void OnDrawGizmos()

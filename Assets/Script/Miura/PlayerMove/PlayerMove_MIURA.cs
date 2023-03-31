@@ -268,8 +268,6 @@ public class PlayerMove_MIURA : MonoBehaviour
             // プレイヤーのZ軸を参考にする
             float PlayerAngle = this.transform.localEulerAngles.z;
 
-            Debug.Log(PlayerAngle);
-
             // BeamParticleの角度を変更する
             BeamParticleManager.GetComponent<BeamParticleScript>().Angle = PlayerAngle - 90;
 
