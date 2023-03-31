@@ -2,16 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class playerdete
+{
+    private int life;
+    private float amount;
+    // 残機
+    public int GetLife()
+    {
+        return life;
+    }
+    public void SetLife(int value)
+    {
+        life = value;
+    }
+    // 残量
+    public float GetAmount()
+    {
+        return amount;
+    }
+    public void SetAmount(int value)
+    {
+        amount = value;
+    }
+}
 public class PlayerClass : MonoBehaviour
 {
 
-    public void GetPlayerLife()// 残機
+    void Start()
     {
 
     }
-    public void GetBeamAmount()// 残量
-    {
-
-    }
-
 }
