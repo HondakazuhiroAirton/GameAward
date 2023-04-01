@@ -12,7 +12,7 @@ public class Continue : MonoBehaviour
     private GameObject continueUI;
 
     //ボタン設定
-    private Button stageselect;
+    private Button returnselect;
     private Button retry;
     private Button nextstage;
 
@@ -21,7 +21,7 @@ public class Continue : MonoBehaviour
     void Start()
     {
         //ボタンの読み込み
-        stageselect = GameObject.Find("StageSelect").GetComponent<Button>();
+        returnselect = GameObject.Find("ReturnSelect").GetComponent<Button>();
         retry = GameObject.Find("Retry").GetComponent<Button>();
         nextstage = GameObject.Find("NextStage").GetComponent<Button>();
 
