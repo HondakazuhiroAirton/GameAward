@@ -12,7 +12,7 @@ public class Continue : MonoBehaviour
     private GameObject continueUI;
 
     //ボタン設定
-    private Button returnselect;
+    private Button stageselect;
     private Button retry;
     private Button nextstage;
 
@@ -21,7 +21,7 @@ public class Continue : MonoBehaviour
     void Start()
     {
         //ボタンの読み込み
-        returnselect = GameObject.Find("ReturnSelect").GetComponent<Button>();
+        stageselect = GameObject.Find("StageSelect").GetComponent<Button>();
         retry = GameObject.Find("Retry").GetComponent<Button>();
         nextstage = GameObject.Find("NextStage").GetComponent<Button>();
 
@@ -37,9 +37,7 @@ public class Continue : MonoBehaviour
     {
         if (Input.GetKeyDown("v"))
         {
-           // SetActive();
-        // パネルUIのアクティブ非アクティブを切り替え
-        continueUI.SetActive(!continueUI.activeSelf);
+           SetActive();
         }
         
     }
@@ -59,10 +57,10 @@ public class Continue : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-//   public void SetActive()
-//   {
-//       //パネルUIのアクティブ、非アクティブを切り替え
-//       continueUI.SetActive(!continueUI.activeSelf);
-//   }
+   public void SetActive()
+   {
+       //パネルUIのアクティブ、非アクティブを切り替え
+       continueUI.SetActive(!continueUI.activeSelf);
+   }
 
 }

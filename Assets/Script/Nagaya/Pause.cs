@@ -14,6 +14,7 @@ public class Pause : MonoBehaviour
     private Button resume;
     private Button restart;
     private Button stageselect;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +40,14 @@ public class Pause : MonoBehaviour
         {
             //　ポーズUIのアクティブ、非アクティブを切り替え
             pauseUI.SetActive(!pauseUI.activeSelf);
+            
 
             //　ポーズUIが表示されてる時は停止
             if (pauseUI.activeSelf)
             {
                 Time.timeScale = 0f;
                 //　ポーズUIが表示されてなければ通常通り進行  
+                
             }
             else
             {              
