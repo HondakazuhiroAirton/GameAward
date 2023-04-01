@@ -26,7 +26,7 @@ public class Continue : MonoBehaviour
     void Awake()
     {
         //ボタンの読み込み
-        stageselect = GameObject.Find("StageSelect").GetComponent<Button>();
+        stageselect = GameObject.Find("ReturnSelect").GetComponent<Button>();
         retry = GameObject.Find("Retry").GetComponent<Button>();
         nextstage = GameObject.Find("NextStage").GetComponent<Button>();
 
@@ -38,9 +38,7 @@ public class Continue : MonoBehaviour
     {
         if (Input.GetKeyDown("v"))
         {
-<<<<<<< HEAD
-           SetActive();
-=======
+
             // パネルUIのアクティブ非アクティブを切り替え
             Active();
 
@@ -57,7 +55,7 @@ public class Continue : MonoBehaviour
             {
                 Time.timeScale = 1f;
             }
->>>>>>> feature/mukaide
+
         }
 
         if (Mathf.Approximately(Time.timeScale, 0f))
@@ -82,11 +80,8 @@ public class Continue : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-<<<<<<< HEAD
-   public void SetActive()
-=======
+
    public void Active()
->>>>>>> feature/mukaide
    {
        //パネルUIのアクティブ、非アクティブを切り替え
        continueUI.SetActive(!continueUI.activeSelf);
