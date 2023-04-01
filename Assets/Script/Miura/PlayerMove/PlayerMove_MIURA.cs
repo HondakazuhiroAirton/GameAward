@@ -41,8 +41,14 @@ public class PlayerMove_MIURA : MonoBehaviour
     public float BoxCastScale = 0.0f;
     // チャージした時間を格納する変数(必要)
     public float ChargeTime = 0.0f;
-    // ビームが1秒間に大きくなる基準
+    // ビームの横幅が1秒間に大きくなる基準
     public float BeamExpansion = 100.0f;
+    // ビームの最大の長さ
+    public float BeamMax = 30.0f;
+    // ビームの長さが1秒間に大きくなる基準
+    public float BeamExpansionDistance = 0.0001f;
+    // ビームの長さの基準
+    public float BeamDistanceKijun;
     //********************************************************************************
 
     // Start is called before the first frame update
@@ -82,6 +88,8 @@ public class PlayerMove_MIURA : MonoBehaviour
         //0329_三浦瞬追記****************************************************************
         // チャージした時間を貯める
         ChargeTime = 0.0f;
+        // 基準値初期化
+        BeamDistanceKijun = 10.0f;
     }
 
 
@@ -240,7 +248,8 @@ public class PlayerMove_MIURA : MonoBehaviour
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space)) // キーコードは変更してね(*^^*)
         {
-            ChargeTime = ChargeTime + BeamExpansion * Time.deltaTime;
+            // 毎フレーム時間を計測する
+            ChargeTime = ChargeTime + Time.deltaTime /*補正値掛ける??*/;
 
             // 最大値は多分こんな感じでつくる
             if (ChargeTime >= 30.0f)
@@ -251,9 +260,19 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space)) // Downと同じキーコードにしてね
         {
+            // 計測した時間から各種値を計算する
 
-            // サイズを更新する
-            BoxCastScale = ChargeTime;
+            // サイズを計算する
+            BoxCastScale = ChargeTime * BeamExpansion;
+
+            // 最大距離距離を計算する
+            BeamMax = ChargeTime * BeamExpansionDistance + BeamDistanceKijun;
+
+            // 最大値補正
+            if (BeamMax >= 50.0f)
+            {
+                BeamMax = 50.0f;
+            }
 
             // ビームマネージャーの中のBoxCastを取得
             GameObject BoxCast = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
@@ -270,6 +289,9 @@ public class PlayerMove_MIURA : MonoBehaviour
 
             // BeamParticleの角度を変更する
             BeamParticleManager.GetComponent<BeamParticleScript>().Angle = PlayerAngle - 90;
+
+            // BeamParticleのBeamMaxを変更する
+            BeamParticleManager.GetComponent<BeamParticleScript>().BeamMax = BeamMax;
 
             // プレハブを指定位置に生成
             Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);

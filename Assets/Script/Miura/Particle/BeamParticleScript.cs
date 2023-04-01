@@ -29,6 +29,9 @@ public class BeamParticleScript : MonoBehaviour
     // 移動量保存
     public Vector3 moveDir;
 
+    // Beamの最大距離
+    public float BeamMax;
+
     // 角度の補正値(BeamCollisionのAngleHoseiをWall側から代入する)
     public float AngleHosei;
 
@@ -129,8 +132,8 @@ public class BeamParticleScript : MonoBehaviour
             }
             else
             {
-                // 反射回数がなくなったら、Destroyする
-                Destroy(this.gameObject);
+                // 反射回数がなくなったら、非アクティブにする
+                this.gameObject.SetActive(false);
             }
         }
     }

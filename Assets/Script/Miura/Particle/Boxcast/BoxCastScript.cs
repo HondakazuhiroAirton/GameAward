@@ -25,6 +25,9 @@ public class BoxCastScript : MonoBehaviour
     // パーティクルの位置取得
     public Vector3 ParticlePosition;
 
+    // ビームの最長
+    public float BeamMax;
+
     // パーティクルの移動ベクトル取得
     public Vector3 ParticleVector;
 
@@ -67,6 +70,9 @@ public class BoxCastScript : MonoBehaviour
 
         // BeamParticleのスピードを取得する
         moveDir = BeamParticle.GetComponent<BeamParticleScript>().moveDir;
+
+        // BeamParticleの長さを取得する
+        BeamMax = BeamParticle.GetComponent<BeamParticleScript>().BeamMax;
     }
 
     void Update()
@@ -90,11 +96,12 @@ public class BoxCastScript : MonoBehaviour
                 // 単位ベクトルにする
                 ParticleVector = ParticleVector.normalized;
 
-                //距離が～以上の時
-                //if ()
-                //{
-
-                //}
+                // ビームの長さが一定以上になったら
+                if (Vector3.Distance(ParticlePosition, transform.position) >= BeamMax)
+                {
+                    // 伸び縮みのStateに変更する
+                    NowState = State.SCALE_UPandDOWN;
+                }
 
 
                 break;
