@@ -36,8 +36,8 @@ public class DeathWall : MonoBehaviour
             // 一番最新のBoxCastをState.SCALE_STAYにする
             NewBoxCast.GetComponent<BoxCastScript>().NowState = BoxCastScript.State.SCALE_STAY;
 
-            // 先行するParticleをデストロイする
-            Destroy(other.gameObject);
+            // 先行するParticleを非アクティブにする
+            other.gameObject.SetActive(false);
 
         }
     }
