@@ -20,14 +20,15 @@ public class Continue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    void Awake()
+    {
         //ボタンの読み込み
         returnselect = GameObject.Find("ReturnSelect").GetComponent<Button>();
         retry = GameObject.Find("Retry").GetComponent<Button>();
         nextstage = GameObject.Find("NextStage").GetComponent<Button>();
-
-        //ボタンが選択された状態になる
-        retry.Select();
-
 
         continueUI.SetActive(false);
     }
@@ -37,11 +38,29 @@ public class Continue : MonoBehaviour
     {
         if (Input.GetKeyDown("v"))
         {
-           // SetActive();
-        // パネルUIのアクティブ非アクティブを切り替え
-        continueUI.SetActive(!continueUI.activeSelf);
+            // パネルUIのアクティブ非アクティブを切り替え
+            Active();
+
+            //ボタンが選択された状態になる
+            retry.Select();      
+
+            //　ポーズUIが表示されてる時は停止
+            if (continueUI.activeSelf)
+            {
+                Time.timeScale = 0f;
+                //　ポーズUIが表示されてなければ通常通り進行  
+            }
+            else
+            {
+                Time.timeScale = 1f;
+            }
         }
-        
+
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
     }
 
     public void ButtonStageSelect()
@@ -59,10 +78,10 @@ public class Continue : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-//   public void SetActive()
-//   {
-//       //パネルUIのアクティブ、非アクティブを切り替え
-//       continueUI.SetActive(!continueUI.activeSelf);
-//   }
+   public void Active()
+   {
+       //パネルUIのアクティブ、非アクティブを切り替え
+       continueUI.SetActive(!continueUI.activeSelf);
+   }
 
 }

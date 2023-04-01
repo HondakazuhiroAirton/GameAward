@@ -17,17 +17,18 @@ public class Pause : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        Time.timeScale = 1f;
+    {  
 
+    }
+
+    void Awake()
+    {
         //ボタンの読み込み
         resume = GameObject.Find("Resume").GetComponent<Button>();
         restart = GameObject.Find("Restart").GetComponent<Button>();
         stageselect = GameObject.Find("StageSelect").GetComponent<Button>();
 
-        //ボタンが選択された状態になる
-        resume.Select();
-
+        Time.timeScale = 1f;
 
         pauseUI.SetActive(false);
     }
@@ -39,6 +40,9 @@ public class Pause : MonoBehaviour
         {
             //　ポーズUIのアクティブ、非アクティブを切り替え
             pauseUI.SetActive(!pauseUI.activeSelf);
+
+            //ボタンが選択された状態になる
+            resume.Select();
 
             //　ポーズUIが表示されてる時は停止
             if (pauseUI.activeSelf)
