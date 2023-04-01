@@ -37,8 +37,11 @@ public class Continue : MonoBehaviour
     {
         if (Input.GetKeyDown("v"))
         {
-            SetActive();
+           // SetActive();
+        // パネルUIのアクティブ非アクティブを切り替え
+        continueUI.SetActive(!continueUI.activeSelf);
         }
+        
     }
 
     public void ButtonStageSelect()
@@ -56,10 +59,10 @@ public class Continue : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-    public void SetActive()
-    {
-        //パネルUIのアクティブ、非アクティブを切り替え
-        continueUI.SetActive(!continueUI.activeSelf);
-    }
+//   public void SetActive()
+//   {
+//       //パネルUIのアクティブ、非アクティブを切り替え
+//       continueUI.SetActive(!continueUI.activeSelf);
+//   }
 
 }
