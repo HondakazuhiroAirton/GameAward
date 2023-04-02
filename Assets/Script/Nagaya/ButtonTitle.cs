@@ -16,10 +16,14 @@ public class ButtonTitle : MonoBehaviour
     private Button redo;
     private Button Continue;
 
+    public GameObject Image;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        Image = GameObject.Find("Image");
+
         //É{É^ÉìÇÃì«Ç›çûÇ›
         redo = GameObject.Find("Redo").GetComponent<Button>();
         Continue = GameObject.Find("Continue").GetComponent<Button>();
@@ -49,12 +53,12 @@ public class ButtonTitle : MonoBehaviour
 
     public void ButtonRedo()
     {
-        SceneManager.LoadScene("StageSelect");
+        Image.GetComponent<Fade>().GameSelect();
     }
 
     public void ButtonContinue()
     {
-        SceneManager.LoadScene("StageSelect");
+        Image.GetComponent<Fade>().GameSelect();
     }
 
     public void Active()
