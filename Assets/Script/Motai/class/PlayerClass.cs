@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerdete
+public class PlayerClass : MonoBehaviour
 {
-    private int life;
-    private float amount;
+    private int life = 0;
+    private float amount = 0;
     // Žc‹@
     public int GetLife()
     {
@@ -20,16 +20,9 @@ public class playerdete
     {
         return amount;
     }
-    public void SetAmount(int value)
+    public void SetAmount(float value)
     {
         amount = value;
     }
 }
-public class PlayerClass : MonoBehaviour
-{
 
-    void Start()
-    {
-
-    }
-}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMove_MIURA : MonoBehaviour
 {
@@ -33,8 +34,11 @@ public class PlayerMove_MIURA : MonoBehaviour
     public float LRpos;
     public float LLpos;
 
-
-    //0329_三浦瞬追記****************************************************************
+    //0402_三浦瞬追記****************************************************************
+    // プレイヤーデータ保存用オブジェクト取得
+    public GameObject PlayerDate;
+    // Geter/Seter用スクリプト保存
+    public PlayerClass PlayerClassScript;
     // プレハブ格納用
     public GameObject BeamParticleManagerPrefab;
     // チャージした時間によってビームの大きさが変わるサイズ変更用の変数
@@ -46,12 +50,13 @@ public class PlayerMove_MIURA : MonoBehaviour
     // ビームの最大の長さ
     public float BeamMax = 30.0f;
     // ビームの長さが1秒間に大きくなる基準
-    public float BeamExpansionDistance = 0.0001f;
+    public float BeamExpansionDistance = 1f;
     // ビームの長さの基準
     public float BeamDistanceKijun;
+    // ビーム使用量の基準
+    public float UseKijun = 10;
     //********************************************************************************
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -85,11 +90,17 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
 
-        //0329_三浦瞬追記****************************************************************
+        //0402_三浦瞬追記****************************************************************
         // チャージした時間を貯める
         ChargeTime = 0.0f;
         // 基準値初期化
         BeamDistanceKijun = 10.0f;
+
+        // Geter/Seter使用用スクリプト保持
+        PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
+
+        // ビーム残量を100%に設定
+        PlayerClassScript.SetAmount(100);
     }
 
 
@@ -136,7 +147,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
 
         }
-        //<<<下のライン移動>>>
+        // <<<下のライン移動>>>
         if (pos.y == Dpos.y)
         {
 
@@ -164,7 +175,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
 
         }
-        //<<<右のライン移動>>>
+        // <<<右のライン移動>>>
         if (pos.x == Rpos.x)
         {
 
@@ -257,15 +268,20 @@ public class PlayerMove_MIURA : MonoBehaviour
                 ChargeTime = 30.0f;
             }
 
+            // チャージ中の各種値表示
+            //Debug.Log("ChargeTimeは"+ChargeTime);
+            //Debug.Log("サイズは"+ ChargeTime * BeamExpansion);
+            //Debug.Log("飛距離は"+ ChargeTime * BeamExpansionDistance + BeamDistanceKijun);
+            //Debug.Log("ビーム消費量は"+ChargeTime);
         }
         if (Input.GetKeyUp(KeyCode.Space)) // Downと同じキーコードにしてね
         {
             // 計測した時間から各種値を計算する
 
-            // サイズを計算する
+            // 1.サイズを計算する
             BoxCastScale = ChargeTime * BeamExpansion;
 
-            // 最大距離距離を計算する
+            // 2.最大飛距離距離を計算する
             BeamMax = ChargeTime * BeamExpansionDistance + BeamDistanceKijun;
 
             // 最大値補正
@@ -274,32 +290,57 @@ public class PlayerMove_MIURA : MonoBehaviour
                 BeamMax = 50.0f;
             }
 
-            // ビームマネージャーの中のBoxCastを取得
-            GameObject BoxCast = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
+            // 3.消費エネルギーの計算
+            // 消費量を計算
+            float use = 3 /*最小使用量が3*/ + ChargeTime * UseKijun;
+            
+            // 最大量を決める
+            if (use >= 10)
+            {
+                use = 10;
+            }
 
-            // 取得したBoxCastのBoxCastスクリプト内(Scale)の大きさを変更する
-            BoxCast.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
+            // 減らす
+            // ビーム残量取得
+            float tempCharge = PlayerClassScript.GetAmount();
 
-            // プレイヤーの角度をBeamParticleに代入する
-            // BeamParticle取得
-            GameObject BeamParticleManager = BeamParticleManagerPrefab.gameObject.transform.GetChild(0).gameObject;
+            // 残量があれば
+            if ((tempCharge = tempCharge - use) > 0)
+            {
+                // ビーム残量を減らして
+                tempCharge = tempCharge - use;
+                // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
+                PlayerClassScript.SetAmount(tempCharge);
 
-            // プレイヤーのZ軸を参考にする
-            float PlayerAngle = this.transform.localEulerAngles.z;
+                // ビームマネージャーの中のBoxCastを取得
+                GameObject BoxCast = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
 
-            // BeamParticleの角度を変更する
-            BeamParticleManager.GetComponent<BeamParticleScript>().Angle = PlayerAngle - 90;
+                // 取得したBoxCastのBoxCastスクリプト内(Scale)の大きさを変更する
+                BoxCast.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
 
-            // BeamParticleのBeamMaxを変更する
-            BeamParticleManager.GetComponent<BeamParticleScript>().BeamMax = BeamMax;
+                // プレイヤーの角度をBeamParticleに代入する
+                // BeamParticle取得
+                GameObject BeamParticleManager = BeamParticleManagerPrefab.gameObject.transform.GetChild(0).gameObject;
 
-            // プレハブを指定位置に生成
-            Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);
-            // チャージ時間を戻す
-            ChargeTime = 0.0f;
+                // プレイヤーのZ軸を参考にする
+                float PlayerAngle = this.transform.localEulerAngles.z;
+
+                // BeamParticleの角度を変更する
+                BeamParticleManager.GetComponent<BeamParticleScript>().Angle = PlayerAngle - 90;
+
+                // BeamParticleのBeamMaxを変更する
+                BeamParticleManager.GetComponent<BeamParticleScript>().BeamMax = BeamMax;
+
+                // プレハブを指定位置に生成
+                Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);
+                // チャージ時間を戻す
+                ChargeTime = 0.0f;
+            }
         }
 
+
         // ビーム発射処理(ここまで)*************************************************************
+
 
     }
 }
