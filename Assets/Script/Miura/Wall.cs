@@ -15,7 +15,7 @@ public class Wall : MonoBehaviour,CollisionAction
         // 単位ベクトル化
         inDirection = inDirection.normalized;
     
-        // 法線ベクトル (取得が難しい。がんばる!!)
+        // 法線ベクトル (取得が難しい。がんばる!! -> なんか上手く言ってた。なんで??)
         Vector3 inNormal = transform.up.normalized;
 
 
