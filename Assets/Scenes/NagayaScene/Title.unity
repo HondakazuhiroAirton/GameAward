@@ -845,6 +845,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_CancelAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_LeftClickAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_RightClickAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_MiddleClickAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_ScrollWheelAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_TrackedDevicePositionAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_TrackedDeviceOrientationAction
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7648790685331296343, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
       propertyPath: m_Name
       value: 'EventSystem '

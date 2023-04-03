@@ -2674,6 +2674,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_PointAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_CancelAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_SubmitAction
+      value: 
+      objectReference: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_LeftClickAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_RightClickAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_MiddleClickAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_ScrollWheelAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_TrackedDevicePositionAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648790685331296331, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
+      propertyPath: m_TrackedDeviceOrientationAction
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7648790685331296343, guid: 31f6523a787636744b32bdc0c027129e, type: 3}
       propertyPath: m_Name
       value: EventSystem (1)
@@ -3136,6 +3172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 1536654266}
+  Image: {fileID: 0}
 --- !u!114 &2108412110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3149,3 +3186,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continueUI: {fileID: 622741881}
+  Image: {fileID: 0}
