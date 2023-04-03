@@ -16,11 +16,13 @@ public class Continue : MonoBehaviour
     private Button retry;
     private Button nextstage;
 
+    public GameObject Image;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //Fade�̎擾
+        Image = GameObject.Find("Image");
     }
 
     void Awake()
@@ -67,12 +69,12 @@ public class Continue : MonoBehaviour
 
     public void ButtonStageSelect()
     {
-        SceneManager.LoadScene("StageSelect");
+        Image.GetComponent<Fade>().GameSelect();
     }
 
     public void ButtonRetry()
     {
-        SceneManager.LoadScene("GameScene");
+        Image.GetComponent<Fade>().GameStart();
     }
 
     public void ButtonNextStage()

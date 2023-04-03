@@ -22,13 +22,20 @@ public class ButtonTitle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Fadeの取得
         Image = GameObject.Find("Image");
 
+        //ボタンが選択された状態になる
+        redo.Select();
+    }
+    void Awake()
+    {
         //ボタンの読み込み
         redo = GameObject.Find("Redo").GetComponent<Button>();
         Continue = GameObject.Find("Continue").GetComponent<Button>();
 
         titleUI.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -36,7 +43,7 @@ public class ButtonTitle : MonoBehaviour
     {
         //時間をカウントダウンする
         countdown -= Time.deltaTime;
-        
+
 
         //countdownが0以下になったとき
         if (countdown <= 0)
@@ -45,15 +52,13 @@ public class ButtonTitle : MonoBehaviour
 
             // パネルUIのアクティブ非アクティブを切り替え
             Active();
-            //ボタンが選択された状態になる
-            redo.Select();
         }
-        
+
     }
 
     public void ButtonRedo()
     {
-        Image.GetComponent<Fade>().GameSelect();
+        Image.GetComponent<Fade>().GameStart();
     }
 
     public void ButtonContinue()

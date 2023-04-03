@@ -14,12 +14,14 @@ public class Pause : MonoBehaviour
     private Button resume;
     private Button restart;
     private Button stageselect;
-    
+
+    public GameObject Image;
 
     // Start is called before the first frame update
     void Start()
-    {  
-
+    {
+        //Fade�̎擾
+        Image = GameObject.Find("Image");
     }
 
     void Awake()
@@ -90,11 +92,11 @@ public class Pause : MonoBehaviour
 
     public void ButtonStage()
     {
-        SceneManager.LoadScene("StageSelect");
+        Image.GetComponent<Fade>().GameSelect();
     }
 
     public void ButtonRestart()
     {
-        SceneManager.LoadScene("GameScene");
+        Image.GetComponent<Fade>().GameStart();
     }
 }

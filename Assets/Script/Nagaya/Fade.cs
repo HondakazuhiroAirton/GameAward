@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
-
     float fadeSpeed = 0.01f;        //透明度が変わるスピードを管理
     float red, green, blue, alfa;   //パネルの色、不透明度を管理
 

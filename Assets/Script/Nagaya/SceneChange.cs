@@ -16,10 +16,10 @@ public class SceneChange: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("return"))
-        {
-            Image.GetComponent<Fade>().GameStart();
-        }
+        //if (Input.GetKey("return"))
+        //{
+        //    Image.GetComponent<Fade>().GameStart();
+        //}
 
         if (Input.GetKey("b"))
         {
