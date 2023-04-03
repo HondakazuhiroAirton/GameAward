@@ -12,7 +12,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.textComponent = GameObject.Find("Text").GetComponent<TextMeshProUGUI>();
+        this.textComponent = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
         this.textComponent.text = "Score: " + score.ToString();
     }
 
