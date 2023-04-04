@@ -27,6 +27,7 @@ public class Continue : MonoBehaviour
 
     void Awake()
     {
+
         //ƒ{ƒ^ƒ“‚Ì“Ç‚İ‚İ
         stageselect = GameObject.Find("ReturnSelect").GetComponent<Button>();
         retry = GameObject.Find("Retry").GetComponent<Button>();
