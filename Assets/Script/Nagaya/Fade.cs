@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
-
     float fadeSpeed = 0.01f;        //透明度が変わるスピードを管理
     float red, green, blue, alfa;   //パネルの色、不透明度を管理
 
@@ -15,6 +14,7 @@ public class Fade : MonoBehaviour
     public string changeSceneName; // フェードアウト処理後、シーン遷移する場合のシーン名
 
     Image fadeImage;                //透明度を変更するパネルのイメージ
+
 
     void Start()
     {
@@ -46,8 +46,6 @@ public class Fade : MonoBehaviour
         if (alfa <= 0)
         {                    //c)完全に透明になったら処理を抜ける
             isFadeIn = false;
-            
-
         }
     }
 

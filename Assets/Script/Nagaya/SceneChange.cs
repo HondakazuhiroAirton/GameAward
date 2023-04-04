@@ -10,17 +10,16 @@ public class SceneChange: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    //    Fadeout = GameObject.Find("Panel");
-
+        Image = GameObject.Find("Image");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("return"))
-        {
-            Image.GetComponent<Fade>().GameStart();
-        }
+        //if (Input.GetKey("return"))
+        //{
+        //    Image.GetComponent<Fade>().GameStart();
+        //}
 
         if (Input.GetKey("b"))
         {

@@ -1,0 +1,5 @@
+name,HP,PosX,PosY,PosZ,category,sprite
+enemy01,10,0,0,0,type1,
+enemy02,10,0,100,0,type2,
+enemy03,10,0,200,0,type2,
+Enemy05,10,0,500,0,type1,
