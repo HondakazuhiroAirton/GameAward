@@ -9,6 +9,7 @@ TagManager:
   - shaft
   - board
   - warp
+  - Reflector
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,11 @@ TagManager:
   - 
   - Water
   - UI
+<<<<<<< HEAD
   - Gimmick
+=======
+  - HitLayer
+>>>>>>> develop
   - 
   - 
   - 
