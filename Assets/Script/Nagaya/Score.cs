@@ -34,6 +34,6 @@ public class Score : MonoBehaviour
 
     public int ResultScore()
     {
-        score;
+      return  score;
     }
 }

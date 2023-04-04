@@ -26,6 +26,7 @@ public class Pause : MonoBehaviour
 
     void Awake()
     {
+
         //ƒ{ƒ^ƒ“‚Ì“Ç‚İ‚İ
         resume = GameObject.Find("Resume").GetComponent<Button>();
         restart = GameObject.Find("Restart").GetComponent<Button>();
