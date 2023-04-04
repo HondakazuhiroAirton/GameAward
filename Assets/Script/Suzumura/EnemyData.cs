@@ -11,7 +11,8 @@ public class EnemyData
     public int PosY;                    // Y座標
     public int PosZ;                    // Z座標
     public Sprite sprite;               // 画像読み込み(パス)
-    //public int AppearanceTime;          // 出現時間？
+    public int AppearanceTime;          // 出現時間
+    public bool Bool;
 }
 
 // 敵カテゴリー列挙型

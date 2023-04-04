@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     //オリジナルのオブジェクト
     public GameObject enemy;
 
-    private const float spawnRate = 2.0f;       // 出現間隔
+    //private const float spawnRate = 2.0f;       // 出現間隔
     private float spawnRealTime = 0;            // リアルタイム
     private int i;                              // 配列番号
 
@@ -32,17 +32,22 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         spawnRealTime += Time.deltaTime;
-        if (spawnRealTime >= spawnRate)
+        for (i = 0; i < 4; i++)
         {
-            spawnNewEnemy();
-            spawnRealTime = 0;
+            if (spawnRealTime >= enemyData[i].AppearanceTime)
+            {
+                if (enemyData[i].Bool == true)
+                {
+                    spawnNewEnemy();
+                    enemyData[i].Bool = false;
+                }
+            }
         }
     }
 
     // 敵出現
     void spawnNewEnemy()
     {
-        i++;
         GameObject newenemy = Instantiate(enemy, new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ), Quaternion.identity);
     }
 }
