@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResultUI : MonoBehaviour
 {
@@ -9,12 +10,18 @@ public class ResultUI : MonoBehaviour
     private GameObject resultUI;
 
     public GameObject Image;
+    public GameObject Score;
+    static int score;
 
     // Start is called before the first frame update
     void Start()
     {
         //Fadeの取得
         Image = GameObject.Find("Image");
+
+        //スコアの取得
+        Score = GameObject.Find("Score");
+        score = Score.GetComponent<Score>().ResultScore();
     }
 
     // Update is called once per frame
@@ -26,7 +33,7 @@ public class ResultUI : MonoBehaviour
             // パネルUIのアクティブ非アクティブを切り替え
             Active();
 
-
+           
 
         }
         }

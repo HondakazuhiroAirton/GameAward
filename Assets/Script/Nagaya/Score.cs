@@ -31,4 +31,9 @@ public class Score : MonoBehaviour
         this.score += 10;
         this.textComponent.text = "Score: " + score.ToString();
     }
+
+    public int ResultScore()
+    {
+        score;
+    }
 }
