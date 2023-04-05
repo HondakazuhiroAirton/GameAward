@@ -10,12 +10,15 @@ public class Enemy : MonoBehaviour
     // 流し込む配列
     public EnemyData[] enemyData;
 
-    //オリジナルのオブジェクト
+    //オブジェクト
     public GameObject enemy;
+    public GameObject enemycollision;
 
-    //private const float spawnRate = 2.0f;       // 出現間隔
+    //private const float spawnRate = 2.0f;       // 出現間隔(つかってない)
     private float spawnRealTime = 0;            // リアルタイム
     private int i;                              // 配列番号
+
+    Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,8 @@ public class Enemy : MonoBehaviour
         textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
         // CSVSerializerを用いてcsvファイルを配列に流し込む
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
+
+        targetPosition = new Vector3(0, 1, 0);
     }
 
     // Update is called once per frame
@@ -34,13 +39,21 @@ public class Enemy : MonoBehaviour
         spawnRealTime += Time.deltaTime;
         for (i = 0; i < 4; i++)
         {
-            if (spawnRealTime >= enemyData[i].AppearanceTime)
+            // 敵未出現の場合
+            if (enemyData[i].State == 0)
             {
-                if (enemyData[i].Bool == true)
+                // 時間になったら敵の出現
+                if (spawnRealTime >= enemyData[i].AppearanceTime)
                 {
                     spawnNewEnemy();
-                    enemyData[i].Bool = false;
+                    enemyData[i].State = 1;
                 }
+            }
+            // 敵出ている
+            else
+            {
+                Vector3 pos = new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ);
+                transform.position = Vector3.MoveTowards(pos, targetPosition, Time.deltaTime * 50);
             }
         }
     }
@@ -49,6 +62,7 @@ public class Enemy : MonoBehaviour
     void spawnNewEnemy()
     {
         GameObject newenemy = Instantiate(enemy, new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ), Quaternion.identity);
+        GameObject newenemycollision = Instantiate(enemycollision, new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ), Quaternion.identity);
     }
 }
 
