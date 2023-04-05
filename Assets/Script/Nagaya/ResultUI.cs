@@ -12,8 +12,11 @@ public class ResultUI : MonoBehaviour
 
     //変数取得のためのオブジェクト取得
     //＜関数読み取りのためゲームオブジェクト取得してます＞
+    public GameObject Combo;
+    public GameObject Numenemy;
+    public GameObject Beam;
     public GameObject Score;
- 
+
 
     //テキストオブジェクト取得  
     TextMeshProUGUI Cm;
@@ -22,27 +25,40 @@ public class ResultUI : MonoBehaviour
     TextMeshProUGUI Rs;
     TextMeshProUGUI Ts;
 
-
-    static int score;
+    static int combo;       //コンボ
+    static int numenemy;    //倒した敵
+    static int beam;        //ビーム
+    static int score;       //スコア
+    static int totalscore;  //合計
 
     // Start is called before the first frame update
     void Start()
     {
-       ////コンボ
-       //Cm = GameObject.Find("Combo").GetComponent<TextMeshProUGUI>();
-       //
-       ////倒した敵
-       //Ne = GameObject.Find("Numenemy").GetComponent<TextMeshProUGUI>();
-       //
-       ////ビーム
-       //Bm = GameObject.Find("Beam").GetComponent<TextMeshProUGUI>();
+        //初期化
+        combo = 0;
+        numenemy = 0;
+        beam = 100;
+        score = 0;
+        totalscore = 0;
+
+        //コンボ
+        //Combo = GameObject.Find("");
+        Cm = GameObject.Find("Combo").GetComponent<TextMeshProUGUI>();
+
+        //倒した敵
+        //Numenemy = GameObject.Find("");
+        Ne = GameObject.Find("NumEnemy").GetComponent<TextMeshProUGUI>();
+
+        //ビーム
+        //Beam = GameObject.Find("");
+        Bm = GameObject.Find("Beam").GetComponent<TextMeshProUGUI>();
 
         //スコアの取得
         Score = GameObject.Find("Score");
         Rs = GameObject.Find("ResultScore").GetComponent<TextMeshProUGUI>();
 
-        ////合計
-        //Ts = GameObject.Find("TotalScore").GetComponent<TextMeshProUGUI>();
+        //合計
+        Ts = GameObject.Find("TotalScore").GetComponent<TextMeshProUGUI>();
 
         resultUI.SetActive(false);
     }
@@ -54,13 +70,20 @@ public class ResultUI : MonoBehaviour
         {
             // パネルUIのアクティブ非アクティブを切り替え
             Active();
+            //タイマーを止める
+            Time.timeScale = 0f;
 
             //テキスト表示
             score = Score.GetComponent<Score>().ResultScore();
             Rs.text = "Score: " + score.ToString();
 
-            //タイマーを止める
-            Time.timeScale = 0f;
+
+
+
+            //合計の計算
+            totalscore = combo + numenemy + beam + score;
+            Ts.text = "TotalScore: " + totalscore.ToString();
+
         }
     }
 
