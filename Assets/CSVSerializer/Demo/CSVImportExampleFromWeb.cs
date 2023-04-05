@@ -27,7 +27,7 @@ public class CSVImportExampleFromWeb : Editor
         //WWWForm form = new WWWForm();
         //UnityWebRequest www = UnityWebRequest.Post(url, form);
         UnityWebRequest www = UnityWebRequest.Get(url);
-        yield return www.Send();
+        yield return www.SendWebRequest();
 
         while (www.isDone == false)
         {
