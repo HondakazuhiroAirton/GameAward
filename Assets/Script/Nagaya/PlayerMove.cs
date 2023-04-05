@@ -33,6 +33,12 @@ public class PlayerMove : MonoBehaviour
     public float LRpos;
     public float LLpos;
 
+    public bool Up;
+    public bool Down;
+    public bool Right;
+    public bool Left;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +73,10 @@ public class PlayerMove : MonoBehaviour
 
         this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
 
+        SetWallFlag(0, true);
+        SetWallFlag(1, true);
+        SetWallFlag(2, true);
+        SetWallFlag(3, true);
     }
 
     // Update is called once per frame
@@ -192,26 +202,50 @@ public class PlayerMove : MonoBehaviour
 
 
         //ワープ
-        if (Input.GetKey("1"))//上
+        if (Up == true)
         {
-            this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (Input.GetKey("1"))//上
+            {
+                this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
         }
-        if (Input.GetKey("2"))//下
+        if (Down == true)
         {
-            this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z - 1);
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+            if (Input.GetKey("2"))//下
+            {
+                this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z - 1);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
         }
-        if (Input.GetKey("3"))//右
+        if (Right == true)
         {
-            this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z - 1);
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+            if (Input.GetKey("3"))//右
+            {
+                this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z - 1);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+            }
         }
-        if (Input.GetKey("4"))//左
+        if (Left == true)
         {
-            this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z - 1);
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+            if (Input.GetKey("4"))//左
+            {
+                this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z - 1);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+            }
         }
 
+
+    }
+
+    void SetWallFlag(int num,bool flag)
+    {
+        switch(num)
+        {
+            case 0: { Up = flag; break; }
+            case 1: { Down = flag; break; }
+            case 2: { Right = flag; break; }
+            case 3: { Left = flag; break; }
+        }
     }
 }
