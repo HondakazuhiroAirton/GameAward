@@ -150,13 +150,13 @@ public class PlayerMove : MonoBehaviour
             pos.x = Rpos.x;
 
             //ライン外にいかない処理
-            if (pos.y >= RRpos - Scale.y / 2)
+            if (pos.y >= RRpos - Scale.x / 2)
             {
-                pos.y = RRpos - Scale.y / 2;
+                pos.y = RRpos - Scale.x / 2;
             }
-            else if (pos.y <= RLpos + Scale.y / 2)
+            else if (pos.y <= RLpos + Scale.x / 2)
             {
-                pos.y = RLpos + Scale.y / 2;
+                pos.y = RLpos + Scale.x / 2;
             }
 
             //w入力で上向きに動く
@@ -178,13 +178,13 @@ public class PlayerMove : MonoBehaviour
             pos.x = Lpos.x;
 
             //ライン外にいかない処理
-            if (pos.y >= LRpos - Scale.y / 2)
+            if (pos.y >= LRpos - Scale.x / 2)
             {
-                pos.y = LRpos - Scale.y / 2;
+                pos.y = LRpos - Scale.x / 2;
             }
-            else if (pos.y <= LLpos + Scale.y / 2)
+            else if (pos.y <= LLpos + Scale.x / 2)
             {
-                pos.y = LLpos + Scale.y / 2;
+                pos.y = LLpos + Scale.x / 2;
             }
 
             //w入力で上向きに動く
