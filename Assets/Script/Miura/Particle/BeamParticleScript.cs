@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Effekseer;
 
 public class BeamParticleScript : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class BeamParticleScript : MonoBehaviour
 
     // 角度の補正値(BeamCollisionのAngleHoseiをWall側から代入する)
     public float AngleHosei;
+
+    // エフェクト入れる
+    public EffekseerEffectAsset effect;
 
     // プレハブ属性*****************************
     // 反射用当たり判定プレハブ格納
@@ -77,11 +81,21 @@ public class BeamParticleScript : MonoBehaviour
 
         // ParticleManagerを取得
         ParticleManager = transform.root.gameObject;
-        
+
+        // effekseer情報取得**************************************************************
+        // transformの位置でエフェクトを再生する
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+        // transformの回転を設定する。
+        handle.SetRotation(transform.rotation);
+
     }
 
     void Update()
     {
+        // transformの位置でエフェクトを再生する
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+        // transformの回転を設定する。
+        handle.SetRotation(transform.rotation);
         Instantiate(BeamParticleSystemPrefab, this.transform.position, Quaternion.identity/*, this.transform*/);
         // 移動処理
         transform.position += moveDir;

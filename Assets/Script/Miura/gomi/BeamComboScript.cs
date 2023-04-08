@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class BeamComboScript : MonoBehaviour
+public class BeamChargeScript : MonoBehaviour
 {
     // プレイヤーデータオブジェクト保持
     public GameObject PlayerDate;
@@ -21,11 +21,23 @@ public class BeamComboScript : MonoBehaviour
 
     void Update()
     {
-        // tmpにComboの数値を入れて
-        float tmpCombo = PlayerClassScript.GetAmount();
+        // tmpにAmountの数値を入れて
+        float tmpAmount = PlayerClassScript.GetAmount();
+
+        // 桁を1つずつ取り出して表示したほうが制御しやすいかも
+        // 表示を少数第2位までにする**********************
+        // 右に2シフト
+        tmpAmount = tmpAmount * 100;
+        // あまりを取る
+        float Amari = tmpAmount % 1;
+        // 引く
+        tmpAmount = tmpAmount - Amari;
+        // 左に2シフトして戻す
+        tmpAmount = tmpAmount / 100;
+        //************************************************
 
         // 毎フレームビーム残量(Amount)の値を表示する
-        this.textComponent.text = tmpCombo + "Combo" .ToString();
+        this.textComponent.text =  tmpAmount +"%" .ToString();
 
     }
 }
