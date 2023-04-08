@@ -52,6 +52,10 @@ public class BoxCastScript : MonoBehaviour
     // BoxCastのMaxの長さ
     private float maxDistance = 1.0f;
 
+    // コンボ数
+    public int Combo = 0;
+
+
     // 何かオブジェクトにぶつかっているかどうか
     bool isHit;
 
@@ -180,6 +184,9 @@ public class BoxCastScript : MonoBehaviour
         {
             GameObject hitObject = hit.collider.gameObject;
 
+            // コンボ数を1増やす
+            Combo++;
+            Debug.Log(Combo+ "Combo");
             // 多分この処理はインターフェスで渡してEnemy側で作った方がいい
             Destroy(hitObject);
             
