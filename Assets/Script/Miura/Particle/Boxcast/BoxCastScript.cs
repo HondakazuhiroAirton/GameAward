@@ -59,7 +59,7 @@ public class BoxCastScript : MonoBehaviour
     // 何かオブジェクトにぶつかっているかどうか
     bool isHit;
 
-    [SerializeField] // これよくわからん
+    [SerializeField] 
     bool isEnable = false; // ギズモに線を表示するかどうか
 
     void Start()
@@ -69,6 +69,7 @@ public class BoxCastScript : MonoBehaviour
 
         // (BeamParticleManager)親のオブジェクトを取得
         ParticleManager = transform.root.gameObject;
+
         // BeamParticleオブジェクトを取得Managerから見て1番上の子
         BeamParticle = ParticleManager.transform.GetChild(0).gameObject;
 
