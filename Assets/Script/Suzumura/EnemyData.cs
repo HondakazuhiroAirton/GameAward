@@ -12,7 +12,7 @@ public class EnemyData
     public int PosZ;                    // Z座標
     public Sprite sprite;               // 画像読み込み(パス)
     public int AppearanceTime;          // 出現時間
-    public int State;
+    public int State;                   // 状態
 }
 
 // 敵カテゴリー列挙型

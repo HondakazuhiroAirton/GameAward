@@ -1,5 +1,5 @@
 name,category,HP,PosX,PosY,PosZ,sprite,AppearanceTime,State
 enemy01,type1,10,100,0,0,Assets/ReSource/Texture/Character/Enemy/slime.png,0,0
-enemy02,type2,10,450,100,0,Assets/ReSource/Texture/Character/Enemy/slime.png,1,0
+enemy02,type2,10,450,100,0,Assets/ReSource/Texture/Character/Enemy/octopas.png,1,0
 enemy03,type2,10,200,300,0,Assets/ReSource/Texture/Character/Enemy/slime.png,2,0
-enemy04,type1,10,350,500,0,Assets/ReSource/Texture/Character/Enemy/slime.png,3,0
+enemy04,type1,10,350,500,0,Assets/ReSource/Texture/Character/Enemy/octopas.png,3,0
