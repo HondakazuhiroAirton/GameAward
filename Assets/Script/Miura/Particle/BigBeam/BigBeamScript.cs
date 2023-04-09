@@ -26,10 +26,10 @@ public class BigBeamScript : MonoBehaviour
     // ビームが進む方向ベクトル
     public Vector3 Direction;
 
-    // プレイヤーオブジェクト保存
-    public GameObject Player;
-
     // privateゾーン*****************************************************
+
+    // プレイヤーオブジェクト保存
+    public GameObject player;
 
     // BoxCast情報を格納
     private RaycastHit hit;
@@ -40,23 +40,32 @@ public class BigBeamScript : MonoBehaviour
     // 何かオブジェクトにぶつかっているかどうか
     bool isHit;
 
-        [SerializeField] 
+    [SerializeField] 
     bool isEnable = false; // ギズモに線を表示するかどうか
 
     void Start()
     {
-        this.transform.position = Player.transform.position;
-        // 初期化
-        EndPosition = this.transform.position;
-        Direction = new Vector3(1.0f,0.0f,0.0f);
+        // プレイヤーの情報取得プレイヤーは親としてInstantinateする
+        player = transform.root.gameObject;
+        // 初期位置に移動
+        this.transform.position = player.transform.position;
+        // プレイヤーの向きによってビームの角度変更
+        this.transform.localRotation = Quaternion.Euler(0.0f,0.0f,player.transform.localRotation.z);
+        Direction = player.transform.up;
         Direction = Direction.normalized;
+        // 各種変数初期化
+        EndPosition = this.transform.position;
+
 
 
     }
 
     void Update()
     {
-        this.transform.position = Player.transform.position;
+        Direction = player.transform.up;
+        Direction = Direction.normalized;
+        // 毎フレームプレイヤーのポジションに移動して常にプレイヤーから発射されるようにする
+        this.transform.position = player.transform.position;
 
         // BoxCast計算ゾーン*************************************************************************
         // 当たり判定の大きさ->箱の大きさの半分の引数を渡す必要があるため*0.5している
