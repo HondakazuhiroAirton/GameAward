@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerClass : MonoBehaviour
 {
+    
     private int life = 0;
     private float amount = 0;
+    public float BeamReamount = 1f;
     // Žc‹@
     public int GetLife()
     {
@@ -23,6 +25,19 @@ public class PlayerClass : MonoBehaviour
     public void SetAmount(float value)
     {
         amount = value;
+    }
+
+    void Update()
+    {
+        if (amount <= 100)
+        {
+            amount += BeamReamount;
+        }
+
+        if (amount >= 100)
+        {
+            amount = 100;
+        }
     }
 }
 
