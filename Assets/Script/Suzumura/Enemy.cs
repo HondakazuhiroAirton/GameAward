@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
     //オブジェクト
     public GameObject enemy;
+    public SpriteRenderer Sprite;
     public GameObject enemycollision;
 
     //private const float spawnRate = 2.0f;       // 出現間隔(つかってない)
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
         // CSVSerializerを用いてcsvファイルを配列に流し込む
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
 
+        Sprite = GetComponent<SpriteRenderer>();
         targetPosition = new Vector3(0, 1, 0);
     }
 
@@ -50,18 +52,22 @@ public class Enemy : MonoBehaviour
                 }
             }
             // 敵出ている
-            else
-            {
-                Vector3 pos = new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ);
-                transform.position = Vector3.MoveTowards(pos, targetPosition, Time.deltaTime * 50);
-            }
+            //else
+            //{
+            //    Vector3 pos = new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ);
+            //    transform.position = Vector3.MoveTowards(pos, targetPosition, Time.deltaTime * 50);
+            //}
         }
     }
 
     // 敵出現
     void spawnNewEnemy()
     {
+        // 画像作成
         GameObject newenemy = Instantiate(enemy, new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ), Quaternion.identity);
+        // テクスチャ設定
+        newenemy.GetComponent<SpriteRenderer>().sprite = enemyData[i].sprite;
+        // 当たり判定作成
         GameObject newenemycollision = Instantiate(enemycollision, new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ), Quaternion.identity);
     }
 }
