@@ -713,10 +713,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: []
-  enemy: {fileID: 8001113391367237068}
-  newenemy: {fileID: 0}
+  EnemyGroup: {fileID: 5521343327945637938}
+  enemytexture: {fileID: 8001113391367237068}
   Sprite: {fileID: 5521343327945637939}
   enemycollision: {fileID: 6274165682967818821}
+  _parentGameObject: {fileID: 5521343327945637938}
 --- !u!4 &4812458560627847132
 Transform:
   m_ObjectHideFlags: 0

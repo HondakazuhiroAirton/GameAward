@@ -11,16 +11,17 @@ public class Enemy : MonoBehaviour
     public EnemyData[] enemyData;
 
     //オブジェクト
-    public GameObject enemy;
-    public GameObject newenemy;
+    public GameObject EnemyGroup;
+    public GameObject enemytexture;
     public SpriteRenderer Sprite;
     public GameObject enemycollision;
+    [SerializeField] GameObject _parentGameObject;
 
     //private const float spawnRate = 2.0f;       // 出現間隔(つかってない)
     private float spawnRealTime = 0;            // リアルタイム
     private int i;                              // 配列番号
 
-    Vector3 targetPosition;
+    //Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,6 @@ public class Enemy : MonoBehaviour
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
 
         Sprite = GetComponent<SpriteRenderer>();
-        targetPosition = new Vector3(0, 1, 0);
     }
 
     // Update is called once per frame
@@ -48,30 +48,41 @@ public class Enemy : MonoBehaviour
                 // 時間になったら敵の出現
                 if (spawnRealTime >= enemyData[i].AppearanceTime)
                 {
-                    spawnNewEnemy();
+                    SpawnNewEnemy();
                     enemyData[i].State = 1;
                 }
             }
             // 敵出ている
             else if (enemyData[i].State == 1)
             {
-                Vector3 pos = new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ);
-                transform.position = Vector3.MoveTowards(pos, targetPosition, Time.deltaTime * 50);
+                transform.position = Vector3.MoveTowards(
+                    transform.position,
+                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
+                    Time.deltaTime*30
+                    );
             }
         }
     }
 
     // 敵出現
-    void spawnNewEnemy()
+    void SpawnNewEnemy()
     {
         // 画像作成
-        GameObject newenemy = Instantiate(enemy, new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ), Quaternion.identity);
-        newenemy.transform.parent = this.transform;
+        GameObject newenemy = Instantiate(
+            enemytexture, 
+            new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ), 
+            Quaternion.identity,
+            _parentGameObject.transform
+            );
         // テクスチャ設定
         newenemy.GetComponent<SpriteRenderer>().sprite = enemyData[i].sprite;
         // 当たり判定作成
-        GameObject newenemycollision = Instantiate(enemycollision, new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ), Quaternion.identity);
-        newenemycollision.transform.parent = this.transform;
+        GameObject newenemycollision = Instantiate(
+        enemycollision, 
+            new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ), 
+            Quaternion.identity,
+            _parentGameObject.transform
+            );
     }
 }
 
