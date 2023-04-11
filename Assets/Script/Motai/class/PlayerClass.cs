@@ -28,7 +28,12 @@ public class PlayerClass : MonoBehaviour
         amount = value;
     }
 
-    void Update()
+    void Start()
+    {
+        
+    }
+
+        void Update()
     {
         //ƒr[ƒ€©‘R‰ñ•œ
         if (amount <= 100)
@@ -44,6 +49,10 @@ public class PlayerClass : MonoBehaviour
         if (life == 0)
         {
             text.enabled = true;
+        }
+        else
+        {
+            text.enabled = false;
         }
     }
 }
