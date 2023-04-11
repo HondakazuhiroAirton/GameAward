@@ -10,18 +10,12 @@ public class Enemy : MonoBehaviour
     // 流し込む配列
     public EnemyData[] enemyData;
 
-    //オブジェクト
-    public GameObject EnemyGroup;
-    public GameObject enemytexture;
-    public SpriteRenderer Sprite;
-    public GameObject enemycollision;
-    [SerializeField] GameObject _parentGameObject;
+    //オリジナルのオブジェクト
+    public GameObject enemy;
 
-    //private const float spawnRate = 2.0f;       // 出現間隔(つかってない)
+    //private const float spawnRate = 2.0f;       // 出現間隔
     private float spawnRealTime = 0;            // リアルタイム
     private int i;                              // 配列番号
-
-    //Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +26,6 @@ public class Enemy : MonoBehaviour
         textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
         // CSVSerializerを用いてcsvファイルを配列に流し込む
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
-
-        Sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -42,47 +34,21 @@ public class Enemy : MonoBehaviour
         spawnRealTime += Time.deltaTime;
         for (i = 0; i < 4; i++)
         {
-            // 敵未出現の場合
-            if (enemyData[i].State == 0)
+            if (spawnRealTime >= enemyData[i].AppearanceTime)
             {
-                // 時間になったら敵の出現
-                if (spawnRealTime >= enemyData[i].AppearanceTime)
+                if (enemyData[i].Bool == true)
                 {
-                    SpawnNewEnemy();
-                    enemyData[i].State = 1;
+                    spawnNewEnemy();
+                    enemyData[i].Bool = false;
                 }
-            }
-            // 敵出ている
-            else if (enemyData[i].State == 1)
-            {
-                transform.position = Vector3.MoveTowards(
-                    transform.position,
-                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                    Time.deltaTime*30
-                    );
             }
         }
     }
 
     // 敵出現
-    void SpawnNewEnemy()
+    void spawnNewEnemy()
     {
-        // 画像作成
-        GameObject newenemy = Instantiate(
-            enemytexture, 
-            new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ), 
-            Quaternion.identity,
-            _parentGameObject.transform
-            );
-        // テクスチャ設定
-        newenemy.GetComponent<SpriteRenderer>().sprite = enemyData[i].sprite;
-        // 当たり判定作成
-        GameObject newenemycollision = Instantiate(
-        enemycollision, 
-            new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ), 
-            Quaternion.identity,
-            _parentGameObject.transform
-            );
+        GameObject newenemy = Instantiate(enemy, new Vector3(enemyData[i].PosX, enemyData[i].PosY, enemyData[i].PosZ), Quaternion.identity);
     }
 }
 

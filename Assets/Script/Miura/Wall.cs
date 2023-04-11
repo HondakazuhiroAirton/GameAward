@@ -18,6 +18,9 @@ public class Wall : MonoBehaviour,CollisionAction
         // 法線ベクトル (取得が難しい。がんばる!! -> なんか上手く言ってた。なんで??)
         Vector3 inNormal = transform.up.normalized;
 
+
+
+
         // 反射ベクトル
         Vector3 result = Vector3.Reflect(inDirection, inNormal);
 

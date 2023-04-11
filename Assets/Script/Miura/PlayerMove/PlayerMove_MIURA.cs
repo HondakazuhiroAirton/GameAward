@@ -57,10 +57,6 @@ public class PlayerMove_MIURA : MonoBehaviour
     public float UseKijun = 10;
     //********************************************************************************
 
-    // 0409追記巨大ビーム発射に関係します
-    public GameObject BigBeamPrefab;
-
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -340,12 +336,6 @@ public class PlayerMove_MIURA : MonoBehaviour
                 // チャージ時間を戻す
                 ChargeTime = 0.0f;
             }
-        }
-
-        // 0409追記巨大ビーム発射処理
-        if (Input.GetKeyUp(KeyCode.K))
-        {
-            Instantiate(BigBeamPrefab,this.transform,this);
         }
 
 
