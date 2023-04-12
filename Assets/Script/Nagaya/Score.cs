@@ -23,7 +23,6 @@ public class Score : MonoBehaviour
         {
             AddScore();
         }
-
     }
 
     public void AddScore()

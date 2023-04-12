@@ -62,7 +62,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         //プレイヤースピード
-        speed = 2f;
+        speed = 0.1f;
 
         //WallUpの端取得
         Upos = WallUp.gameObject.transform.position;
@@ -182,13 +182,13 @@ public class PlayerMove_MIURA : MonoBehaviour
             pos.x = Rpos.x;
 
             //ライン外にいかない処理
-            if (pos.y >= RRpos - Scale.y / 2)
+            if (pos.y >= RRpos - Scale.x / 2)
             {
-                pos.y = RRpos - Scale.y / 2;
+                pos.y = RRpos - Scale.x / 2;
             }
-            else if (pos.y <= RLpos + Scale.y / 2)
+            else if (pos.y <= RLpos + Scale.x / 2)
             {
-                pos.y = RLpos + Scale.y / 2;
+                pos.y = RLpos + Scale.x/ 2;
             }
 
             //w入力で上向きに動く
@@ -210,13 +210,13 @@ public class PlayerMove_MIURA : MonoBehaviour
             pos.x = Lpos.x;
 
             //ライン外にいかない処理
-            if (pos.y >= LRpos - Scale.y / 2)
+            if (pos.y >= LRpos - Scale.x / 2)
             {
-                pos.y = LRpos - Scale.y / 2;
+                pos.y = LRpos - Scale.x / 2;
             }
-            else if (pos.y <= LLpos + Scale.y / 2)
+            else if (pos.y <= LLpos + Scale.x / 2)
             {
-                pos.y = LLpos + Scale.y / 2;
+                pos.y = LLpos + Scale.x / 2;
             }
 
             //w入力で上向きに動く
@@ -337,10 +337,6 @@ public class PlayerMove_MIURA : MonoBehaviour
                 ChargeTime = 0.0f;
             }
         }
-
-
         // ビーム発射処理(ここまで)*************************************************************
-
-
     }
 }
