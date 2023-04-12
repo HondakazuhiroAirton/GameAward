@@ -33,37 +33,37 @@ public class Gimmick : MonoBehaviour,ICollisionAction
 
 
 
-        Vector3 moveDir = obj.GetComponent<BeamParticleScript>().moveDir; // 移動方向ベクトル
+        //Vector3 moveDir = obj.GetComponent<BeamParticleScript>().moveDir; // 移動方向ベクトル
 
-        Vector3 StartPosition = obj.GetComponent<BeamParticleScript>().StartPosition;
-        // パーティクルと平面の距離(入射ベクトルを求める)
-        Vector3 inDirection = obj.transform.position - StartPosition;
-        // 単位ベクトル化
-        inDirection = inDirection.normalized;
+        //Vector3 StartPosition = obj.GetComponent<BeamParticleScript>().StartPosition;
+        //// パーティクルと平面の距離(入射ベクトルを求める)
+        //Vector3 inDirection = obj.transform.position - StartPosition;
+        //// 単位ベクトル化
+        //inDirection = inDirection.normalized;
 
-        // 法線ベクトル (取得が難しい。がんばる!!)
-        Vector3 inNormal = transform.up.normalized;
-
-
+        //// 法線ベクトル (取得が難しい。がんばる!!)
+        //Vector3 inNormal = transform.up.normalized;
 
 
-        // 反射ベクトル
-        Vector3 result = Vector3.Reflect(inDirection, inNormal);
 
-        // 反射ベクトルを移動量としてビームパーティクルにわたす
-        obj.GetComponent<BeamParticleScript>().moveDir = result * obj.GetComponent<BeamParticleScript>().Speed;
 
-        // ビームパーティクルのスタートポジションを更新する
-        obj.GetComponent<BeamParticleScript>().StartPosition = obj.transform.position;
+        //// 反射ベクトル
+        //Vector3 result = Vector3.Reflect(inDirection, inNormal);
 
-        // 反射アングルを更新する(ベクトルから角度を求める) <- ラジアン値だった。
-        float Angle = Mathf.Atan2(result.y, result.x);
+        //// 反射ベクトルを移動量としてビームパーティクルにわたす
+        //obj.GetComponent<BeamParticleScript>().moveDir = result * obj.GetComponent<BeamParticleScript>().Speed;
 
-        // ラジアン値をディグリー値に変換
-        Angle = Angle * Mathf.Rad2Deg;
+        //// ビームパーティクルのスタートポジションを更新する
+        //obj.GetComponent<BeamParticleScript>().StartPosition = obj.transform.position;
 
-        // ビームパーティクルのアングルを更新する
-        obj.GetComponent<BeamParticleScript>().Angle = Angle;
+        //// 反射アングルを更新する(ベクトルから角度を求める) <- ラジアン値だった。
+        //float Angle = Mathf.Atan2(result.y, result.x);
+
+        //// ラジアン値をディグリー値に変換
+        //Angle = Angle * Mathf.Rad2Deg;
+
+        //// ビームパーティクルのアングルを更新する
+        //obj.GetComponent<BeamParticleScript>().Angle = Angle;
 
 
         return newBeamline;
