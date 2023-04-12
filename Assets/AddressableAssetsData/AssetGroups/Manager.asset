@@ -16,11 +16,20 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 91b17c8e8c8096342ac038caba725533
+<<<<<<< HEAD
   m_SerializeEntries:
+<<<<<<< HEAD:Assets/AddressableAssetsData/AssetGroups/Manager.asset
   - m_GUID: 333362eb353780a4880db3a79630245e
     m_Address: GameManager
+=======
+  - m_GUID: a97c105638bdf8b4a8650670310a4cd3
+    m_Address: matkages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
+>>>>>>> develop:Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+=======
+  m_SerializeEntries: []
+>>>>>>> feature/mukaide
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f257e291df9be1040ba0920ce0feb68c, type: 2}
   m_SchemaSet:
