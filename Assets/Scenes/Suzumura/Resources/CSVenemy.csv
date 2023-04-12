@@ -1,5 +1,0 @@
-name,category,HP,PosX,PosY,PosZ,sprite,AppearanceTime,Bool
-enemy01,type1,10,50,0,0,Assets/ReSource/Texture/Character/Enemy/slime.png,0,true
-enemy02,type2,10,50,100,0,Assets/ReSource/Texture/Character/Enemy/slime.png,1,true
-enemy03,type2,10,50,300,0,Assets/ReSource/Texture/Character/Enemy/slime.png,2,true
-enemy04,type1,10,50,500,0,Assets/ReSource/Texture/Character/Enemy/slime.png,3,true

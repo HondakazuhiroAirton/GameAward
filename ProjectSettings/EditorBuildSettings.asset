@@ -5,38 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/NagayaScene.unity
-    guid: 451b2fab3b6b95640a0ced4be8af004c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/NagayaScene/Title.unity
-    guid: c8ae14ec0328bcf4d95465256ec148e3
-  - enabled: 1
-    path: Assets/Scenes/NagayaScene/StageSelect.unity
-    guid: 2342eb7e9ba338346b25ddc20b27abea
-  - enabled: 1
-    path: Assets/Scenes/NagayaScene/Debug.unity
-    guid: 5f58106b9b13d984ba65d59144b5e3d0
-  - enabled: 1
-    path: Assets/Scenes/NagayaScene/GameScene.unity
-    guid: b5f96e2789c96cf48b9de3d1740fb5cf
-  - enabled: 1
-    path: Assets/Scenes/NagayaScene/GameOver.unity
-    guid: 89619b642dcd49c4b866b1cb620122c4
-  m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: 4b7275ce2943e7048acaea11c3ca8283, type: 2}
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  m_configObjects: {}
