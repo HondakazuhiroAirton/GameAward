@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Buttonselect : MonoBehaviour
 {
+    public GameObject button;
     // Start is called before the first frame update
     void Start()
     {
-        
+        button.SetActive(false);
     }
 
     // Update is called once per frame

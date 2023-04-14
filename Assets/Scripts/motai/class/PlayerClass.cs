@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerClass : MonoBehaviour
 {
     [SerializeField] Text text;
+    public GameObject ButtonS;
+    public GameObject ButtonR;
     private int life = 0;
     private float amount = 0;
     public float recovery = 0.1f;
@@ -48,10 +50,14 @@ public class PlayerClass : MonoBehaviour
         if (life == 0)
         {
             text.enabled = true;
+            ButtonR.SetActive(true);
+            ButtonS.SetActive(true);
         }
         else
         {
             text.enabled = false;
+            ButtonR.SetActive(false);
+            ButtonS.SetActive(false);
         }
     }
 }
