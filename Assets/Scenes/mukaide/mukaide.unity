@@ -4769,7 +4769,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.21056585
+          time: 0.1894248
           value: 1
           inSlope: 0
           outSlope: 0
