@@ -7,12 +7,15 @@ public class EnemyData
     public string name;                 // 名前(No.)
     public EnemyCategory category;      // カテゴリー
     public int HP;                      // HP
-    public int PosX;                    // X座標
-    public int PosY;                    // Y座標
-    public int PosZ;                    // Z座標
+    public int StartPosX;               // X座標
+    public int StartPosY;               // Y座標
+    public int StartPosZ;               // Z座標
+    public int TargetPosX;              //
+    public int TargetPosY;              //
+    public int TargetPosZ;              //
     public Sprite sprite;               // 画像読み込み(パス)
     public int AppearanceTime;          // 出現時間
-    public bool Bool;
+    public int State;                   // 状態
 }
 
 // 敵カテゴリー列挙型
