@@ -10,11 +10,14 @@ public class Enemy : MonoBehaviour
     // 流し込む配列
     public EnemyData[] enemyData;
 
-    //オリジナルのオブジェクト
+    // オリジナルのオブジェクト
     public GameObject enemy;
+
+    // 出現用
+    private GameObject[] newenemy = new GameObject[4];
     public SpriteRenderer Sprite;
 
-    [SerializeField] GameObject _parentGameObject;
+    //[SerializeField] GameObject _parentGameObject;
 
     //private const float spawnRate = 2.0f;       // 出現間隔
     private float spawnRealTime = 0;            // リアルタイム
@@ -30,6 +33,9 @@ public class Enemy : MonoBehaviour
         // CSVSerializerを用いてcsvファイルを配列に流し込む
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
 
+        // GameObjectを保持する配列の生成
+        //GameObject[] newenemy = new GameObject[4];
+
         Sprite = GetComponent<SpriteRenderer>();
     }
 
@@ -39,36 +45,37 @@ public class Enemy : MonoBehaviour
         spawnRealTime += Time.deltaTime;
         for (i = 0; i < 4; i++)
         {
+            // 敵未出現
             if (enemyData[i].State == 0)
             {
                 if (spawnRealTime >= enemyData[i].AppearanceTime)
                 {
-                    SpawnNewEnemy();
+                    SpawnNewEnemy(i);
                     enemyData[i].State = 1;
                 }
             }
-            //
+            // 敵出現
             else if (enemyData[i].State == 1)
             {
-                transform.position = Vector3.MoveTowards(
-                   transform.position,
+                newenemy[i].transform.position = Vector3.MoveTowards(
+                   newenemy[i].transform.position,
                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 30
+                   Time.deltaTime * 5000
                    );
             }
         }
     }
 
-    // 敵出現
-    void SpawnNewEnemy()
+    // 敵を出現させる関数
+    void SpawnNewEnemy(int no)
     {
-        GameObject newenemy = Instantiate(
-            enemy, 
-            new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-            Quaternion.identity,
-            _parentGameObject.transform
+        newenemy[no] = Instantiate(
+            enemy,
+            new Vector3(enemyData[no].StartPosX, enemyData[no].StartPosY, enemyData[no].StartPosZ),
+            Quaternion.identity/*,*/
+            //_parentGameObject.transform
             );
-        newenemy.GetComponent<SpriteRenderer>().sprite = enemyData[i].sprite;
+        newenemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
     }
 }
 

@@ -14,7 +14,7 @@ public class EnemyData
     public int TargetPosY;              //
     public int TargetPosZ;              //
     public Sprite sprite;               // 画像読み込み(パス)
-    public int AppearanceTime;          // 出現時間
+    public float AppearanceTime;          // 出現時間
     public int State;                   // 状態
 }
 
