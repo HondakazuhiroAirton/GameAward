@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414f04e165911fb40bee0dce3cf3af0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: stage select
+  sceneName: Title
 --- !u!1001 &1237727679
 PrefabInstance:
   m_ObjectHideFlags: 0
