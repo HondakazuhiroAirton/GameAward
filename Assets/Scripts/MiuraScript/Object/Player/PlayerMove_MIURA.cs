@@ -55,6 +55,10 @@ public class PlayerMove_MIURA : MonoBehaviour
     public float BeamDistanceKijun;
     // ビーム使用量の基準
     public float UseKijun = 10;
+
+    // 巨大ビームプレハブ格納
+    public GameObject BigBeamPrefabs;
+
     //********************************************************************************
 
     void Start()
@@ -274,6 +278,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             //Debug.Log("飛距離は"+ ChargeTime * BeamExpansionDistance + BeamDistanceKijun);
             //Debug.Log("ビーム消費量は"+ChargeTime);
         }
+
         if (Input.GetKeyUp(KeyCode.Space)) // Downと同じキーコードにしてね
         {
             // 計測した時間から各種値を計算する
@@ -340,6 +345,14 @@ public class PlayerMove_MIURA : MonoBehaviour
 
 
         // ビーム発射処理(ここまで)*************************************************************
+
+        // 巨大ビーム発射処理(ここから)*************************************************************
+        if (Input.GetKeyUp(KeyCode.K)) // Downと同じキーコードにしてね
+        {
+            // プレハブを指定位置に生成
+            Instantiate(BigBeamPrefabs, this.transform.position, gameObject.transform.localRotation);
+        }
+
 
 
     }

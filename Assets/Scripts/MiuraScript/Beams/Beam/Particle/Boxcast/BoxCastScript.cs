@@ -55,7 +55,7 @@ public class BoxCastScript : MonoBehaviour
     // 何かオブジェクトにぶつかっているかどうか
     bool isHit;
 
-    [SerializeField] // これよくわからん
+    [SerializeField] // privateだけど表示
     bool isEnable = false; // ギズモに線を表示するかどうか
 
     void Start()
