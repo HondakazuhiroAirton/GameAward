@@ -253,6 +253,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5605941289906821488, guid: 8a1c34c070f15284fbc2473b20966a55,
         type: 3}
+      propertyPath: originenemy
+      value: 
+      objectReference: {fileID: 649502399}
+    - target: {fileID: 5605941289906821488, guid: 8a1c34c070f15284fbc2473b20966a55,
+        type: 3}
       propertyPath: enemy.Array.data[0]
       value: 
       objectReference: {fileID: 649502399}
@@ -503,7 +508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969637677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 868, y: 500, z: -1000}
+  m_LocalPosition: {x: 868, y: 500, z: -865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
