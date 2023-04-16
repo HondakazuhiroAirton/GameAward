@@ -11,10 +11,10 @@ public class Enemy : MonoBehaviour
     public EnemyData[] enemyData;
 
     // オリジナルのオブジェクト
-    public GameObject enemy;
+    public GameObject originenemy;
 
     // 出現用
-    private GameObject[] newenemy = new GameObject[4];
+    private GameObject[] enemy = new GameObject[4];
     public SpriteRenderer Sprite;
 
     //[SerializeField] GameObject _parentGameObject;
@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour
     //private const float spawnRate = 2.0f;       // 出現間隔
     private float spawnRealTime = 0;            // リアルタイム
     private int i;                              // 配列番号
+
+    //二点間の距離を入れる
+    private float[] distance_two = new float[4];
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +35,6 @@ public class Enemy : MonoBehaviour
         textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
         // CSVSerializerを用いてcsvファイルを配列に流し込む
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
-
-        // GameObjectを保持する配列の生成
-        //GameObject[] newenemy = new GameObject[4];
 
         Sprite = GetComponent<SpriteRenderer>();
     }
@@ -57,11 +57,27 @@ public class Enemy : MonoBehaviour
             // 敵出現
             else if (enemyData[i].State == 1)
             {
-                newenemy[i].transform.position = Vector3.MoveTowards(
-                   newenemy[i].transform.position,
-                   new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 5000
-                   );
+                //enemy[i].transform.position = Vector3.MoveTowards(
+                //   enemy[i].transform.position,
+                //   new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
+                //   Time.deltaTime * 3000
+                //   );
+
+                //二点間の距離を代入(スピード調整に使う)
+                distance_two[i] = Vector3.Distance(
+                    new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
+                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ)
+                    );
+
+                // 現在の位置
+                float present_Location = (Time.time * 200) / distance_two[i]; // Time.deltaTimeだとバグる
+
+                enemy[i].transform.position = Vector3.Slerp(
+                    new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
+                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
+                    present_Location
+                    );
+                enemy[i].transform.Rotate(0f, 1.0f, 0f);
             }
         }
     }
@@ -69,13 +85,13 @@ public class Enemy : MonoBehaviour
     // 敵を出現させる関数
     void SpawnNewEnemy(int no)
     {
-        newenemy[no] = Instantiate(
-            enemy,
+        enemy[no] = Instantiate(
+            originenemy,
             new Vector3(enemyData[no].StartPosX, enemyData[no].StartPosY, enemyData[no].StartPosZ),
             Quaternion.identity/*,*/
             //_parentGameObject.transform
             );
-        newenemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
+        enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
     }
 }
 
