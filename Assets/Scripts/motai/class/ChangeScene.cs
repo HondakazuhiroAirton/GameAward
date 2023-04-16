@@ -11,6 +11,7 @@ public class ChangeScene : MonoBehaviour
     //ボタン設定
     private Button Retry;
     private Button StageSelect;
+    [SerializeField]
     private GameObject GameOver;
 
     public GameObject Image;
@@ -19,6 +20,8 @@ public class ChangeScene : MonoBehaviour
     {
         //Fadeの取得
         Image = GameObject.Find("Image");
+        //ボタンが選択された状態になる
+        Retry.Select();
     }
 
     void Awake()
@@ -30,7 +33,7 @@ public class ChangeScene : MonoBehaviour
 
         //Time.timeScale = 1f;
 
-        GameOver.SetActive(false);
+        //GameOver.SetActive(false);
     }
     // インスペクタービューから設定したシーンを読み込む
     public void LoadScene()
