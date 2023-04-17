@@ -91,8 +91,8 @@ public class Enemy2 : MonoBehaviour
         enemy[no] = Instantiate(
             originenemy,
             new Vector3(enemyData[no].StartPosX, enemyData[no].StartPosY, enemyData[no].StartPosZ),
-            Quaternion.identity/*,*/
-            //_parentGameObject.transform
+            Quaternion.identity,
+            this.transform
             );
         enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
     }
