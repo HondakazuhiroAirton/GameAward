@@ -22,7 +22,7 @@ public enum StageNo
 public class StageChangerScript : MonoBehaviour
 {
     // ステージデータを入れる**************************************************
-    public GameObject[] StageData;
+    public GameObject StageData;
 
 
     // 今のステージNo
@@ -58,7 +58,7 @@ public class StageChangerScript : MonoBehaviour
         Destroy(this.transform.GetChild(0).gameObject);
 
         // 対応したステージデータのプレハブを作る
-        Instantiate( StageData[(int)no] ,
+        Instantiate( StageData ,
             new Vector3(0.0f, 0.0f, 0.0f),
             Quaternion.identity,
             this.transform);//  <-- StageChangerの子として作成
