@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class Enemy : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
     // ó¨ÇµçûÇﬁîzóÒ
     public EnemyData[] enemyData;
@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour
 
 // CSVÇScriptableObjectÇ…ó¨ÇµçûÇﬁ
 #if UNITY_EDITOR
-public class PostEnemy : AssetPostprocessor
+public class PostEnemy2 : AssetPostprocessor
 {
     static void OnPostEnemyAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
     {
