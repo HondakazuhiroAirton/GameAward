@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     // オリジナルのオブジェクト
     public GameObject originenemy;
 
+    // StageChangerオブジェクト
+    public GameObject StageChanger;
+
     // 出現用
     private GameObject[] enemy = new GameObject[4];
     public SpriteRenderer Sprite;
@@ -29,8 +32,26 @@ public class Enemy : MonoBehaviour
     {
         // テキストファイルの読み込みを行ってくれるクラス
         TextAsset textasset = new TextAsset();
+
+        // 親のオブジェクト(StageChanger)を取得
+        StageChanger = this.transform.root.gameObject;
+        // スクリプト上のNextStageを取得
+        StageNo nextStageNo = StageChanger.GetComponent<StageChangerScript>().NextStage;
+
         // csvファイルを読み込ませる
-        textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
+        // NextStageの番号で読み込むファイルを分岐する
+        switch (nextStageNo)
+        {
+            case StageNo.Stage1_1:
+            textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage1_2:
+                textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
+                break;
+
+                // ステージが増えたら下に追記
+
+        }
         // CSVSerializerを用いてcsvファイルを配列に流し込む
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
 
