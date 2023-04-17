@@ -17,8 +17,6 @@ public class Enemy : MonoBehaviour
     private GameObject[] enemy = new GameObject[4];
     public SpriteRenderer Sprite;
 
-    //[SerializeField] GameObject _parentGameObject;
-
     //private const float spawnRate = 2.0f;       // 出現間隔
     [SerializeField] private float spawnRealTime = 0;            // リアルタイム
     private int i;                              // 配列番号
@@ -91,8 +89,8 @@ public class Enemy : MonoBehaviour
         enemy[no] = Instantiate(
             originenemy,
             new Vector3(enemyData[no].StartPosX, enemyData[no].StartPosY, enemyData[no].StartPosZ),
-            Quaternion.identity/*,*/
-            //_parentGameObject.transform
+            Quaternion.identity,
+            this.transform
             );
         enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
     }

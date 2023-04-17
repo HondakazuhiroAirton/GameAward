@@ -1145,8 +1145,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NowStage: 0
   NextStage: 0
+  changeStage: 0
 --- !u!1001 &1621164553
 PrefabInstance:
   m_ObjectHideFlags: 0

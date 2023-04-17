@@ -54,8 +54,14 @@ public class StageChangerScript : MonoBehaviour
     // ステージ変更処理
     void StageChange(StageNo no) // <--- 変更先のNo.
     {
-        // 対応したステージデータのプレハブを読み込む
-        Instantiate( StageData[(int)no] );
+        // 前のエネミーを全部デリートする
+        Destroy(this.transform.GetChild(0));
+
+        // 対応したステージデータのプレハブを作る
+        Instantiate( StageData[(int)no] ,
+            new Vector3(0.0f, 0.0f, 0.0f),
+            Quaternion.identity,
+            this.transform);//  <-- StageChangerの子として作成
 
         // ステージ変更フラグをfalseにする
         changeStage = false;
