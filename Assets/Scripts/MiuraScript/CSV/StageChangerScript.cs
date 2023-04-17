@@ -8,6 +8,12 @@ public enum StageNo
     Stage1_1 = 0,
     Stage1_2,
     Stage1_3,
+    Stage2_1,
+    Stage2_2,
+    Stage2_3,
+    Stage3_1,
+    Stage3_2,
+    Stage3_3,
 
 
     Stage_MAX // 全ステージ+1
@@ -20,7 +26,7 @@ public class StageChangerScript : MonoBehaviour
 
 
     // 今のステージNo
-    public StageNo NowStage;
+    //public StageNo NowStage;
 
     // 次のステージNo
     public StageNo NextStage;
@@ -40,7 +46,7 @@ public class StageChangerScript : MonoBehaviour
         if (changeStage == true)
         {
             // ステージ変更処理を開始する
-            StageChange(StageNo.Stage1_1);
+            StageChange(NextStage);
         }
     }
 
