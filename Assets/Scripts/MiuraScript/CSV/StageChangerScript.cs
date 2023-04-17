@@ -55,7 +55,7 @@ public class StageChangerScript : MonoBehaviour
     void StageChange(StageNo no) // <--- 変更先のNo.
     {
         // 前のエネミーを全部デリートする
-        Destroy(this.transform.GetChild(0));
+        Destroy(this.transform.GetChild(0).gameObject);
 
         // 対応したステージデータのプレハブを作る
         Instantiate( StageData[(int)no] ,
