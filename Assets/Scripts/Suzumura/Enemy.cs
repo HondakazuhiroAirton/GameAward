@@ -7,6 +7,8 @@ using UnityEditor;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private float spawnRealTime = 0;            // リアルタイム
+
     // 流し込む配列
     public EnemyData[] enemyData;
 
@@ -21,11 +23,14 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer Sprite;
 
     //private const float spawnRate = 2.0f;       // 出現間隔
-    [SerializeField] private float spawnRealTime = 0;            // リアルタイム
     private int i;                              // 配列番号
 
-    //二点間の距離を入れる
-    private float[] distance_two = new float[4];
+    private float[] distance_two = new float[4];    //二点間の距離を入れる
+    private float[] State1time = new float[4];
+    private float[] present_Location = new float[4];
+    private Vector3 target1 = new Vector3(500.0f, 500.0f, 0.0f);
+    [SerializeField] private float[] State2time = new float[4];
+    float angle = 500.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +63,6 @@ public class Enemy : MonoBehaviour
         Sprite = GetComponent<SpriteRenderer>();
 
         spawnRealTime = 0;            // リアルタイム
-
     }
 
     // Update is called once per frame
@@ -77,29 +81,60 @@ public class Enemy : MonoBehaviour
                 }
             }
             // 敵出現
+            // 1:Slerpによる二点間の球形移動
             else if (enemyData[i].State == 1)
             {
-                //enemy[i].transform.position = Vector3.MoveTowards(
-                //   enemy[i].transform.position,
-                //   new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                //   Time.deltaTime * 3000
-                //   );
-
                 //二点間の距離を代入(スピード調整に使う)
                 distance_two[i] = Vector3.Distance(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
                     new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ)
                     );
 
+                // この状態での経過時間を取得
+                State1time[i] += Time.deltaTime;
+
                 // 現在の位置
-                float present_Location = (Time.time * 200) / distance_two[i]; // Time.deltaTimeだとバグる
+                present_Location[i] = (State1time[i] * 1000) / distance_two[i];
 
                 enemy[i].transform.position = Vector3.Slerp(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                    present_Location
+                    target1,
+                    present_Location[i]
                     );
-                enemy[i].transform.Rotate(0f, 1.0f, 0f);
+                //enemy[i].transform.Rotate(0f, 1.0f, 0f);      // お遊び
+
+                // 指定場所についたら次の動きに移行
+                if (enemy[i].transform.position == target1)
+                {
+                    enemyData[i].State = 2;
+                    //State2time[i] = 0;
+                }
+            }
+            // 2:円を描く
+            else if (enemyData[i].State == 2)
+            {
+                // この状態での経過時間を取得
+                State2time[i] += Time.deltaTime;
+
+                enemy[i].transform.RotateAround(
+                    new Vector3(300.0f, 500.0f, 0.0f),
+                    Vector3.forward,        // Z軸
+                    Time.deltaTime * angle
+                    );
+                // 2周したら次の動きに移行
+                if (State2time[i] * angle >= 720.0f)
+                {
+                    enemyData[i].State = 3;
+                }
+            }
+            // 3:MoveTowardsで目標位置に
+            else if (enemyData[i].State == 3)
+            {
+                enemy[i].transform.position = Vector3.MoveTowards(
+                   enemy[i].transform.position,
+                   new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
+                   Time.deltaTime * 1000
+                   );
             }
         }
     }
@@ -107,12 +142,16 @@ public class Enemy : MonoBehaviour
     // 敵を出現させる関数
     void SpawnNewEnemy(int no)
     {
+        // 出現
         enemy[no] = Instantiate(
             originenemy,
             new Vector3(enemyData[no].StartPosX, enemyData[no].StartPosY, enemyData[no].StartPosZ),
             Quaternion.identity,
-            this.transform
+            transform
             );
+        // サイズ設定
+        enemy[no].transform.localScale = new Vector3(enemyData[no].Size, enemyData[no].Size, enemyData[no].Size);
+        // テクスチャ設定(仮)
         enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
     }
 }
