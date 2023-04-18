@@ -7,13 +7,19 @@ using System.IO; // ファイル書き込みに必要
 [Serializable]
 public struct SaveData
 {
-    public int x;
-    public int y;
+    public int stage1;
+    public int stage2;
+    public int stage3;
+    public int stage4;
+    public int stage5;
 
     public void Dump()
     {
-        Debug.Log("x = " + x);
-        Debug.Log("y = " + y);
+        Debug.Log("stage1 = " + stage1);
+        Debug.Log("stage2 = " + stage2);
+        Debug.Log("stage3 = " + stage3);
+        Debug.Log("stage4 = " + stage4);
+        Debug.Log("stage5 = " + stage5);
     }
 }
 
@@ -24,15 +30,15 @@ public class SaveManager : MonoBehaviour
 {
     // 保存するファイル
     const string SAVE_FILE_PATH = "save.txt";
+    public int goal;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (goal == 10)     // Input.GetKeyDown(KeyCode.S)// Sキーでセーブ実行
         {
-            // Sキーでセーブ実行
+            // goalの数が10とになると保存
             var data = new SaveData();
-            data.x = 5;
-            data.y = 7;
+            data.stage1 = 1;
             // JSONにシリアライズ
             var json = JsonUtility.ToJson(data);
             // Assetsフォルダに保存する
@@ -42,7 +48,74 @@ public class SaveManager : MonoBehaviour
             writer.Flush();
             writer.Close();
         }
-        else if (Input.GetKeyDown(KeyCode.L))
+        if (goal == 20)
+        {
+            // goalの数が20とになると保存
+            var data = new SaveData();
+            data.stage1 = 1;
+            data.stage2 = 1;
+            // JSONにシリアライズ
+            var json = JsonUtility.ToJson(data);
+            // Assetsフォルダに保存する
+            var path = Application.dataPath + "/" + SAVE_FILE_PATH;
+            var writer = new StreamWriter(path, false); // 上書き
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+        }
+        if (goal == 30)
+        {
+            // goalの数が30とになると保存
+            var data = new SaveData();
+            data.stage1 = 1;
+            data.stage2 = 1;
+            data.stage3 = 1;
+            // JSONにシリアライズ
+            var json = JsonUtility.ToJson(data);
+            // Assetsフォルダに保存する
+            var path = Application.dataPath + "/" + SAVE_FILE_PATH;
+            var writer = new StreamWriter(path, false); // 上書き
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+        }
+        if (goal == 40)
+        {
+            // goalの数が40とになると保存
+            var data = new SaveData();
+            data.stage1 = 1;
+            data.stage2 = 1;
+            data.stage3 = 1;
+            data.stage4 = 1;
+            // JSONにシリアライズ
+            var json = JsonUtility.ToJson(data);
+            // Assetsフォルダに保存する
+            var path = Application.dataPath + "/" + SAVE_FILE_PATH;
+            var writer = new StreamWriter(path, false); // 上書き
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+        }
+        if (goal == 50)
+        {
+            // goalの数が50とになると保存
+            var data = new SaveData();
+            data.stage1 = 1;
+            data.stage2 = 1;
+            data.stage3 = 1;
+            data.stage4 = 1;
+            data.stage5 = 1;
+            // JSONにシリアライズ
+            var json = JsonUtility.ToJson(data);
+            // Assetsフォルダに保存する
+            var path = Application.dataPath + "/" + SAVE_FILE_PATH;
+            var writer = new StreamWriter(path, false); // 上書き
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
         {
             // Lキーでロード実行
             // Assetsフォルダからロード
