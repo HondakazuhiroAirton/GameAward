@@ -13,9 +13,9 @@ public class WorldSelector : MonoBehaviour
     public Button World4;
 
     public GameObject Stage1;
-    public GameObject Stage1;
-    public GameObject Stage1;
-    public GameObject Stage1;
+    public GameObject Stage2;
+    public GameObject Stage3;
+    public GameObject Stage4;
 
     // Start is called before the first frame update
     void Start()
