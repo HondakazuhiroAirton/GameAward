@@ -7,6 +7,7 @@ public class EnemyData
     public string name;                 // 名前(No.)
     public EnemyCategory category;      // カテゴリー
     public int HP;                      // HP
+    public int Size;                    // 大きさ
     public int StartPosX;               // X座標
     public int StartPosY;               // Y座標
     public int StartPosZ;               // Z座標

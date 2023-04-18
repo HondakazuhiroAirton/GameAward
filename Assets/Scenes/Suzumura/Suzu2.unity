@@ -298,10 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789344f5385cc7949814621846e47ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageData:
-  - {fileID: 6254047566953467982, guid: 6bf475000b99c6f42b5a855a656732ad, type: 3}
-  - {fileID: 8496310261303876193, guid: 1df704ad57f124c4a97aa555c5f65312, type: 3}
-  - {fileID: 0}
+  StageData: {fileID: 6254047566953467982, guid: 6bf475000b99c6f42b5a855a656732ad,
+    type: 3}
   NextStage: 0
   changeStage: 0
 --- !u!4 &453021027
@@ -365,7 +363,7 @@ PrefabInstance:
     - target: {fileID: 5274611144688336657, guid: 5374d4ecb2a7aa6489e1a0bbf33a7aad,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 203
+      value: 371
       objectReference: {fileID: 0}
     - target: {fileID: 5274611144688336657, guid: 5374d4ecb2a7aa6489e1a0bbf33a7aad,
         type: 3}
