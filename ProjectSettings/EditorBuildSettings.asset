@@ -6,8 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/koutaScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: 4b7275ce2943e7048acaea11c3ca8283,
-      type: 2}
+    path: Assets/Scenes/motai/koutaScene.unity
+    guid: 4ab0ef541295ef54ebecec696c2e8ecc
+  - enabled: 1
+    path: Assets/Scenes/motai/Title.unity
+    guid: 442f0bea259e8204c92697d463bb70ac
+  - enabled: 1
+    path: Assets/Scenes/mukaide/GameScene.unity
+    guid: 08c2793b4da8dd148ab48e46494629bc
+  - enabled: 1
+    path: Assets/Scenes/nagaya/nagaya.unity
+    guid: cd5a482316f4d5e419ca58d1c136b97c
+  - enabled: 1
+    path: Assets/Scenes/nagaya/Stage1.unity
+    guid: a3d1c214ab78fe8468a93f4541d0d958
+  m_configObjects: {}

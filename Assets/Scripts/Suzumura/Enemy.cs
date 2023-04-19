@@ -7,30 +7,62 @@ using UnityEditor;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private float spawnRealTime = 0;            // リアルタイム
+
     // 流し込む配列
     public EnemyData[] enemyData;
 
-    //オリジナルのオブジェクト
-    public GameObject enemy;
+    // オリジナルのオブジェクト
+    public GameObject originenemy;
+
+    // StageChangerオブジェクト
+    public GameObject StageChanger;
+
+    // 出現用
+    private GameObject[] enemy = new GameObject[4];
     public SpriteRenderer Sprite;
 
-    [SerializeField] GameObject _parentGameObject;
-
     //private const float spawnRate = 2.0f;       // 出現間隔
-    private float spawnRealTime = 0;            // リアルタイム
     private int i;                              // 配列番号
+
+    private float[] distance_two = new float[4];    //二点間の距離を入れる
+    private float[] State1time = new float[4];
+    private float[] present_Location = new float[4];
+    private Vector3 target1 = new Vector3(500.0f, 500.0f, 0.0f);
+    [SerializeField] private float[] State2time = new float[4];
+    float angle = 500.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         // テキストファイルの読み込みを行ってくれるクラス
         TextAsset textasset = new TextAsset();
+
+        // 親のオブジェクト(StageChanger)を取得
+        StageChanger = this.transform.root.gameObject;
+        // スクリプト上のNextStageを取得
+        StageNo nextStageNo = StageChanger.GetComponent<StageChangerScript>().NextStage;
+
         // csvファイルを読み込ませる
-        textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
+        // NextStageの番号で読み込むファイルを分岐する
+        switch (nextStageNo)
+        {
+            case StageNo.Stage1_1:
+            textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage1_2:
+                textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
+                break;
+
+                // ステージが増えたら下に追記
+
+        }
         // CSVSerializerを用いてcsvファイルを配列に流し込む
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
 
         Sprite = GetComponent<SpriteRenderer>();
+
+        spawnRealTime = 0;            // リアルタイム
     }
 
     // Update is called once per frame
@@ -39,36 +71,88 @@ public class Enemy : MonoBehaviour
         spawnRealTime += Time.deltaTime;
         for (i = 0; i < 4; i++)
         {
+            // 敵未出現
             if (enemyData[i].State == 0)
             {
                 if (spawnRealTime >= enemyData[i].AppearanceTime)
                 {
-                    SpawnNewEnemy();
+                    SpawnNewEnemy(i);
                     enemyData[i].State = 1;
                 }
             }
-            //
+            // 敵出現
+            // 1:Slerpによる二点間の球形移動
             else if (enemyData[i].State == 1)
             {
-                transform.position = Vector3.MoveTowards(
-                   transform.position,
+                //二点間の距離を代入(スピード調整に使う)
+                distance_two[i] = Vector3.Distance(
+                    new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
+                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ)
+                    );
+
+                // この状態での経過時間を取得
+                State1time[i] += Time.deltaTime;
+
+                // 現在の位置
+                present_Location[i] = (State1time[i] * 1000) / distance_two[i];
+
+                enemy[i].transform.position = Vector3.Slerp(
+                    new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
+                    target1,
+                    present_Location[i]
+                    );
+                //enemy[i].transform.Rotate(0f, 1.0f, 0f);      // お遊び
+
+                // 指定場所についたら次の動きに移行
+                if (enemy[i].transform.position == target1)
+                {
+                    enemyData[i].State = 2;
+                    //State2time[i] = 0;
+                }
+            }
+            // 2:円を描く
+            else if (enemyData[i].State == 2)
+            {
+                // この状態での経過時間を取得
+                State2time[i] += Time.deltaTime;
+
+                enemy[i].transform.RotateAround(
+                    new Vector3(300.0f, 500.0f, 0.0f),
+                    Vector3.forward,        // Z軸
+                    Time.deltaTime * angle
+                    );
+                // 2周したら次の動きに移行
+                if (State2time[i] * angle >= 720.0f)
+                {
+                    enemyData[i].State = 3;
+                }
+            }
+            // 3:MoveTowardsで目標位置に
+            else if (enemyData[i].State == 3)
+            {
+                enemy[i].transform.position = Vector3.MoveTowards(
+                   enemy[i].transform.position,
                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 30
+                   Time.deltaTime * 1000
                    );
             }
         }
     }
 
-    // 敵出現
-    void SpawnNewEnemy()
+    // 敵を出現させる関数
+    void SpawnNewEnemy(int no)
     {
-        GameObject newenemy = Instantiate(
-            enemy, 
-            new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
+        // 出現
+        enemy[no] = Instantiate(
+            originenemy,
+            new Vector3(enemyData[no].StartPosX, enemyData[no].StartPosY, enemyData[no].StartPosZ),
             Quaternion.identity,
-            _parentGameObject.transform
+            transform
             );
-        newenemy.GetComponent<SpriteRenderer>().sprite = enemyData[i].sprite;
+        // サイズ設定
+        enemy[no].transform.localScale = new Vector3(enemyData[no].Size, enemyData[no].Size, enemyData[no].Size);
+        // テクスチャ設定(仮)
+        enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
     }
 }
 

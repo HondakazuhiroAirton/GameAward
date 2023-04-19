@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5858290741403956701}
   - component: {fileID: 5858290741403956700}
   - component: {fileID: 5858290741403956703}
-  - component: {fileID: 5858290741403956698}
+  - component: {fileID: 3198833057066302826}
   m_Layer: 0
   m_Name: RightDeathWall
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5858290741403956698
+--- !u!114 &3198833057066302826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5858290741403956513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88bb06f732dff504ab93ced2cba43e12, type: 3}
+  m_Script: {fileID: 11500000, guid: f320db56935eb5f45a7fa4d3e3b38ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5858290742378399810
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 5858290742378399870}
   - component: {fileID: 5858290742378399809}
   - component: {fileID: 5858290742378399808}
-  - component: {fileID: 5858290742378399871}
+  - component: {fileID: 5681053204412339592}
   m_Layer: 0
   m_Name: LeftDeathWall
   m_TagString: Untagged
@@ -208,7 +208,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5858290742378399871
+--- !u!114 &5681053204412339592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5858290742378399810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88bb06f732dff504ab93ced2cba43e12, type: 3}
+  m_Script: {fileID: 11500000, guid: f320db56935eb5f45a7fa4d3e3b38ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5858290742420546496
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 5858290742420546556}
   - component: {fileID: 5858290742420546559}
   - component: {fileID: 5858290742420546558}
-  - component: {fileID: 5858290742420546557}
+  - component: {fileID: 7671680608957747866}
   m_Layer: 0
   m_Name: UpDeathWall
   m_TagString: Untagged
@@ -318,7 +318,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5858290742420546557
+--- !u!114 &7671680608957747866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5858290742420546496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88bb06f732dff504ab93ced2cba43e12, type: 3}
+  m_Script: {fileID: 11500000, guid: f320db56935eb5f45a7fa4d3e3b38ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5858290742557288198
@@ -342,8 +342,6 @@ GameObject:
   - component: {fileID: 5858290742557288194}
   - component: {fileID: 5858290742557288197}
   - component: {fileID: 5858290742557288196}
-  - component: {fileID: 5858290742557288192}
-  - component: {fileID: 5858290742557288195}
   m_Layer: 0
   m_Name: DownDeathWall
   m_TagString: Untagged
@@ -429,30 +427,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5858290742557288192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5858290742557288198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88bb06f732dff504ab93ced2cba43e12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5858290742557288195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5858290742557288198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88bb06f732dff504ab93ced2cba43e12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5858290742831094598
 GameObject:
   m_ObjectHideFlags: 0

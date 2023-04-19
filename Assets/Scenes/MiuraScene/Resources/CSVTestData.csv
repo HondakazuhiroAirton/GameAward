@@ -1,0 +1,4 @@
+name,HP,ATK,DEF,category,sprite,skill
+Slime,100,10,10,amorphous,Assets/ReSource/Texture/Character/Enemy/slime.png,"""Taiatari"""
+Wolf,200,20,20,beast,Assets/ReSource/Texture/Character/Enemy/slime.png,"""Kamituki,Toboe"""
+Gob,300,30,30,demihuman,Assets/ReSource/Texture/Character/Enemy/slime.png,"""Hit,Srow,Kamon"""
