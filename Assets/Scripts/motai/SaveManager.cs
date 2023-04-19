@@ -34,7 +34,7 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
-        if (goal == 10)     // Input.GetKeyDown(KeyCode.S)// Sキーでセーブ実行
+        if (goal == 1)     // Input.GetKeyDown(KeyCode.S)// Sキーでセーブ実行
         {
             // goalの数が10とになると保存
             var data = new SaveData();
@@ -48,12 +48,28 @@ public class SaveManager : MonoBehaviour
             writer.Flush();
             writer.Close();
         }
+        if (goal == 10)     // Input.GetKeyDown(KeyCode.S)// Sキーでセーブ実行
+        {
+            // goalの数が10とになると保存
+            var data = new SaveData();
+            data.stage1 = 2;
+            data.stage2 = 1;
+            // JSONにシリアライズ
+            var json = JsonUtility.ToJson(data);
+            // Assetsフォルダに保存する
+            var path = Application.dataPath + "/" + SAVE_FILE_PATH;
+            var writer = new StreamWriter(path, false); // 上書き
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+        }
         if (goal == 20)
         {
             // goalの数が20とになると保存
             var data = new SaveData();
-            data.stage1 = 1;
-            data.stage2 = 1;
+            data.stage1 = 2;
+            data.stage2 = 2;
+            data.stage3 = 1;
             // JSONにシリアライズ
             var json = JsonUtility.ToJson(data);
             // Assetsフォルダに保存する
@@ -67,9 +83,10 @@ public class SaveManager : MonoBehaviour
         {
             // goalの数が30とになると保存
             var data = new SaveData();
-            data.stage1 = 1;
-            data.stage2 = 1;
-            data.stage3 = 1;
+            data.stage1 = 2;
+            data.stage2 = 2;
+            data.stage3 = 2;
+            data.stage4 = 1;
             // JSONにシリアライズ
             var json = JsonUtility.ToJson(data);
             // Assetsフォルダに保存する
@@ -83,10 +100,11 @@ public class SaveManager : MonoBehaviour
         {
             // goalの数が40とになると保存
             var data = new SaveData();
-            data.stage1 = 1;
-            data.stage2 = 1;
-            data.stage3 = 1;
-            data.stage4 = 1;
+            data.stage1 = 2;
+            data.stage2 = 2;
+            data.stage3 = 2;
+            data.stage4 = 2;
+            data.stage5 = 1;
             // JSONにシリアライズ
             var json = JsonUtility.ToJson(data);
             // Assetsフォルダに保存する
@@ -100,11 +118,11 @@ public class SaveManager : MonoBehaviour
         {
             // goalの数が50とになると保存
             var data = new SaveData();
-            data.stage1 = 1;
-            data.stage2 = 1;
-            data.stage3 = 1;
-            data.stage4 = 1;
-            data.stage5 = 1;
+            data.stage1 = 2;
+            data.stage2 = 2;
+            data.stage3 = 2;
+            data.stage4 = 2;
+            data.stage5 = 2;
             // JSONにシリアライズ
             var json = JsonUtility.ToJson(data);
             // Assetsフォルダに保存する
