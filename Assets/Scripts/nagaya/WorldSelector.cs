@@ -37,7 +37,21 @@ public class WorldSelector : MonoBehaviour
         //ワールド１の中身を呼び出す
         Debug.Log("Pushed!");
         Stage1.SetActive(true);
+ 
+    }
 
-        
+    public void onButtonWorld2()
+    {
+        Stage2.SetActive(true);
+    }
+
+    public void onButtonWorld3()
+    {
+        Stage3.SetActive(true);
+    }
+
+    public void onButtonWorld4()
+    {
+        Stage4.SetActive(true);
     }
 }

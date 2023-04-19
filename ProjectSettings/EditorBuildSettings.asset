@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mukaide/GameScene.unity
     guid: 08c2793b4da8dd148ab48e46494629bc
+  - enabled: 1
+    path: Assets/Scenes/nagaya/nagaya.unity
+    guid: cd5a482316f4d5e419ca58d1c136b97c
+  - enabled: 1
+    path: Assets/Scenes/nagaya/Stage1.unity
+    guid: a3d1c214ab78fe8468a93f4541d0d958
   m_configObjects: {}
