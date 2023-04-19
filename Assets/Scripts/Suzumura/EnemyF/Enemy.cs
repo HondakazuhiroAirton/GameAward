@@ -26,12 +26,17 @@ public class Enemy : MonoBehaviour
     private int i;                              // 配列番号
 
     // この辺の変数整理が必要
+    private Vector3[] prevPosition = new Vector3[4];
     private float[] distance_two = new float[4];    //二点間の距離を入れる
     private float[] State1time = new float[4];
     private float[] PresentLocation = new float[4];
     private Vector3 target1 = new Vector3(1500.0f, 100.0f, 0.0f);
     private float[] State2time = new float[4];
     float angle = 50.0f;
+    // オブジェクトの正面
+    [SerializeField] private Vector3 _forward = Vector3.forward;
+    // オブジェクトの上向き
+    [SerializeField] private Vector3 _up = Vector3.up;
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +90,8 @@ public class Enemy : MonoBehaviour
             // 1:Slerpによる二点間の球形移動
             else if (enemyData[i].State == 1)
             {
+                // 前フレームのワールド位置
+                prevPosition[i] = enemy[i].transform.position;
                 //二点間の距離を代入(スピード調整に使う)
                 distance_two[i] = Vector3.Distance(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
@@ -95,7 +102,7 @@ public class Enemy : MonoBehaviour
                 State1time[i] += Time.deltaTime;
 
                 // 現在の位置
-                PresentLocation[i] = (State1time[i] * 1000) / distance_two[i];
+                PresentLocation[i] = (State1time[i] * 100) / distance_two[i];
 
                 enemy[i].transform.position = Vector3.Slerp(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
@@ -103,6 +110,9 @@ public class Enemy : MonoBehaviour
                     PresentLocation[i]
                     );
                 //enemy[i].transform.Rotate(0f, 1.0f, 0f);      // おあそび
+
+                // 進行方向に向きを変える
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, prevPosition[i]);
 
                 // positionの値を四捨五入
                 Vector3 roundposition;
@@ -163,10 +173,25 @@ public class Enemy : MonoBehaviour
     }
 
     // 進行方向に向きを変える関数
-    //Vector3 RotateToMovementDirection()
-    //{
+    public Quaternion RotateToMovementDirection(Vector3 newPos, Vector3 oldPos)
+    {
+        // 移動量を計算
+        Vector3 delta = newPos- oldPos;
 
-    //}
+        // 静止している状態だと、進行方向を特定できないため回転しない
+        //if (delta == Vector3.zero)
+        //    return;
+
+        // 回転補正計算
+        Quaternion offsetRot = Quaternion.Inverse(Quaternion.LookRotation(_forward, _up));
+
+        // 進行方向（移動量ベクトル）に向くようなクォータニオンを取得
+        Quaternion rotation = Quaternion.LookRotation(delta, Vector3.forward) * offsetRot;
+
+
+        // オブジェクトの回転に反映
+        return rotation;
+    }
 }
 
 // CSVをScriptableObjectに流し込む
