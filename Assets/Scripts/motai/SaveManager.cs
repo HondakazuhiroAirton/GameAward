@@ -34,7 +34,7 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
-        if (goal == 10)     // Input.GetKeyDown(KeyCode.S)// Sキーでセーブ実行
+        if (goal == 1)     // Input.GetKeyDown(KeyCode.S)// Sキーでセーブ実行
         {
             // goalの数が10とになると保存
             var data = new SaveData();
@@ -48,12 +48,29 @@ public class SaveManager : MonoBehaviour
             writer.Flush();
             writer.Close();
         }
-        if (goal == 20)
+        if (goal == 10) //1-1がクリアしたら
+        {
+            // goalの数が10とになると保存
+            var data = new SaveData();
+            data.stage1 = 2;
+            data.stage2 = 1;
+            // JSONにシリアライズ
+            var json = JsonUtility.ToJson(data);
+            // Assetsフォルダに保存する
+            var path = Application.dataPath + "/" + SAVE_FILE_PATH;
+            var writer = new StreamWriter(path, false); // 上書き
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+            goal = 10;
+        }
+        if (goal == 20) //1-2がクリアしたら
         {
             // goalの数が20とになると保存
             var data = new SaveData();
-            data.stage1 = 1;
-            data.stage2 = 1;
+            data.stage1 = 2;
+            data.stage2 = 2;
+            data.stage3 = 1;
             // JSONにシリアライズ
             var json = JsonUtility.ToJson(data);
             // Assetsフォルダに保存する
@@ -62,14 +79,16 @@ public class SaveManager : MonoBehaviour
             writer.WriteLine(json);
             writer.Flush();
             writer.Close();
+            goal = 20;
         }
-        if (goal == 30)
+        if (goal == 30) //1-3がクリアしたら
         {
             // goalの数が30とになると保存
             var data = new SaveData();
-            data.stage1 = 1;
-            data.stage2 = 1;
-            data.stage3 = 1;
+            data.stage1 = 2;
+            data.stage2 = 2;
+            data.stage3 = 2;
+            data.stage4 = 1;
             // JSONにシリアライズ
             var json = JsonUtility.ToJson(data);
             // Assetsフォルダに保存する
@@ -78,32 +97,16 @@ public class SaveManager : MonoBehaviour
             writer.WriteLine(json);
             writer.Flush();
             writer.Close();
+            goal = 30;
         }
-        if (goal == 40)
+        if (goal == 40) //1-4がクリアしたら
         {
             // goalの数が40とになると保存
             var data = new SaveData();
-            data.stage1 = 1;
-            data.stage2 = 1;
-            data.stage3 = 1;
-            data.stage4 = 1;
-            // JSONにシリアライズ
-            var json = JsonUtility.ToJson(data);
-            // Assetsフォルダに保存する
-            var path = Application.dataPath + "/" + SAVE_FILE_PATH;
-            var writer = new StreamWriter(path, false); // 上書き
-            writer.WriteLine(json);
-            writer.Flush();
-            writer.Close();
-        }
-        if (goal == 50)
-        {
-            // goalの数が50とになると保存
-            var data = new SaveData();
-            data.stage1 = 1;
-            data.stage2 = 1;
-            data.stage3 = 1;
-            data.stage4 = 1;
+            data.stage1 = 2;
+            data.stage2 = 2;
+            data.stage3 = 2;
+            data.stage4 = 2;
             data.stage5 = 1;
             // JSONにシリアライズ
             var json = JsonUtility.ToJson(data);
@@ -113,6 +116,26 @@ public class SaveManager : MonoBehaviour
             writer.WriteLine(json);
             writer.Flush();
             writer.Close();
+            goal = 40;
+        }
+        if (goal == 50) //1-5がクリアしたら
+        {
+            // goalの数が50とになると保存
+            var data = new SaveData();
+            data.stage1 = 2;
+            data.stage2 = 2;
+            data.stage3 = 2;
+            data.stage4 = 2;
+            data.stage5 = 2;
+            // JSONにシリアライズ
+            var json = JsonUtility.ToJson(data);
+            // Assetsフォルダに保存する
+            var path = Application.dataPath + "/" + SAVE_FILE_PATH;
+            var writer = new StreamWriter(path, false); // 上書き
+            writer.WriteLine(json);
+            writer.Flush();
+            writer.Close();
+            goal = 50;
         }
 
         if (Input.GetKeyDown(KeyCode.L))
