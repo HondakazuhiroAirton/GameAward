@@ -34,7 +34,25 @@ public class StageSelect : MonoBehaviour
         SceneManager.LoadScene("Stage1");
     }
 
-    
+    public void onButtonStage1_2()
+    {
+        SceneManager.LoadScene("Stage1");
+    }
+
+    public void onButtonStage1_3()
+    {
+        SceneManager.LoadScene("Stage1");
+    }
+
+    public void onButtonStage1_4()
+    {
+        SceneManager.LoadScene("Stage1");
+    }
+
+    public void onButtonStage1_5()
+    {
+        SceneManager.LoadScene("Stage1");
+    }
 
     public void onButtonCancel()
     {

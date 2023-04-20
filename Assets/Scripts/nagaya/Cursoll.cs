@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cursoll : MonoBehaviour
 {
@@ -10,10 +11,24 @@ public class Cursoll : MonoBehaviour
     // 今の位置を入れておく変数
     [SerializeField] private int NowPosition;
 
+    GameObject worldSelector;
+
+    WorldSelector script;
+
+    public GameObject World1;
+    public GameObject World2;
+    public GameObject World3;
+    public GameObject World4;
+
+    public GameObject Return;
+
     void Start()
     {
+        worldSelector = GameObject.Find("/UICanvas/WorldSelector");
+        script = worldSelector.GetComponent<WorldSelector>();
+
         // 最初はステージ1
-        NowPosition = 0;
+        NowPosition = 1;
         this.transform.position = iti[NowPosition].transform.position;
     }
 
@@ -23,15 +38,45 @@ public class Cursoll : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             NowPosition += 1;
-            if (NowPosition > 2/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
+            if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
             this.transform.position = iti[NowPosition].transform.position;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             NowPosition -= 1;
-            if (NowPosition < 0) NowPosition = 2;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
+            if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
             this.transform.position = iti[NowPosition].transform.position;
         }
+
+
     }
+
+   public void WorldButton()
+   {
+       if(Input.GetKeyDown(KeyCode.Return))
+        {
+            if(NowPosition==0)
+            {
+                SceneManager.LoadScene("nagaya");
+            }
+            else if (NowPosition == 1)
+            {
+                World1.SetActive(true);
+            }
+            else if(NowPosition==2)
+            {
+                World2.SetActive(true);
+            }
+            else if(NowPosition==3)
+            {
+                World3.SetActive(true);
+            }
+            else if(NowPosition==4)
+            {
+                World4.SetActive(true);
+            }
+        }
+
+   }
 }
