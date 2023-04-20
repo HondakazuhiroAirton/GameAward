@@ -32,11 +32,13 @@ public class Enemy : MonoBehaviour
     private float[] PresentLocation = new float[4];
     private Vector3 target1 = new Vector3(1500.0f, 100.0f, 0.0f);
     private float[] State2time = new float[4];
-    float angle = 50.0f;
+    float angle = 200.0f;
+    // オブジェクトの右向き
+    [SerializeField] private Vector3 _right = Vector3.up;
+    // オブジェクトの上向き
+    [SerializeField] private Vector3 _up = Vector3.right;
     // オブジェクトの正面
     [SerializeField] private Vector3 _forward = Vector3.forward;
-    // オブジェクトの上向き
-    [SerializeField] private Vector3 _up = Vector3.up;
 
     // Start is called before the first frame update
     void Start()
@@ -102,7 +104,7 @@ public class Enemy : MonoBehaviour
                 State1time[i] += Time.deltaTime;
 
                 // 現在の位置
-                PresentLocation[i] = (State1time[i] * 100) / distance_two[i];
+                PresentLocation[i] = (State1time[i] * 500) / distance_two[i];
 
                 enemy[i].transform.position = Vector3.Slerp(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
@@ -150,8 +152,12 @@ public class Enemy : MonoBehaviour
                 enemy[i].transform.position = Vector3.MoveTowards(
                    enemy[i].transform.position,
                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 1000
+                   Time.deltaTime * 500
                    );
+
+                // 進行方向に向きを変える
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, prevPosition[i]);
+
             }
         }
     }
@@ -183,10 +189,10 @@ public class Enemy : MonoBehaviour
         //    return;
 
         // 回転補正計算
-        Quaternion offsetRot = Quaternion.Inverse(Quaternion.LookRotation(_forward, _up));
+        Quaternion offsetRot = Quaternion.Inverse(Quaternion.LookRotation(_right, _up));
 
         // 進行方向（移動量ベクトル）に向くようなクォータニオンを取得
-        Quaternion rotation = Quaternion.LookRotation(delta, Vector3.forward) * offsetRot;
+        Quaternion rotation = Quaternion.LookRotation(delta, Vector3.right) * offsetRot;
 
 
         // オブジェクトの回転に反映
