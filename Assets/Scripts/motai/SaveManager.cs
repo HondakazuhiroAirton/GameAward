@@ -47,11 +47,10 @@ public class SaveManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))     // Input.GetKeyDown(KeyCode.S)// Sキーでセーブ実行
         {
+            goal += 1;
             // goalの数が10とになると保存
             var data = new SaveData();
-            data.stage = 2;
-            data.stage2 += 20;
-            data.stage3 = data.stage + data.stage2;
+            data.stage = 1;
             // JSONにシリアライズ
             var json = JsonUtility.ToJson(data);
             // Assetsフォルダに保存する
@@ -60,10 +59,6 @@ public class SaveManager : MonoBehaviour
             writer.WriteLine(json);
             writer.Flush();
             writer.Close();
-
-            goal = 2;
-            goal2 += 3;
-            goal3 = goal * goal2;
         }
         
 
