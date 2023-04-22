@@ -12,6 +12,7 @@ public class Cursoll : MonoBehaviour
     [SerializeField] private int NowPosition;
 
     GameObject worldSelector;
+    GameObject Cursol;
 
     WorldSelector script;
 
@@ -54,7 +55,8 @@ public class Cursoll : MonoBehaviour
 
    public void WorldButton()
    {
-       if(Input.GetKeyDown(KeyCode.Return))
+
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if(NowPosition==0)
             {
@@ -63,6 +65,7 @@ public class Cursoll : MonoBehaviour
             else if (NowPosition == 1)
             {
                 World1.SetActive(true);
+
             }
             else if(NowPosition==2)
             {
