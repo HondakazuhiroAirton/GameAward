@@ -7,6 +7,7 @@ using UnityEditor;
 
 public class Enemy : MonoBehaviour
 {
+    private const int obcount = 16;
     [SerializeField] private float spawnRealTime = 0;            // リアルタイム
 
     // 流し込む配列
@@ -19,26 +20,26 @@ public class Enemy : MonoBehaviour
     public GameObject StageChanger;
 
     // 出現用
-    private GameObject[] enemy = new GameObject[4];
+    private GameObject[] enemy = new GameObject[obcount];
     public SpriteRenderer Sprite;
 
     //private const float spawnRate = 2.0f;       // 出現間隔
     private int i;                              // 配列番号
 
     // この辺の変数整理が必要
-    private Vector3[] prevPosition = new Vector3[4];
-    private float[] distance_two = new float[4];    //二点間の距離を入れる
-    private float[] State1time = new float[4];
-    private float[] PresentLocation = new float[4];
-    private Vector3 target1 = new Vector3(1500.0f, 100.0f, 0.0f);
-    private float[] State2time = new float[4];
-    float angle = 200.0f;
+    private Vector3[] prevPosition = new Vector3[obcount];
+    private float[] distance_two = new float[obcount];    //二点間の距離を入れる
+    private float[] State1time = new float[obcount];
+    private float[] PresentLocation = new float[obcount];
+    private Vector3[] target1 = new Vector3[obcount];
+    private float[] State2time = new float[obcount];
+    float angle = 400.0f;
     // オブジェクトの右向き
-    [SerializeField] private Vector3 _right = Vector3.up;
+    private Vector3 _right = Vector3.up;
     // オブジェクトの上向き
-    [SerializeField] private Vector3 _up = Vector3.right;
+    private Vector3 _up = Vector3.right;
     // オブジェクトの正面
-    [SerializeField] private Vector3 _forward = Vector3.forward;
+    private Vector3 _forward = Vector3.forward;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +57,7 @@ public class Enemy : MonoBehaviour
         switch (nextStageNo)
         {
             case StageNo.Stage1_1:
-            textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
+            textasset = Resources.Load("CSVEnemy2", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage1_2:
                 textasset = Resources.Load("CSVEnemy", typeof(TextAsset)) as TextAsset;
@@ -71,13 +72,18 @@ public class Enemy : MonoBehaviour
         Sprite = GetComponent<SpriteRenderer>();
 
         spawnRealTime = 0;            // リアルタイム
+
+        for (i = 0; i < obcount; i++)
+        {
+            target1[i] = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         spawnRealTime += Time.deltaTime;
-        for (i = 0; i < 4; i++)
+        for (i = 0; i < obcount; i++)
         {
             // 敵未出現
             if (enemyData[i].State == 0)
@@ -97,7 +103,7 @@ public class Enemy : MonoBehaviour
                 //二点間の距離を代入(スピード調整に使う)
                 distance_two[i] = Vector3.Distance(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ)
+                    target1[i]
                     );
 
                 // この状態での経過時間を取得
@@ -108,7 +114,7 @@ public class Enemy : MonoBehaviour
 
                 enemy[i].transform.position = Vector3.Slerp(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                    target1,
+                    target1[i],
                     PresentLocation[i]
                     );
                 //enemy[i].transform.Rotate(0f, 1.0f, 0f);      // おあそび
@@ -118,15 +124,15 @@ public class Enemy : MonoBehaviour
 
                 // positionの値を四捨五入
                 Vector3 roundposition;
-                roundposition.x = Mathf.Floor(enemy[i].transform.position.x);
-                roundposition.y = Mathf.Floor(enemy[i].transform.position.y);
-                roundposition.z = Mathf.Floor(enemy[i].transform.position.z);
+                roundposition.x = Mathf.Round(enemy[i].transform.position.x);
+                roundposition.y = Mathf.Round(enemy[i].transform.position.y);
+                roundposition.z = Mathf.Round(enemy[i].transform.position.z);
 
                 // 指定場所についたら次の動きに移行
-                if (roundposition == target1)
+                if (roundposition == target1[i])
                 {
                     enemyData[i].State = 2;
-                    //State2time[i] = 0;
+                    State2time[i] = 0;
                 }
             }
             // 2:円を描く
@@ -136,7 +142,7 @@ public class Enemy : MonoBehaviour
                 State2time[i] += Time.deltaTime;
 
                 enemy[i].transform.RotateAround(
-                    new Vector3(target1.x - 100.0f, target1.y, target1.z),
+                    new Vector3(target1[i].x - 100.0f, target1[i].y, target1[i].z),
                     Vector3.forward,        // Z軸
                     Time.deltaTime * angle
                     );
@@ -149,10 +155,13 @@ public class Enemy : MonoBehaviour
             // 3:MoveTowardsで目標位置に
             else if (enemyData[i].State == 3)
             {
+                // 前フレームのワールド位置
+                prevPosition[i] = enemy[i].transform.position;
+                // 移動
                 enemy[i].transform.position = Vector3.MoveTowards(
                    enemy[i].transform.position,
                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 500
+                   Time.deltaTime * 800
                    );
 
                 // 進行方向に向きを変える
@@ -185,8 +194,8 @@ public class Enemy : MonoBehaviour
         Vector3 delta = newPos- oldPos;
 
         // 静止している状態だと、進行方向を特定できないため回転しない
-        //if (delta == Vector3.zero)
-        //    return;
+        if (delta == Vector3.zero)
+            return Quaternion.identity;
 
         // 回転補正計算
         Quaternion offsetRot = Quaternion.Inverse(Quaternion.LookRotation(_right, _up));
@@ -200,6 +209,7 @@ public class Enemy : MonoBehaviour
     }
 }
 
+/*
 // CSVをScriptableObjectに流し込む
 #if UNITY_EDITOR
 public class PostEnemy : AssetPostprocessor
@@ -229,3 +239,4 @@ public class PostEnemy : AssetPostprocessor
     }
 }
 #endif
+*/

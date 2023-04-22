@@ -11,6 +11,9 @@ public class EnemyData
     public int StartPosX;               // XÀ•W
     public int StartPosY;               // YÀ•W
     public int StartPosZ;               // ZÀ•W
+    public int Target1PosX;             //
+    public int Target1PosY;             //
+    public int Target1PosZ;             //
     public int TargetPosX;              //
     public int TargetPosY;              //
     public int TargetPosZ;              //
