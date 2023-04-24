@@ -7,39 +7,29 @@ using UnityEditor;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float spawnRealTime = 0;            // リアルタイム
+    [SerializeField] private float spawnRealTime = 0;            // タイマー
 
-    // 流し込む配列
+    // CSVのデータを流し込む配列
     public EnemyData[] enemyData;
-
-    // オリジナルのオブジェクト
-    public GameObject originenemy;
 
     // StageChangerオブジェクト
     public GameObject StageChanger;
 
-    // 親のオブジェクト(StageChanger)を取得
-    //static public GameObject StageChanger = this.transform.root.gameObject;
+    // オリジナルのオブジェクト
+    public GameObject originenemy;
 
-    // スクリプト上のNextStageを取得
-    //StageNo nextStageNo = StageChanger.GetComponent<StageChangerScript>().NextStage;
-
-    // 出現用
-    [SerializeField] private int obcount;
+    // 出現用オブジェクト
+    private int element;
     private GameObject[] enemy;
     public SpriteRenderer Sprite;
 
-    //private const float spawnRate = 2.0f;       // 出現間隔
+    //private const float spawnRate = 2.0f;     // 出現間隔
     private int i;                              // 配列番号
 
-    // この辺の変数整理が必要
-    float angle = 400.0f;
-    // オブジェクトの右向き
-    private Vector3 _right = Vector3.up;
-    // オブジェクトの上向き
-    private Vector3 _up = Vector3.right;
-    // オブジェクトの正面
-    private Vector3 _forward = Vector3.forward;
+    float angle = 400.0f;                       // 回転量(2で使用中)
+    private Vector3 _right = Vector3.up;        // オブジェクトの右向き→上向きに変更
+    private Vector3 _up = Vector3.right;        // オブジェクトの上向き→右向きに変更
+    private Vector3 _forward = Vector3.forward; // オブジェクトの正面
 
     // Start is called before the first frame update
     void Start()
@@ -51,9 +41,11 @@ public class Enemy : MonoBehaviour
         StageChanger = this.transform.root.gameObject;
         // スクリプト上のNextStageを取得
         StageNo nextStageNo = StageChanger.GetComponent<StageChangerScript>().NextStage;
-        obcount = CountNumberofLine.Main(nextStageNo);
 
-        enemy = new GameObject[obcount];
+        // 使用するCSVファイルの行数を取得
+        element = CountNumberofLine.Main(nextStageNo);
+        // 配列の要素数を決定
+        enemy = new GameObject[element];
 
         // csvファイルを読み込ませる
         // NextStageの番号で読み込むファイルを分岐する
@@ -72,14 +64,11 @@ public class Enemy : MonoBehaviour
         // CSVSerializerを用いてcsvファイルを配列に流し込む
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
 
+        // SpriteRendererの初期化
         Sprite = GetComponent<SpriteRenderer>();
 
-        spawnRealTime = 0;            // リアルタイム
-
-        //const int obcount = CountNumberofLine.Main();
-        //GameObject[] enemy = new GameObject[obcount];
-
-        for (i = 0; i < obcount; i++)
+        // Target1Posを使いやすいように置き換え
+        for (i = 0; i < element; i++)
         {
             enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
         }
@@ -88,12 +77,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnRealTime += Time.deltaTime;
-        for (i = 0; i < obcount; i++)
+        spawnRealTime += Time.deltaTime;    // 現在時間
+        for (i = 0; i < element; i++)
         {
             // 敵未出現
             if (enemyData[i].State == 0)
             {
+                // 時間になったら敵登場
                 if (spawnRealTime >= enemyData[i].AppearanceTime)
                 {
                     SpawnNewEnemy(i);
@@ -104,7 +94,7 @@ public class Enemy : MonoBehaviour
             // 1:Slerpによる二点間の球形移動
             else if (enemyData[i].State == 1)
             {
-                // 前フレームのワールド位置
+                // 前フレームのワールド位置をとっておく
                 enemyData[i].prevPosition = enemy[i].transform.position;
                 //二点間の距離を代入(スピード調整に使う)
                 enemyData[i].distance_two = Vector3.Distance(
@@ -118,6 +108,7 @@ public class Enemy : MonoBehaviour
                 // 現在の位置
                 enemyData[i].PresentLocation = (enemyData[i].State1time * 500) / enemyData[i].distance_two;
 
+                // 移動
                 enemy[i].transform.position = Vector3.Slerp(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
                     enemyData[i].target1,
@@ -147,11 +138,13 @@ public class Enemy : MonoBehaviour
                 // この状態での経過時間を取得
                 enemyData[i].State2time += Time.deltaTime;
 
+                // 移動
                 enemy[i].transform.RotateAround(
                     new Vector3(enemyData[i].target1.x - 100.0f, enemyData[i].target1.y, enemyData[i].target1.z),
                     Vector3.forward,        // Z軸
                     Time.deltaTime * angle
                     );
+
                 // 2周したら次の動きに移行
                 if (enemyData[i].State2time * angle >= 720.0f)
                 {
@@ -161,7 +154,7 @@ public class Enemy : MonoBehaviour
             // 3:MoveTowardsで目標位置に
             else if (enemyData[i].State == 3)
             {
-                // 前フレームのワールド位置
+                // 前フレームのワールド位置をとっておく
                 enemyData[i].prevPosition = enemy[i].transform.position;
                 // 移動
                 enemy[i].transform.position = Vector3.MoveTowards(
