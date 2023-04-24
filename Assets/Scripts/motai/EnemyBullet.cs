@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    // キューブ(敵に)
     [SerializeField] GameObject ball;
+    [SerializeField] GameObject player;
+    // 弾に
     public float ballSpeed = 10.0f;
-    public float time = 1.0f;
+    public float time = 5.0f;
 
     void Update()
     {
-        transform.LookAt(player.transform);
-        time -= Time.deltaTime;
+        transform.LookAt(player.transform);// キューブ(敵に)
+
+        time -= Time.deltaTime;// 弾に
         if (time <= 0)
         {
             BallShot();
-            time = 1.0f;
+            time = 5.0f;
         }
     }
 
-    void BallShot()
+    void BallShot()// キューブ(敵に)
     {
         GameObject shotObj = Instantiate(ball, transform.position, Quaternion.identity);
         shotObj.GetComponent<Rigidbody>().velocity = transform.forward * ballSpeed;
     }
+
 }
