@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Effekseer;
 
 public class BeamParticleScript : MonoBehaviour
 {
@@ -39,8 +40,6 @@ public class BeamParticleScript : MonoBehaviour
     // 反射用当たり判定プレハブ格納
     public GameObject BeamBoxCastReflect;
 
-    // ビームの見た目パーティクル格納
-    public GameObject BeamParticleSystemPrefab;
 
     // privateゾーン********************************************
     // 今の反射回数
@@ -77,12 +76,20 @@ public class BeamParticleScript : MonoBehaviour
 
         // ParticleManagerを取得
         ParticleManager = transform.root.gameObject;
-        
+
+        // エフェクシアのエフェクトもらう
+        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beemeee");
+        Debug.Log(effect);
+        // transformの位置でエフェクトを再生する
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+        // tramsformの回転を設定する
+        Quaternion rot = Quaternion.Euler(transform.rotation.x , transform.rotation.y , transform.rotation.z - 90);
+        handle.SetRotation(rot);
     }
 
     void Update()
     {
-        Instantiate(BeamParticleSystemPrefab, this.transform.position, Quaternion.identity/*, this.transform*/);
+       
         // 移動処理
         transform.position += moveDir;
     }
