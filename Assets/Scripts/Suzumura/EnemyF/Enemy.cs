@@ -18,6 +18,10 @@ public class Enemy : MonoBehaviour
     // オリジナルのオブジェクト
     public GameObject originenemy;
 
+    public GameObject ExclamationMark;
+    public GameObject AppearanceNoticeObj;
+    private AppearanceNotice appearanceNotice;
+
     // 出現用オブジェクト
     private int element;
     private GameObject[] enemy;
@@ -67,9 +71,12 @@ public class Enemy : MonoBehaviour
         // SpriteRendererの初期化
         Sprite = GetComponent<SpriteRenderer>();
 
+        appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
+
         // Target1Posを使いやすいように置き換え
         for (i = 0; i < element; i++)
         {
+            enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
             enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
         }
     }
@@ -184,13 +191,20 @@ public class Enemy : MonoBehaviour
         enemy[no].transform.localScale = new Vector3(enemyData[no].Size, enemyData[no].Size, enemyData[no].Size);
         // テクスチャ設定(仮)
         enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
+
+        Instantiate(ExclamationMark,
+        enemyData[i].Entry,
+        Quaternion.identity,
+        this.transform);//  <-- StageChangerの子として作成
+        // 敵予告のフェード
+        appearanceNotice.StartFade();
     }
 
     // 進行方向に向きを変える関数
     public Quaternion RotateToMovementDirection(Vector3 newPos, Vector3 oldPos)
     {
         // 移動量を計算
-        Vector3 delta = newPos- oldPos;
+        Vector3 delta = newPos - oldPos;
 
         // 静止している状態だと、進行方向を特定できないため回転しない
         if (delta == Vector3.zero)

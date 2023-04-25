@@ -48,8 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRealTime: 0
   enemyData: []
-  originenemy: {fileID: 6825728215260208665}
   StageChanger: {fileID: 0}
+  originenemy: {fileID: 6825728215260208665}
+  ExclamationMark: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
+    type: 3}
+  AppearanceNoticeObj: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
+    type: 3}
   Sprite: {fileID: 1514023431371668655}
 --- !u!212 &1514023431371668655
 SpriteRenderer:

@@ -11,6 +11,9 @@ public class EnemyData
     public int StartPosX;               // X座標
     public int StartPosY;               // Y座標
     public int StartPosZ;               // Z座標
+    public int EntryPosX;               //
+    public int EntryPosY;               //
+    public int EntryPosZ;               //
     public int Target1PosX;             //
     public int Target1PosY;             //
     public int Target1PosZ;             //
@@ -25,6 +28,7 @@ public class EnemyData
     public float distance_two;         //二点間の距離を入れる
     public float State1time;
     public float PresentLocation;
+    public Vector3 Entry;
     public Vector3 target1;
     public float State2time;
 
