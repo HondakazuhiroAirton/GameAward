@@ -24,22 +24,32 @@ public class StageSelect : MonoBehaviour
     // 今の位置を入れておく変数
     [SerializeField] private int NowPosition;
 
-   
+    // ボタン配列で管理
+    public Button[] button;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Stage1_1.Select();
-        Time.timeScale = 1f;
+//       Stage1_1.Select;
 
-        Stage1UI.SetActive(false);
+//       Stage1UI.SetActive(false);
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+//        if(GetKeyDown(KeyCode.UpArrow))
+//        {
+//            button -= 1;   
+//        }
+//        else if(GetKeyDown(KeyCode.DownArrow))
+//        {
+//            button += 1;
+//        }
     }
 
     public void onButtonStage1_1()

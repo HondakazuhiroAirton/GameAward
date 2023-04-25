@@ -10,6 +10,7 @@ public class Cursoll : MonoBehaviour
 
     // 今の位置を入れておく変数
     [SerializeField] private int NowPosition;
+    [SerializeField] private GameObject cursol;
 
     GameObject worldSelector;
     GameObject Cursol;
@@ -23,8 +24,12 @@ public class Cursoll : MonoBehaviour
 
     public GameObject Return;
 
+    
+
     void Start()
     {
+
+        cursol = GameObject.Find("Triangle");
         worldSelector = GameObject.Find("/UICanvas/WorldSelector");
         script = worldSelector.GetComponent<WorldSelector>();
 
@@ -39,16 +44,20 @@ public class Cursoll : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             NowPosition += 1;
-            if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
+            if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/)   NowPosition = 0;
             this.transform.position = iti[NowPosition].transform.position;
+            if (NowPosition <= 0)
+            {
+            }
         }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             NowPosition -= 1;
             if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
             this.transform.position = iti[NowPosition].transform.position;
+
         }
+        
 
 
     }
@@ -58,7 +67,8 @@ public class Cursoll : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            if(NowPosition==0)
+
+            if (NowPosition==0)
             {
                 SceneManager.LoadScene("nagaya");
             }
@@ -66,6 +76,7 @@ public class Cursoll : MonoBehaviour
             {
                 World1.SetActive(true);
 
+                UnityEditor.EditorApplication.isPaused = true;
             }
             else if(NowPosition==2)
             {
