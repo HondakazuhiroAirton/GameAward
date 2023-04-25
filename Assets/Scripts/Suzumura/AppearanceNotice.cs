@@ -5,19 +5,29 @@ using UnityEngine.UI;
 
 public class AppearanceNotice : MonoBehaviour
 {
-    Color color;
+    public GameObject Object;
+    //フェード後に呼び出されるメゾッド
+    private static void OnFinished() { }
 
     // Start is called before the first frame update
     void Start()
     {
-        color = gameObject.GetComponent<AppearanceNotice> ().color;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //mesh.material.color = mesh.material.color - new Color32(0, 0, 0, 1);
-        color.a -= 0.1f;
-        gameObject.GetComponent<AppearanceNotice>().color = color;
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            // テスト用
+            CanvasFader.Begin(Object, false, 0.7f, true, OnFinished);
+        }
+    }
+
+    public void StartFade()
+    {
+        CanvasFader.Begin(Object, false, 0.7f, true, OnFinished);
+
     }
 }
