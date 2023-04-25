@@ -74,8 +74,8 @@ public class CBeam : MonoBehaviour
             beamlines[currentEndNo].direction, out hit,
             beamlines[currentEndNo].distance, layerMask);
 
-        Physics.CheckBox()
-        Physics.OverlapSphere();
+        //Physics.CheckBox()
+        //Physics.OverlapSphere();
         if (Hit && !hitTrigger)
         {
             hitTrigger = true;

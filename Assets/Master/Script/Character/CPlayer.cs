@@ -27,16 +27,16 @@ public class CPlayer : MonoBehaviour
     void Update()
     {
         var input = GameInput.actions.Character;
-            
+
         int moveVec = 0;
 
-        if (Input.GetKey(KeyCode.UpArrow)) { }
+        if (Input.GetKey(KeyCode.UpArrow)) { UpKeyEvent(); }
 
-        if (Input.GetKey(KeyCode.DownArrow)) { }
+        if (Input.GetKey(KeyCode.DownArrow)) { DownKeyEvent(); }
 
-        if (Input.GetKey(KeyCode.LeftArrow)) { moveVec = -1; }
+        if (Input.GetKey(KeyCode.LeftArrow)) { LeftKeyEvent(); }
 
-        if (Input.GetKey(KeyCode.RightArrow)) { moveVec = 1; }
+        if (Input.GetKey(KeyCode.RightArrow)) { RightKeyEvent(); }
 
         if (Input.GetKey(KeyCode.DownArrow)) { }
 
@@ -65,15 +65,29 @@ public class CPlayer : MonoBehaviour
 
 
 
-  
+    void LeftKeyEvent()
+    {
+
+    }
+
+    void RightKeyEvent()
+    {
+
+
+    }
+
+    void DownKeyEvent()
+    {
+
+    }
+
+    void UpKeyEvent()
+    {
+
+    }
 
     void SetRail(RailNo dir)
     {
         railData.GetMoveRange(dir, out moveRange);
-    }
-
-    void SetPosition()
-    {
-
     }
 }

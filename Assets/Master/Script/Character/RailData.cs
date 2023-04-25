@@ -18,9 +18,8 @@ public class MoveRange
     public float yMin; 
 }
 
-public class RailData : MonoBehaviour
+public class RailData 
 {
-    [SerializeField]
     private GameObject[] wallsObj;
 
     // Start is called before the first frame update

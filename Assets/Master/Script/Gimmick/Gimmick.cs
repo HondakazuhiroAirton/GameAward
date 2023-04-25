@@ -32,7 +32,7 @@ public class Gimmick : MonoBehaviour,ICollisionAction
         Beamline newBeamline = new Beamline();
 
 
-        newBeamline.startPos = beamline
+        //newBeamline.startPos = beamline
         //Vector3 moveDir = obj.GetComponent<BeamParticleScript>().moveDir; // ˆÚ“®•ûŒüƒxƒNƒgƒ‹
 
         //Vector3 StartPosition = obj.GetComponent<BeamParticleScript>().StartPosition;

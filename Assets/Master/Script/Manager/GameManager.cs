@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(this.gameObject);
-
-
     }
 
     // Start is called before the first frame update
