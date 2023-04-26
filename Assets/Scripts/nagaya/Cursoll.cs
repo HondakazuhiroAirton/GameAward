@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 using UnityEngine.SceneManagement;
 
 public class Cursoll : MonoBehaviour
@@ -23,7 +24,7 @@ public class Cursoll : MonoBehaviour
     public GameObject World4;
 
     public GameObject Return;
-
+//それぞれからのゲームオブジェクト（
     
 
     void Start()
@@ -38,24 +39,29 @@ public class Cursoll : MonoBehaviour
         this.transform.position = iti[NowPosition].transform.position;
     }
 
+    void Awake()
+    {
+        World1.SetActive(false);
+        World2.SetActive(false);
+        World3.SetActive(false);
+        World4.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
+      //
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            NowPosition += 1;
-            if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/)   NowPosition = 0;
+            NowPosition += 1;  
+            if (NowPosition >= 5/*<-マジックナンバー ワールドの合計の数-1を入れたい*/)   NowPosition = 4;
             this.transform.position = iti[NowPosition].transform.position;
-            if (NowPosition <= 0)
-            {
-            }
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))  
         {
             NowPosition -= 1;
-            if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
+            if (NowPosition < 0) NowPosition = 0;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
             this.transform.position = iti[NowPosition].transform.position;
-
         }
         
 
@@ -64,7 +70,7 @@ public class Cursoll : MonoBehaviour
 
    public void WorldButton()
    {
-
+    
         if (Input.GetKeyDown(KeyCode.Return))
         {
 
@@ -75,8 +81,7 @@ public class Cursoll : MonoBehaviour
             else if (NowPosition == 1)
             {
                 World1.SetActive(true);
-
-                UnityEditor.EditorApplication.isPaused = true;
+//              UnityEditor.EditorApplication.isPaused = true;
             }
             else if(NowPosition==2)
             {
