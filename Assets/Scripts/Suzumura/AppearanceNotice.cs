@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class AppearanceNotice : MonoBehaviour
 {
+    // オリジナルのオブジェクト
+    public GameObject ExclamationMark;
+
     public GameObject Object;
     //フェード後に呼び出されるメゾッド
-    private static void OnFinished() { }
+    private void OnFinished() { }
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +21,19 @@ public class AppearanceNotice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // テスト用
         if (Input.GetKeyDown(KeyCode.A))
         {
-            // テスト用
             CanvasFader.Begin(Object, false, 0.7f, true, OnFinished);
         }
     }
 
-    public void StartFade()
+    // 敵出現予告「!」+ フェード
+    public void StartFade(Vector3 Entry)
     {
+        Object = Instantiate(ExclamationMark,
+        Entry,
+        Quaternion.identity);
         CanvasFader.Begin(Object, false, 0.7f, true, OnFinished);
-
     }
 }

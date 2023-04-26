@@ -18,13 +18,12 @@ public class Enemy : MonoBehaviour
     // オリジナルのオブジェクト
     public GameObject originenemy;
 
-    public GameObject ExclamationMark;
     public GameObject AppearanceNoticeObj;
     private AppearanceNotice appearanceNotice;
 
     // 出現用オブジェクト
     private int element;
-    private GameObject[] enemy;
+    [SerializeField] private GameObject[] enemy;
     public SpriteRenderer Sprite;
 
     //private const float spawnRate = 2.0f;     // 出現間隔
@@ -192,12 +191,9 @@ public class Enemy : MonoBehaviour
         // テクスチャ設定(仮)
         enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
 
-        Instantiate(ExclamationMark,
-        enemyData[i].Entry,
-        Quaternion.identity,
-        this.transform);//  <-- StageChangerの子として作成
+        //  <-- StageChangerの子として作成
         // 敵予告のフェード
-        appearanceNotice.StartFade();
+        appearanceNotice.StartFade(enemyData[i].Entry);
     }
 
     // 進行方向に向きを変える関数
