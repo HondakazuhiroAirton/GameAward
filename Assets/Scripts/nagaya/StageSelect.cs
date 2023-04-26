@@ -23,9 +23,7 @@ public class StageSelect : MonoBehaviour
 
     // 今の位置を入れておく変数
     [SerializeField] private int NowPosition;
-
-    // ボタン配列で管理
-    public Button[] button;
+    
 
 
 
