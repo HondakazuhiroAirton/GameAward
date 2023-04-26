@@ -19,13 +19,13 @@ MonoBehaviour:
   - path: tex/eff03.png
     texture: {fileID: 2800000, guid: 6b4e5cbafb3107d48a16f1b1ad704ee5, type: 3}
   - path: tex/LaserMain02.png
-    texture: {fileID: 2800000, guid: b86e7c25756a3ac428e8e11386906ceb, type: 3}
+    texture: {fileID: 0}
   - path: tex/Particle01.png
-    texture: {fileID: 2800000, guid: 6297da1e7a8eece41bf1ea544e2310b0, type: 3}
+    texture: {fileID: 0}
   soundResources: []
   modelResources:
   - path: tex/bullet.asset
-    asset: {fileID: 11400000, guid: 3d8726f51ce0b9248b675ed90ceecf8c, type: 2}
+    asset: {fileID: 0}
   materialResources: []
   curveResources: []
   Scale: 1
