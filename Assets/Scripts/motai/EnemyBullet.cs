@@ -7,26 +7,26 @@ public class EnemyBullet : MonoBehaviour
     // キューブ(敵に)
     [SerializeField] GameObject ball;
     [SerializeField] GameObject player;
-    // 弾に
-    public float ballSpeed = 10.0f;
-    public float time = 5.0f;
+    public const float maxtime = 5.0f;
+    public float time;
+    
 
     void Update()
     {
-        transform.LookAt(player.transform);// キューブ(敵に)
+        time += Time.deltaTime;
+        transform.LookAt(player.transform);// キューブ(敵に)]
 
-        time -= Time.deltaTime;// 弾に
-        if (time <= 0)
+        if(time >= maxtime)
         {
             BallShot();
-            time = 5.0f;
+
+            time = 0;
         }
     }
 
     void BallShot()// キューブ(敵に)
     {
-        GameObject shotObj = Instantiate(ball, transform.position, Quaternion.identity);
-        shotObj.GetComponent<Rigidbody>().velocity = transform.forward * ballSpeed;
+        Instantiate(ball, transform.position, this.transform.rotation);
     }
 
 }
