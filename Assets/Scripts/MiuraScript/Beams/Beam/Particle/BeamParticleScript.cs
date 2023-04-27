@@ -89,11 +89,11 @@ public class BeamParticleScript : MonoBehaviour
         // ほんとにラジアン
         float tmp = Player.transform.rotation.z;
         // ラジアン->度に変換
-        tmp = tmp * Mathf.Deg2Rad;
+        tmp = tmp * Mathf.Rad2Deg;
 
         Debug.Log(tmp);
         // tramsformの回転を設定する
-        Quaternion rot = Quaternion.Euler(tmp, 90 , 90);
+        Quaternion rot = Quaternion.Euler(tmp , 90 , 90);
         handle.SetRotation(rot);
     }
 
