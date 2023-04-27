@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class beamlife : MonoBehaviour
 {
     public GameObject Gameover;
-    private int life = 1;
+    private int life = 3;
     private float amount = 100;
     public float recovery = 0.1f;
     
@@ -28,6 +28,10 @@ public class beamlife : MonoBehaviour
     {
         amount = value;
     }
+    public void GameOver()
+    {
+        Gameover.SetActive(true);
+    }
     void Start()
     {
         Gameover = GameObject.Find("Gameover");
@@ -39,13 +43,18 @@ public class beamlife : MonoBehaviour
         {
             amount += recovery * Time.deltaTime;
         }
-       // else
-       // {
-       //     //return;
-       // }
+        // else
+        // {
+        //     //return;
+        // }
+        //デバック用
         if (Input.GetKey(KeyCode.B))
         {
             amount--;
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            life--;
         }
 
         // Game Over

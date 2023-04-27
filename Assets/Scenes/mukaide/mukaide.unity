@@ -24836,7 +24836,7 @@ MonoBehaviour:
   EmitterScale: 0
   TimeScale: 0
   effectAsset: {fileID: 11400000, guid: 94463aead2097484f921ebd44b655877, type: 2}
-  playOnStart: 0
+  playOnStart: 1
   isLooping: 0
 --- !u!4 &1389263910
 Transform:
