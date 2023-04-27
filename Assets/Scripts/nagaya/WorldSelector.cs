@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class WorldSelector : MonoBehaviour
@@ -29,7 +30,10 @@ public class WorldSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            onButtonWorld1();
+        }
     }
 
     public void onButtonWorld1()
@@ -53,5 +57,10 @@ public class WorldSelector : MonoBehaviour
     public void onButtonWorld4()
     {
         Stage4.SetActive(true);
+    }
+
+    public void onButtonReturn()
+    {
+        SceneManager.LoadScene("Title(Proto)");
     }
 }

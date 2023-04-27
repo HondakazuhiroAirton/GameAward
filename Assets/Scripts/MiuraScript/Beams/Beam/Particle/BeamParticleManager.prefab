@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7954957734673453955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.113844685, y: 0.113844685, z: 0.113844685}
+  m_LocalScale: {x: 0.1497735, y: 0.1497735, z: 0.1497735}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7954957736179242919}
@@ -220,19 +220,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7745fedffaf991342b198d7a2287df35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Angle: 180
+  Angle: 0
   Speed: 0.2
   ReflectMax: 1000
   ParticleManager: {fileID: 7954957736179242913}
   NowBoxCast: {fileID: 0}
   StartPosition: {x: 0, y: 0, z: 0}
   moveDir: {x: 0, y: 0, z: 0}
-  BeamMax: 10.011384
+  BeamMax: 10.014977
   AngleHosei: 0
   BeamBoxCastReflect: {fileID: 3653431189480935985, guid: d7658118b82beb242b0ab4877e7ac34f,
     type: 3}
-  BeamParticleSystemPrefab: {fileID: 4735100903435849481, guid: 9d34c6d017a3d1545931dfa7c61aa406,
-    type: 3}
+  Player: {fileID: 0}
 --- !u!135 &7954957735459857815
 SphereCollider:
   m_ObjectHideFlags: 0

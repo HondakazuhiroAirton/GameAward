@@ -343,7 +343,6 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
         }
 
-
         // ビーム発射処理(ここまで)*************************************************************
 
         // 巨大ビーム発射処理(ここから)*************************************************************
@@ -352,8 +351,6 @@ public class PlayerMove_MIURA : MonoBehaviour
             // プレハブを指定位置に生成
             Instantiate(BigBeamPrefabs, this.transform.position, gameObject.transform.localRotation);
         }
-
-
 
     }
 }

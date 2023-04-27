@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Effekseer;
 
 public class BeamParticleScript : MonoBehaviour
 {
@@ -39,8 +40,7 @@ public class BeamParticleScript : MonoBehaviour
     // 反射用当たり判定プレハブ格納
     public GameObject BeamBoxCastReflect;
 
-    // ビームの見た目パーティクル格納
-    public GameObject BeamParticleSystemPrefab;
+    public GameObject Player;
 
     // privateゾーン********************************************
     // 今の反射回数
@@ -60,10 +60,10 @@ public class BeamParticleScript : MonoBehaviour
 
     void Start()
     {
-       // Angleから移動量を求める処理
+        // Angleから移動量を求める処理
 
         // Angle(度)をラジアンに変更
-          Angle = Mathf.Deg2Rad * Angle;
+        Angle = Mathf.Deg2Rad * Angle;
 
         // XMoveとYMoveにCos/Sinで移動量を求める
         XMove = Mathf.Cos(Angle);
@@ -77,12 +77,28 @@ public class BeamParticleScript : MonoBehaviour
 
         // ParticleManagerを取得
         ParticleManager = transform.root.gameObject;
-        
+
+        // プレイヤーを検索して探す
+        Player = GameObject.Find("Player");
+
+        // エフェクシアのエフェクトもらう
+        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beemeee");
+        // transformの位置でエフェクトを再生する
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+
+        // ほんとにラジアン
+        float tmp = Player.transform.rotation.z;
+        // ラジアン->度に変換
+        tmp = tmp * Mathf.Deg2Rad;
+
+        Debug.Log(tmp);
+        // tramsformの回転を設定する
+        Quaternion rot = Quaternion.Euler(tmp, 90 , 90);
+        handle.SetRotation(rot);
     }
 
     void Update()
     {
-        Instantiate(BeamParticleSystemPrefab, this.transform.position, Quaternion.identity/*, this.transform*/);
         // 移動処理
         transform.position += moveDir;
     }
