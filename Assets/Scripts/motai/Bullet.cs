@@ -22,22 +22,16 @@ public class Bullet : MonoBehaviour
         var moveVal = transform.forward * ballSpeed * Time.deltaTime;
         transform.position += moveVal;
 
-        Wx = Screen.width / 15;
-        Wy = Screen.height / 15;
-        Debug.Log("スクリーンx =" + Wx);
-        Debug.Log("スクリーンy =" + Wy);
+        Wx = Camera.main.WorldToViewportPoint(transform.position).x;
+        Wy = Camera.main.WorldToViewportPoint(transform.position).y;
 
-        if (transform.position.x == Wx || transform.position.y == Wy )
+        if (0 >= Wx || Wx >= 1 )
         {
             GameObject.Destroy(this.gameObject);
         }
-        if(-transform.position.x == -Wx || -transform.position.y == -Wy)
+        else if (0 >= Wy || Wy >= 1)
         {
             GameObject.Destroy(this.gameObject);
         }
     }
-    /*void OnBecameInvisible()
-    {
-        GameObject.Destroy(this.gameObject);
-    }*/
 }
