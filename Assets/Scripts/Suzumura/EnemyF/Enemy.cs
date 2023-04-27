@@ -86,6 +86,9 @@ public class Enemy : MonoBehaviour
         spawnRealTime += Time.deltaTime;    // 現在時間
         for (i = 0; i < element; i++)
         {
+            // 前フレームのワールド位置をとっておく
+            if (enemyData[i].State != 0) enemyData[i].prevPosition = enemy[i].transform.position;
+
             // 敵未出現
             if (enemyData[i].State == 0)
             {
@@ -100,8 +103,6 @@ public class Enemy : MonoBehaviour
             // 1:Slerpによる二点間の球形移動
             else if (enemyData[i].State == 1)
             {
-                // 前フレームのワールド位置をとっておく
-                enemyData[i].prevPosition = enemy[i].transform.position;
                 //二点間の距離を代入(スピード調整に使う)
                 enemyData[i].distance_two = Vector3.Distance(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
@@ -151,6 +152,9 @@ public class Enemy : MonoBehaviour
                     Time.deltaTime * angle
                     );
 
+                // 進行方向に向きを変える
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
                 // 2周したら次の動きに移行
                 if (enemyData[i].State2time * angle >= 720.0f)
                 {
@@ -160,8 +164,6 @@ public class Enemy : MonoBehaviour
             // 3:MoveTowardsで目標位置に
             else if (enemyData[i].State == 3)
             {
-                // 前フレームのワールド位置をとっておく
-                enemyData[i].prevPosition = enemy[i].transform.position;
                 // 移動
                 enemy[i].transform.position = Vector3.MoveTowards(
                    enemy[i].transform.position,
@@ -191,9 +193,8 @@ public class Enemy : MonoBehaviour
         // テクスチャ設定(仮)
         enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
 
-        //  <-- StageChangerの子として作成
-        // 敵予告のフェード
-        appearanceNotice.StartFade(enemyData[i].Entry);
+        // 敵予告のフェードを始める
+        appearanceNotice.StartFade(enemyData[i].Entry, enemyData[i].sideNo);
     }
 
     // 進行方向に向きを変える関数

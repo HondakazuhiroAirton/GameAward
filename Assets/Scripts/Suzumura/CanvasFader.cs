@@ -32,10 +32,14 @@ public class CanvasFader : MonoBehaviour
     // フェード切り替え回数
     private int FadeCount = 0;
 
+    public GameObject AppearanceNoticeObj;
+    private AppearanceNotice appearanceNotice;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
     }
 
     // Update is called once per frame
@@ -80,9 +84,11 @@ public class CanvasFader : MonoBehaviour
             return;
         }
 
+        // ここまで処理が進んだらフェードが終わっている
         _onFinished?.Invoke();
 
         _fadeState = FadeState.None;
+        appearanceNotice.DestroyExclamation();       // クローンを削除
         this.enabled = false;
     }
 
