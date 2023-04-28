@@ -85,7 +85,9 @@ public class BeamParticleScript : MonoBehaviour
         // エフェクシアのエフェクトもらう
         // Beamの大きさに応じてswitchかけて大きさ調整
         EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beemeee");
-        
+        Debug.Log(effect.Scale);
+        effect.Scale *= 10.0f;
+        Debug.Log(effect.Scale);
         // transformの位置でエフェクトを再生する
         EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
 

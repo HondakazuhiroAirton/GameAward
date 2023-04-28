@@ -9,7 +9,7 @@ public class StageManagerScript : MonoBehaviour
     // 現在のステージ
     [SerializeField]private int StageIndex;
 
-    // Geter/Seterその他関数**************************************************************::
+    // Geter/Seterその他関数**************************************************************
     // ステージ全情報取得
     public StageClearDate[] GetStageInformation()
     {
