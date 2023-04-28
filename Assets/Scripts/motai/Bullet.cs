@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Effekseer;
 public class Bullet : MonoBehaviour
 {
 
@@ -18,6 +18,12 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // エフェクトを取得する。
+        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Bullet");
+        // transformの位置でエフェクトを再生する
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+        // transformの回転を設定する。
+        handle.SetRotation(transform.rotation);
 
         var moveVal = transform.forward * ballSpeed * Time.deltaTime;
         transform.position += moveVal;
