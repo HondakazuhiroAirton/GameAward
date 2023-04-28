@@ -133,18 +133,18 @@ public class PlayerMove_MIURA : MonoBehaviour
         BeamParticleManagerPrefab = Resources.Load<GameObject>("BeamParticleManager");
 
         // 巨大ビームをResourcesから取得
-        BeamParticleManagerPrefab = Resources.Load<GameObject>("BigBeam");
+        BigBeamPrefabs = Resources.Load<GameObject>("BigBeam");
 
 
         // とりあえず消したのこの辺******************************************
-        // PlayerDateもってくる
-        //PlayerDate = GameObject.Find("PlayerDate");
+        //PlayerDateもってくる
+        PlayerDate = GameObject.Find("PlayerDate");
 
-        // Geter/Seter使用用スクリプト保持
-        //PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
+        //Geter / Seter使用用スクリプト保持
+        PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
 
-        // ビーム残量を100%に設定
-        //PlayerClassScript.SetAmount(100);
+        //ビーム残量を100 % に設定
+        PlayerClassScript.SetAmount(100);
         // とりあえず消したのこの辺まで****************************************
     }
 
