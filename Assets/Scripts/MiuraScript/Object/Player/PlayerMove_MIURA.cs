@@ -33,6 +33,11 @@ public class PlayerMove_MIURA : MonoBehaviour
     public float RLpos;
     public float LRpos;
     public float LLpos;
+    //ワープフラグ用
+    public bool Up;
+    public bool Down;
+    public bool Right;
+    public bool Left;
 
     //0402_三浦瞬追記****************************************************************
     // プレイヤーデータ保存用オブジェクト取得
@@ -93,6 +98,17 @@ public class PlayerMove_MIURA : MonoBehaviour
         LLpos = Lpos.y - LScale.y / 2;
 
         this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
+
+        //wall色変更
+        WallUp.GetComponent<Renderer>().material.color = Color.red;
+        WallDown.GetComponent<Renderer>().material.color = Color.red;
+        WallRight.GetComponent<Renderer>().material.color = Color.red;
+        WallLeft.GetComponent<Renderer>().material.color = Color.red;
+
+        SetWallFlag(0, true);
+        SetWallFlag(1, true);
+        SetWallFlag(2, false);
+        SetWallFlag(3, true);
 
         //0402_三浦瞬追記****************************************************************
         // チャージした時間を貯める
@@ -237,27 +253,46 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
 
         //ワープ
-        if (Input.GetKey("1"))//上
+        if (Up == true)
         {
-            this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            //色変更
+            WallUp.GetComponent<Renderer>().material.color = Color.green;
+            if (Input.GetKey("1"))//上
+            {
+                this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
         }
-        if (Input.GetKey("2"))//下
+        if (Down == true)
         {
-            this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z - 1);
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+            //色変更
+            WallDown.GetComponent<Renderer>().material.color = Color.green;
+            if (Input.GetKey("2"))//下
+            {
+                this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z - 1);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
         }
-        if (Input.GetKey("3"))//右
+        if (Right == true)
         {
-            this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z - 1);
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+            //色変更
+            WallRight.GetComponent<Renderer>().material.color = Color.green;
+            if (Input.GetKey("3"))//右
+            {
+                this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z - 1);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+            }
         }
-        if (Input.GetKey("4"))//左
+        if (Left == true)
         {
-            this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z - 1);
-            this.gameObject.transform.rotation = Quaternion.Euler(0, 0,90);
+            //色変更
+            WallLeft.GetComponent<Renderer>().material.color = Color.green;
+            if (Input.GetKey("4"))//左
+            {
+                this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z - 1);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+            }
         }
-
 
         //0329_三浦瞬追記****************************************************************
         // ビーム発射処理*************************************************************
@@ -298,7 +333,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             // 3.消費エネルギーの計算
             // 消費量を計算
             float use = 3 /*最小使用量が3*/ + ChargeTime * UseKijun;
-            
+
             // 最大量を決める
             if (use >= 10)
             {
@@ -350,6 +385,19 @@ public class PlayerMove_MIURA : MonoBehaviour
         {
             // プレハブを指定位置に生成
             Instantiate(BigBeamPrefabs, this.transform.position, gameObject.transform.localRotation);
+        }
+
+    }
+    //wall使用フラグ
+    void SetWallFlag(int num, bool flag)
+    {
+        switch (num)
+        {
+            case 0: { Up = flag; break; }
+            case 1: { Down = flag; break; }
+            case 2: { Right = flag; break; }
+            case 3: { Left = flag; break; }
+
         }
 
     }
