@@ -9,9 +9,6 @@ public class WorldSelector : MonoBehaviour
 {
 
     public Button World1;
-    public Button World2;
-    public Button World3;
-    public Button World4;
 
     public GameObject Stage1;
     public GameObject Stage2;
@@ -21,9 +18,8 @@ public class WorldSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-       //Å‰‚©‚ç‘I‘ğ‚µ‚Ä‚¢‚éó‘Ô
-       World1.Select();
+        //Å‰‚©‚ç‘I‘ğ‚µ‚Ä‚¢‚éó‘Ô
+        World1.Select();
 
     }
 

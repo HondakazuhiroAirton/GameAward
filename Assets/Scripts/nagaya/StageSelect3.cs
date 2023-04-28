@@ -6,21 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class StageSelect3 : MonoBehaviour
 {
-    public Button Stage3_1;
-    public Button Stage3_2;
-    public Button Stage3_3;
-    public Button Stage3_4;
-    public Button Stage3_5;
-
-    public Button Cancel;
+    public Button world;
 
     public GameObject Stage3;
+    public GameObject Sel;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -56,6 +50,8 @@ public class StageSelect3 : MonoBehaviour
 
     public void onButtonCancel()
     {
+        Sel.SetActive(true);
+        world.Select();
         Stage3.SetActive(false);
     }
 }
