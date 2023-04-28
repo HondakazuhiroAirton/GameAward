@@ -55,7 +55,7 @@ public class StageChangerScript : MonoBehaviour
 
     void Update()
     {
-        // 条件を達成したらステージ変更処理を開始する
+        // 手動でステージ選択
         if (changeStage == true)
         {
             // ステージ変更処理を開始する

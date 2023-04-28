@@ -55,10 +55,10 @@ public class Enemy : MonoBehaviour
         switch (nextStageNo)
         {
             case StageNo.Stage1_1:
-            textasset = Resources.Load("CSV/Enemy2", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/Enemy01", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage1_2:
-                textasset = Resources.Load("CSV/Enemy", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/Enemy00", typeof(TextAsset)) as TextAsset;
                 break;
 
                 // ステージが増えたら下に追記
