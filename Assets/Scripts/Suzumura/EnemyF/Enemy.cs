@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
         StageChanger = this.transform.root.gameObject;
         // スクリプト上のNextStageを取得
         StageNo nextStageNo = StageChanger.GetComponent<StageChangerScript>().NextStage;
-
+        Debug.Log(nextStageNo);
         // 使用するCSVファイルの行数を取得
         element = CountNumberofLine.Main(nextStageNo);
         // 配列の要素数を決定
