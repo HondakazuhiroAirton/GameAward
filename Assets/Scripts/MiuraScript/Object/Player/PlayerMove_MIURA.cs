@@ -8,44 +8,7 @@ public class PlayerMove_MIURA : MonoBehaviour
     // publicゾーン**************************************************************
     public float speed; //プレイヤーのスピード 
 
-<<<<<<< HEAD
-    public Vector3 Upos;        //上の位置
-    public Vector3 UScale;      //上のスケール
-    public Vector3 Dpos;        //下の位置
-    public Vector3 DScale;      //下のスケール
-    public Vector3 Rpos;        //右の位置
-    public Vector3 RScale;      //右のスケール
-    public Vector3 Lpos;        //左の位置
-    public Vector3 LScale;      //左のスケール
-
-    public float URpos;
-    public float ULpos;
-    public float DRpos;
-    public float DLpos;
-    public float RRpos;
-    public float RLpos;
-    public float LRpos;
-    public float LLpos;
-    //ワープフラグ用
-    public bool Up;
-    public bool Down;
-    public bool Right;
-    public bool Left;
-
-    //0402_三浦瞬追記****************************************************************
-    // プレイヤーデータ保存用オブジェクト取得
-    public GameObject PlayerDate;
-    // Geter/Seter用スクリプト保存
-    public PlayerClass PlayerClassScript;
-    // プレハブ格納用
-    public GameObject BeamParticleManagerPrefab;
-    // チャージした時間によってビームの大きさが変わるサイズ変更用の変数
-    public float BoxCastScale = 0.0f;
-    // チャージした時間を格納する変数(必要)
-    public float ChargeTime = 0.0f;
-=======
     // ビームの情報達********************************
->>>>>>> feature/miura
     // ビームの横幅が1秒間に大きくなる基準
     public float BeamExpansion = 100.0f;
     // ビームの最大の長さ
@@ -56,6 +19,12 @@ public class PlayerMove_MIURA : MonoBehaviour
     public float BeamDistanceKijun;
     // ビーム使用量の基準
     public float UseKijun = 10;
+
+    //ワープフラグ用
+    public bool Up;
+    public bool Down;
+    public bool Right;
+    public bool Left;
 
     // privateゾーン*************************************************************
     // 移動バー
@@ -95,7 +64,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     // プレハブ格納用
     private GameObject BeamParticleManagerPrefab;
-    
+
     // チャージした時間を格納する変数(必要)
     public float ChargeTime = 0.0f;
 
@@ -141,12 +110,12 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
 
-<<<<<<< HEAD
+
         //wall色変更
-        WallUp.GetComponent<Renderer>().material.color = Color.red;
-        WallDown.GetComponent<Renderer>().material.color = Color.red;
-        WallRight.GetComponent<Renderer>().material.color = Color.red;
-        WallLeft.GetComponent<Renderer>().material.color = Color.red;
+        wallUp.GetComponent<Renderer>().material.color = Color.red;
+        wallDown.GetComponent<Renderer>().material.color = Color.red;
+        wallRight.GetComponent<Renderer>().material.color = Color.red;
+        wallLeft.GetComponent<Renderer>().material.color = Color.red;
 
         SetWallFlag(0, true);
         SetWallFlag(1, true);
@@ -154,8 +123,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         SetWallFlag(3, true);
 
         //0402_三浦瞬追記****************************************************************
-=======
->>>>>>> feature/miura
+
         // チャージした時間を貯める
         ChargeTime = 0.0f;
         // 基準値初期化
@@ -313,7 +281,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         if (Up == true)
         {
             //色変更
-            WallUp.GetComponent<Renderer>().material.color = Color.green;
+            wallUp.GetComponent<Renderer>().material.color = Color.green;
             if (Input.GetKey("1"))//上
             {
                 this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
@@ -323,7 +291,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         if (Down == true)
         {
             //色変更
-            WallDown.GetComponent<Renderer>().material.color = Color.green;
+            wallDown.GetComponent<Renderer>().material.color = Color.green;
             if (Input.GetKey("2"))//下
             {
                 this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z - 1);
@@ -333,7 +301,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         if (Right == true)
         {
             //色変更
-            WallRight.GetComponent<Renderer>().material.color = Color.green;
+            wallRight.GetComponent<Renderer>().material.color = Color.green;
             if (Input.GetKey("3"))//右
             {
                 this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z - 1);
@@ -343,7 +311,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         if (Left == true)
         {
             //色変更
-            WallLeft.GetComponent<Renderer>().material.color = Color.green;
+            wallLeft.GetComponent<Renderer>().material.color = Color.green;
             if (Input.GetKey("4"))//左
             {
                 this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z - 1);
