@@ -44,7 +44,7 @@ public class BeamManagerScript : MonoBehaviour
         if (falseCount >= childCount)
         {
             // マネージャー削除
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
