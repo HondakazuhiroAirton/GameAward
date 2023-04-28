@@ -22,6 +22,18 @@ public class StageManagerScript : MonoBehaviour
         AllStage = date;
     }
 
+    // ステージ情報取得
+    public int GetStageIndex()
+    {
+        return StageIndex;
+    }
+
+    // ステージ情報セット
+    public void SetStageIndex(int date)
+    {
+        StageIndex = date;
+    }
+
     // 指定したステージのクリア状況を直接変更する変数
     public void SetInformation(int stageNo,StageClearState state) /*stageNo = 通し番号*/
     {
