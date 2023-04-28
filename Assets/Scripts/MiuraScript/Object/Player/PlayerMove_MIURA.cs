@@ -5,17 +5,10 @@ using TMPro;
 
 public class PlayerMove_MIURA : MonoBehaviour
 {
-    private Rigidbody rb;
-
-    public GameObject WallUp;
-    public GameObject WallDown;
-    public GameObject WallLeft;
-    public GameObject WallRight;
-
+    // publicゾーン**************************************************************
     public float speed; //プレイヤーのスピード 
-    public Vector3 pos;
-    public Vector3 Scale;
 
+<<<<<<< HEAD
     public Vector3 Upos;        //上の位置
     public Vector3 UScale;      //上のスケール
     public Vector3 Dpos;        //下の位置
@@ -50,6 +43,9 @@ public class PlayerMove_MIURA : MonoBehaviour
     public float BoxCastScale = 0.0f;
     // チャージした時間を格納する変数(必要)
     public float ChargeTime = 0.0f;
+=======
+    // ビームの情報達********************************
+>>>>>>> feature/miura
     // ビームの横幅が1秒間に大きくなる基準
     public float BeamExpansion = 100.0f;
     // ビームの最大の長さ
@@ -61,44 +57,91 @@ public class PlayerMove_MIURA : MonoBehaviour
     // ビーム使用量の基準
     public float UseKijun = 10;
 
+    // privateゾーン*************************************************************
+    // 移動バー
+    private GameObject wallUp;
+    private GameObject wallDown;
+    private GameObject wallLeft;
+    private GameObject wallRight;
+
+    // バーの情報達**************************************
+    private Vector3 Upos;        //上の位置
+    private Vector3 UScale;      //上のスケール
+    private Vector3 Dpos;        //下の位置
+    private Vector3 DScale;      //下のスケール
+    private Vector3 Rpos;        //右の位置
+    private Vector3 RScale;      //右のスケール
+    private Vector3 Lpos;        //左の位置
+    private Vector3 LScale;      //左のスケール
+
+    private float URpos;
+    private float ULpos;
+    private float DRpos;
+    private float DLpos;
+    private float RRpos;
+    private float RLpos;
+    private float LRpos;
+    private float LLpos;
+
+    private Vector3 pos; // プレイヤーのポジション取得
+    private Vector3 Scale; // プレイヤーの大きさ取得
+
+
+    // ビームの情報達********************************
+    // プレイヤーデータ保存用オブジェクト取得
+    private GameObject PlayerDate;
+    // Geter/Seter用スクリプト保存
+    private PlayerClass PlayerClassScript;
+
+    // プレハブ格納用
+    private GameObject BeamParticleManagerPrefab;
+    
+    // チャージした時間を格納する変数(必要)
+    public float ChargeTime = 0.0f;
+
     // 巨大ビームプレハブ格納
-    public GameObject BigBeamPrefabs;
+    private GameObject BigBeamPrefabs;
 
     //********************************************************************************
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        // 各種バー取得
+        wallUp = GameObject.Find("WallUp");
+        wallDown = GameObject.Find("WallDown");
+        wallLeft = GameObject.Find("WallLeft");
+        wallRight = GameObject.Find("WallRight");
 
         //プレイヤースピード
         speed = 2f;
 
         //WallUpの端取得
-        Upos = WallUp.gameObject.transform.position;
-        UScale = WallUp.gameObject.transform.localScale;
+        Upos = wallUp.gameObject.transform.position;
+        UScale = wallUp.gameObject.transform.localScale;
         URpos = Upos.x + UScale.x / 2;
         ULpos = Upos.x - UScale.x / 2;
 
         //WallDownの端取得
-        Dpos = WallDown.gameObject.transform.position;
-        DScale = WallDown.gameObject.transform.localScale;
+        Dpos = wallDown.gameObject.transform.position;
+        DScale = wallDown.gameObject.transform.localScale;
         DRpos = Dpos.x + DScale.x / 2;
         DLpos = Dpos.x - DScale.x / 2;
 
         //WallRightの端取得
-        Rpos = WallRight.gameObject.transform.position;
-        RScale = WallRight.gameObject.transform.localScale;
+        Rpos = wallRight.gameObject.transform.position;
+        RScale = wallRight.gameObject.transform.localScale;
         RRpos = Rpos.y + RScale.y / 2;
         RLpos = Rpos.y - RScale.y / 2;
 
         //WallLeftの端取得
-        Lpos = WallLeft.gameObject.transform.position;
-        LScale = WallLeft.gameObject.transform.localScale;
+        Lpos = wallLeft.gameObject.transform.position;
+        LScale = wallLeft.gameObject.transform.localScale;
         LRpos = Lpos.y + LScale.y / 2;
         LLpos = Lpos.y - LScale.y / 2;
 
         this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
 
+<<<<<<< HEAD
         //wall色変更
         WallUp.GetComponent<Renderer>().material.color = Color.red;
         WallDown.GetComponent<Renderer>().material.color = Color.red;
@@ -111,16 +154,30 @@ public class PlayerMove_MIURA : MonoBehaviour
         SetWallFlag(3, true);
 
         //0402_三浦瞬追記****************************************************************
+=======
+>>>>>>> feature/miura
         // チャージした時間を貯める
         ChargeTime = 0.0f;
         // 基準値初期化
         BeamDistanceKijun = 10.0f;
 
+        // ビームをResourcesから取得
+        BeamParticleManagerPrefab = Resources.Load<GameObject>("BeamParticleManager");
+
+        // 巨大ビームをResourcesから取得
+        BeamParticleManagerPrefab = Resources.Load<GameObject>("BigBeam");
+
+
+        // とりあえず消したのこの辺******************************************
+        // PlayerDateもってくる
+        //PlayerDate = GameObject.Find("PlayerDate");
+
         // Geter/Seter使用用スクリプト保持
-        PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
+        //PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
 
         // ビーム残量を100%に設定
-        PlayerClassScript.SetAmount(100);
+        //PlayerClassScript.SetAmount(100);
+        // とりあえず消したのこの辺まで****************************************
     }
 
 
@@ -318,8 +375,9 @@ public class PlayerMove_MIURA : MonoBehaviour
         {
             // 計測した時間から各種値を計算する
 
+            // チャージした時間によってビームの大きさが変わるサイズ変更用の変数
             // 1.サイズを計算する
-            BoxCastScale = ChargeTime * BeamExpansion;
+            float BoxCastScale = ChargeTime * BeamExpansion;
 
             // 2.最大飛距離距離を計算する
             BeamMax = ChargeTime * BeamExpansionDistance + BeamDistanceKijun;
