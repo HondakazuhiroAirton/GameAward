@@ -7,8 +7,10 @@ public class AppearanceNotice : MonoBehaviour
 {
     // オリジナルのオブジェクト
     public GameObject ExclamationMark;
+    public GameObject Rail;
 
-    public GameObject Object;
+    public GameObject ExObject;
+    public GameObject RaObject;
     //フェード後に呼び出されるメゾッド
     private void OnFinished() { }
 
@@ -27,7 +29,7 @@ public class AppearanceNotice : MonoBehaviour
         // テスト用
         if (Input.GetKeyDown(KeyCode.A))
         {
-            CanvasFader.Begin(Object, false, 0.7f, true, OnFinished);
+            //CanvasFader.Begin(Object, false, 0.7f, true, OnFinished);
         }
     }
 
@@ -44,14 +46,16 @@ public class AppearanceNotice : MonoBehaviour
             default: break;
         }
         // インスタンス
-        Object = Instantiate(ExclamationMark,
+        ExObject = Instantiate(ExclamationMark,
             Entry,
-            Quaternion.Euler(0, 0, 0));
-        GameObject Rail = this.transform.Find("Rail").gameObject;
-        Rail.transform.Rotate(new Vector3(0, 0, angle));
+            Quaternion.identity);
+        RaObject = Instantiate(Rail,
+            Entry,
+            Quaternion.Euler(0, 0, angle));
 
         // フェードスタート
-        CanvasFader.Begin(Object, false, 0.7f, true, OnFinished);
+        CanvasFader.Begin(ExObject, false, 0.7f, true, OnFinished);
+        CanvasFader.Begin(RaObject, false, 0.7f, true, OnFinished);
     }
 
     // クローンを削除する関数

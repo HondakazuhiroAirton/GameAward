@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6580224240037232755}
   - component: {fileID: 1514023431371668655}
   m_Layer: 0
-  m_Name: 'EnemyGroup '
+  m_Name: EnemyGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
