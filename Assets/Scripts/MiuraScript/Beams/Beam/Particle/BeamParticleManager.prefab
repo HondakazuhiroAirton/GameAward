@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7954957734673453954}
   m_Layer: 0
   m_Name: Boxcast
-  m_TagString: Untagged
+  m_TagString: Beam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7954957734673453955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.071994394, y: 0.071994394, z: 0.071994394}
+  m_LocalScale: {x: 0.0722816, y: 0.0722816, z: 0.0722816}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7954957736179242919}
@@ -93,8 +93,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7954957734673453955}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -220,14 +220,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7745fedffaf991342b198d7a2287df35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Angle: 90
+  Angle: 0
   Speed: 0.2
   ReflectMax: 1000
   ParticleManager: {fileID: 7954957736179242913}
   NowBoxCast: {fileID: 0}
   StartPosition: {x: 0, y: 0, z: 0}
   moveDir: {x: 0, y: 0, z: 0}
-  BeamMax: 10.007199
+  BeamMax: 10.007228
   AngleHosei: 0
   BeamBoxCastReflect: {fileID: 3653431189480935985, guid: d7658118b82beb242b0ab4877e7ac34f,
     type: 3}
