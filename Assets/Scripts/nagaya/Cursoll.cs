@@ -12,11 +12,8 @@ public class Cursoll : MonoBehaviour
     // 今の位置を入れておく変数
     [SerializeField] private int NowPosition;
     [SerializeField] private GameObject cursol;
-
-    GameObject worldSelector;
-    GameObject Cursol;
-
-    WorldSelector script;
+    
+     GameObject triangle;
 
     public GameObject World1;
     public GameObject World2;
@@ -24,19 +21,21 @@ public class Cursoll : MonoBehaviour
     public GameObject World4;
 
     public GameObject Return;
-//それぞれからのゲームオブジェクト（
+
+    private bool isPanel;
     
 
     void Start()
     {
 
         cursol = GameObject.Find("Triangle");
-        worldSelector = GameObject.Find("/UICanvas/WorldSelector");
-        script = worldSelector.GetComponent<WorldSelector>();
+        triangle = GameObject.Find("/UICanvas/Triangle");
 
         // 最初はステージ1
         NowPosition = 1;
         this.transform.position = iti[NowPosition].transform.position;
+
+        isPanel = true;
     }
 
     void Awake()
@@ -81,6 +80,7 @@ public class Cursoll : MonoBehaviour
             else if (NowPosition == 1)
             {
                 World1.SetActive(true);
+                isPanel = false;
 //              UnityEditor.EditorApplication.isPaused = true;
             }
             else if(NowPosition==2)
@@ -95,6 +95,15 @@ public class Cursoll : MonoBehaviour
             {
                 World4.SetActive(true);
             }
+        }
+
+        if(isPanel)
+        {
+            triangle.GetComponent<Cursoll>().enabled = false;
+        }
+        else
+        {
+            triangle.GetComponent<Cursoll>().enabled = true;
         }
 
    }
