@@ -9,7 +9,7 @@ public class PlayerClass : MonoBehaviour
     public GameObject ButtonS;
     public GameObject ButtonR;
     private int life = 0;
-    private float amount = 0;
+    private float amount = 100;
     public float recovery = 0.1f;
     
     // Žc‹@
@@ -46,18 +46,20 @@ public class PlayerClass : MonoBehaviour
             return;
         }
 
+        Debug.Log(amount);
+
         // Game Over
         if (life == 0)
         {
-            text.enabled = true;
-            ButtonR.SetActive(true);
-            ButtonS.SetActive(true);
+            //text.enabled = true;
+            //ButtonR.SetActive(true);
+            //ButtonS.SetActive(true);
         }
         else
         {
-            text.enabled = false;
-            ButtonR.SetActive(false);
-            ButtonS.SetActive(false);
+            //text.enabled = false;
+            //ButtonR.SetActive(false);
+            //ButtonS.SetActive(false);
         }
     }
 }

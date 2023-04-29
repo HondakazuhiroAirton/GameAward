@@ -43,17 +43,20 @@ public class CBeam : MonoBehaviour
 
     Vector3 hetPos;
 
+    Vector3 pos;
+    float rad;
+
     // Start is called before the first frame update
     void Start()
     {
-        // 最初のビームを設定
-        Beamline fastBeamLine = new Beamline();
-        fastBeamLine.startPos = tailPos = transform.position;
-        fastBeamLine.direction = transform.forward;
-        fastBeamLine.distance = 10f;
-        fastBeamLine.enable = true;
+        //// 最初のビームを設定
+        //Beamline fastBeamLine = new Beamline();
+        //fastBeamLine.startPos = tailPos = transform.position;
+        //fastBeamLine.direction = transform.forward;
+        //fastBeamLine.distance = 10f;
+        //fastBeamLine.enable = true;
 
-        beamlines.Add(fastBeamLine);
+        //beamlines.Add(fastBeamLine);
 
         // レイヤーマスクの設定
         layerMask = hitLayer;
@@ -67,60 +70,64 @@ public class CBeam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        beamlines[currentEndNo].startPos += beamlines[currentEndNo].direction * speed * Time.deltaTime;
+        //beamlines[currentEndNo].startPos += beamlines[currentEndNo].direction * speed * Time.deltaTime;
 
-        var Hit = Physics.SphereCast(
-            beamlines[currentEndNo].startPos, radius,
-            beamlines[currentEndNo].direction, out hit,
-            beamlines[currentEndNo].distance, layerMask);
-
-        //Physics.CheckBox()
-        //Physics.OverlapSphere();
-        if (Hit && !hitTrigger)
-        {
-            hitTrigger = true;
-            hetPos = hit.point;
-            beamlines[currentEndNo].isHit = true;
-            beamlines[currentEndNo].enable = true;
-            var createBeamLine = hit.collider.GetComponent<ICollisionAction>().CollisionEvent(beamlines[currentEndNo]);
-        }
-
-        if (hitTrigger)
-        {
-            beamlines[currentEndNo].distance -= speed * Time.deltaTime;
-
-            if (beamlines[currentEndNo].distance <= 0)
-            {
-                hitTrigger = false;
-                beamlines[currentEndNo].distance = 0;
-
-                // beamlines[currentEndNo].startPos = hetPos;
-                // currentEndNo++;
-            }
-        }
-
-        Debug.Log(beamlines[currentEndNo].distance);
-
-        foreach (var line in beamlines)
-        {
-            if (!useFlag) continue;
-           
+        //var Hit = Physics.SphereCast(
+        //    beamlines[currentEndNo].startPos, radius,
+        //    beamlines[currentEndNo].direction, out hit,
+        //    beamlines[currentEndNo].distance, layerMask);
 
 
-        }
+
+        //if (Hit && !hitTrigger)
+        //{
+        //    hitTrigger = true;
+        //    hetPos = hit.point;
+        //    beamlines[currentEndNo].isHit = true;
+        //    beamlines[currentEndNo].enable = true;
+        //    var createBeamLine = hit.collider.GetComponent<ICollisionAction>().CollisionEvent(beamlines[currentEndNo]);
+        //}
+
+        //if (hitTrigger)
+        //{
+        //    beamlines[currentEndNo].distance -= speed * Time.deltaTime;
+
+        //    if (beamlines[currentEndNo].distance <= 0)
+        //    {
+        //        hitTrigger = false;
+        //        beamlines[currentEndNo].distance = 0;
+
+        //        beamlines[currentEndNo].startPos = hetPos;
+        //        currentEndNo++;
+        //    }
+        //}
+
+        //Debug.Log(beamlines[currentEndNo].distance);
+
+        //foreach (var line in beamlines)
+        //{
+        //    if (!useFlag) continue;
+
+
+
+        //}
+
+        Physics.CheckSphere(pos, rad, hitLayer);
+
+
     }
 
 
 
     private void OnDrawGizmos()
     {
-        if (beamlines.Count == 0) return;
+        //if (beamlines.Count == 0) return;
 
-        foreach (var line in beamlines)
-        {
-            if (!line.enable) continue;
-            Gizmos.color = Color.white;
-            Gizmos.DrawRay(line.startPos, line.direction * line.distance);
-        }
+        //foreach (var line in beamlines)
+        //{
+        //    if (!line.enable) continue;
+        //    Gizmos.color = Color.white;
+        //    Gizmos.DrawRay(line.startPos, line.direction * line.distance);
+        //}
     }
 }

@@ -8,19 +8,11 @@ public class CPlayer : MonoBehaviour
 {
     [SerializeField]
     private float speed; //プレイヤーのスピード
-
-    private MoveRange moveRange;
-
-    [SerializeField]
-    private GameObject railObject;
-    
-    RailData railData;
-
+   
     // Start is called before the first frame update
     void Start()
     {
-        railData = railObject.GetComponent<RailData>();
-        SetRail(RailNo.UP);
+
     }
 
     // Update is called once per frame
@@ -38,29 +30,27 @@ public class CPlayer : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow)) { RightKeyEvent(); }
 
-        if (Input.GetKey(KeyCode.DownArrow)) { }
+        if (Input.GetKey("1")) { }
 
-        if (Input.GetKey("1")) { SetRail(RailNo.UP); }
+        if (Input.GetKey("2")) { }
 
-        if (Input.GetKey("2")) { SetRail(0); }
+        if (Input.GetKey("3")) { }
 
-        if (Input.GetKey("3")) { SetRail(0); }
-
-        if (Input.GetKey("4")) { SetRail(0); }
+        if (Input.GetKey("4")) { }
 
         if (Input.GetKey(KeyCode.Space)) { }
 
-        /// 移動処理 ///
-        var moveVal = transform.right * speed * moveVec * Time.deltaTime;
+        ///// 移動処理 ///
+        //var moveVal = transform.right * speed * moveVec * Time.deltaTime;
 
-        transform.position += moveVal;
+        //transform.position += moveVal;
 
-        /// 移動制限 ///
-        var Pos = transform.position;
+        ///// 移動制限 ///
+        //var Pos = transform.position;
 
-        Pos.x = Mathf.Clamp(Pos.x, moveRange.xMin, moveRange.xMax);
-        Pos.y = Mathf.Clamp(Pos.y, moveRange.yMin, moveRange.yMax);
-        transform.position = new Vector3(Pos.x, Pos.y, Pos.z);
+        //Pos.x = Mathf.Clamp(Pos.x, moveRange.xMin, moveRange.xMax);
+        //Pos.y = Mathf.Clamp(Pos.y, moveRange.yMin, moveRange.yMax);
+        //transform.position = new Vector3(Pos.x, Pos.y, Pos.z);
     }
 
 
@@ -73,7 +63,6 @@ public class CPlayer : MonoBehaviour
     void RightKeyEvent()
     {
 
-
     }
 
     void DownKeyEvent()
@@ -84,10 +73,5 @@ public class CPlayer : MonoBehaviour
     void UpKeyEvent()
     {
 
-    }
-
-    void SetRail(RailNo dir)
-    {
-        railData.GetMoveRange(dir, out moveRange);
     }
 }
