@@ -422,7 +422,7 @@ MonoBehaviour:
   TimingOfUpdate: 0
   EmitterScale: 0
   TimeScale: 0
-  effectAsset: {fileID: 11400000, guid: f5e9cbba7daaf734585619635ff6a2eb, type: 2}
+  effectAsset: {fileID: 11400000, guid: 856ed569cc5e0be4d915bd7b26bc2fca, type: 2}
   playOnStart: 0
   isLooping: 0
 --- !u!1 &282012926 stripped
@@ -947,7 +947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1259394312
 Transform:
   m_ObjectHideFlags: 0
@@ -978,6 +978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageData: {fileID: 6254047566953467982, guid: 6bf475000b99c6f42b5a855a656732ad,
     type: 3}
+  StageManager: {fileID: 0}
   NextStage: 0
   changeStage: 0
 --- !u!1001 &1621164553

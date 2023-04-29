@@ -84,7 +84,7 @@ public class BeamParticleScript : MonoBehaviour
 
         // エフェクシアのエフェクトもらう
         // Beamの大きさに応じてswitchかけて大きさ調整
-        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beemeee");
+        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beam2");
         Debug.Log(effect.Scale);
         effect.Scale *= 10.0f;
         Debug.Log(effect.Scale);
@@ -102,6 +102,17 @@ public class BeamParticleScript : MonoBehaviour
     {
         // 移動処理
         transform.position += moveDir;
+        // エフェクシアのエフェクトもらう
+        // Beamの大きさに応じてswitchかけて大きさ調整
+        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beam2");
+        // transformの位置でエフェクトを再生する
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+
+        // プレイヤーのZ角度持ってくる
+        float tmp = Player.transform.eulerAngles.z;
+        // tramsformの回転を設定する
+        Quaternion rot = Quaternion.Euler(tmp - 90, 270, 90);
+        handle.SetRotation(rot);
     }
 
     public void CollisionEvent(GameObject obj)
