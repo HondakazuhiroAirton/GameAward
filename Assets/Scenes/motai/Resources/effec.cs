@@ -5,6 +5,7 @@ using Effekseer;
 
 public class effec : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,7 @@ public class effec : MonoBehaviour
         EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
         // transform‚Ì‰ñ“]‚ğİ’è‚·‚éB
         handle.SetRotation(transform.rotation);
+
     }
 
     // Update is called once per frame
