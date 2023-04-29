@@ -40,6 +40,7 @@ public class BeamParticleScript : MonoBehaviour
     // 反射用当たり判定プレハブ格納
     public GameObject BeamBoxCastReflect;
 
+    // プレイヤーいれる
     public GameObject Player;
 
     // privateゾーン********************************************
@@ -55,7 +56,7 @@ public class BeamParticleScript : MonoBehaviour
     private float ZMove = 0.0f;
 
     // 当たり判定の拡大率を保存
-   // private float xCollisionSize = 1.0f;
+    // private float xCollisionSize = 1.0f;
 
 
     void Start()
@@ -82,18 +83,18 @@ public class BeamParticleScript : MonoBehaviour
         Player = GameObject.Find("Player");
 
         // エフェクシアのエフェクトもらう
-        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beemeee");
+        // Beamの大きさに応じてswitchかけて大きさ調整
+        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beam2");
+        Debug.Log(effect.Scale);
+        effect.Scale *= 10.0f;
+        Debug.Log(effect.Scale);
         // transformの位置でエフェクトを再生する
         EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
 
-        // ほんとにラジアン
-        float tmp = Player.transform.rotation.z;
-        // ラジアン->度に変換
-        tmp = tmp * Mathf.Deg2Rad;
-
-        Debug.Log(tmp);
+        // プレイヤーのZ角度持ってくる
+        float tmp = Player.transform.eulerAngles.z;
         // tramsformの回転を設定する
-        Quaternion rot = Quaternion.Euler(tmp, 90 , 90);
+        Quaternion rot = Quaternion.Euler(tmp - 90 , 270 , 90);
         handle.SetRotation(rot);
     }
 
@@ -101,6 +102,17 @@ public class BeamParticleScript : MonoBehaviour
     {
         // 移動処理
         transform.position += moveDir;
+        // エフェクシアのエフェクトもらう
+        // Beamの大きさに応じてswitchかけて大きさ調整
+        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beam2");
+        // transformの位置でエフェクトを再生する
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+
+        // プレイヤーのZ角度持ってくる
+        float tmp = Player.transform.eulerAngles.z;
+        // tramsformの回転を設定する
+        Quaternion rot = Quaternion.Euler(tmp - 90, 270, 90);
+        handle.SetRotation(rot);
     }
 
     public void CollisionEvent(GameObject obj)

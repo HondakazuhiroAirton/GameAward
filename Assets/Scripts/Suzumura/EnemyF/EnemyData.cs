@@ -8,20 +8,21 @@ public class EnemyData
     public EnemyCategory category;      // カテゴリー
     public int HP;                      // HP
     public int Size;                    // 大きさ
-    public int StartPosX;               // X座標
-    public int StartPosY;               // Y座標
-    public int StartPosZ;               // Z座標
-    public int EntryPosX;               //
+    public int StartPosX;               // 出現位置
+    public int StartPosY;               // 
+    public int StartPosZ;               // 
+    public int EntryPosX;               // 画面内に入る位置
     public int EntryPosY;               //
     public int EntryPosZ;               //
-    public int Target1PosX;             //
+    public int sideNo;                  // 辺
+    public int Target1PosX;             // 目標地点1
     public int Target1PosY;             //
     public int Target1PosZ;             //
-    public int TargetPosX;              //
+    public int TargetPosX;              // 目標地点
     public int TargetPosY;              //
     public int TargetPosZ;              //
     public Sprite sprite;               // 画像読み込み(パス)
-    public float AppearanceTime;          // 出現時間
+    public float AppearanceTime;        // 出現時間
     public int State;                   // 状態
 
     public Vector3 prevPosition;

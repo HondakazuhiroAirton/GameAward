@@ -537,7 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 90558491}
   - component: {fileID: 90558490}
-  - component: {fileID: 90558489}
+  - component: {fileID: 90558492}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -545,26 +545,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &90558489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90558488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &90558490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,8 +573,45 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &90558492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90558488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &110014312
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.00006, y: -395.00003}
+  m_AnchoredPosition: {x: 960, y: -395.00003}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &110225757
@@ -813,7 +830,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 786746286}
+      - m_Target: {fileID: 786746288}
         m_TargetAssemblyTypeName: StageSelect, Assembly-CSharp
         m_MethodName: onButtonStage1_2
         m_Mode: 1
@@ -1614,13 +1631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa2c0f4cddc5e04baf6247ab08f36e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stage4_1: {fileID: 1914923503}
-  Stage4_2: {fileID: 832434389}
-  Stage4_3: {fileID: 1556632120}
-  Stage4_4: {fileID: 239591838}
-  Stage4_5: {fileID: 110014314}
-  Cancel: {fileID: 1843861673}
+  world: {fileID: 1285690579}
   Stage4: {fileID: 303111490}
+  Sel: {fileID: 1603474957}
 --- !u!1 &461005918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,7 +1671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -823, y: -469}
+  m_AnchoredPosition: {x: -823, y: -318}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461005920
@@ -1705,13 +1718,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1603474957}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 670676499}
+        m_TargetAssemblyTypeName: WorldSelector, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1792,7 +1805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.00006, y: -781.66675}
+  m_AnchoredPosition: {x: 960, y: -781.66675}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483686354
@@ -1839,7 +1852,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 786746286}
+      - m_Target: {fileID: 786746288}
         m_TargetAssemblyTypeName: StageSelect, Assembly-CSharp
         m_MethodName: onButtonCancel
         m_Mode: 1
@@ -2060,7 +2073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -71, y: -92}
+  m_AnchoredPosition: {x: -71, y: -52}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &575199580
@@ -2107,9 +2120,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WorldSelector, Assembly-CSharp
-        m_MethodName: onButtonWorld2
+      - m_Target: {fileID: 2086739183}
+        m_TargetAssemblyTypeName: Cursoll, Assembly-CSharp
+        m_MethodName: WorldButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2194,7 +2207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -565, y: -40.999996}
+  m_AnchoredPosition: {x: -457, y: -141}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596218593
@@ -3050,9 +3063,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 786746286}
-        m_TargetAssemblyTypeName: StageSelect, Assembly-CSharp
-        m_MethodName: onButtonStage1_1
+      - m_Target: {fileID: 1717826964}
+        m_TargetAssemblyTypeName: StageSelect3, Assembly-CSharp
+        m_MethodName: onButtonStage3_1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3112,6 +3125,7 @@ GameObject:
   - component: {fileID: 670676502}
   - component: {fileID: 670676501}
   - component: {fileID: 670676500}
+  - component: {fileID: 670676508}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -3197,15 +3211,31 @@ RectTransform:
   - {fileID: 1294797909}
   - {fileID: 1717826961}
   - {fileID: 303111491}
-  - {fileID: 2086739182}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &670676508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670676499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7707f1ba907ca346b3dcb0c1c3d4488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  World1: {fileID: 596218593}
+  Stage1: {fileID: 786746282}
+  Stage2: {fileID: 1294797908}
+  Stage3: {fileID: 1717826960}
+  Stage4: {fileID: 303111490}
 --- !u!1 &675319266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,7 +3273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.00006, y: -298.33334}
+  m_AnchoredPosition: {x: 960, y: -298.33334}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675319268
@@ -3290,7 +3320,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 786746286}
+      - m_Target: {fileID: 786746288}
         m_TargetAssemblyTypeName: StageSelect, Assembly-CSharp
         m_MethodName: onButtonStage1_1
         m_Mode: 1
@@ -3351,8 +3381,8 @@ GameObject:
   - component: {fileID: 786746283}
   - component: {fileID: 786746285}
   - component: {fileID: 786746284}
-  - component: {fileID: 786746286}
   - component: {fileID: 786746287}
+  - component: {fileID: 786746288}
   m_Layer: 5
   m_Name: Stage1
   m_TagString: Untagged
@@ -3424,26 +3454,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786746282}
   m_CullTransparentMesh: 1
---- !u!114 &786746286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786746282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efdb015034b18e4aa488f0ab917172c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stage1_1: {fileID: 675319268}
-  Stage1_2: {fileID: 110225757}
-  Stage1_3: {fileID: 1951578878}
-  Stage1_4: {fileID: 1639171659}
-  Stage1_5: {fileID: 1039110244}
-  Cancel: {fileID: 483686354}
-  Stage1UI: {fileID: 786746282}
-  NowPosition: 0
 --- !u!114 &786746287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3470,6 +3480,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &786746288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786746282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efdb015034b18e4aa488f0ab917172c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  world: {fileID: 596218593}
+  Stage1UI: {fileID: 786746282}
+  Sel: {fileID: 1603474957}
+  NowPosition: 0
 --- !u!1 &802053448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4342,9 +4368,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1717826964}
-        m_TargetAssemblyTypeName: StageSelect3, Assembly-CSharp
-        m_MethodName: onButtonStage3_1
+      - m_Target: {fileID: 1294797912}
+        m_TargetAssemblyTypeName: StageSelect2, Assembly-CSharp
+        m_MethodName: onButtonCancel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4832,7 +4858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.00006, y: -685.0001}
+  m_AnchoredPosition: {x: 960, y: -685.0001}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1039110244
@@ -4848,7 +4874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4879,7 +4905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 786746286}
+      - m_Target: {fileID: 786746288}
         m_TargetAssemblyTypeName: StageSelect, Assembly-CSharp
         m_MethodName: onButtonStage1_5
         m_Mode: 1
@@ -4958,7 +4984,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146699066
 GameObject:
@@ -5671,7 +5697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 754, y: -89}
+  m_AnchoredPosition: {x: 754, y: 276}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1285690579
@@ -5718,9 +5744,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WorldSelector, Assembly-CSharp
-        m_MethodName: onButtonWorld4
+      - m_Target: {fileID: 2086739183}
+        m_TargetAssemblyTypeName: Cursoll, Assembly-CSharp
+        m_MethodName: WorldButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5863,13 +5889,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a3d5f5b21b7164f9d5cd5e8a60e54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stage2_1: {fileID: 959169304}
-  Stage2_2: {fileID: 1405185413}
-  Stage2_3: {fileID: 493892345}
-  Stage2_4: {fileID: 1964024277}
-  Stage2_5: {fileID: 1523685379}
-  Cancel: {fileID: 930666965}
+  world: {fileID: 575199580}
   Stage2: {fileID: 1294797908}
+  Sel: {fileID: 1603474957}
 --- !u!1 &1328244945
 GameObject:
   m_ObjectHideFlags: 0
@@ -6821,7 +6843,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1603474958}
-  - component: {fileID: 1603474959}
   m_Layer: 5
   m_Name: WorldSelector
   m_TagString: Untagged
@@ -6854,26 +6875,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1603474959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603474957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7707f1ba907ca346b3dcb0c1c3d4488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  World1: {fileID: 596218593}
-  World2: {fileID: 575199580}
-  World3: {fileID: 1745912097}
-  World4: {fileID: 1285690579}
-  Stage1: {fileID: 786746282}
-  Stage2: {fileID: 1294797908}
-  Stage3: {fileID: 1717826960}
-  Stage4: {fileID: 303111490}
 --- !u!1 &1621212986
 GameObject:
   m_ObjectHideFlags: 0
@@ -7046,7 +7047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.00006, y: -588.3334}
+  m_AnchoredPosition: {x: 960, y: -588.3334}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639171659
@@ -7093,7 +7094,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 786746286}
+      - m_Target: {fileID: 786746288}
         m_TargetAssemblyTypeName: StageSelect, Assembly-CSharp
         m_MethodName: onButtonStage1_4
         m_Mode: 1
@@ -7238,13 +7239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714b8809c036dc14ea34441aacef4fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stage3_1: {fileID: 666274116}
-  Stage3_2: {fileID: 950951191}
-  Stage3_3: {fileID: 86576652}
-  Stage3_4: {fileID: 1205475250}
-  Stage3_5: {fileID: 850921709}
-  Cancel: {fileID: 300810897}
+  world: {fileID: 1745912097}
   Stage3: {fileID: 1717826960}
+  Sel: {fileID: 1603474957}
 --- !u!1 &1745912095
 GameObject:
   m_ObjectHideFlags: 0
@@ -7329,9 +7326,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WorldSelector, Assembly-CSharp
-        m_MethodName: onButtonWorld3
+      - m_Target: {fileID: 2086739183}
+        m_TargetAssemblyTypeName: Cursoll, Assembly-CSharp
+        m_MethodName: WorldButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7954,7 +7951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960.00006, y: -491.66672}
+  m_AnchoredPosition: {x: 960, y: -491.66672}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1951578878
@@ -8001,7 +7998,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 786746286}
+      - m_Target: {fileID: 786746288}
         m_TargetAssemblyTypeName: StageSelect, Assembly-CSharp
         m_MethodName: onButtonStage1_3
         m_Mode: 1
@@ -8455,6 +8452,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017764592}
   m_CullTransparentMesh: 1
+--- !u!1001 &2026039517
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9980187
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.370794
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.221989
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086256, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086257, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: StageIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496574426765086258, guid: 5727deeba03c5094ca4b92b34fb4b047,
+        type: 3}
+      propertyPath: m_Name
+      value: StageManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5727deeba03c5094ca4b92b34fb4b047, type: 3}
 --- !u!1 &2045766049
 GameObject:
   m_ObjectHideFlags: 0
@@ -8669,12 +8740,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086739180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -584.56714, y: 40.21822, z: 0}
-  m_LocalScale: {x: 93.53074, y: 93.53074, z: 9.353074}
+  m_LocalPosition: {x: -62.5, y: 4.3, z: 100}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 670676503}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2086739183
 MonoBehaviour:
@@ -8696,6 +8767,7 @@ MonoBehaviour:
   - {fileID: 1285690577}
   NowPosition: 0
   cursol: {fileID: 2086739180}
+  Worldsel: {fileID: 1603474957}
   World1: {fileID: 786746282}
   World2: {fileID: 1294797908}
   World3: {fileID: 1717826960}

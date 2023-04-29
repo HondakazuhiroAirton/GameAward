@@ -9,7 +9,7 @@ public class StageManagerScript : MonoBehaviour
     // 現在のステージ
     [SerializeField]private int StageIndex;
 
-    // Geter/Seterその他関数**************************************************************::
+    // Geter/Seterその他関数**************************************************************
     // ステージ全情報取得
     public StageClearDate[] GetStageInformation()
     {
@@ -20,6 +20,18 @@ public class StageManagerScript : MonoBehaviour
     public void SetStageInformation(StageClearDate[] date)
     {
         AllStage = date;
+    }
+
+    // ステージ情報取得
+    public int GetStageIndex()
+    {
+        return StageIndex;
+    }
+
+    // ステージ情報セット
+    public void SetStageIndex(int date)
+    {
+        StageIndex = date;
     }
 
     // 指定したステージのクリア状況を直接変更する変数

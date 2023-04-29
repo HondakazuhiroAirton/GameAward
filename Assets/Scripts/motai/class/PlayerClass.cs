@@ -46,6 +46,7 @@ public class PlayerClass : MonoBehaviour
             return;
         }
 
+<<<<<<< HEAD
         Debug.Log(amount);
 
         // Game Over
@@ -61,6 +62,21 @@ public class PlayerClass : MonoBehaviour
             //ButtonR.SetActive(false);
             //ButtonS.SetActive(false);
         }
+=======
+        //// Game Over
+        //if (life == 0)
+        //{
+        //    text.enabled = true;
+        //    ButtonR.SetActive(true);
+        //    ButtonS.SetActive(true);
+        //}
+        //else
+        //{
+        //    text.enabled = false;
+        //    ButtonR.SetActive(false);
+        //    ButtonS.SetActive(false);
+        //}
+>>>>>>> develop
     }
 }
 

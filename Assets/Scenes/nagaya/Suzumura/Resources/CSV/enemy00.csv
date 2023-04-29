@@ -1,0 +1,2 @@
+name,category,HP,Size,StartPosX,StartPosY,StartPosZ,EntryPosX,EntryPosY,EntryPosZ,Target1PosX,Target1PosY,Target1PosZ,TargetPosX,TargetPosY,TargetPosZ,sprite,AppearanceTime,State
+enemy01,type1,10,20,0,-100,0,1300,50,0,1500,300,0,500,800,0,Assets/ReSource/Texture/Character/Enemy/slime.png,0,0
