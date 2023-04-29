@@ -300,7 +300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageData: {fileID: 5315390210836308574, guid: 6bf475000b99c6f42b5a855a656732ad,
     type: 3}
-  StageManager: {fileID: 0}
+  StageManager: {fileID: 1496574426765086258, guid: 5727deeba03c5094ca4b92b34fb4b047,
+    type: 3}
   NextStage: 0
   changeStage: 0
 --- !u!4 &453021027
