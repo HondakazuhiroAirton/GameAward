@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 2bddd3b323e573e49985442ebffe89ca
+=======
+guid: 2c76fd56c51f90645bf29f5b99a034ab
+>>>>>>> feature/KoutaMotai
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
