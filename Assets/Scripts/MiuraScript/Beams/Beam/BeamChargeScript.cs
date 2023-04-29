@@ -37,7 +37,7 @@ public class BeamChargeScript : MonoBehaviour
         //************************************************
 
         // 毎フレームビーム残量(Amount)の値を表示する
-        this.textComponent.text =  tmpAmount +"%" .ToString();
+        this.textComponent.text = tmpAmount + "%".ToString();
 
     }
 }
