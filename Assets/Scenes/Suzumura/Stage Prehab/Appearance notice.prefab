@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3920941145128739719}
   - component: {fileID: -3126185476490082402}
   m_Layer: 5
-  m_Name: Rail
+  m_Name: Appearance notice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,12 +117,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f73e01dba218f74981be01ac0ecd5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExclamationMark: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
+  ExclamationMark: {fileID: 3920941145128739718, guid: 907a83dd7033a9842b1260fc779b9246,
     type: 3}
-  Rail: {fileID: 3920941145128739718}
-  ExObject: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
-    type: 3}
-  RaObject: {fileID: 3920941145128739718}
+  Rail: {fileID: 3920941145128739718, guid: 87444a50ae299c24dbd83a2cb7cf6978, type: 3}
+  ExObject: {fileID: 0}
+  RaObject: {fileID: 0}
 --- !u!225 &3920941145128739719
 CanvasGroup:
   m_ObjectHideFlags: 0
