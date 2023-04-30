@@ -13,10 +13,13 @@ public class StageSelect4 : MonoBehaviour
     public GameObject Sel;
     private GameObject SM;
 
+    Image fadeImage;                //透明度を変更するパネルのイメージ
+
     // Start is called before the first frame update
     void Start()
     {
         SM = GameObject.Find("StageManager");
+        fadeImage = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -27,32 +30,32 @@ public class StageSelect4 : MonoBehaviour
 
     public void onButtonStage4_1()
     {
+        fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(15);
-        SceneManager.LoadScene("Stage1");
     }
 
     public void onButtonStage4_2()
     {
+        fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(16);
-        SceneManager.LoadScene("Stage1");
     }
 
     public void onButtonStage4_3()
     {
+        fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(17);
-        SceneManager.LoadScene("Stage1");
     }
 
     public void onButtonStage4_4()
     {
+        fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(18);
-        SceneManager.LoadScene("Stage1");
     }
 
     public void onButtonStage4_5()
     {
+        fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(19);
-        SceneManager.LoadScene("Stage1");
     }
 
     public void onButtonCancel()

@@ -45,7 +45,6 @@ public class Cursoll : MonoBehaviour
         worldSelector = GameObject.Find("/UICanvas/WorldSelector");
         script = worldSelector.GetComponent<WorldSelector>();
 
-
         triangle = GameObject.Find("/UICanvas/Triangle");
 
 
@@ -60,31 +59,21 @@ public class Cursoll : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        {
+            NowPosition += 1;
+            if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
 
+            this.transform.position = iti[NowPosition].transform.position;
 
-            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        {
+            NowPosition -= 1;
+            if (NowPosition < 0) NowPosition = 0;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
+            this.transform.position = iti[NowPosition].transform.position;
 
-            {
-                NowPosition += 1;
-                if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
-
-                this.transform.position = iti[NowPosition].transform.position;
-
-            }
-
-
-
-            else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-
-            {
-                NowPosition -= 1;
-                if (NowPosition < 0) NowPosition = 0;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
-                this.transform.position = iti[NowPosition].transform.position;
-
-            }
-
-
+        }
 
     }
 
@@ -101,10 +90,7 @@ public class Cursoll : MonoBehaviour
             else if (NowPosition == 1)
             {
                 World1.SetActive(true);
-
-
-                UnityEditor.EditorApplication.isPaused = true;
-
+               //UnityEditor.EditorApplication.isPaused = true;
                 Stage1_1 = GameObject.Find("1-1").GetComponent<Button>();
                 Stage1_1.Select();
                 Worldsel.SetActive(false);
