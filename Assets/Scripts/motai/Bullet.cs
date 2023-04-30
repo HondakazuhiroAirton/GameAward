@@ -4,7 +4,9 @@ using UnityEngine;
 using Effekseer;
 public class Bullet : MonoBehaviour
 {
-
+    GameObject PD;
+    GameObject objects;
+    PlayerClass PlayerClasslife;
     public float ballSpeed = 10.0f;
     private float Wx;
     private float Wy;
@@ -17,14 +19,19 @@ public class Bullet : MonoBehaviour
         //EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
         //// transformの回転を設定する。
         //handle.SetRotation(transform.rotation);
+
+        // ビーム残量へのアクセス
+        //PlayerDateもってくる
+        PD = GameObject.Find("PD");
+
+        //Geter / Seter使用用スクリプト保持
+        PlayerClasslife = PD.GetComponent<PlayerClass>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
-        
 
         var moveVal = transform.forward * ballSpeed * Time.deltaTime;
         transform.position += moveVal;
@@ -38,6 +45,28 @@ public class Bullet : MonoBehaviour
         }
         else if (0 >= Wy || Wy >= 1)
         {
+            GameObject.Destroy(this.gameObject);
+        }
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        int LifePoint = PlayerClasslife.GetLife();
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log(LifePoint);
+            if (LifePoint > 0)
+            {
+                LifePoint = LifePoint - 1;
+
+                PlayerClasslife.SetLife(LifePoint);
+
+            }
+            else
+            {
+                Destroy(other.gameObject);
+            }
+
             GameObject.Destroy(this.gameObject);
         }
     }

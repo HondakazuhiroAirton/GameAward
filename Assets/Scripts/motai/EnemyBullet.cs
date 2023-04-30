@@ -14,7 +14,10 @@ public class EnemyBullet : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        transform.LookAt(player.transform);// キューブ(敵に)]
+        if(player != null)
+        {
+            transform.LookAt(player.transform);// キューブ(敵に)
+        }
 
         if(time >= maxtime)
         {
