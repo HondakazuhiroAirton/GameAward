@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 8510211684547006523}
   - component: {fileID: -6284837590365817930}
   - component: {fileID: 1262824577036293868}
+  - component: {fileID: 1778321179434612470}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: bullet
@@ -173,3 +174,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballSpeed: 2
+--- !u!114 &1778321179434612470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207064910377938854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d396bcb8480c24eb784eebe6096a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimingOfUpdate: 0
+  EmitterScale: 0
+  TimeScale: 0
+  effectAsset: {fileID: 11400000, guid: 5d8e2ad1f0ccc3242be6d460f0216a4c, type: 2}
+  playOnStart: 1
+  isLooping: 1
