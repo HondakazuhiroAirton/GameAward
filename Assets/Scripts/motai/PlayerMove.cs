@@ -25,4 +25,11 @@ public class PlayerMove : MonoBehaviour
             transform.position -= transform.right * speed * Time.deltaTime;
         }
     }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "bullet")
+    //    {
+    //        GameObject.Destroy(this.gameObject);
+    //    }
+    //}
 }

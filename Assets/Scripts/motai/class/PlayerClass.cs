@@ -8,8 +8,9 @@ public class PlayerClass : MonoBehaviour
     [SerializeField] Text text;
     public GameObject ButtonS;
     public GameObject ButtonR;
-    private int life = 0;
+    private int life;
     private float amount = 100;
+    private float bigamount = 100;
     public float recovery = 0.1f;
     
     // 残機
@@ -30,9 +31,19 @@ public class PlayerClass : MonoBehaviour
     {
         amount = value;
     }
+
+    // ビッグ残量
+    public float GetBigAmount()
+    {
+        return bigamount;
+    }
+    public void SetBigAmount(float value)
+    {
+        bigamount = value;
+    }
     void Start()
     {
-
+        SetLife(3);
     }
     void Update()
     {
