@@ -9,12 +9,12 @@ public class effec : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // エフェクトを取得する。
-        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Bullet");
-        // transformの位置でエフェクトを再生する
-        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
-        // transformの回転を設定する。
-        handle.SetRotation(transform.rotation);
+        //// エフェクトを取得する。
+        //EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Bullet");
+        //// transformの位置でエフェクトを再生する
+        //EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+        //// transformの回転を設定する。
+        //handle.SetRotation(transform.rotation);
 
     }
 
