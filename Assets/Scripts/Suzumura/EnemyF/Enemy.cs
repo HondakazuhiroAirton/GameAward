@@ -55,10 +55,10 @@ public class Enemy : MonoBehaviour
         switch (nextStageNo)
         {
             case StageNo.Stage1_1:
-                textasset = Resources.Load("CSV/Enemy01", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/Enemy11", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage1_2:
-                textasset = Resources.Load("CSV/Enemy00", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/Enemy12", typeof(TextAsset)) as TextAsset;
                 break;
 
                 // ステージが増えたら下に追記
@@ -113,7 +113,7 @@ public class Enemy : MonoBehaviour
                 enemyData[i].State1time += Time.deltaTime;
 
                 // 現在の位置
-                enemyData[i].PresentLocation = (enemyData[i].State1time * 500) / enemyData[i].distance_two;
+                enemyData[i].PresentLocation = (enemyData[i].State1time * 5) / enemyData[i].distance_two;
 
                 // 移動
                 enemy[i].transform.position = Vector3.Slerp(
@@ -147,7 +147,7 @@ public class Enemy : MonoBehaviour
 
                 // 移動
                 enemy[i].transform.RotateAround(
-                    new Vector3(enemyData[i].target1.x - 100.0f, enemyData[i].target1.y, enemyData[i].target1.z),
+                    new Vector3(enemyData[i].target1.x - 1.0f, enemyData[i].target1.y, enemyData[i].target1.z),
                     Vector3.forward,        // Z軸
                     Time.deltaTime * angle
                     );
@@ -168,7 +168,7 @@ public class Enemy : MonoBehaviour
                 enemy[i].transform.position = Vector3.MoveTowards(
                    enemy[i].transform.position,
                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 800
+                   Time.deltaTime * 8
                    );
 
                 // 進行方向に向きを変える
@@ -194,7 +194,7 @@ public class Enemy : MonoBehaviour
         enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
 
         // 敵予告のフェードを始める
-        appearanceNotice.StartFade(enemyData[i].Entry, enemyData[i].sideNo);
+        appearanceNotice.StartFade(enemyData[no].Entry, enemyData[no].sideNo);
     }
 
     // 進行方向に向きを変える関数

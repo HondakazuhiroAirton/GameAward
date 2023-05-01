@@ -93,7 +93,7 @@ public class CanvasFader : MonoBehaviour
     }
 
     public static CanvasFader Begin(GameObject target, bool isFadeOut, float duration, bool ignoreTimeScale = true, Action onFinished = null)
-    {   //@ªignoreTimeScale‚ÆonFinished‚ÍÈ—ª‰Â
+    {   //@                                                                                ªignoreTimeScale‚ÆonFinished‚ÍÈ—ª‰Â
         CanvasFader canvasFader = target.GetComponent<CanvasFader>();
         if (canvasFader == null)
         {
