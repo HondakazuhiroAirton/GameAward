@@ -126,6 +126,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         // チャージした時間を貯める
         ChargeTime = 0.0f;
+
         // 基準値初期化
         BeamDistanceKijun = 10.0f;
 
@@ -135,8 +136,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         // 巨大ビームをResourcesから取得
         BigBeamPrefabs = Resources.Load<GameObject>("BigBeam");
 
-
-        // とりあえず消したのこの辺******************************************
+        // ビーム残量へのアクセス
         //PlayerDateもってくる
         PlayerDate = GameObject.Find("PlayerDate");
 
@@ -145,7 +145,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         //ビーム残量を100 % に設定
         PlayerClassScript.SetAmount(100);
-        // とりあえず消したのこの辺まで****************************************
+       
     }
 
 
@@ -391,11 +391,17 @@ public class PlayerMove_MIURA : MonoBehaviour
                 // プレイヤーのZ軸を参考にする
                 float PlayerAngle = this.transform.localEulerAngles.z;
 
+                // BeamEffectScriptをキャッシュ************************************************
+                BeamParticleScript script = BeamParticleManager.GetComponent<BeamParticleScript>();
+
+                // BeamParticleのEffect角度を更新する
+                script.PlayerAngle = PlayerAngle;
+
                 // BeamParticleの角度を変更する
-                BeamParticleManager.GetComponent<BeamParticleScript>().Angle = PlayerAngle - 90;
+                script.Angle = PlayerAngle - 90;
 
                 // BeamParticleのBeamMaxを変更する
-                BeamParticleManager.GetComponent<BeamParticleScript>().BeamMax = BeamMax;
+                script.BeamMax = BeamMax;
 
                 // プレハブを指定位置に生成
                 Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);

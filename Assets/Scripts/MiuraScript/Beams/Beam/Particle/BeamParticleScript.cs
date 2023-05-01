@@ -43,6 +43,10 @@ public class BeamParticleScript : MonoBehaviour
     // プレイヤーいれる
     public GameObject Player;
 
+    // エフェクシア関連の関数
+    //回転(外部から更新をかけて角度を変化させる)
+    public float PlayerAngle;
+
     // privateゾーン********************************************
     // 今の反射回数
     private int reflectCount = 0;
@@ -54,6 +58,14 @@ public class BeamParticleScript : MonoBehaviour
     private float XMove = 1.0f;
     private float YMove = 0.0f;
     private float ZMove = 0.0f;
+
+    // エフェクシア用関数アレコレ
+    // 再生するアセット
+    private EffekseerEffectAsset effect;
+    // ハンドル
+    private EffekseerHandle handle;
+    // エフェクトの回転計算
+    private Quaternion EffectRot;
 
     // 当たり判定の拡大率を保存
     // private float xCollisionSize = 1.0f;
@@ -84,18 +96,16 @@ public class BeamParticleScript : MonoBehaviour
 
         // エフェクシアのエフェクトもらう
         // Beamの大きさに応じてswitchかけて大きさ調整
-        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beam2");
-        Debug.Log(effect.Scale);
-        effect.Scale *= 10.0f;
-        Debug.Log(effect.Scale);
+        effect = Resources.Load<EffekseerEffectAsset>("beam3");
         // transformの位置でエフェクトを再生する
-        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+        handle = EffekseerSystem.PlayEffect(effect, transform.position);
 
-        // プレイヤーのZ角度持ってくる
-        float tmp = Player.transform.eulerAngles.z;
         // tramsformの回転を設定する
-        Quaternion rot = Quaternion.Euler(tmp - 90 , 270 , 90);
-        handle.SetRotation(rot);
+        EffectRot = Quaternion.Euler(0 , 0 , PlayerAngle);
+        Debug.Log(PlayerAngle);
+
+        handle.SetRotation(EffectRot);
+
     }
 
     void Update()
@@ -103,16 +113,11 @@ public class BeamParticleScript : MonoBehaviour
         // 移動処理
         transform.position += moveDir;
         // エフェクシアのエフェクトもらう
-        // Beamの大きさに応じてswitchかけて大きさ調整
-        EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("beam2");
         // transformの位置でエフェクトを再生する
+        // 場所指定
         EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
-
-        // プレイヤーのZ角度持ってくる
-        float tmp = Player.transform.eulerAngles.z;
-        // tramsformの回転を設定する
-        Quaternion rot = Quaternion.Euler(tmp - 90, 270, 90);
-        handle.SetRotation(rot);
+        // 角度指定
+        handle.SetRotation(EffectRot);
     }
 
     public void CollisionEvent(GameObject obj)
@@ -147,6 +152,10 @@ public class BeamParticleScript : MonoBehaviour
                 // Wallの反射アクションを起こす
                 other.gameObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
 
+
+                // エフェクト角度も更新する
+                PlayerAngle = Angle;
+
                 // 前もってプレハブの大きさを変更しておく
                 BeamBoxCastReflect.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
 
@@ -156,7 +165,6 @@ public class BeamParticleScript : MonoBehaviour
                 // つぎの反射の当たり判定を生み出す処理
                 Instantiate(BeamBoxCastReflect, this.transform.position, Quaternion.identity, ParticleManager.transform);
 
-
             }
             else
             {
@@ -164,6 +172,11 @@ public class BeamParticleScript : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
+    }
+
+    public void BeamStart()
+    {
+     
     }
 }
 
