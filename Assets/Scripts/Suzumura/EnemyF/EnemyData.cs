@@ -7,13 +7,13 @@ public class EnemyData
     public string name;                 // 名前(No.)
     public EnemyCategory category;      // カテゴリー
     public int HP;                      // HP
-    public int Size;                    // 大きさ
+    public float Size;                  // 大きさ
     public int StartPosX;               // 出現位置
     public int StartPosY;               // 
     public int StartPosZ;               // 
-    public int EntryPosX;               // 画面内に入る位置
-    public int EntryPosY;               //
-    public int EntryPosZ;               //
+    public float EntryPosX;             // 画面内に入る位置
+    public float EntryPosY;             //
+    public float EntryPosZ;             //
     public int sideNo;                  // 辺
     public int Target1PosX;             // 目標地点1
     public int Target1PosY;             //

@@ -30,8 +30,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3920941145128739718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -300}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3920941146145709931}
@@ -117,10 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f73e01dba218f74981be01ac0ecd5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExclamationMark: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
+  ExclamationMark: {fileID: 3920941145128739718, guid: 907a83dd7033a9842b1260fc779b9246,
     type: 3}
   Rail: {fileID: 3920941145128739718}
-  ExObject: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
+  ExObject: {fileID: 3920941145128739718, guid: 907a83dd7033a9842b1260fc779b9246,
     type: 3}
   RaObject: {fileID: 3920941145128739718}
 --- !u!225 &3920941145128739719
