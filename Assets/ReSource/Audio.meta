@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 2bddd3b323e573e49985442ebffe89ca
 =======
 guid: 2c76fd56c51f90645bf29f5b99a034ab
 >>>>>>> feature/KoutaMotai
+=======
+guid: d443c99b61d1fb04babdd63b055aa0b4
+>>>>>>> feature/miura
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
