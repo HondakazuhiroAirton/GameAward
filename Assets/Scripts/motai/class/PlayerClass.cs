@@ -32,7 +32,7 @@ public class PlayerClass : MonoBehaviour
         amount = value;
     }
 
-    // ビッグ残量
+    // ビッグビーム残量
     public float GetBigAmount()
     {
         return bigamount;
@@ -44,6 +44,8 @@ public class PlayerClass : MonoBehaviour
     void Start()
     {
         SetLife(3);
+
+        SetBigAmount(50);
     }
     void Update()
     {

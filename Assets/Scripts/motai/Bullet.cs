@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
         //// transformの回転を設定する。
         //handle.SetRotation(transform.rotation);
 
-        // ビーム残量へのアクセス
+        // ビームライフへのアクセス
         //PlayerDateもってくる
         PD = GameObject.Find("PD");
 
