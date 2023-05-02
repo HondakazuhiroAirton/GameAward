@@ -12,10 +12,10 @@ public class ResultUI : MonoBehaviour
 
     //変数取得のためのオブジェクト取得
     //＜関数読み取りのためゲームオブジェクト取得してます＞
-    public GameObject Combo;
-    public GameObject Numenemy;
-    public GameObject Beam;
-    public GameObject Score;
+     GameObject Combo;
+     GameObject Numenemy;
+     GameObject Beam;
+     TextMeshProUGUI Score;
 
 
     //テキストオブジェクト取得  
@@ -32,6 +32,9 @@ public class ResultUI : MonoBehaviour
     static int totalscore;  //合計
 
     // Start is called before the first frame update
+
+  
+
     void Start()
     {
         //初期化
@@ -54,7 +57,7 @@ public class ResultUI : MonoBehaviour
         Bm = GameObject.Find("Beam").GetComponent<TextMeshProUGUI>();
 
         //スコアの取得
-        Score = GameObject.Find("Score");
+        Score = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
         Rs = GameObject.Find("ResultScore").GetComponent<TextMeshProUGUI>();
 
         //合計
