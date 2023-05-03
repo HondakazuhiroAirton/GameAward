@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMove : MonoBehaviour
 {
     private float speed = 5.0f;
-
+    public Slider slider;
     void Update()
     {
         if (Input.GetKey("up"))
@@ -24,12 +24,7 @@ public class PlayerMove : MonoBehaviour
         {
             transform.position -= transform.right * speed * Time.deltaTime;
         }
+
+        
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.tag == "bullet")
-    //    {
-    //        GameObject.Destroy(this.gameObject);
-    //    }
-    //}
 }
