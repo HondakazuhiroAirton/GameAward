@@ -30,20 +30,37 @@ public class ResultUI : MonoBehaviour
     static int beam;        //ビーム
     static int score;       //スコア
     static int totalscore;  //合計
-    static int i; //トータルスコアで使ってる
+    static int i;  //色々使う
+
+    // 0503三浦追記
+    // 何のスコアをぐるぐるして表示させるか覚えておく変数
+    enum resultState
+    {
+        None = 0,
+        combo,
+        numenemy,
+        beam,
+        score,
+        totalscore
+    };
+    private resultState panelState;
+
 
     // Start is called before the first frame update
 
-  
+
 
     void Start()
     {
         //初期化
         combo = 0;
         numenemy = 0;
-        beam = 100;
+        beam = 0;
         score = 0;
         totalscore = 0;
+        i = 0;
+
+        panelState = resultState.None;
 
         //コンボ
         //Combo = GameObject.Find("");
@@ -75,16 +92,22 @@ public class ResultUI : MonoBehaviour
             // パネルUIのアクティブ非アクティブを切り替え
             Active();
             //タイマーを止める
-            Time.timeScale = 0f;
+            Time.timeScale = 0.0f;
 
+            // パネルのステイトを変更する
+            // 最初のステイトに
+            //panelState = resultState.None
+
+            // ↑今は暫定機に…
+            panelState = resultState.score;
         }
 
 
         //テキスト表示
         if (resultUI.activeSelf == true)
         {
-            text(3);
-
+            // 表示関数開始
+            text();
         }
     }
 
@@ -92,64 +115,108 @@ public class ResultUI : MonoBehaviour
     {
         //パネルUIのアクティブ、非アクティブを切り替え
         resultUI.SetActive(!resultUI.activeSelf);
-        //合計の計算
-        totalscore = combo + numenemy + beam + score;
+
+        // trueの時だけ処理する
+        if (resultUI.activeSelf == true)
+        {
+            // 三浦)この辺で全部の変数に最終の値入れちゃう
+
+            //combo = ??;//<<<コンボの数を持ってくる関数
+            //numenemy = ??;//<<<倒した敵の数を持って来る関数
+            //beam = ??;//<<<ビーム残量をもって来る関数
+            score = Score.GetComponent<Score>().ResultScore();
+            totalscore = combo + numenemy + beam + score; // トータル計算
+        }
     }
 
-    void text(int no)
+    void text()
     {
-        switch(no)
+        
+        switch (panelState)
         {
-            case 0: //コンボ
+            case resultState.None: // 何もしない
+                break;
+            case resultState.combo: //コンボ
                 {
-                   // if (combo < //<<<コンボの数を持ってくる関数)
-                   // {
-                   //     combo++;
-                   //     Cm.text = combo.ToString();
-                   // }
-                    break; 
-                };
-            case 1:
-                {//倒した敵の数
-                    //if (numenemy < //<<<倒した敵の数を持って来る関数)
-                    //{
-                    //    numenemy++;
-                    //    Ne.text = numenemy.ToString();
-                    //}
-                    break; 
-                };
-            case 2:
-                {//ビーム残量
-                    //if (beam < //<<<ビーム残量をもって来る関数)
+                // if (i < combo)
+                // {
+                //     combo++;
+                //     Cm.text = combo.ToString();
+                // }else
+                //{
+                //     // 次のステイトへ(次はnumenemy表示)   
+                //     panelState = resultState.numenemy;
+                //     // iを初期化
+                //     // i = 0;
+                //}
+                break;
+                }
+            case resultState.numenemy:
+                {
+                //倒した敵の数
+                //if (i < numenemy)
+                //{
+                //    numenemy++;
+                //    Ne.text = numenemy.ToString();
+                //}
+                // }else
+                //{
+                //     // 次のステイトへ(次はbeam表示)   
+                //     panelState = resultState.beam;
+                //     // iを初期化
+                //     // i = 0;
+                //}
+                   break;
+                }
+            case resultState.beam:
+                    {
+                    //ビーム残量
+                    //if (i < beam)
                     //{
                     //    beam++;
                     //    Bm.text = beam.ToString();
                     //}
-                    break; 
-                };
-            case 3://スコア
-                {
-                    if (score < Score.GetComponent<Score>().ResultScore())
-                    {
-                        score++;
-                        Rs.text = score.ToString();
+                    //else
+                    //{
+                    //     // 次のステイトへ(次はscore表示)   
+                    //     panelState = resultState.score;
+                    //     // iを初期化
+                    //     // i = 0;
+                    //}
+                       break;
                     }
-                    else
+                case resultState.score://スコア
                     {
-                        text(4);
+                        if (i < score)
+                        {
+                            i++;
+                            Rs.text = i.ToString();
+                        }
+                        else
+                        {
+                            // 次のステイトへ(次はtotalscore表示)   
+                            panelState = resultState.totalscore;
+                            // iを初期化
+                            i = 0;
+                        }
+                        break;
                     }
-                    break; 
-                };
-            case 4:
-                {//トータルスコア
+                case resultState.totalscore:
+                    {//トータルスコア
 
-                    if (i < totalscore)
-                    {
-                        i++;
-                        Ts.text = i.ToString();
+                        if (i < totalscore)
+                        {
+                            i++;
+                            Ts.text = i.ToString();
+                        }
+                        else
+                        {
+                            // トータルスコアを表示しておわり(最後はNoneにする)   
+                            panelState = resultState.None;
+                        }
+                        break;
                     }
-                    break; 
-                };
-        }
+            }
+        
     }
 }
