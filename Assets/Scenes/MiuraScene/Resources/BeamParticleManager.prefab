@@ -120,7 +120,7 @@ MonoBehaviour:
   ChildNo: 1
   LayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1073741888
   isEnable: 1
 --- !u!1 &7954957735459857810
 GameObject:
@@ -232,6 +232,7 @@ MonoBehaviour:
   BeamBoxCastReflect: {fileID: 3653431189480935985, guid: d7658118b82beb242b0ab4877e7ac34f,
     type: 3}
   Player: {fileID: 0}
+  PlayerAngle: 0
 --- !u!135 &7954957735459857815
 SphereCollider:
   m_ObjectHideFlags: 0
