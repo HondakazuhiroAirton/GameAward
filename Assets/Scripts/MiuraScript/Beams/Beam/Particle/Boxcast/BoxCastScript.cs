@@ -199,6 +199,11 @@ public class BoxCastScript : MonoBehaviour
         Gizmos.DrawWireCube(transform.position + ParticleVector * maxDistance, Vector3.one * scale * 2);
 
     }
+
+    //public void CollisionEvent(GameObject obj)
+    //{
+    //    throw new System.NotImplementedException();
+    //}
 }
 
 
