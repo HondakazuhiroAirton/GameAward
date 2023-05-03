@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 2016537144}
   - component: {fileID: 2016537145}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AudioManage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,11 +280,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2016537141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3609698f63efe5e4f8b2d4660af674a3, type: 3}
+  m_Script: {fileID: 11500000, guid: e9a53fc8d8f6b5d41b59b525cfa02e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 2016537145}
-  Bgm: {fileID: 8300000, guid: e35b55e59a6ba7a4fa30b741d697d44f, type: 3}
+  A_BGM: {fileID: 2016537145}
+  B_BGM: {fileID: 0}
+  A_Bgm: {fileID: 8300000, guid: e35b55e59a6ba7a4fa30b741d697d44f, type: 3}
+  B_Bgm: {fileID: 8300000, guid: b74b3f4ffa410814080d9bbb81483805, type: 3}
 --- !u!82 &2016537145
 AudioSource:
   m_ObjectHideFlags: 0
