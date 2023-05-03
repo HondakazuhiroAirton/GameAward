@@ -50,7 +50,9 @@ public enum Phase
     phase2 = 2,
     phase3 = 3,
     phase4 = 4,
-    phase5 = 5
+    phase5 = 5,
+
+    phase_max
 }
 
 //public class EnemyDataBase : ScriptableObject

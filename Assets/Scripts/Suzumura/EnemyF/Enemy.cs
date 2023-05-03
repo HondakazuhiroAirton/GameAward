@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour,CollisionAction
 {
     [SerializeField] private float spawnRealTime = 0;            // タイマー
 
@@ -97,7 +97,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         spawnRealTime += Time.deltaTime;    // 現在時間
-        PhaseTransition = true;
+        PhaseTransition = true;             
         for (i = 0; i < element; i++)
         {
             // 敵が削除されていた場合はスキップ           ↓削除ステート
@@ -224,16 +224,10 @@ public class Enemy : MonoBehaviour
                     Destroy(enemy[i]);
                 }
             }
-            if (enemyData[i].State != -1) PhaseTransition = false;
+            PhaseTransition = false;  // 敵が残っていれば遷移しない
         }
 
         // 全ての敵が倒されたor画面外に逃げたら次のフェーズに移行
-        //PhaseTransition = true;
-        //for (i = 0; i < element; i++)
-        //{
-        //    if (enemyData[i].State == -1) continue;
-        //    else PhaseTransition = false; break;
-        //}
         if (PhaseTransition)
         {
             CurrentPhase++;
@@ -279,6 +273,13 @@ public class Enemy : MonoBehaviour
 
         // オブジェクトの回転に反映
         return rotation;
+    }
+
+    public void CollisionEvent(GameObject obj)
+    {
+        //throw new System.NotImplementedException();
+        enemyData[i].State = -1;
+        Destroy(enemy[i]);
     }
 }
 
