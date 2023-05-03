@@ -31,6 +31,7 @@ public class Pause : MonoBehaviour
         resume = GameObject.Find("Resume").GetComponent<Button>();
         restart = GameObject.Find("Restart").GetComponent<Button>();
         stageselect = GameObject.Find("StageSelect").GetComponent<Button>();
+        pauseUI = GameObject.Find("PousePanel");
 
         Time.timeScale = 1f;
 
