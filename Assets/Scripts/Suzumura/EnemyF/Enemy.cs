@@ -34,6 +34,12 @@ public class Enemy : MonoBehaviour
     private Vector3 _up = Vector3.right;        // オブジェクトの上向き→右向きに変更
     private Vector3 _forward = Vector3.forward; // オブジェクトの正面
 
+    private Vector3 ViewportLB;     // 画面の左下座標
+    private Vector3 ViewportRT;     // 画面の右上座標
+
+    private bool PhaseTransition = false;   // フェーズ遷移の判断
+    private int CurrentPhase;               // 現在のフェーズ
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,16 +84,34 @@ public class Enemy : MonoBehaviour
             enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
             enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
         }
+
+        // ビューポート取得
+        ViewportLB = Camera.main.ViewportToWorldPoint(new Vector3(-0.1f, -0.1f));
+        ViewportRT = Camera.main.ViewportToWorldPoint(new Vector3(1.1f, 1.1f));
+
+        // 最初はtPhase1;
+        CurrentPhase = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         spawnRealTime += Time.deltaTime;    // 現在時間
+        PhaseTransition = true;
         for (i = 0; i < element; i++)
         {
-            // 前フレームのワールド位置をとっておく
-            if (enemyData[i].State != 0) enemyData[i].prevPosition = enemy[i].transform.position;
+            // 敵が削除されていた場合はスキップ           ↓削除ステート
+            if (enemy[i] == null && enemyData[i].State == -1) continue;
+
+            // 現在のフェーズに出現する敵だけを出す
+            if (CurrentPhase != (int)enemyData[i].phase) continue;
+
+            // 敵出現時の共通処理
+            if (enemyData[i].State != 0)
+            {
+                enemyData[i].prevPosition = enemy[i].transform.position;    // 前フレームのワールド位置をとっておく
+                enemyData[i].Duration += Time.deltaTime;                    // 経過時間を取得
+            }
 
             // 敵未出現
             if (enemyData[i].State == 0)
@@ -97,6 +121,7 @@ public class Enemy : MonoBehaviour
                 {
                     SpawnNewEnemy(i);
                     enemyData[i].State = 1;
+                    enemyData[i].Duration = 0.0f;
                 }
             }
             // 敵出現
@@ -109,11 +134,8 @@ public class Enemy : MonoBehaviour
                     enemyData[i].target1
                     );
 
-                // この状態での経過時間を取得
-                enemyData[i].State1time += Time.deltaTime;
-
                 // 現在の位置
-                enemyData[i].PresentLocation = (enemyData[i].State1time * 5) / enemyData[i].distance_two;
+                enemyData[i].PresentLocation = (enemyData[i].Duration * 5) / enemyData[i].distance_two;
 
                 // 移動
                 enemy[i].transform.position = Vector3.Slerp(
@@ -126,25 +148,22 @@ public class Enemy : MonoBehaviour
                 // 進行方向に向きを変える
                 enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
-                // positionの値を四捨五入
-                Vector3 roundposition;
-                roundposition.x = Mathf.Round(enemy[i].transform.position.x);
-                roundposition.y = Mathf.Round(enemy[i].transform.position.y);
-                roundposition.z = Mathf.Round(enemy[i].transform.position.z);
+                // positionの値を四捨五入(現在は調整不要？)
+                //Vector3 roundposition;
+                //roundposition.x = Mathf.Round(enemy[i].transform.position.x);
+                //roundposition.y = Mathf.Round(enemy[i].transform.position.y);
+                //roundposition.z = Mathf.Round(enemy[i].transform.position.z);
 
                 // 指定場所についたら次の動きに移行
-                if (roundposition == enemyData[i].target1)
+                if (enemy[i].transform.position == enemyData[i].target1)
                 {
                     enemyData[i].State = 2;
-                    enemyData[i].State2time = 0;
+                    enemyData[i].Duration = 0;
                 }
             }
             // 2:円を描く
             else if (enemyData[i].State == 2)
             {
-                // この状態での経過時間を取得
-                enemyData[i].State2time += Time.deltaTime;
-
                 // 移動
                 enemy[i].transform.RotateAround(
                     new Vector3(enemyData[i].target1.x - 1.0f, enemyData[i].target1.y, enemyData[i].target1.z),
@@ -156,9 +175,10 @@ public class Enemy : MonoBehaviour
                 enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 // 2周したら次の動きに移行
-                if (enemyData[i].State2time * angle >= 720.0f)
+                if (enemyData[i].Duration * angle >= 720.0f)
                 {
                     enemyData[i].State = 3;
+                    enemyData[i].Duration = 0;
                 }
             }
             // 3:MoveTowardsで目標位置に
@@ -174,7 +194,50 @@ public class Enemy : MonoBehaviour
                 // 進行方向に向きを変える
                 enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
+                // 一定時間経過で次の動きに移行
+                if (enemyData[i].Duration >= 3.0f)
+                {
+                    enemyData[i].State = 4;
+                    enemyData[i].Duration = 0;
+                }
             }
+            // 4:敵が逃げていく
+            else if (enemyData[i].State == 4)
+            {
+                // 移動
+                enemy[i].transform.position = Vector3.MoveTowards(
+                   enemy[i].transform.position,
+                   new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
+                   Time.deltaTime * 8
+                   );
+
+                // 進行方向に向きを変える
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                // 画面外に逃げたら削除
+                if (enemy[i].transform.position.x <= ViewportLB.x ||
+                    enemy[i].transform.position.x >= ViewportRT.x ||
+                    enemy[i].transform.position.y <= ViewportLB.y ||
+                    enemy[i].transform.position.y >= ViewportRT.y)
+                {
+                    enemyData[i].State = -1;
+                    Destroy(enemy[i]);
+                }
+            }
+            if (enemyData[i].State != -1) PhaseTransition = false;
+        }
+
+        // 全ての敵が倒されたor画面外に逃げたら次のフェーズに移行
+        //PhaseTransition = true;
+        //for (i = 0; i < element; i++)
+        //{
+        //    if (enemyData[i].State == -1) continue;
+        //    else PhaseTransition = false; break;
+        //}
+        if (PhaseTransition)
+        {
+            CurrentPhase++;
+            spawnRealTime = 0;
         }
     }
 

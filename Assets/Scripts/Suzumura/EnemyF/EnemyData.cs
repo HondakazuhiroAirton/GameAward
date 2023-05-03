@@ -6,6 +6,7 @@ public class EnemyData
 {
     public string name;                 // 名前(No.)
     public EnemyCategory category;      // カテゴリー
+    public Phase phase;                 // 出現フェーズ
     public int HP;                      // HP
     public float Size;                  // 大きさ
     public int StartPosX;               // 出現位置
@@ -27,11 +28,10 @@ public class EnemyData
 
     public Vector3 prevPosition;
     public float distance_two;         //二点間の距離を入れる
-    public float State1time;
+    public float Duration;
     public float PresentLocation;
     public Vector3 Entry;
     public Vector3 target1;
-    public float State2time;
 
 }
 
@@ -41,6 +41,16 @@ public enum EnemyCategory
     type1 = 1,
     type2 = 2,
     type3 = 3
+}
+
+// 出現フェーズ列挙型
+public enum Phase
+{
+    phase1 = 1,
+    phase2 = 2,
+    phase3 = 3,
+    phase4 = 4,
+    phase5 = 5
 }
 
 //public class EnemyDataBase : ScriptableObject
