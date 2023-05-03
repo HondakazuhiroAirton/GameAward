@@ -13,8 +13,7 @@ public class AudioManager : MonoBehaviour
     {
         if (instance == null)
         {
-            instance = this;
-           
+            instance = this;    
 
         }
         else
@@ -30,10 +29,21 @@ public class AudioManager : MonoBehaviour
     int volume;
 
 
-    [SerializeField] private AudioSource A_BGM;
-    [SerializeField] private AudioSource B_BGM;
-    [SerializeField] private AudioClip A_Bgm;
-    [SerializeField] private AudioClip B_Bgm;
+    //BGM集
+    [SerializeField] private AudioSource BGM;
+    [SerializeField] private AudioClip TitleBgm;
+    [SerializeField] private AudioClip SelectBgm;
+    [SerializeField] private AudioClip GameBgm;
+    [SerializeField] private AudioClip ResultBgm;
+
+    //SE集
+    [SerializeField] private AudioSource SE;
+    [SerializeField] private AudioClip SelectSE;
+    [SerializeField] private AudioClip MenuSE;
+    [SerializeField] private AudioClip BeamSE;
+    [SerializeField] private AudioClip PlayerMoveSE;
+    [SerializeField] private AudioClip EnemyDefeatSE;
+    [SerializeField] private AudioClip CursolSE;
 
     private string beforeScene;//string型の変数beforeSceneを宣言 
 
@@ -44,7 +54,7 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         beforeScene = "Title(Proto)";
-      A_BGM.PlayOneShot(A_Bgm);
+        BGM.PlayOneShot(TitleBgm);
 
         //シーンが切り替わった時に呼ばれるメソッドを登録
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
@@ -55,8 +65,11 @@ public class AudioManager : MonoBehaviour
     {
      if(Input.GetKeyDown(KeyCode.Return))
         {
+            SE.PlayOneShot(SelectSE);
             SceneManager.LoadScene("nagaya");
         }
+
+    
     }
 
     void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
@@ -65,15 +78,15 @@ public class AudioManager : MonoBehaviour
         //タイトルからステージセレクトへ
         if (beforeScene == "Title(Proto)" && nextScene.name == "nagaya")
         {
-            A_BGM.Stop();
-            B_BGM.PlayOneShot(B_Bgm);
+            BGM.Stop();
+            BGM.PlayOneShot(SelectBgm);
         }
         
         // ステージセレクトからゲーム画面へ(予定）
         if (beforeScene == "nagaya" && nextScene.name == "Stage1")
         {
-            A_BGM.PlayOneShot(A_Bgm);
-            B_BGM.Stop();
+            BGM.PlayOneShot(TitleBgm);
+            BGM.Stop();
         }
 
 
