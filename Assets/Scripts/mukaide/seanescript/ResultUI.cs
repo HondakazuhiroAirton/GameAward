@@ -30,6 +30,7 @@ public class ResultUI : MonoBehaviour
     static int beam;        //ビーム
     static int score;       //スコア
     static int totalscore;  //合計
+    static int i; //トータルスコアで使ってる
 
     // Start is called before the first frame update
 
@@ -76,16 +77,13 @@ public class ResultUI : MonoBehaviour
             //タイマーを止める
             Time.timeScale = 0f;
 
-            //テキスト表示
-            score = Score.GetComponent<Score>().ResultScore();
-            Rs.text = "Score: " + score.ToString();
+        }
 
 
-
-
-            //合計の計算
-            totalscore = combo + numenemy + beam + score;
-            Ts.text = "TotalScore: " + totalscore.ToString();
+        //テキスト表示
+        if (resultUI.activeSelf == true)
+        {
+            text(3);
 
         }
     }
@@ -94,5 +92,64 @@ public class ResultUI : MonoBehaviour
     {
         //パネルUIのアクティブ、非アクティブを切り替え
         resultUI.SetActive(!resultUI.activeSelf);
+        //合計の計算
+        totalscore = combo + numenemy + beam + score;
+    }
+
+    void text(int no)
+    {
+        switch(no)
+        {
+            case 0: //コンボ
+                {
+                   // if (combo < //<<<コンボの数を持ってくる関数)
+                   // {
+                   //     combo++;
+                   //     Cm.text = combo.ToString();
+                   // }
+                    break; 
+                };
+            case 1:
+                {//倒した敵の数
+                    //if (numenemy < //<<<倒した敵の数を持って来る関数)
+                    //{
+                    //    numenemy++;
+                    //    Ne.text = numenemy.ToString();
+                    //}
+                    break; 
+                };
+            case 2:
+                {//ビーム残量
+                    //if (beam < //<<<ビーム残量をもって来る関数)
+                    //{
+                    //    beam++;
+                    //    Bm.text = beam.ToString();
+                    //}
+                    break; 
+                };
+            case 3://スコア
+                {
+                    if (score < Score.GetComponent<Score>().ResultScore())
+                    {
+                        score++;
+                        Rs.text = score.ToString();
+                    }
+                    else
+                    {
+                        text(4);
+                    }
+                    break; 
+                };
+            case 4:
+                {//トータルスコア
+
+                    if (i < totalscore)
+                    {
+                        i++;
+                        Ts.text = i.ToString();
+                    }
+                    break; 
+                };
+        }
     }
 }
