@@ -9,6 +9,7 @@ public class BigBeamGauge : MonoBehaviour
     PlayerClass PlayerBB;
     private float BigBeam;
     public Slider slider;
+    private bool Beamdec = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +19,31 @@ public class BigBeamGauge : MonoBehaviour
 
         //Geter / Seter使用用スクリプト保持
         PlayerBB = PD.GetComponent<PlayerClass>();
+
+        BigBeam = PlayerBB.GetBigAmount();
+
+        slider.value = BigBeam;
     }
 
     // Update is called once per frame
     void Update()
     {
-        BigBeam = PlayerBB.GetBigAmount();
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (slider.value == 100)
+            {
+                Beamdec = true;
+            }
+        }
 
-        slider.value = BigBeam;
+        if(Beamdec)
+        {
+            slider.value = slider.value - 0.1f;
+            if(slider.value == 0)
+            {
+                Beamdec = false;
+            }
+        }
+        
     }
 }

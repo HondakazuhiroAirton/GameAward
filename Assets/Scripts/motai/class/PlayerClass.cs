@@ -45,7 +45,7 @@ public class PlayerClass : MonoBehaviour
     {
         SetLife(3);
 
-        SetBigAmount(100);
+        SetBigAmount(50);
     }
     void Update()
     {

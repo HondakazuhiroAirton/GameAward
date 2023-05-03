@@ -9,38 +9,54 @@ public class SilderColor : MonoBehaviour
 {
     [SerializeField] Image sliderImage;
     public Slider slider;
+    GameObject PD;
+    PlayerClass PlayerBB;
+    private float BigBeam;
+    int PM = -1;
 
     void Start()
     {
         sliderImage.color =new Color(1.0f, 1.0f, 1.0f, 1.0f);
-        StartCoroutine("Flashing");
+        //StartCoroutine("Flashing");
+
+        //PlayerDateもってくる
+        PD = GameObject.Find("PD");
+
+        //Geter / Seter使用用スクリプト保持
+        PlayerBB = PD.GetComponent<PlayerClass>();
+
+        BigBeam = PlayerBB.GetBigAmount();
+
+        slider.value = BigBeam;
+
     }
 
     void Update()
     {
-        if (slider.value > 100)
-        {
-            Flashing();
-
-            slider.value --;
-        }
+        if (slider.value == 100) Flashing();
+        else sliderImage.color = new Color32(255, 255, 255, 255);
     }
 
-    IEnumerator Flashing()
+    void Flashing()
     {
-         while (true)
-         {
-             for (int i = 0; i < 20; i++)
-             {
-                 sliderImage.color = sliderImage.color - new Color32(0, 0, 0, 10);
-                 yield return new WaitForSeconds(0.01f);
-             }
+        if (sliderImage.color == new Color32(255, 255, 255, 255))
+        {
+            PM = -1;
 
-             for (int k = 0; k < 20; k++)
-             {
-                 sliderImage.color = sliderImage.color + new Color32(0, 0, 0, 10);
-                 yield return new WaitForSeconds(0.01f);
-             }
-         }
+        }
+        else if (sliderImage.color == new Color32(255, 255, 255, 0))
+        {
+            PM = 1;
+
+        }
+
+        if(PM == -1)
+        {
+            sliderImage.color = sliderImage.color - new Color32(0, 0, 0, 1);
+        }
+        else if (PM == 1)
+        {
+            sliderImage.color = sliderImage.color + new Color32(0, 0, 0, 1);
+        }
     }
 }
