@@ -180,8 +180,8 @@ public class BoxCastScript : MonoBehaviour
         {
             GameObject hitObject = hit.collider.gameObject;
             Debug.Log("あたったよ");
-            // 多分この処理はインターフェスで渡してEnemy側で作った方がいい
-            Destroy(hitObject);
+            // インターフェスで渡して
+            hitObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
             
         }
 
