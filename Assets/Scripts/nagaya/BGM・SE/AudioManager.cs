@@ -8,19 +8,19 @@ public class AudioManager : MonoBehaviour
 {
     //シングルトン設定ここから
     public static AudioManager instance;
-  
+
     private void Awake()
     {
         if (instance == null)
         {
-            instance = this;    
+            instance = this;
 
         }
         else
         {
             Destroy(this.gameObject);
         }
-  
+
     }
     //シングルトン設定ここまで
 
@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip CursolSE;
 
     private string beforeScene;//string型の変数beforeSceneを宣言 
-
+//  private string clearScene; //string型の変数clearSceneを宣言
 
     // Start is called before the first frame update
     void Start()
@@ -63,13 +63,13 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if(Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             SE.PlayOneShot(SelectSE);
             SceneManager.LoadScene("nagaya");
         }
 
-    
+
     }
 
     void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
@@ -81,7 +81,7 @@ public class AudioManager : MonoBehaviour
             BGM.Stop();
             BGM.PlayOneShot(SelectBgm);
         }
-        
+
         // ステージセレクトからゲーム画面へ(予定）
         if (beforeScene == "nagaya" && nextScene.name == "Stage1")
         {
@@ -94,5 +94,32 @@ public class AudioManager : MonoBehaviour
         beforeScene = nextScene.name;
     }
 
-
+    //クリアしたとき、BGMを変更
+    //void OnClearScene(Scene prevScene,Scene nextScene)
+    //{
+    // if()
+    // {
+    // BGM.Stop();
+    // BGM.PlayOneShot(ResultBgm);
+    //  }
+    // 
+    // //クリアからステージセレクトへ行くとき
+    // if()
+    //  {
+    // BGM.Stop();
+    // BGM.PlayOneShot(SelectBgm);
+    //  }
+    //
+    // //クリアからゲームプレイ（コンティニュー）へ
+    // if()
+    // {
+    // BGM.Stop();
+    // BGM.PlayOneShot(GameBgm);
+    //}
+    // ClearScene=nextScene.name;
+    //}
+    //
+    //
+    //
+    //
 }
