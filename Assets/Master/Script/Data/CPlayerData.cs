@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CPlayerData :MonoBehaviour
+public class CPlayerData : MonoBehaviour
 {
     [SerializeField]
     private int life;
@@ -17,6 +17,7 @@ public class CPlayerData :MonoBehaviour
     {
         _life = new CCounter<int>(life);
         _beamPower = new CCounter<float>(beamPower);
+
     }
 
     // Update is called once per frame

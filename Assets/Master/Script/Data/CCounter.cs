@@ -12,7 +12,6 @@ public class CCounter<T>
         _Val = val;
     }
 
-
     virtual protected void Set(T val)
     {
         _Val = val;
