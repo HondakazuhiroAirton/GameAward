@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip SelectBgm;
     [SerializeField] private AudioClip GameBgm;
     [SerializeField] private AudioClip ResultBgm;
+    [SerializeField] private AudioClip GameOverBgm;
 
     //SE集
     [SerializeField] private AudioSource SE;
@@ -44,6 +45,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip PlayerMoveSE;
     [SerializeField] private AudioClip EnemyDefeatSE;
     [SerializeField] private AudioClip CursolSE;
+    [SerializeField] private AudioClip CancelSE;
+    [SerializeField] private AudioClip PauseSE;
 
     private string beforeScene;//string型の変数beforeSceneを宣言 
 //  private string clearScene; //string型の変数clearSceneを宣言
@@ -53,11 +56,12 @@ public class AudioManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
 
-        beforeScene = "Title(Proto)";
+        beforeScene = "mTitleScene";
         BGM.PlayOneShot(TitleBgm);
 
         //シーンが切り替わった時に呼ばれるメソッドを登録
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
+     // SceneManager.activeSceneChanged+=OnClearScene;
     }
 
     // Update is called once per frame
@@ -66,7 +70,7 @@ public class AudioManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             SE.PlayOneShot(SelectSE);
-            SceneManager.LoadScene("nagaya");
+            SceneManager.LoadScene("mSelectScene");
         }
 
 
@@ -76,17 +80,25 @@ public class AudioManager : MonoBehaviour
     {
         //シーンがどう変わったかで判定
         //タイトルからステージセレクトへ
-        if (beforeScene == "Title(Proto)" && nextScene.name == "nagaya")
+        if (beforeScene == "mTitleScene" && nextScene.name == "mSelectScene")
         {
             BGM.Stop();
             BGM.PlayOneShot(SelectBgm);
         }
 
         // ステージセレクトからゲーム画面へ(予定）
-        if (beforeScene == "nagaya" && nextScene.name == "Stage1")
+        if (beforeScene == "mSelectScene" && nextScene.name == "mGameScene")
         {
-            BGM.PlayOneShot(TitleBgm);
+            BGM.PlayOneShot(GameBgm);
             BGM.Stop();
+        }
+
+        //ステージセレクトからタイトル画面へ
+        if(beforeScene=="mSelectScene"&&nextScene.name=="mTitleScene")
+        {
+            //if()//タイトルへ戻るボタンを押したとき
+            BGM.Stop();
+            BGM.PlayOneShot(TitleBgm);
         }
 
 
@@ -104,17 +116,25 @@ public class AudioManager : MonoBehaviour
     //  }
     // 
     // //クリアからステージセレクトへ行くとき
-    // if()
+    //
+    //if(ClearScene == "mGameScene" && nextScene.name =="mStageSelectScene")
     //  {
-    // BGM.Stop();
-    // BGM.PlayOneShot(SelectBgm);
+    // if()//ステージセレクトボタンが押された時
+    //   (
+    //   BGM.Stop();
+    //   BGM.PlayOneShot(SelectBgm);
+    //   }
     //  }
     //
     // //クリアからゲームプレイ（コンティニュー）へ
     // if()
     // {
-    // BGM.Stop();
-    // BGM.PlayOneShot(GameBgm);
+    // if()//ボタンが押された時
+    //       {
+    //       BGM.Stop();
+    //       BGM.PlayOneShot(GameBgm);
+    //       }
+    // }
     //}
     // ClearScene=nextScene.name;
     //}
