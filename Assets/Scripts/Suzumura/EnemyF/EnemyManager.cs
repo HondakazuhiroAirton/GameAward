@@ -249,8 +249,9 @@ public class EnemyManager : MonoBehaviour
     void SpawnNewEnemy(int no)
     {
         // 次に作るエネミーの番号を覚える
-        EnemyIdx = no;
-       
+        //EnemyIdx = no;
+        //Enemy.SetEnemyIndex(no);
+
         // 出現
         enemy[no] = Instantiate(
             originenemy,
@@ -258,6 +259,9 @@ public class EnemyManager : MonoBehaviour
             Quaternion.identity,
             transform
             );
+        Debug.Log((no + 1) + "を渡す");
+        // インターフェイス
+        enemy[no].GetComponent<EnemyInstance>().EnemyIns(no);
         // 名前をつける
         enemy[no].name = enemyData[no].name;
 
@@ -302,7 +306,7 @@ public class EnemyManager : MonoBehaviour
     //    return _instance;
     //}
 
-    // 敵番号取得
+    //敵番号取得
     public static int GetEnemyNo()
     {
         return EnemyIdx;
@@ -314,7 +318,7 @@ public class EnemyManager : MonoBehaviour
         if (enemyData[no].State == -1) return Vector3.zero;
         if (enemyData[no].State == 0) return Vector3.zero;
         //Debug.Log(no);
-        //Debug.Log(no + "番の現在のステートは" + enemyData[no].State);
+        //Debug.Log("enemy" + (no + 1) + "の現在のステートは" + enemyData[no].State);
         return enemy[no].transform.position;
     }
 

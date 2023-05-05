@@ -47,12 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRealTime: 0
-  enemyData: []
   StageChanger: {fileID: 0}
   originenemy: {fileID: 6825728215260208665}
   AppearanceNoticeObj: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
     type: 3}
-  enemy: []
   Sprite: {fileID: 1514023431371668655}
 --- !u!212 &1514023431371668655
 SpriteRenderer:
@@ -119,7 +117,7 @@ GameObject:
   - component: {fileID: 2400740992040134900}
   - component: {fileID: 2337221436199598936}
   m_Layer: 30
-  m_Name: enemy
+  m_Name: enemyyyyy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,3 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd26c49c34b581b46a60a5ec50b39aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyNo: 0
+  EffectPos: {x: 0, y: 0, z: 0}
+  ThisEnemy: {fileID: 6825728215260208665}
