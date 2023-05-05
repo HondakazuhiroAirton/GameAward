@@ -2,29 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, CollisionAction
+public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
 {
     public int EnemyNo;
     public Vector3 EffectPos;
+    //private GameObject ThisEnemy;
 
     // Start is called before the first frame update
     void Start()
     {
         // EnemyManager King = EnemyManager.getinstace();
-        EnemyNo = EnemyManager.GetEnemyNo();
-        //Debug.Log(EnemyNo);
+        //EnemyNo = EnemyManager.GetEnemyNo();
+        //ThisEnemy = this.gameObject.GetComponent<GameObject>();
+        //Debug.Log(ThisEnemy);
     }
 
     // Update is called once per fram
     void Update()
     {
-        
+        //Debug.Log("現在：" + (EnemyNo + 1));
     }
 
     public void CollisionEvent(GameObject obj)
     {
-        //Debug.Log(EnemyNo + "番の敵に当たった");
         //throw new System.NotImplementedException();
+        Debug.Log((EnemyNo + 1) + "を消すよ...!");
         EffectPos = EnemyManager.GetEnemyPos(EnemyNo);
         if (EffectPos != Vector3.zero) Debug.Log("enemy" + (EnemyNo + 1) + "が座標" + EffectPos + "で消滅");
 
@@ -35,6 +37,13 @@ public class Enemy : MonoBehaviour, CollisionAction
     }
 
 
+    public void EnemyIns(int no)
+    {
+        //throw new System.NotImplementedException();
+        EnemyNo = no;
+        Debug.Log((EnemyNo + 1) + "をうけとった！");
+    }
+
     // 敵情報取得
     public int GetEnemyIndex()
     {
@@ -42,9 +51,9 @@ public class Enemy : MonoBehaviour, CollisionAction
     }
 
     // 敵情報セット
-    public void SetEnemyIndex(int date)
-    {
-        EnemyNo = date;
-    }
+    //public static void SetEnemyIndex(int date)
+    //{
+    //    //EnemyNo = date;
+    //}
 
 }

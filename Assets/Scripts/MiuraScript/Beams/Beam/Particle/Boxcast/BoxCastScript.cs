@@ -44,7 +44,7 @@ public class BoxCastScript : MonoBehaviour
     public LayerMask LayerMask;
     // privateゾーン*****************************************************
     // BoxCast情報を格納
-    private RaycastHit hit;
+    private RaycastHit[] hit;
 
     // BoxCastの大きさを入れる変数
     private float scale;
@@ -53,7 +53,7 @@ public class BoxCastScript : MonoBehaviour
     private float maxDistance = 1.0f;
 
     // 何かオブジェクトにぶつかっているかどうか
-    bool isHit;
+    RaycastHit[] isHit;
 
     [SerializeField] // privateだけど表示
     bool isEnable = false; // ギズモに線を表示するかどうか
@@ -172,13 +172,13 @@ public class BoxCastScript : MonoBehaviour
         maxDistance = Mathf.Sqrt(maxDistance);
 
         // BoxCastを飛ばす 　　　　場所                  大きさ             方向(ベクトル)              回転方向?  
-        isHit = Physics.BoxCast(transform.position, Vector3.one * scale, ParticleVector, out hit, Quaternion.identity, maxDistance,LayerMask);
+        isHit = Physics.BoxCastAll(transform.position, Vector3.one * scale, ParticleVector, Quaternion.identity, maxDistance,LayerMask);
         //                                                                                ↑あたったオブジェクトをここに格納  
 
         // BoxCastにあたったオブジェクトの処理
-        if (isHit == true)
+        foreach(var obj in isHit)
         {
-            GameObject hitObject = hit.collider.gameObject;
+            GameObject hitObject = obj.collider.gameObject;
             Debug.Log("あたったよ");
             // インターフェスで渡して
             hitObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
