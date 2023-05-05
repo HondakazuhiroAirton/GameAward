@@ -37,6 +37,8 @@ public class BeamHead : MonoBehaviour
 
         ray.origin = transform.position;
         ray.direction = -dir;       // ˆÚ“®•ûŒü 
+
+        layerMask = hitLayer;
     }
 
     // Update is called once per frame
@@ -51,21 +53,23 @@ public class BeamHead : MonoBehaviour
 
         foreach (var obj in HitObjects)
         {
-            Debug.Log("a");
+            obj.collider.gameObject.GetComponent<CollisionAction>()?.CollisionEvent(this.gameObject);
         }
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
+        collision.gameObject.GetComponent<ICollisionAction>()?.CollisionEvent(collision);
+
+
         //collision.gameObject.GetComponent<ICollisionAction>()?.CollisionEvent() ;
-        foreach (ContactPoint point in collision.contacts)
-        {
-            // var reflectPos = Vector2.Reflect(transform.position, point.normal);
-            var reflectPos = point.normal;
-            dir = reflectPos.normalized;
-            ray.direction = -dir;
-        }
+        //foreach (ContactPoint point in collision.contacts)
+        //{
+        //    // var reflectPos = Vector2.Reflect(transform.position, point.normal);
+        //    var reflectPos = point.normal;
+        //    dir = reflectPos.normalized;
+        //    ray.direction = -dir;
+        //}
     }
 
     private void OnDrawGizmos()

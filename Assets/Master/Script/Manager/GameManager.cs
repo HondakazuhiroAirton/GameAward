@@ -12,10 +12,17 @@ public class GameManager : MonoBehaviour
     {
         new GameObject("GameManager", typeof(GameManager));
         new GameObject("GameManager", typeof(InputManager));
+
+
+
+
     }
+
 
     protected void Awake()
     {
+        Application.targetFrameRate = 60;
+
         if (s_instance)
         {
             Destroy(this.gameObject);
