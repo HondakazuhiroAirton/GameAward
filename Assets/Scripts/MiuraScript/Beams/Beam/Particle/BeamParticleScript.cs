@@ -112,12 +112,12 @@ public class BeamParticleScript : MonoBehaviour
     {
         // 移動処理
         transform.position += moveDir;
-        // エフェクシアのエフェクトもらう
-        // transformの位置でエフェクトを再生する
-        // 場所指定
-       // EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
-        // 角度指定
-        //handle.SetRotation(EffectRot);
+        //エフェクシアのエフェクトもらう
+        //transformの位置でエフェクトを再生する
+        //場所指定
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+        //角度指定
+        handle.SetRotation(EffectRot);
     }
 
     public void CollisionEvent(GameObject obj)

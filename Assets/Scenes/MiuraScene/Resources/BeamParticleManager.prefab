@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7954957734673453955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.12166309, y: 0.12166309, z: 0.12166309}
+  m_LocalScale: {x: 0.0759354, y: 0.0759354, z: 0.0759354}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7954957736179242919}
@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7954957734673453955}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -173,7 +173,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7954957735459857810}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -221,13 +221,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Angle: -90
-  Speed: 0.2
+  Speed: 0.01
   ReflectMax: 1000
   ParticleManager: {fileID: 7954957736179242913}
   NowBoxCast: {fileID: 0}
   StartPosition: {x: 0, y: 0, z: 0}
   moveDir: {x: 0, y: 0, z: 0}
-  BeamMax: 10.012166
+  BeamMax: 10.075935
   AngleHosei: 0
   BeamBoxCastReflect: {fileID: 3653431189480935985, guid: d7658118b82beb242b0ab4877e7ac34f,
     type: 3}
