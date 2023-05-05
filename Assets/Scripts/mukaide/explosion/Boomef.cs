@@ -10,8 +10,7 @@ public class Boomef : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Boom = GameObject.Find("red").GetComponent<ParticleSystem>();
-        boom = this.GetComponent<GameObject>();
+        boom = GameObject.Find("boom");
     }
 
     // Update is called once per frame
