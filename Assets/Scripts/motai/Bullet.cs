@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     GameObject PD;
     GameObject objects;
-    PlayerClass PlayerClasslife;
+    beamlife PlayerClasslife;
     public float ballSpeed = 10.0f;
     private float Wx;
     private float Wy;
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
         PD = GameObject.Find("PD");
 
         //Geter / Seter使用用スクリプト保持
-        PlayerClasslife = PD.GetComponent<PlayerClass>();
+        PlayerClasslife = PD.GetComponent<beamlife>();
     }
 
 

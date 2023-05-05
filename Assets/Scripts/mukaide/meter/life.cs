@@ -16,7 +16,7 @@ public class life : MonoBehaviour
         life1 = GameObject.Find("life1");
         life2 = GameObject.Find("life2");
         life3 = GameObject.Find("life3");
-        Obj = GameObject.Find("GameObject");
+        //Obj = GameObject.Find("GameObject");
         Life = 0;
     }
 
