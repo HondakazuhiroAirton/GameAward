@@ -34,7 +34,14 @@ public class Cursoll : MonoBehaviour
 
     private WorldSelector script;
 
+    private GameObject audioManage;
+    private AudioSource se;
+    public AudioClip Cursolse;
+    public AudioManager SEscript;
+   
     private bool isPanel;
+
+
 
 
     void Start()
@@ -47,6 +54,10 @@ public class Cursoll : MonoBehaviour
 
         triangle = GameObject.Find("/UICanvas/Triangle");
 
+        audioManage = GameObject.Find("AudioManage");
+        se = audioManage.GetComponent<AudioSource>();
+        SEscript = audioManage.GetComponent<AudioManager>();
+        
 
         // 最初はステージ1
         NowPosition = 1;
@@ -61,6 +72,8 @@ public class Cursoll : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
+            se.PlayOneShot(Cursolse);
+           
             NowPosition += 1;
             if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
 
@@ -130,4 +143,5 @@ public class Cursoll : MonoBehaviour
         // }
 
     }
+    
 }
