@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerMove_MIURA : MonoBehaviour
+public class PlayerMove_GOMI : MonoBehaviour
 {
     // publicゾーン**************************************************************
     public float speed; //プレイヤーのスピード 
@@ -70,9 +70,6 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     // 巨大ビームプレハブ格納
     private GameObject BigBeamPrefabs;
-
-    // このオブジェクトのアニメーター
-    Animator animator;
 
     //********************************************************************************
 
@@ -145,9 +142,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         //ビーム残量を100 % に設定
         PlayerClassScript.SetAmount(100);
-
-        // アニメーターを取得
-        animator = this.GetComponent<Animator>();
+       
     }
 
 
@@ -322,16 +317,9 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
 
         //0329_三浦瞬追記****************************************************************
-
-        // アニメーター通常状態
-        animator.SetBool("fCharge", false);
-
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space)) // キーコードは変更してね(*^^*)
         {
-            // アニメーターぐるぐる状態
-            animator.SetBool("fCharge",true);
-
             // 毎フレーム時間を計測する
             ChargeTime = ChargeTime + Time.deltaTime /*補正値掛ける??*/;
 
