@@ -47,6 +47,9 @@ public class BeamParticleScript : MonoBehaviour
     //回転(外部から更新をかけて角度を変化させる)
     public float PlayerAngle;
 
+    // 今のビームレベルを保持しておく(外からもらう) 
+    public int NowBeamLevel;
+
     // privateゾーン********************************************
     // 今の反射回数
     private int reflectCount = 0;
@@ -60,8 +63,9 @@ public class BeamParticleScript : MonoBehaviour
     private float ZMove = 0.0f;
 
     // エフェクシア用関数アレコレ
-    // 再生するアセット
-    private EffekseerEffectAsset effect;
+    // 再生するアセット配列
+    private EffekseerEffectAsset[] effect; 
+
     // ハンドル
     private EffekseerHandle handle;
     // エフェクトの回転計算
@@ -96,10 +100,17 @@ public class BeamParticleScript : MonoBehaviour
 
         // エフェクシアのエフェクトもらう
         // Beamの大きさに応じてswitchかけて大きさ調整
-        effect = Resources.Load<EffekseerEffectAsset>("beam3");
-        // transformの位置でエフェクトを再生する
-        handle = EffekseerSystem.PlayEffect(effect, transform.position);
+        effect = new EffekseerEffectAsset[5];
 
+        effect[0] = Resources.Load<EffekseerEffectAsset>("beam1");
+        effect[1] = Resources.Load<EffekseerEffectAsset>("beam2");
+        effect[2] = Resources.Load<EffekseerEffectAsset>("beam3");
+        effect[3] = Resources.Load<EffekseerEffectAsset>("beam4");
+        effect[4] = Resources.Load<EffekseerEffectAsset>("beam5");
+        // transformの位置でエフェクトを再生する
+
+
+        handle = EffekseerSystem.PlayEffect(effect[NowBeamLevel], transform.position);
         // tramsformの回転を設定する
         EffectRot = Quaternion.Euler(0 , 0 , PlayerAngle);
         Debug.Log(PlayerAngle);
@@ -115,7 +126,7 @@ public class BeamParticleScript : MonoBehaviour
         //エフェクシアのエフェクトもらう
         //transformの位置でエフェクトを再生する
         //場所指定
-        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, transform.position);
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect[NowBeamLevel], transform.position);
         //角度指定
         handle.SetRotation(EffectRot);
     }
@@ -161,6 +172,7 @@ public class BeamParticleScript : MonoBehaviour
 
                 // 次のプレハブのBoxCastのNoを設定する
                 BeamBoxCastReflect.GetComponent<BoxCastScript>().ChildNo = child + 1;
+
 
                 // つぎの反射の当たり判定を生み出す処理
                 Instantiate(BeamBoxCastReflect, this.transform.position, Quaternion.identity, ParticleManager.transform);

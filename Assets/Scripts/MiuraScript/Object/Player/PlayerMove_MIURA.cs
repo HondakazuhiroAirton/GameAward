@@ -8,17 +8,30 @@ public class PlayerMove_MIURA : MonoBehaviour
     // publicゾーン**************************************************************
     public float speed; //プレイヤーのスピード 
 
-    // ビームの情報達********************************
-    // ビームの横幅が1秒間に大きくなる基準
-    public float BeamExpansion = 100.0f;
-    // ビームの最大の長さ
-    public float BeamMax = 30.0f;
-    // ビームの長さが1秒間に大きくなる基準
-    public float BeamExpansionDistance = 1f;
-    // ビームの長さの基準
-    public float BeamDistanceKijun;
-    // ビーム使用量の基準
-    public float UseKijun = 10;
+    // ビームの最大溜め時間*************************
+    public float MaxChargeTime = 8;// 少数第2位まで入力されると怪しい
+
+    // ビームの情報達(public嵐)********************************
+    // Lv0
+    public float Lv0_Scale;
+    public float Lv0_Distance;
+    public float Lv0_Use;
+    // Lv1
+    public float Lv1_Scale;
+    public float Lv1_Distance;
+    public float Lv1_Use;
+    // Lv2
+    public float Lv2_Scale;
+    public float Lv2_Distance;
+    public float Lv2_Use; 
+    // Lv3
+    public float Lv3_Scale;
+    public float Lv3_Distance;
+    public float Lv3_Use;
+    // Lv4
+    public float Lv4_Scale;
+    public float Lv4_Distance;
+    public float Lv4_Use;
 
     //ワープフラグ用
     public bool Up;
@@ -27,6 +40,10 @@ public class PlayerMove_MIURA : MonoBehaviour
     public bool Left;
 
     // privateゾーン*************************************************************
+    // ビームの1段階の時間*************************
+    private int OneChargeFrame;
+
+
     // 移動バー
     private GameObject wallUp;
     private GameObject wallDown;
@@ -66,7 +83,7 @@ public class PlayerMove_MIURA : MonoBehaviour
     private GameObject BeamParticleManagerPrefab;
 
     // チャージした時間を格納する変数(必要)
-    public float ChargeTime = 0.0f;
+    private int ChargeTime = 0;
 
     // 巨大ビームプレハブ格納
     private GameObject BigBeamPrefabs;
@@ -78,6 +95,15 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     void Start()
     {
+        // ビーム溜め時間計算********************************************
+        // 入力された最大溜め時間の単位を秒からフレームに変更
+        float MaxFrame;
+        MaxFrame = MaxChargeTime * 60;
+
+        // 少数第2位まで入力されると怪しい
+        // 1個あたりの溜め時間に変換
+        OneChargeFrame = (int)MaxFrame / 5;
+
         // 各種バー取得
         wallUp = GameObject.Find("UP");
         wallDown = GameObject.Find("Down");
@@ -110,7 +136,6 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
 
-
         //wall色変更
         wallUp.GetComponent<Renderer>().material.color = Color.red;
         wallDown.GetComponent<Renderer>().material.color = Color.red;
@@ -125,11 +150,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         //0402_三浦瞬追記****************************************************************
 
         // チャージした時間を貯める
-        ChargeTime = 0.0f;
-
-        // 基準値初期化
-        BeamDistanceKijun = 10.0f;
-
+        ChargeTime = 0;
         // ビームをResourcesから取得
         BeamParticleManagerPrefab = Resources.Load<GameObject>("BeamParticleManager");
 
@@ -323,56 +344,114 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         //0329_三浦瞬追記****************************************************************
 
-        // アニメーター通常状態
+        // アニメーター通常状態はFalse
         animator.SetBool("fCharge", false);
 
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space)) // キーコードは変更してね(*^^*)
         {
-            // アニメーターぐるぐる状態
+            // アニメーターぐるぐる状態はTrue
             animator.SetBool("fCharge",true);
 
-            // 毎フレーム時間を計測する
-            ChargeTime = ChargeTime + Time.deltaTime /*補正値掛ける??*/;
+            // 毎フレーム1足すことによって時間を図る
+            ChargeTime = ChargeTime + 1; 
 
-            // 最大値は多分こんな感じでつくる
-            if (ChargeTime >= 30.0f)
+            // 最大値設定 ←バグるならこの変か？？？？
+            if (ChargeTime >= MaxChargeTime)
             {
-                ChargeTime = 30.0f;
+                ChargeTime = (int)(MaxChargeTime + 1);
             }
 
             // チャージ中の各種値表示
-            //Debug.Log("ChargeTimeは"+ChargeTime);
-            //Debug.Log("サイズは"+ ChargeTime * BeamExpansion);
-            //Debug.Log("飛距離は"+ ChargeTime * BeamExpansionDistance + BeamDistanceKijun);
-            //Debug.Log("ビーム消費量は"+ChargeTime);
+            Debug.Log("ChargeTimeは"+ChargeTime);
+            
+            // 時間によって変わる(閾値)
+            if (0 <= ChargeTime && ChargeTime < OneChargeFrame) // 1段階目
+            {
+                Debug.Log("1段階目のチャージ");
+            }
+            else if (OneChargeFrame <= ChargeTime && ChargeTime < 2 * OneChargeFrame)// 2段階目
+            {
+                Debug.Log("2段階目のチャージ");
+            }
+            else if (2 * OneChargeFrame <= ChargeTime && ChargeTime < 3 * OneChargeFrame)// 3段階目
+            {
+                Debug.Log("3段階目のチャージ");
+            }
+            else if (3 * OneChargeFrame <= ChargeTime && ChargeTime < 4 * OneChargeFrame)// 4段階目
+            {
+                Debug.Log("4段階目のチャージ");
+            }
+            else if (4 * OneChargeFrame <= ChargeTime)// 5段階目
+            {
+                Debug.Log("5段階目のチャージ");
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.Space)) // Downと同じキーコードにしてね
         {
             // 計測した時間から各種値を計算する
-
+            float use = 0;
+            float BoxCastScale = 0;
+            float Distance = 0;
+            int BeamLevel = 0;
             // チャージした時間によってビームの大きさが変わるサイズ変更用の変数
-            // 1.サイズを計算する
-            float BoxCastScale = ChargeTime * BeamExpansion;
 
-            // 2.最大飛距離距離を計算する
-            BeamMax = ChargeTime * BeamExpansionDistance + BeamDistanceKijun;
-
-            // 最大値補正
-            if (BeamMax >= 50.0f)
+            // 時間によって変わる(閾値)
+            if (0 <= ChargeTime && ChargeTime < OneChargeFrame) // 無チャージ
             {
-                BeamMax = 50.0f;
+                // 1.サイズを入れる
+                BoxCastScale = Lv0_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv0_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv0_Use;
+                // ビームの種類を教える
+                BeamLevel = 0;
             }
-
-            // 3.消費エネルギーの計算
-            // 消費量を計算
-            float use = 3 /*最小使用量が3*/ + ChargeTime * UseKijun;
-
-            // 最大量を決める
-            if (use >= 10)
+            else if(OneChargeFrame <= ChargeTime && ChargeTime < 2 * OneChargeFrame)// 1階目
             {
-                use = 10;
+                // 1.サイズを入れる
+                BoxCastScale = Lv1_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv1_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv1_Use;
+                // ビームの種類を教える
+                BeamLevel = 1;
+            }
+            else if (2 * OneChargeFrame <= ChargeTime && ChargeTime < 3 * OneChargeFrame)// 2段階目
+            {
+                // 1.サイズを入れる
+                BoxCastScale = Lv2_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv2_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv2_Use;
+                // ビームの種類を教える
+                BeamLevel = 2;
+            }
+            else if (3 * OneChargeFrame <= ChargeTime && ChargeTime < 4 * OneChargeFrame)// 3段階目
+            {
+                // 1.サイズを入れる
+                BoxCastScale = Lv3_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv3_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv3_Use;
+                // ビームの種類を教える
+                BeamLevel = 3;
+            }
+            else if (4 * OneChargeFrame <= ChargeTime )// 4段階目
+            {
+                // 1.サイズを入れる
+                BoxCastScale = Lv4_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv4_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv4_Use;
+                // ビームの種類を教える
+                BeamLevel = 4;
             }
 
             // 減らす
@@ -390,9 +469,6 @@ public class PlayerMove_MIURA : MonoBehaviour
                 // ビームマネージャーの中のBoxCastを取得
                 GameObject BoxCast = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
 
-                // 取得したBoxCastのBoxCastスクリプト内(Scale)の大きさを変更する
-                BoxCast.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
-
                 // プレイヤーの角度をBeamParticleに代入する
                 // BeamParticle取得
                 GameObject BeamParticleManager = BeamParticleManagerPrefab.gameObject.transform.GetChild(0).gameObject;
@@ -400,7 +476,7 @@ public class PlayerMove_MIURA : MonoBehaviour
                 // プレイヤーのZ軸を参考にする
                 float PlayerAngle = this.transform.localEulerAngles.z;
 
-                // BeamEffectScriptをキャッシュ************************************************
+                // BeamEffectScriptをキャッシュ***********************************************************************思いかもしれん
                 BeamParticleScript script = BeamParticleManager.GetComponent<BeamParticleScript>();
 
                 // BeamParticleのEffect角度を更新する
@@ -410,16 +486,22 @@ public class PlayerMove_MIURA : MonoBehaviour
                 script.Angle = PlayerAngle - 90;
 
                 // BeamParticleのBeamMaxを変更する
-                script.BeamMax = BeamMax;
+                script.BeamMax = Distance;
+
+                // BeamParticleのを変更する
+                script.BeamMax = Distance;
+
+                // BeamParticleのチャージ段階を渡す
+                script.NowBeamLevel = BeamLevel;
 
                 // プレハブを指定位置に生成
                 Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);
                 // チャージ時間を戻す
-                ChargeTime = 0.0f;
+                ChargeTime = 0;
             }
         }
 
-        // ビーム発射処理(ここまで)*************************************************************
+        // ビーム発射処理(ここまで)*****************************************************************
 
         // 巨大ビーム発射処理(ここから)*************************************************************
         if (Input.GetKeyUp(KeyCode.K)) // Downと同じキーコードにしてね

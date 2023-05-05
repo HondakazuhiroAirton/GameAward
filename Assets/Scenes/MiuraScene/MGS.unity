@@ -995,16 +995,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
-  BeamExpansion: 1
-  BeamMax: 30
-  BeamExpansionDistance: 1
-  BeamDistanceKijun: 0
-  UseKijun: 10
+  MaxChargeTime: 8
+  Lv1_Scale: 1
+  Lv1_Distance: 5
+  Lv1_Use: 3
+  Lv2_Scale: 2
+  Lv2_Distance: 7
+  Lv2_Use: 6
+  Lv3_Scale: 3
+  Lv3_Distance: 9
+  Lv3_Use: 9
+  Lv4_Scale: 4
+  Lv4_Distance: 12
+  Lv4_Use: 12
+  Lv5_Scale: 5
+  Lv5_Distance: 15
+  Lv5_Use: 15
   Up: 0
   Down: 0
   Right: 0
   Left: 0
-  ChargeTime: 0
 --- !u!95 &832663125
 Animator:
   serializedVersion: 4
