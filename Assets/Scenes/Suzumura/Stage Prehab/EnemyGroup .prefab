@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 7816741588157824079}
   - component: {fileID: 2400740992040134900}
   - component: {fileID: 2337221436199598936}
+  - component: {fileID: 467950663399119424}
   m_Layer: 30
   m_Name: enemyyyyy
   m_TagString: Enemy
@@ -131,7 +132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6825728215260208665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -217,4 +218,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyNo: 0
   EffectPos: {x: 0, y: 0, z: 0}
-  ThisEnemy: {fileID: 6825728215260208665}
+  explosion: {fileID: 0}
+  explosionFlug: 0
+--- !u!114 &467950663399119424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825728215260208665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2f2321250dafb41972cf3e92bf9fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boom: {fileID: 7725003548565232521, guid: 638468ca63787074b957bd23a27b7b62, type: 3}
+  boom: {fileID: 6825728215260208665}
