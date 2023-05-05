@@ -42,7 +42,8 @@ public class PlayerMove_MIURA : MonoBehaviour
     // privateゾーン*************************************************************
     // ビームの1段階の時間*************************
     private int OneChargeFrame;
-
+    // ビーム最大溜め時間
+    private float MaxFrame;
 
     // 移動バー
     private GameObject wallUp;
@@ -97,7 +98,6 @@ public class PlayerMove_MIURA : MonoBehaviour
     {
         // ビーム溜め時間計算********************************************
         // 入力された最大溜め時間の単位を秒からフレームに変更
-        float MaxFrame;
         MaxFrame = MaxChargeTime * 60;
 
         // 少数第2位まで入力されると怪しい
@@ -357,13 +357,10 @@ public class PlayerMove_MIURA : MonoBehaviour
             ChargeTime = ChargeTime + 1; 
 
             // 最大値設定 ←バグるならこの変か？？？？
-            if (ChargeTime >= MaxChargeTime)
+            if (ChargeTime >= MaxFrame)
             {
-                ChargeTime = (int)(MaxChargeTime + 1);
+                ChargeTime = (int)(MaxFrame + 1);
             }
-
-            // チャージ中の各種値表示
-            Debug.Log("ChargeTimeは"+ChargeTime);
             
             // 時間によって変わる(閾値)
             if (0 <= ChargeTime && ChargeTime < OneChargeFrame) // 1段階目
