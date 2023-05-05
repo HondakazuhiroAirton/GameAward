@@ -34,7 +34,9 @@ public class beamlife : MonoBehaviour
     }
     void Start()
     {
-        Gameover = GameObject.Find("Gameover");
+        //Gameover = GameObject.Find("Gameover");
+        SetAmount(100);
+        SetLife(3);
     }
     void Update()
     {
@@ -51,6 +53,7 @@ public class beamlife : MonoBehaviour
         if (Input.GetKey(KeyCode.B))
         {
             amount--;
+
         }
         if (Input.GetKeyDown(KeyCode.N))
         {

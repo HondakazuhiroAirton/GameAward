@@ -344,8 +344,13 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         //0329_三浦瞬追記****************************************************************
 
+<<<<<<< HEAD
         // アニメーター通常状態はFalse
         animator.SetBool("fCharge", false);
+=======
+        // アニメーター通常状態
+        //animator.SetBool("fCharge", false);
+>>>>>>> feature/KoutaMotai
 
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space)) // キーコードは変更してね(*^^*)
