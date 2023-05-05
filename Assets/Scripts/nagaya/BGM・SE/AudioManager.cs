@@ -142,4 +142,9 @@ public class AudioManager : MonoBehaviour
     //
     //
     //
+
+    void playCusolSE()
+    {
+        SE.PlayOneShot(CursolSE);
+    }
 }
