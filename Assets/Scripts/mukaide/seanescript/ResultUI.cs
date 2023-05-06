@@ -113,6 +113,7 @@ public class ResultUI : MonoBehaviour
 
             // ª¡‚Íb’è‹@‚Éc
             panelState = resultState.score;
+
         }
 
 
@@ -248,5 +249,10 @@ public class ResultUI : MonoBehaviour
                 }
             }
         
+    }
+
+    public int TotalScore()
+    {
+       return totalscore;
     }
 }
