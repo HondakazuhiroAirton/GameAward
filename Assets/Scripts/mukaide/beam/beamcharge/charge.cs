@@ -16,14 +16,6 @@ public class charge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Play();
-        }
-        if(Input.GetKeyUp(KeyCode.B))
-        {
-            Stop();
-        }
 
     }
     public void Play()
