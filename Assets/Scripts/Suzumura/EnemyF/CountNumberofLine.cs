@@ -18,6 +18,60 @@ public class CountNumberofLine
             case StageNo.Stage1_2:
                 lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy12.csv");
                 break;
+            case StageNo.Stage1_3:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy13.csv");
+                break;
+            case StageNo.Stage1_4:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy14.csv");
+                break;
+            case StageNo.Stage1_5:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy15.csv");
+                break;
+            case StageNo.Stage2_1:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy21.csv");
+                break;
+            case StageNo.Stage2_2:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy22.csv");
+                break;
+            case StageNo.Stage2_3:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy23.csv");
+                break;
+            case StageNo.Stage2_4:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy24.csv");
+                break;
+            case StageNo.Stage2_5:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy25.csv");
+                break;
+            case StageNo.Stage3_1:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy31.csv");
+                break;
+            case StageNo.Stage3_2:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy32.csv");
+                break;
+            case StageNo.Stage3_3:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy33.csv");
+                break;
+            case StageNo.Stage3_4:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy34.csv");
+                break;
+            case StageNo.Stage3_5:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy35.csv");
+                break;
+            case StageNo.Stage4_1:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy41.csv");
+                break;
+            case StageNo.Stage4_2:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy42.csv");
+                break;
+            case StageNo.Stage4_3:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy43.csv");
+                break;
+            case StageNo.Stage4_4:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy44.csv");
+                break;
+            case StageNo.Stage4_5:
+                lines = File.ReadAllLines("Assets/Scenes/Suzumura/Resources/CSV/Enemy45.csv");
+                break;
         }
         return lines.Length - 1;    // ÉwÉbÉ_Å[ï™ÇÕÇ–Ç¢ÇƒÇ®Ç≠
     }
