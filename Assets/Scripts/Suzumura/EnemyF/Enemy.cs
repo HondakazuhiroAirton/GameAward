@@ -8,22 +8,17 @@ public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
     public Vector3 EffectPos;
     public Boomef explosion;
     public bool explosionFlug;
-    //private GameObject ThisEnemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        // EnemyManager King = EnemyManager.getinstace();
-        //EnemyNo = EnemyManager.GetEnemyNo();
-        //ThisEnemy = this.gameObject.GetComponent<GameObject>();
-        //Debug.Log(ThisEnemy);
         explosion = GetComponent<Boomef>();
         explosionFlug = false;
     }
     // Update is called once per fram
     void Update()
     {
-        //Debug.Log("現在：" + (EnemyNo + 1));
+
     }
 
     public void CollisionEvent(GameObject obj)
@@ -54,11 +49,5 @@ public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
     {
         return EnemyNo;
     }
-
-    // 敵情報セット
-    //public static void SetEnemyIndex(int date)
-    //{
-    //    //EnemyNo = date;
-    //}
 
 }

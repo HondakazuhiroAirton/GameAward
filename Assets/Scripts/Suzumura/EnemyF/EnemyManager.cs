@@ -43,8 +43,6 @@ public class EnemyManager : MonoBehaviour
     // 作るエネミーの番号
     [SerializeField]private static int EnemyIdx;
 
-    //private static EnemyManager _instance;
-
 
     // Start is called before the first frame update
     void Start()
@@ -97,11 +95,6 @@ public class EnemyManager : MonoBehaviour
 
         // 最初はtPhase1;
         CurrentPhase = 1;
-
-        //if (_instance == null)
-        //{
-        //    _instance = this;
-        //}
     }
 
     // Update is called once per frame
@@ -248,10 +241,6 @@ public class EnemyManager : MonoBehaviour
     // 敵を出現させる関数
     void SpawnNewEnemy(int no)
     {
-        // 次に作るエネミーの番号を覚える
-        //EnemyIdx = no;
-        //Enemy.SetEnemyIndex(no);
-
         // 出現
         enemy[no] = Instantiate(
             originenemy,
@@ -295,17 +284,6 @@ public class EnemyManager : MonoBehaviour
         return rotation;
     }
 
-    // ビームが敵に当たって倒された
-    //public static void HitBeam(int enemyIdx)
-    //{
-    //    DestroyEnemy(enemyIdx);
-    //}
-
-    //public static EnemyManager getinstace()
-    //{
-    //    return _instance;
-    //}
-
     //敵番号取得
     public static int GetEnemyNo()
     {
@@ -327,7 +305,6 @@ public class EnemyManager : MonoBehaviour
     public static void DestroyEnemy(int no)
     {
         enemyData[no].State = -1;
-        //Debug.Log(no);
         Destroy(enemy[no]);
     }
 
