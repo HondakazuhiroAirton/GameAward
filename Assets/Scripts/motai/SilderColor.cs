@@ -52,11 +52,11 @@ public class SilderColor : MonoBehaviour
 
         if(PM == -1)
         {
-            sliderImage.color = sliderImage.color - new Color32(0, 0, 0, 1);
+            sliderImage.color = sliderImage.color - new Color32(0, 0, 0, 5);
         }
         else if (PM == 1)
         {
-            sliderImage.color = sliderImage.color + new Color32(0, 0, 0, 1);
+            sliderImage.color = sliderImage.color + new Color32(0, 0, 0, 5);
         }
     }
 }
