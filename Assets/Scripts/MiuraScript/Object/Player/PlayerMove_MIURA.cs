@@ -347,9 +347,6 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         // アニメーター通常状態はFalse
         animator.SetBool("fCharge", false);
-        // アニメーター通常状態
-        animator.SetBool("fCharge", false);
-
 
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space)) // キーコードは変更してね(*^^*)
