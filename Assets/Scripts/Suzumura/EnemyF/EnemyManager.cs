@@ -386,10 +386,6 @@ public class EnemyManager : MonoBehaviour
     // 敵座標
     public static Vector3 GetEnemyPos(int no)
     {
-        if (enemyData[no].State == -1) return Vector3.zero;
-        if (enemyData[no].State == 0) return Vector3.zero;
-        //Debug.Log(no);
-        //Debug.Log("enemy" + (no + 1) + "の現在のステートは" + enemyData[no].State);
         return enemy[no].transform.position;
     }
 
