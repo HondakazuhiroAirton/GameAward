@@ -162,7 +162,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         // ビーム残量へのアクセス
         //PlayerDateもってくる
-        PlayerDate = GameObject.Find("PlayerDate");
+        PlayerDate = GameObject.Find("PD");
 
         //Geter / Seter使用用スクリプト保持
         PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
