@@ -79,6 +79,9 @@ public class PlayerMove_MIURA : MonoBehaviour
     private GameObject PlayerDate;
     // Geter/Seter用スクリプト保存
     private PlayerClass PlayerClassScript;
+    // Charge用キラキラパーティクルシステムオブジェクト取得
+    private GameObject beamCharge;
+    private charge beamChargeScript;
 
     // プレハブ格納用
     private GameObject BeamParticleManagerPrefab;
@@ -98,6 +101,11 @@ public class PlayerMove_MIURA : MonoBehaviour
     {
         // アニメーターを取得
         animator = this.GetComponent<Animator>();
+
+        // ビームチャージパーティクルシステム取得
+        beamCharge = GameObject.Find("beamcharge");
+        // そこのスクリプト取得
+        beamChargeScript = beamCharge.GetComponent<charge>();
 
         // ビーム溜め時間計算********************************************
         // 入力された最大溜め時間の単位を秒からフレームに変更
@@ -352,8 +360,16 @@ public class PlayerMove_MIURA : MonoBehaviour
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space)) // キーコードは変更してね(*^^*)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // チャージエフェクト開始
+                beamChargeScript.Play();
+            }
+
             // アニメーターぐるぐる状態はTrue
             animator.SetBool("fCharge",true);
+
+  
 
             // 毎フレーム1足すことによって時間を図る
             ChargeTime = ChargeTime + 1; 
@@ -389,6 +405,9 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space)) // Downと同じキーコードにしてね
         {
+            // チャージエフェクトストップ
+            beamChargeScript.Stop();
+
             // 計測した時間から各種値を計算する
             float use = 0;
             float BoxCastScale = 0;
