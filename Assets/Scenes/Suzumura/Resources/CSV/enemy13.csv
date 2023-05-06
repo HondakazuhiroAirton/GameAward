@@ -1,0 +1,5 @@
+name,category,phase,HP,Size,StartPosX,StartPosY,StartPosZ,EntryPosX,EntryPosY,EntryPosZ,sideNo,Target1PosX,Target1PosY,Target1PosZ,TargetPosX,TargetPosY,TargetPosZ,sprite,AppearanceTime,State,NextState
+enemy01,type1,phase1,10,0.1,4,0,0,0,-3,0,1,-4,0,0,4,0,0,Assets/ReSource/Texture/Character/Enemy/slime.png,0,0,9
+enemy02,type1,phase1,10,0.1,4,0,0,0,-3,0,1,-4,0,0,4,0,0,Assets/ReSource/Texture/Character/Enemy/slime.png,0.2,0,9
+enemy03,type1,phase1,10,0.1,4,0,0,0,-3,0,1,-4,0,0,4,0,0,Assets/ReSource/Texture/Character/Enemy/slime.png,0.4,0,9
+enemy04,type1,phase1,10,0.1,4,0,0,0,-3,0,1,-4,0,0,4,0,0,Assets/ReSource/Texture/Character/Enemy/slime.png,0.6,0,9

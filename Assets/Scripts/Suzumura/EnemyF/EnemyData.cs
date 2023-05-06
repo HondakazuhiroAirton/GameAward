@@ -25,6 +25,7 @@ public class EnemyData
     public Sprite sprite;               // 画像読み込み(パス)
     public float AppearanceTime;        // 出現時間
     public int State;                   // 状態
+    public int NextState;               // 次の状態
 
     public Vector3 prevPosition;
     public float distance_two;         //二点間の距離を入れる
@@ -32,6 +33,7 @@ public class EnemyData
     public float PresentLocation;
     public Vector3 Entry;
     public Vector3 target1;
+    public Vector3 target;
 
 }
 

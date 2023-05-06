@@ -70,9 +70,60 @@ public class EnemyManager : MonoBehaviour
             case StageNo.Stage1_2:
                 textasset = Resources.Load("CSV/Enemy12", typeof(TextAsset)) as TextAsset;
                 break;
-
-                // ステージが増えたら下に追記
-
+            case StageNo.Stage1_3:
+                textasset = Resources.Load("CSV/Enemy13", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage1_4:
+                textasset = Resources.Load("CSV/Enemy14", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage1_5:
+                textasset = Resources.Load("CSV/Enemy15", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage2_1:
+                textasset = Resources.Load("CSV/Enemy21", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage2_2:
+                textasset = Resources.Load("CSV/Enemy22", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage2_3:
+                textasset = Resources.Load("CSV/Enemy23", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage2_4:
+                textasset = Resources.Load("CSV/Enemy24", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage2_5:
+                textasset = Resources.Load("CSV/Enemy25", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage3_1:
+                textasset = Resources.Load("CSV/Enemy31", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage3_2:
+                textasset = Resources.Load("CSV/Enemy32", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage3_3:
+                textasset = Resources.Load("CSV/Enemy33", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage3_4:
+                textasset = Resources.Load("CSV/Enemy34", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage3_5:
+                textasset = Resources.Load("CSV/Enemy35", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage4_1:
+                textasset = Resources.Load("CSV/Enemy41", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage4_2:
+                textasset = Resources.Load("CSV/Enemy42", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage4_3:
+                textasset = Resources.Load("CSV/Enemy43", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage4_4:
+                textasset = Resources.Load("CSV/Enemy44", typeof(TextAsset)) as TextAsset;
+                break;
+            case StageNo.Stage4_5:
+                textasset = Resources.Load("CSV/Enemy45", typeof(TextAsset)) as TextAsset;
+                break;
         }
         // CSVSerializerを用いてcsvファイルを配列に流し込む
         enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
@@ -87,6 +138,7 @@ public class EnemyManager : MonoBehaviour
         {
             enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
             enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
+            enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
         }
 
         // ビューポート取得
@@ -124,7 +176,7 @@ public class EnemyManager : MonoBehaviour
                 if (spawnRealTime >= enemyData[i].AppearanceTime)
                 {
                     SpawnNewEnemy(i);
-                    enemyData[i].State = 1;
+                    enemyData[i].State = enemyData[i].NextState;
                     enemyData[i].Duration = 0.0f;
                 }
             }
@@ -227,6 +279,47 @@ public class EnemyManager : MonoBehaviour
                     DestroyEnemy(i);
                 }
             }
+
+            // 9:往復移動
+            else if (enemyData[i].State == 9)
+            {
+                // 移動
+                enemy[i].transform.position = Vector3.MoveTowards(
+                   enemy[i].transform.position,
+                   new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ),
+                   Time.deltaTime * 8
+                   );
+
+                // 進行方向に向きを変える
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                // 指定場所についたら次の動きに移行
+                if (enemy[i].transform.position == enemyData[i].target1)
+                {
+                    enemyData[i].State = 10;
+                }
+            }
+            // 10:往復移動
+            else if (enemyData[i].State == 10)
+            {
+                // 移動
+                enemy[i].transform.position = Vector3.MoveTowards(
+                   enemy[i].transform.position,
+                   new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
+                   Time.deltaTime * 8
+                   );
+
+                // 進行方向に向きを変える
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                // 指定場所についたら次の動きに移行
+                if (enemy[i].transform.position == enemyData[i].target)
+                {
+                    enemyData[i].State = 9;
+                }
+            }
+
+
             PhaseTransition = false;  // 敵が残っていれば遷移しない
         }
 
