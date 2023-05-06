@@ -90,12 +90,15 @@ public class PlayerMove_MIURA : MonoBehaviour
     private GameObject BigBeamPrefabs;
 
     // このオブジェクトのアニメーター
-    Animator animator;
+    [SerializeField]Animator animator;
 
     //********************************************************************************
 
     void Start()
     {
+        // アニメーターを取得
+        animator = this.GetComponent<Animator>();
+
         // ビーム溜め時間計算********************************************
         // 入力された最大溜め時間の単位を秒からフレームに変更
         MaxFrame = MaxChargeTime * 60;
@@ -167,8 +170,6 @@ public class PlayerMove_MIURA : MonoBehaviour
         //ビーム残量を100 % に設定
         PlayerClassScript.SetAmount(100);
 
-        // アニメーターを取得
-        animator = this.GetComponent<Animator>();
     }
 
 
