@@ -38,7 +38,7 @@ public class BigBeamGauge : MonoBehaviour
 
         if(Beamdec)
         {
-            slider.value = slider.value - 0.1f;
+            slider.value = slider.value - 1f;
             if(slider.value == 0)
             {
                 Beamdec = false;
