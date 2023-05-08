@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class Rank : MonoBehaviour
 {
     //パネルの取得
-    GameObject RankPanel;
+    [SerializeField]
+    Image RankPanel;
+    float alfa;
 
     //ランクを決めるスコアの範囲
     public int S;
@@ -38,7 +40,7 @@ public class Rank : MonoBehaviour
 
     void Awake()
     {
-        RankPanel = GameObject.Find("Rank");
+        RankPanel = GetComponent<Image>();
         RankS = GameObject.Find("S");
         RankA = GameObject.Find("A");
         RankB = GameObject.Find("B");
@@ -47,54 +49,57 @@ public class Rank : MonoBehaviour
 
         Time.timeScale = 1f;
 
-        RankPanel.SetActive(false);
+        alfa = RankPanel.color.a;
+        alfa = 0;
+        SetAlpha();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("o"))
-        {
+            if (Input.GetKeyDown("o"))
+            {
+
+            alfa = 1;
+            SetAlpha();
+
             //合計をもってする
             FainalScore = Resulte.TotalScore();
 
-            //ランクを決めて画像を変える処理
-            if (FainalScore >= S)
-            {
-                Rankselect(0);
-            }
-            else if(FainalScore < S && FainalScore >= A)
-            {
-                Rankselect(1);
-            }
-            else if (FainalScore < A && FainalScore >= B)
-            {
-                Rankselect(2);
-            }
-            else if (FainalScore < B && FainalScore >= C)
-            {
-                Rankselect(3);
-            }
-            else if (FainalScore < C)
-            {
-                Rankselect(4);
-            }
+                //ランクを決めて画像を変える処理
+                if (FainalScore >= S)
+                {
+                    Rankselect(0);
+                }
+                else if (FainalScore < S && FainalScore >= A)
+                {
+                    Rankselect(1);
+                }
+                else if (FainalScore < A && FainalScore >= B)
+                {
+                    Rankselect(2);
+                }
+                else if (FainalScore < B && FainalScore >= C)
+                {
+                    Rankselect(3);
+                }
+                else if (FainalScore < C)
+                {
+                    Rankselect(4);
+                }
 
-            //　ポーズUIのアクティブ、非アクティブを切り替え
-            RankPanel.SetActive(!RankPanel.activeSelf);
+                //　ポーズUIが表示されてる時は停止
+                if (alfa == 1)
+                {
+                    Time.timeScale = 0f;
+                    //　ポーズUIが表示されてなければ通常通り進行  
 
-            //　ポーズUIが表示されてる時は停止
-            if (RankPanel.activeSelf)
-            {
-                Time.timeScale = 0f;
-                //　ポーズUIが表示されてなければ通常通り進行  
-
+                }
+                else
+                {
+                    Time.timeScale = 1f;
+                }
             }
-            else
-            {
-                Time.timeScale = 1f;
-            }
-        }
 
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
@@ -153,5 +158,10 @@ public class Rank : MonoBehaviour
                     break;
                 }
         }
+    }
+
+    void SetAlpha()
+    {
+        RankPanel.color = new Color(1, 1, 1, alfa);
     }
 }
