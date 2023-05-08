@@ -20,6 +20,7 @@ public class EnemyManager : MonoBehaviour
 
     public GameObject AppearanceNoticeObj;
     private AppearanceNotice appearanceNotice;
+    public bool clearflag;
 
     // 出現用オブジェクト
     private int element;
@@ -150,6 +151,8 @@ public class EnemyManager : MonoBehaviour
 
         // 最初はPhase1;
         CurrentPhase = 1;
+
+        clearflag = false;
     }
 
     // Update is called once per frame
@@ -332,6 +335,11 @@ public class EnemyManager : MonoBehaviour
             CurrentPhase++;
             spawnRealTime = 0;
         }
+
+        if (CurrentPhase == 6)
+        {
+            clearflag = true;
+        }
     }
 
     // 敵を出現させる関数
@@ -406,6 +414,10 @@ public class EnemyManager : MonoBehaviour
         Destroy(enemy[no]);
     }
 
+    public bool getclearflag()
+    {
+        return clearflag;
+    }
 }
 
 /*

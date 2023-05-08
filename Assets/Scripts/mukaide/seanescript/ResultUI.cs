@@ -9,6 +9,9 @@ public class ResultUI : MonoBehaviour
     //クリア時に表示するUI
     [SerializeField]
     private GameObject resultUI;
+    [SerializeField]
+    GameObject flag;
+    EnemyManager clearflag;
 
     //変数取得のためのオブジェクト取得
     //＜関数読み取りのためゲームオブジェクト取得してます＞
@@ -94,13 +97,16 @@ public class ResultUI : MonoBehaviour
         //合計
         Ts = GameObject.Find("TotalScore").GetComponent<TextMeshProUGUI>();
 
+        flag = GameObject.Find("EnemyGroup ");
+        clearflag = flag.GetComponent<EnemyManager>();
+
         resultUI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("k"))
+        if (clearflag.getclearflag() == true)
         {
             // パネルUIのアクティブ非アクティブを切り替え
             Active();
