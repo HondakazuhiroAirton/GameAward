@@ -844,7 +844,7 @@ RectTransform:
   m_Children:
   - {fileID: 1615327405}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1380,6 +1380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badb487746525b0478eb61dfb9e6b679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RankPanel: {fileID: 855559836}
   S: 40
   A: 30
   B: 20
@@ -1460,7 +1461,7 @@ RectTransform:
   m_Children:
   - {fileID: 855559835}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2268,7 +2269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2503,7 +2504,7 @@ RectTransform:
   m_Children:
   - {fileID: 15206699}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3155,7 +3156,7 @@ RectTransform:
   m_Children:
   - {fileID: 987819085}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3904,7 +3905,7 @@ GameObject:
   - component: {fileID: 1615327404}
   - component: {fileID: 1615327403}
   m_Layer: 5
-  m_Name: Result
+  m_Name: result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
