@@ -55,6 +55,7 @@ public class ResultUI : MonoBehaviour
     };
     private resultState panelState;
 
+    private bool initflag;
 
     // Start is called before the first frame update
 
@@ -97,7 +98,7 @@ public class ResultUI : MonoBehaviour
         //合計
         Ts = GameObject.Find("TotalScore").GetComponent<TextMeshProUGUI>();
 
-        flag = GameObject.Find("EnemyGroup ");
+        flag = GameObject.Find("EnemyGroup (Clone)");
         clearflag = flag.GetComponent<EnemyManager>();
 
         resultUI.SetActive(false);
@@ -110,6 +111,7 @@ public class ResultUI : MonoBehaviour
         {
             // パネルUIのアクティブ非アクティブを切り替え
             Active();
+
             //タイマーを止める
             Time.timeScale = 0.0f;
 
@@ -134,8 +136,10 @@ public class ResultUI : MonoBehaviour
     public void Active()
     {
         //パネルUIのアクティブ、非アクティブを切り替え
-        resultUI.SetActive(!resultUI.activeSelf);
+        resultUI.SetActive(true);
 
+        if (!initflag) return;
+        initflag = true;
         // trueの時だけ処理する
         if (resultUI.activeSelf == true)
         {
