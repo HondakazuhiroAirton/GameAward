@@ -35,7 +35,6 @@ public class beamlife : MonoBehaviour
     void Start()
     {
         //Gameover = GameObject.Find("Gameover");
-        SetAmount(100);
         SetLife(3);
     }
     void Update()
