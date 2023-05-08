@@ -30,7 +30,7 @@ public class Save_MIURA : MonoBehaviour
         StageClearDate = CSVSerializer.Deserialize<StageClearDate>(textasset.text);
 
         // 2.ファイルを消す
-        AssetDatabase.DeleteAsset("Assets/Scenes/MiuraScene/Resources/SaveData.csv");
+        //AssetDatabase.DeleteAsset("Assets/Scenes/MiuraScene/Resources/SaveData.csv");
 
         // 3.もう1回同じ名前のファイル作成
         //                     ↓ 作るファイル名 ↓true     ↓文字コード  

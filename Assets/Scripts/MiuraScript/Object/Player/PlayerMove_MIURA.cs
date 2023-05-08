@@ -152,7 +152,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         LRpos = Lpos.y + LScale.y / 2;
         LLpos = Lpos.y - LScale.y / 2;
 
-        this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
+        this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z);
 
         //wallêFïœçX
         wallUp.GetComponent<Renderer>().material.color = Color.red;
@@ -331,7 +331,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             wallUp.GetComponent<Renderer>().material.color = Color.green;
             if (Input.GetKey("1"))//è„
             {
-                this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z - 1);
+                this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z );
                 this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
@@ -341,7 +341,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             wallDown.GetComponent<Renderer>().material.color = Color.green;
             if (Input.GetKey("2"))//â∫
             {
-                this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z - 1);
+                this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z );
                 this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
             }
         }
@@ -351,7 +351,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             wallRight.GetComponent<Renderer>().material.color = Color.green;
             if (Input.GetKey("3"))//âE
             {
-                this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z - 1);
+                this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z);
                 this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
             }
         }
@@ -361,7 +361,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             wallLeft.GetComponent<Renderer>().material.color = Color.green;
             if (Input.GetKey("4"))//ç∂
             {
-                this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z - 1);
+                this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z);
                 this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
             }
         }
