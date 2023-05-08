@@ -27,8 +27,8 @@ public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
         explosionFlug = true;
         //throw new System.NotImplementedException();
         Debug.Log((EnemyNo + 1) + "を消すよ...!");
-        EffectPos = EnemyManager.GetEnemyPos(EnemyNo);
-        if (EffectPos != Vector3.zero) Debug.Log("enemy" + (EnemyNo + 1) + "が座標" + EffectPos + "で消滅");
+        //EffectPos = EnemyManager.GetEnemyPos(EnemyNo);
+        /*if (EffectPos != Vector3.zero) */Debug.Log("enemy" + (EnemyNo + 1) + "が座標" + transform.position + "で消滅");
 
         // ここで爆発のエフェクト再生
         explosion.BoomCreate();

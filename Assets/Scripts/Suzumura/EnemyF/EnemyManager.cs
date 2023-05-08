@@ -24,7 +24,9 @@ public class EnemyManager : MonoBehaviour
     // 出現用オブジェクト
     private int element;
     [SerializeField] private static GameObject[] enemy;
+    [SerializeField] private static GameObject[] model;
     public SpriteRenderer Sprite;
+    public GameObject Parent;
 
     //private const float spawnRate = 2.0f;     // 出現間隔
     private int i;                              // 配列番号
@@ -59,6 +61,7 @@ public class EnemyManager : MonoBehaviour
         element = CountNumberofLine.Main(nextStageNo);
         // 配列の要素数を決定
         enemy = new GameObject[element];
+        model = new GameObject[element];
 
         // csvファイルを読み込ませる
         // NextStageの番号で読み込むファイルを分岐する
@@ -141,11 +144,11 @@ public class EnemyManager : MonoBehaviour
             enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
         }
 
-        // ビューポート取得
+        // ビューポート取得(敵が消える境目、少し広く取っている)
         ViewportLB = Camera.main.ViewportToWorldPoint(new Vector3(-0.1f, -0.1f));
         ViewportRT = Camera.main.ViewportToWorldPoint(new Vector3(1.1f, 1.1f));
 
-        // 最初はtPhase1;
+        // 最初はPhase1;
         CurrentPhase = 1;
     }
 
@@ -251,7 +254,7 @@ public class EnemyManager : MonoBehaviour
                 enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 // 一定時間経過で次の動きに移行
-                if (enemyData[i].Duration >= 3.0f)
+                if (enemyData[i].Duration >= 10.0f)
                 {
                     enemyData[i].State = 4;
                     enemyData[i].Duration = 0;
@@ -346,12 +349,18 @@ public class EnemyManager : MonoBehaviour
         enemy[no].GetComponent<EnemyInstance>().EnemyIns(no);
         // 名前をつける
         enemy[no].name = enemyData[no].name;
-
         // サイズ設定
         enemy[no].transform.localScale = new Vector3(enemyData[no].Size, enemyData[no].Size, enemyData[no].Size);
         // テクスチャ設定(仮)
-        enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
-
+        //enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
+        // モデル設定
+        model[no] = Instantiate(
+            Resources.Load(enemyData[no].model, typeof(GameObject)) as GameObject,
+            new Vector3(enemyData[no].StartPosX, enemyData[no].StartPosY, enemyData[no].StartPosZ),
+            Quaternion.identity
+            );
+        Parent = GameObject.Find(enemyData[no].name);
+        model[no].transform.parent = Parent.transform;
         // 敵予告のフェードを始める
         appearanceNotice.StartFade(enemyData[no].Entry, enemyData[no].sideNo);
     }
@@ -384,10 +393,10 @@ public class EnemyManager : MonoBehaviour
     }
 
     // 敵座標
-    public static Vector3 GetEnemyPos(int no)
-    {
-        return enemy[no].transform.position;
-    }
+    //public static Vector3 GetEnemyPos(int no)
+    //{
+    //    return enemy[no].transform.position;
+    //}
 
 
     // 敵削除
