@@ -46,11 +46,16 @@ public class StageChangerScript : MonoBehaviour
     // Stage‚ğØ‚è‘Ö‚¦‚é‚©‚Ç‚¤‚©ƒtƒ‰ƒO
     private bool changeStage = false;
 
-    void Start()
+    private void Awake()
     {
         StageManager = GameObject.Find("StageManager");
         NextStage = (StageNo)StageManager.GetComponent<StageManagerScript>().GetStageIndex();
         StageChange(NextStage);
+        
+    }
+
+    void Start()
+    {
     }
 
     void Update()

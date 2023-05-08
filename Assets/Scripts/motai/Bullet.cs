@@ -7,7 +7,11 @@ public class Bullet : MonoBehaviour
     GameObject PD;
     GameObject objects;
     beamlife PlayerClasslife;
+    [SerializeField] GameObject player;
     public float ballSpeed = 10.0f;
+
+    // 玉の移動方向
+    public Vector3 moveVal;
     private float Wx;
     private float Wy;
 
@@ -26,6 +30,23 @@ public class Bullet : MonoBehaviour
 
         //Geter / Seter使用用スクリプト保持
         PlayerClasslife = PD.GetComponent<beamlife>();
+
+        player = GameObject.Find("Player");
+
+        // プレイヤーの場所取得
+        Vector3 PlayerPos = player.transform.position;
+
+        // ベクトル計算
+        moveVal = PlayerPos - this.transform.position;
+
+        // 正規化
+        moveVal = moveVal.normalized ;
+
+        // 補正係数をかける
+        moveVal.x *= ballSpeed;
+        moveVal.y *= ballSpeed;
+        moveVal.z *= ballSpeed;
+
     }
 
 
@@ -33,7 +54,9 @@ public class Bullet : MonoBehaviour
     void Update()
     {
 
-        var moveVal = transform.forward * ballSpeed * Time.deltaTime;
+
+
+        // 玉を毎フレームを動かしてる
         transform.position += moveVal;
 
         Wx = Camera.main.WorldToViewportPoint(transform.position).x;

@@ -78,7 +78,7 @@ public class PlayerMove_MIURA : MonoBehaviour
     // プレイヤーデータ保存用オブジェクト取得
     private GameObject PlayerDate;
     // Geter/Seter用スクリプト保存
-    private PlayerClass PlayerClassScript;
+    private beamlife PlayerClassScript;
     // Charge用キラキラパーティクルシステムオブジェクト取得
     private GameObject beamCharge;
     private charge beamChargeScript;
@@ -188,7 +188,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         PlayerDate = GameObject.Find("PD");
 
         //Geter / Seter使用用スクリプト保持
-        PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
+        PlayerClassScript = PlayerDate.GetComponent<beamlife>();
 
         //ビーム残量を100 % に設定
         PlayerClassScript.SetAmount(100);
@@ -491,13 +491,20 @@ public class PlayerMove_MIURA : MonoBehaviour
             // ビーム残量取得
             float tempCharge = PlayerClassScript.GetAmount();
 
+            float tmp = tempCharge - use;
+
             // 残量があれば
-            if ((tempCharge = tempCharge - use) > 0)
+            if (tmp  > 0)
             {
                 // ビーム残量を減らして
                 tempCharge = tempCharge - use;
+                Debug.Log("使用量" + use);
+                Debug.Log("ビーム残り" +tempCharge);
+
                 // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
                 PlayerClassScript.SetAmount(tempCharge);
+
+                Debug.Log("メーターの中身" + PlayerClassScript.GetAmount());
 
                 // プレイヤーの角度をBeamParticleに代入する
                 // プレイヤーのZ軸を参考にする
@@ -522,6 +529,8 @@ public class PlayerMove_MIURA : MonoBehaviour
                 Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);
                 // チャージ時間を戻す
                 ChargeTime = 0;
+
+
             }
         }
 

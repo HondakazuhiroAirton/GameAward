@@ -16,16 +16,19 @@ public class EnemyBullet : MonoBehaviour
     {
         // animatorコンポーネントを取得
         animator = GetComponent<Animator>();
+
+        player = GameObject.Find("Player");
     }
 
         void Update()
     {
         
         time += Time.deltaTime;
-        if(player != null)
-        {
-            transform.LookAt(player.transform);// キューブ(敵に)
-        }
+        //if(player != null)
+        //{
+        //    transform.LookAt(player.transform);// キューブ(敵に)
+        //    this.transform.rotation = Quaternion.Euler(0,0,this.transform.eulerAngles.z);
+        //}
 
         if (time >= mintime)// 2秒たったらアニメーションスタート
         {
@@ -45,6 +48,8 @@ public class EnemyBullet : MonoBehaviour
 
     void BallShot()// キューブ(敵に)
     {
+
+        // たまを生み出してる
         Instantiate(ball, transform.position, this.transform.rotation);
         
     }
