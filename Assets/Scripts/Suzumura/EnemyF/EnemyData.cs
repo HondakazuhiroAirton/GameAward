@@ -23,6 +23,7 @@ public class EnemyData
     public int TargetPosY;              //
     public int TargetPosZ;              //
     public Sprite sprite;               // 画像読み込み(パス)
+    public string model;            // モデル読み込み(パス)
     public float AppearanceTime;        // 出現時間
     public int State;                   // 状態
     public int NextState;               // 次の状態

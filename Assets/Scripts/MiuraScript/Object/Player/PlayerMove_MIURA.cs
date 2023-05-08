@@ -83,6 +83,13 @@ public class PlayerMove_MIURA : MonoBehaviour
     private GameObject beamCharge;
     private charge beamChargeScript;
 
+    // ビームマネージャーの中のBoxCastを取得
+    private GameObject BoxCast;
+
+    // BeamParticle取得
+    GameObject BeamParticleManager;
+    // BeamEffectScript
+    BeamParticleScript script;
     // プレハブ格納用
     private GameObject BeamParticleManagerPrefab;
 
@@ -167,6 +174,14 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         // 巨大ビームをResourcesから取得
         BigBeamPrefabs = Resources.Load<GameObject>("BigBeam");
+
+        // ビームマネージャーの中のBoxCastを取得
+        BoxCast = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
+
+        // BeamParticle取得
+        BeamParticleManager = BeamParticleManagerPrefab.gameObject.transform.GetChild(0).gameObject;
+        // BeamEffectScriptをキャッシ
+        script = BeamParticleManager.GetComponent<BeamParticleScript>();
 
         // ビーム残量へのアクセス
         //PlayerDateもってくる
@@ -484,18 +499,9 @@ public class PlayerMove_MIURA : MonoBehaviour
                 // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
                 PlayerClassScript.SetAmount(tempCharge);
 
-                // ビームマネージャーの中のBoxCastを取得
-                GameObject BoxCast = BeamParticleManagerPrefab.gameObject.transform.GetChild(1).gameObject;
-
                 // プレイヤーの角度をBeamParticleに代入する
-                // BeamParticle取得
-                GameObject BeamParticleManager = BeamParticleManagerPrefab.gameObject.transform.GetChild(0).gameObject;
-
                 // プレイヤーのZ軸を参考にする
                 float PlayerAngle = this.transform.localEulerAngles.z;
-
-                // BeamEffectScriptをキャッシュ***********************************************************************思いかもしれん
-                BeamParticleScript script = BeamParticleManager.GetComponent<BeamParticleScript>();
 
                 // BeamParticleのEffect角度を更新する
                 script.PlayerAngle = PlayerAngle;
@@ -503,10 +509,10 @@ public class PlayerMove_MIURA : MonoBehaviour
                 // BeamParticleの角度を変更する
                 script.Angle = PlayerAngle - 90;
 
-                // BeamParticleのBeamMaxを変更する
-                script.BeamMax = Distance;
+                // BoxCastの幅を変更する
+                BoxCast.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
 
-                // BeamParticleのを変更する
+                // BeamParticleのBeamMax(飛距離)を変更する
                 script.BeamMax = Distance;
 
                 // BeamParticleのチャージ段階を渡す
