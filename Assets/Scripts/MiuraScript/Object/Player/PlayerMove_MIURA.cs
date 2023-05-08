@@ -491,12 +491,14 @@ public class PlayerMove_MIURA : MonoBehaviour
             // ビーム残量取得
             float tempCharge = PlayerClassScript.GetAmount();
 
+            float tmp = tempCharge - use;
+
             // 残量があれば
-            if ((tempCharge = tempCharge - use) > 0)
+            if (tmp  > 0)
             {
                 // ビーム残量を減らして
                 tempCharge = tempCharge - use;
-
+                Debug.Log("使用量" + use);
                 Debug.Log("ビーム残り" +tempCharge);
 
                 // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
