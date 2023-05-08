@@ -338,6 +338,7 @@ public class EnemyManager : MonoBehaviour
 
         if (CurrentPhase == 6)
         {
+            Debug.Log("‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ");
             clearflag = true;
         }
     }

@@ -4,21 +4,45 @@ using UnityEngine;
 
 public class DataManager
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    int _score;
+    int _life;
+    int _beamPower;
+    int _specialBeamCount;
+    int _specialBeam;
 
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+  
 
-    }
-
-    //T GetDate<T>(string dataName)
+    //// Start is called before the first frame update
+    //void Start()
     //{
-    //    //T a = ;
+    //    _beamPower = 10000;
+    //    _specialBeamCount = 0;
+    //}
+
+
+    //public T SetValue(T Val, string dataName)
+    //{
+       
+
     //    return
+    //}
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+    //}
+
+    ////T GetDate<T>(string dataName)
+    ////{
+    ////    //T a = ;
+    ////    return
+    ////}
+
+
+    //public static T GetData()
+    //{
+
     //}
 }

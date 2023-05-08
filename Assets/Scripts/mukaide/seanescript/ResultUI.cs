@@ -51,11 +51,15 @@ public class ResultUI : MonoBehaviour
         numenemy,
         beam,
         score,
-        totalscore
+        totalscore,
+        end
     };
     private resultState panelState;
 
     private bool initflag;
+
+    
+
 
     // Start is called before the first frame update
 
@@ -63,6 +67,7 @@ public class ResultUI : MonoBehaviour
 
     void Start()
     {
+        initflag = false;
         //初期化
         combo = 0;
         numenemy = 0;
@@ -112,6 +117,7 @@ public class ResultUI : MonoBehaviour
             // パネルUIのアクティブ非アクティブを切り替え
             Active();
 
+            // Debug.Log("いいいいいいいいいいいいいいいいいい");
             //タイマーを止める
             Time.timeScale = 0.0f;
 
@@ -120,8 +126,10 @@ public class ResultUI : MonoBehaviour
             //panelState = resultState.None
 
             // ↑今は暫定機に…
-            panelState = resultState.score;
-
+            if (panelState == resultState.None)
+            {
+                panelState = resultState.score;
+            }
         }
 
 
@@ -135,11 +143,13 @@ public class ResultUI : MonoBehaviour
 
     public void Active()
     {
+        if (initflag) return;
+        initflag = true;
+
         //パネルUIのアクティブ、非アクティブを切り替え
         resultUI.SetActive(true);
 
-        if (!initflag) return;
-        initflag = true;
+     
         // trueの時だけ処理する
         if (resultUI.activeSelf == true)
         {
@@ -167,7 +177,7 @@ public class ResultUI : MonoBehaviour
 
     void text()
     {
-        
+
         switch (panelState)
         {
             case resultState.None: // 何もしない
@@ -207,7 +217,7 @@ public class ResultUI : MonoBehaviour
                     break;
                 }
             case resultState.beam:
-                    {
+                {
                     //ビーム残量
                     //if (i < beam)
                     //{
@@ -223,8 +233,8 @@ public class ResultUI : MonoBehaviour
                     //     // i = 0;
                     //}
                     break;
-                    }
-                case resultState.score://スコア
+                }
+            case resultState.score://スコア
                 {
                     if (i < score)
                     {
@@ -241,7 +251,7 @@ public class ResultUI : MonoBehaviour
                     }
                     break;
                 }
-                case resultState.totalscore:
+            case resultState.totalscore:
                 {//トータルスコア
 
                     if (i < totalscore)
@@ -253,12 +263,17 @@ public class ResultUI : MonoBehaviour
                     {
                         Ts.text = totalscore.ToString();
                         // トータルスコアを表示しておわり(最後はNoneにする)   
-                        panelState = resultState.None;
+                        panelState = resultState.end;
                     }
                     break;
                 }
-            }
-        
+
+            case resultState.end:
+                {
+                    break;
+                }
+        }
+
     }
 
     public int TotalScore()

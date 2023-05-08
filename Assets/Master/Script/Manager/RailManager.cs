@@ -19,6 +19,7 @@ public class RailManager : MonoBehaviour
    
     void Start()
     {
+        _rails = new List<Rail>();
         var rails = this.gameObject.GetComponentsInChildren<Rail>();
         _rails.AddRange(rails);
 
@@ -35,5 +36,4 @@ public class RailManager : MonoBehaviour
     {
         return a.RailNo - b.RailNo;
     }
-   
 }
