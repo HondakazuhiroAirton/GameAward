@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Rank : MonoBehaviour
 {
     //パネルの取得
     [SerializeField]
     Image RankPanel;
-    float alfa;
 
     //ランクを決めるスコアの範囲
     public int S;
@@ -22,6 +22,21 @@ public class Rank : MonoBehaviour
     GameObject RankB;
     GameObject RankC;
     GameObject RankD;
+    GameObject ranktx;
+
+    Image RankSPanel;
+    Image RankAPanel;
+    Image RankBPanel;
+    Image RankCPanel;
+    Image RankDPanel;
+    TextMeshProUGUI ranktxPanel;
+
+    float alfaS;
+    float alfaA;
+    float alfaB;
+    float alfaC;
+    float alfaD;
+    float ranktxal;
 
     //スコアを持ってきて入れる変数
     static int FainalScore;
@@ -29,81 +44,55 @@ public class Rank : MonoBehaviour
 
     //ここでスコアを持ってくるオブジェクト取得
     [SerializeField]
-    GameObject Obj;
+   // GameObject Obj;
 
     // Start is called before the first frame update
     void Start()
     {
-        Obj = GameObject.Find("Result");
-        Resulte = Obj.GetComponent<ResultUI>();
+        //Obj = GameObject.Find("Result");
+        //Resulte = Obj.GetComponent<ResultUI>();
     }
 
     void Awake()
     {
-        RankPanel = GetComponent<Image>();
         RankS = GameObject.Find("S");
+        RankSPanel = RankS.GetComponent<Image>();
         RankA = GameObject.Find("A");
+        RankAPanel = RankA.GetComponent<Image>();
         RankB = GameObject.Find("B");
+        RankBPanel = RankB.GetComponent<Image>();
         RankC = GameObject.Find("C");
+        RankCPanel = RankC.GetComponent<Image>();
         RankD = GameObject.Find("D");
+        RankDPanel = RankD.GetComponent<Image>();
+        ranktx = GameObject.Find("ranktx");
+        ranktxPanel = ranktx.GetComponent<TextMeshProUGUI>();
 
         Time.timeScale = 1f;
 
-        alfa = RankPanel.color.a;
-        alfa = 0;
-        SetAlpha();
+        alfaS = RankSPanel.color.a;
+        alfaS = 0;
+        alfaA = RankAPanel.color.a;
+        alfaA = 0;
+        alfaB = RankBPanel.color.a;
+        alfaB = 0;
+        alfaC = RankCPanel.color.a;
+        alfaC = 0;
+        alfaD = RankDPanel.color.a;
+        alfaD = 0;
+        ranktxal = ranktxPanel.color.a;
+        ranktxal = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-            if (Input.GetKeyDown("o"))
-            {
-
-            alfa = 1;
-            SetAlpha();
-
-            //合計をもってする
-            FainalScore = Resulte.TotalScore();
-
-                //ランクを決めて画像を変える処理
-                if (FainalScore >= S)
-                {
-                    Rankselect(0);
-                }
-                else if (FainalScore < S && FainalScore >= A)
-                {
-                    Rankselect(1);
-                }
-                else if (FainalScore < A && FainalScore >= B)
-                {
-                    Rankselect(2);
-                }
-                else if (FainalScore < B && FainalScore >= C)
-                {
-                    Rankselect(3);
-                }
-                else if (FainalScore < C)
-                {
-                    Rankselect(4);
-                }
-
-                //　ポーズUIが表示されてる時は停止
-                if (alfa == 1)
-                {
-                    Time.timeScale = 0f;
-                    //　ポーズUIが表示されてなければ通常通り進行  
-
-                }
-                else
-                {
-                    Time.timeScale = 1f;
-                }
-            }
-
-        if (Mathf.Approximately(Time.timeScale, 0f))
+ 
+        //デバック用
+        if(Input.GetKeyDown("q"))
         {
-            return;
+            rankpanel();
         }
 
     }
@@ -114,54 +103,69 @@ public class Rank : MonoBehaviour
         {
             case 0:
                 {
-                    RankS.SetActive(true);
-                    RankA.SetActive(false);
-                    RankB.SetActive(false);
-                    RankC.SetActive(false);
-                    RankD.SetActive(false);
+                    alfaS = 1.0f;
+                    RankS.GetComponent<Image>().color += new Color(0, 0, 0, alfaS);
                     break;
                 }
             case 1:
                 {
-                    RankS.SetActive(false);
-                    RankA.SetActive(true);
-                    RankB.SetActive(false);
-                    RankC.SetActive(false);
-                    RankD.SetActive(false);
+                    alfaA = 1.0f;
+                    RankA.GetComponent<Image>().color += new Color(0, 0, 0, alfaA);
                     break;
                 }
             case 2:
                 {
-                    RankS.SetActive(false);
-                    RankA.SetActive(false);
-                    RankB.SetActive(true);
-                    RankC.SetActive(false);
-                    RankD.SetActive(false);
+                    alfaB = 1.0f;
+                    RankB.GetComponent<Image>().color += new Color(0, 0, 0, alfaB);
                     break;
                 }
             case 3:
                 {
-                    RankS.SetActive(false);
-                    RankA.SetActive(false);
-                    RankB.SetActive(false);
-                    RankC.SetActive(true);
-                    RankD.SetActive(false);
+                    alfaC = 1.0f;
+                    RankC.GetComponent<Image>().color += new Color(0, 0, 0, alfaC);
                     break;
                 }
             case 4:
                 {
-                    RankS.SetActive(false);
-                    RankA.SetActive(false);
-                    RankB.SetActive(false);
-                    RankC.SetActive(false);
-                    RankD.SetActive(true);
+                    alfaD = 1.0f;
+                    RankD.GetComponent<Image>().color += new Color(0, 0, 0, alfaD);
                     break;
                 }
         }
     }
 
-    void SetAlpha()
+    //ランクパネル呼び出し用
+    public void rankpanel()
     {
-        RankPanel.color = new Color(1, 1, 1, alfa);
+            //合計をもって来る
+            // FainalScore = Resulte.TotalScore();
+            FainalScore = 20;
+
+            ranktxal = 1.0f;
+            ranktx.GetComponent<TextMeshProUGUI>().color += new Color(0, 0, 0, ranktxal);
+
+            //ランクを決めて画像を変える処理
+            if (FainalScore >= S)
+            {
+                Rankselect(0);
+            }
+            else if (FainalScore < S && FainalScore >= A)
+            {
+                Rankselect(1);
+            }
+            else if (FainalScore < A && FainalScore >= B)
+            {
+                Rankselect(2);
+            }
+            else if (FainalScore < B && FainalScore >= C)
+            {
+                Rankselect(3);
+            }
+            else if (FainalScore < C)
+            {
+                Rankselect(4);
+            }
+
     }
+
 }

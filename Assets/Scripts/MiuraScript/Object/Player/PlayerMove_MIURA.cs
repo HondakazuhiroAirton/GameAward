@@ -555,6 +555,6 @@ public class PlayerMove_MIURA : MonoBehaviour
             case 3: { Left = flag; break; }
 
         }
-
     }
+
 }
