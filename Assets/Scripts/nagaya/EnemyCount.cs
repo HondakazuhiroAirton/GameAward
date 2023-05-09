@@ -35,31 +35,25 @@ public class EnemyCount : MonoBehaviour
         
 
     }
-
-
-
-    void onButtonCount()
-    {
-        
-        count++;
-        enemycount.text = "Enemy:" + count;
-    }
-
     
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Hit"); // ログを表示する
+
+
         // もし衝突した相手オブジェクトの名前が"プレイヤービーム"ならば
-       if (collision.gameObject.name == "PlayerBeam")
+        if (collision.gameObject.name == "PlayerBeam")
        {
 //            beingMeasured = !beingMeasured;
            // 衝突した相手オブジェクトを削除する
            Destroy(Enemy);
-           onButtonCount();
-            
 
-       }
+            count++;
+            enemycount.text = "Combo:" + count;
+
+
+        }
     }
     
 }

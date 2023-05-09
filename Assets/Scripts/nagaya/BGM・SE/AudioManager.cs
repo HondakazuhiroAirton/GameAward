@@ -147,4 +147,25 @@ public class AudioManager : MonoBehaviour
     {
         SE.PlayOneShot(CursolSE);
     }
+
+    void playBeamSE()
+    {
+        SE.PlayOneShot(BeamSE);
+    }
+
+    void playEnemyDefeatSE()
+    {
+
+    }
+
+    void playPlayerMoveSE()
+    {
+
+    }
+
+    void playPauseSE()
+    {
+        
+    }
+
 }
