@@ -26,7 +26,11 @@ public class EnemyData
     public string model;            // モデル読み込み(パス)
     public float AppearanceTime;        // 出現時間
     public int State;                   // 状態
-    public int NextState;               // 次の状態
+    public int NextState1;               // 次の状態1
+    public int NextState2;               // 次の状態2
+    public int NextState3;               // 次の状態3
+    public int NextState4;               // 次の状態4
+    public int NextState5;               // 次の状態5
 
     public Vector3 prevPosition;
     public float distance_two;         //二点間の距離を入れる
@@ -34,8 +38,8 @@ public class EnemyData
     public float PresentLocation;
     public Vector3 Entry;
     public Vector3 target1;
-    public Vector3 target;
-
+    public Vector3 target;          
+    public int Step;              
 }
 
 // 敵カテゴリー列挙型

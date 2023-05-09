@@ -137,12 +137,13 @@ public class EnemyManager : MonoBehaviour
 
         appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
 
-        // Target1Posを使いやすいように置き換え
+        // 初期設定
         for (i = 0; i < element; i++)
         {
             enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
             enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
             enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
+            enemyData[i].Step = 0;
         }
 
         // ビューポート取得(敵が消える境目、少し広く取っている)
@@ -182,7 +183,7 @@ public class EnemyManager : MonoBehaviour
                 if (spawnRealTime >= enemyData[i].AppearanceTime)
                 {
                     SpawnNewEnemy(i);
-                    enemyData[i].State = enemyData[i].NextState;
+                    enemyData[i].State = SetState(i);
                     enemyData[i].Duration = 0.0f;
                 }
             }
@@ -219,7 +220,7 @@ public class EnemyManager : MonoBehaviour
                 // 指定場所についたら次の動きに移行
                 if (enemy[i].transform.position == enemyData[i].target1)
                 {
-                    enemyData[i].State = 2;
+                    enemyData[i].State = SetState(i);
                     enemyData[i].Duration = 0;
                 }
             }
@@ -239,7 +240,7 @@ public class EnemyManager : MonoBehaviour
                 // 2周したら次の動きに移行
                 if (enemyData[i].Duration * angle >= 720.0f)
                 {
-                    enemyData[i].State = 3;
+                    enemyData[i].State = SetState(i);
                     enemyData[i].Duration = 0;
                 }
             }
@@ -259,7 +260,7 @@ public class EnemyManager : MonoBehaviour
                 // 一定時間経過で次の動きに移行
                 if (enemyData[i].Duration >= 10.0f)
                 {
-                    enemyData[i].State = 4;
+                    enemyData[i].State = SetState(i);
                     enemyData[i].Duration = 0;
                 }
             }
@@ -413,6 +414,21 @@ public class EnemyManager : MonoBehaviour
     {
         enemyData[no].State = -1;
         Destroy(enemy[no]);
+    }
+
+    // 次のステートをセット
+    public int SetState(int no)
+    {
+        enemyData[no].Step++;
+        switch (enemyData[no].Step)
+        {
+            case 1: return enemyData[no].NextState1;
+            case 2: return enemyData[no].NextState2;
+            case 3: return enemyData[no].NextState3;
+            case 4: return enemyData[no].NextState4;
+            case 5: return enemyData[no].NextState5;
+            default: return -1;
+        }
     }
 
     public bool getclearflag()
