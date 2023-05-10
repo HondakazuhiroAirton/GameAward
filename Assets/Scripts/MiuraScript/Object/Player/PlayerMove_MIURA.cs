@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 using TMPro;
 
@@ -104,6 +105,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     //********************************************************************************
 
+
     void Start()
     {
         // アニメーターを取得
@@ -198,6 +200,10 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     void Update()
     {
+
+        // ゲームパッドが接続されていないとnullになる。
+        if (Gamepad.current == null) return;
+
         //プレイヤーの座標取得
         pos = this.gameObject.transform.position;
         //プレイヤーのスケール取得
@@ -373,9 +379,9 @@ public class PlayerMove_MIURA : MonoBehaviour
         animator.SetBool("fCharge", false);
 
         // ビーム発射処理*************************************************************
-        if (Input.GetKey(KeyCode.Space)) // キーコードは変更してね(*^^*)
+        if (Input.GetKey(KeyCode.Space) || Gamepad.current.buttonEast.isPressed) // キーコードは変更してね(*^^*)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Gamepad.current.buttonEast.isPressed)
             {
                 // チャージエフェクト開始
                 beamChargeScript.Play();
@@ -418,7 +424,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space)) // Downと同じキーコードにしてね
+        if (Input.GetKeyUp(KeyCode.Space)|| Gamepad.current.buttonEast.wasReleasedThisFrame) // Downと同じキーコードにしてね
         {
             // チャージエフェクトストップ
             beamChargeScript.Stop();
@@ -543,6 +549,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             Instantiate(BigBeamPrefabs, this.transform.position, gameObject.transform.localRotation);
         }
 
+
     }
     //wall使用フラグ
     void SetWallFlag(int num, bool flag)
@@ -556,5 +563,6 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         }
     }
+
 
 }
