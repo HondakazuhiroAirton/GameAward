@@ -33,29 +33,28 @@ public class Bullet : MonoBehaviour
 
         player = GameObject.Find("Player");
 
-        // プレイヤーの場所取得
-        Vector3 PlayerPos = player.transform.position;
+        if (player != null)
+        {
+            // プレイヤーの場所取得
+            Vector3 PlayerPos = player.transform.position;
 
-        // ベクトル計算
-        moveVal = PlayerPos - this.transform.position;
+            // ベクトル計算
+            moveVal = PlayerPos - this.transform.position;
 
-        // 正規化
-        moveVal = moveVal.normalized ;
+            // 正規化
+            moveVal = moveVal.normalized;
 
-        // 補正係数をかける
-        moveVal.x *= ballSpeed;
-        moveVal.y *= ballSpeed;
-        moveVal.z *= ballSpeed;
-
+            // 補正係数をかける
+            moveVal.x *= ballSpeed;
+            moveVal.y *= ballSpeed;
+            moveVal.z *= ballSpeed;
+        }
     }
 
 
     // Update is called once per frame
     void Update()
     {
-
-
-
         // 玉を毎フレームを動かしてる
         transform.position += moveVal;
 
