@@ -67,11 +67,11 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            SE.PlayOneShot(SelectSE);
-            SceneManager.LoadScene("mSelectScene");
-        }
+  //   if (Input.GetKeyDown(KeyCode.Return))
+  //   {
+  //       SE.PlayOneShot(SelectSE);
+  //       SceneManager.LoadScene("mSelectScene");
+  //   }
 
 
     }
@@ -111,8 +111,12 @@ public class AudioManager : MonoBehaviour
     //{
     // if()
     // {
-    // BGM.Stop();
-    // BGM.PlayOneShot(ResultBgm);
+    //  BGM.Stop();
+    //  BGM.PlayOneShot(ResultBgm);
+    //      if()//リザルト表示された時
+    //      {
+    //          SE.PlayOneShot(MenuSE);
+    //      }
     //  }
     // 
     // //クリアからステージセレクトへ行くとき
@@ -155,17 +159,17 @@ public class AudioManager : MonoBehaviour
 
     void playEnemyDefeatSE()
     {
-
+        SE.PlayOneShot(EnemyDefeatSE);
     }
 
     void playPlayerMoveSE()
     {
-
+        SE.PlayOneShot(PlayerMoveSE);
     }
 
     void playPauseSE()
     {
-        
+        SE.PlayOneShot(PauseSE);
     }
 
 }
