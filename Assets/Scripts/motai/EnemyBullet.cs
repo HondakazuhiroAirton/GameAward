@@ -20,15 +20,11 @@ public class EnemyBullet : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-        void Update()
+    void Update()
     {
-        
+        if (player == null) return;
+
         time += Time.deltaTime;
-        //if(player != null)
-        //{
-        //    transform.LookAt(player.transform);// キューブ(敵に)
-        //    this.transform.rotation = Quaternion.Euler(0,0,this.transform.eulerAngles.z);
-        //}
 
         if (time >= mintime)// 2秒たったらアニメーションスタート
         {

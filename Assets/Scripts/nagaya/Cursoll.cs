@@ -59,9 +59,15 @@ public class Cursoll : MonoBehaviour
         SEscript = audioManage.GetComponent<AudioManager>();
         
 
-        // 最初はステージ1
+        // 最初はワールド1
         NowPosition = 1;
         this.transform.position = iti[NowPosition].transform.position;
+
+        // ステージ選択を非アクティブにしておく
+        World1.SetActive(false);
+        World2.SetActive(false);
+        World3.SetActive(false);
+        World4.SetActive(false);
 
         isPanel = true;
     }
@@ -83,7 +89,7 @@ public class Cursoll : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             NowPosition -= 1;
-            if (NowPosition < 0) NowPosition = 0;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
+            if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
             this.transform.position = iti[NowPosition].transform.position;
 
         }

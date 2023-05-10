@@ -70,7 +70,6 @@ public class AudioManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             SE.PlayOneShot(SelectSE);
-            SceneManager.LoadScene("mSelectScene");
         }
 
 
