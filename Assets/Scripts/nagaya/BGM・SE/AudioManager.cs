@@ -67,18 +67,12 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             SE.PlayOneShot(SelectSE);
         }
-=======
-  //   if (Input.GetKeyDown(KeyCode.Return))
-  //   {
-  //       SE.PlayOneShot(SelectSE);
-  //       SceneManager.LoadScene("mSelectScene");
-  //   }
->>>>>>> feature/mika
+
 
 
     }
