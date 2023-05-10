@@ -10,6 +10,9 @@ public class EnemyCount : MonoBehaviour
     public TextMeshProUGUI enemycount;
     public GameObject Enemy;
     public GameObject playerbeam;
+    public GameObject Enemycount;
+
+    float seconds;
 
     int enemyCount;
 
@@ -26,14 +29,18 @@ public class EnemyCount : MonoBehaviour
         playerbeam = GameObject.Find("PlayerBeam");
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         enemycount.text = enemycount.ToString();
-        
+
+        GameObject Enemycount = GameObject.Find("EnemyCount");
+    //    TextMeshProUGUI.enemycount = Enemycount.GetComponent<TextMeshProUGUI>();
+        enemycount.enabled=false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
-
+       
     }
     
 
@@ -45,6 +52,7 @@ public class EnemyCount : MonoBehaviour
         // もし衝突した相手オブジェクトの名前が"プレイヤービーム"ならば
         if (collision.gameObject.name == "PlayerBeam")
        {
+            enemycount.enabled = true;
 //            beingMeasured = !beingMeasured;
            // 衝突した相手オブジェクトを削除する
            Destroy(Enemy);
@@ -52,7 +60,11 @@ public class EnemyCount : MonoBehaviour
             count++;
             enemycount.text = "Combo:" + count;
 
-
+//            if(seconds>=3.0f)
+//            {
+//                enemycount.enabled = false;
+//                count=0;
+//            }
         }
     }
     

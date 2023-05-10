@@ -38,6 +38,9 @@ public class Cursoll : MonoBehaviour
     private AudioSource se;
     public AudioClip Cursolse;
     public AudioManager SEscript;
+    public AudioClip Selectse;
+    public AudioClip Cancelse;
+
    
     private bool isPanel;
 
@@ -82,12 +85,13 @@ public class Cursoll : MonoBehaviour
            
             NowPosition += 1;
             if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
-
             this.transform.position = iti[NowPosition].transform.position;
 
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
+            se.PlayOneShot(Cursolse);
+
             NowPosition -= 1;
             if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
             this.transform.position = iti[NowPosition].transform.position;
@@ -101,13 +105,16 @@ public class Cursoll : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
-
+            
             if (NowPosition == 0)
             {
+                se.PlayOneShot(Cancelse);
                 SceneManager.LoadScene("nagaya");
             }
             else if (NowPosition == 1)
             {
+                se.PlayOneShot(Selectse);
+
                 World1.SetActive(true);
                //UnityEditor.EditorApplication.isPaused = true;
                 Stage1_1 = GameObject.Find("1-1").GetComponent<Button>();
@@ -118,6 +125,8 @@ public class Cursoll : MonoBehaviour
             }
             else if (NowPosition == 2)
             {
+                se.PlayOneShot(Selectse);
+
                 World2.SetActive(true);
                 Stage2_1 = GameObject.Find("2-1").GetComponent<Button>();
                 Stage2_1.Select();
@@ -125,6 +134,8 @@ public class Cursoll : MonoBehaviour
             }
             else if (NowPosition == 3)
             {
+                se.PlayOneShot(Selectse);
+
                 World3.SetActive(true);
                 Stage3_1 = GameObject.Find("3-1").GetComponent<Button>();
                 Stage3_1.Select();
@@ -132,6 +143,8 @@ public class Cursoll : MonoBehaviour
             }
             else if (NowPosition == 4)
             {
+                se.PlayOneShot(Selectse);
+
                 World4.SetActive(true);
                 Stage4_1 = GameObject.Find("4-1").GetComponent<Button>();
                 Stage4_1.Select();
