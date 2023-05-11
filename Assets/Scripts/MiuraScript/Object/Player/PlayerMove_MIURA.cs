@@ -105,6 +105,9 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     //********************************************************************************
 
+    //ゲームパッド
+    [SerializeField] PlayerInput input;
+    private bool _isPressed;
 
     void Start()
     {
@@ -195,14 +198,15 @@ public class PlayerMove_MIURA : MonoBehaviour
         //ビーム残量を100 % に設定
         PlayerClassScript.SetAmount(100);
 
+        //ゲームパッド
+        input = this.GetComponent<PlayerInput>();
+
+        _isPressed = false;
     }
 
 
     void Update()
     {
-
-        // ゲームパッドが接続されていないとnullになる。
-        if (Gamepad.current == null) return;
 
         //プレイヤーの座標取得
         pos = this.gameObject.transform.position;
@@ -379,9 +383,9 @@ public class PlayerMove_MIURA : MonoBehaviour
         animator.SetBool("fCharge", false);
 
         // ビーム発射処理*************************************************************
-        if (Input.GetKey(KeyCode.Space) || Gamepad.current.buttonEast.isPressed) // キーコードは変更してね(*^^*)
+        if (Input.GetKey(KeyCode.Space) || _isPressed == true) // キーコードは変更してね(*^^*)
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Gamepad.current.buttonEast.isPressed)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 // チャージエフェクト開始
                 beamChargeScript.Play();
@@ -424,7 +428,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space)|| Gamepad.current.buttonEast.wasReleasedThisFrame) // Downと同じキーコードにしてね
+        if (Input.GetKeyUp(KeyCode.Space)) // Downと同じキーコードにしてね
         {
             // チャージエフェクトストップ
             beamChargeScript.Stop();
@@ -564,5 +568,199 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
     }
 
+
+    public void OnAttck(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Canceled)
+        {
+            // チャージエフェクトストップ
+            beamChargeScript.Stop();
+
+            // 計測した時間から各種値を計算する
+            float use = 0;
+            float BoxCastScale = 0;
+            float Distance = 0;
+            int BeamLevel = 0;
+            // チャージした時間によってビームの大きさが変わるサイズ変更用の変数
+
+            // 時間によって変わる(閾値)
+            if (0 <= ChargeTime && ChargeTime < OneChargeFrame) // 無チャージ
+            {
+                // 1.サイズを入れる
+                BoxCastScale = Lv0_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv0_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv0_Use;
+                // ビームの種類を教える
+                BeamLevel = 0;
+            }
+            else if (OneChargeFrame <= ChargeTime && ChargeTime < 2 * OneChargeFrame)// 1階目
+            {
+                // 1.サイズを入れる
+                BoxCastScale = Lv1_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv1_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv1_Use;
+                // ビームの種類を教える
+                BeamLevel = 1;
+            }
+            else if (2 * OneChargeFrame <= ChargeTime && ChargeTime < 3 * OneChargeFrame)// 2段階目
+            {
+                // 1.サイズを入れる
+                BoxCastScale = Lv2_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv2_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv2_Use;
+                // ビームの種類を教える
+                BeamLevel = 2;
+            }
+            else if (3 * OneChargeFrame <= ChargeTime && ChargeTime < 4 * OneChargeFrame)// 3段階目
+            {
+                // 1.サイズを入れる
+                BoxCastScale = Lv3_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv3_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv3_Use;
+                // ビームの種類を教える
+                BeamLevel = 3;
+            }
+            else if (4 * OneChargeFrame <= ChargeTime)// 4段階目
+            {
+                // 1.サイズを入れる
+                BoxCastScale = Lv4_Scale;
+                // 2.最大飛距離距離を入れる
+                Distance = Lv4_Distance;
+                // 3.消費エネルギーを決める
+                use = Lv4_Use;
+                // ビームの種類を教える
+                BeamLevel = 4;
+            }
+
+            // 減らす
+            // ビーム残量取得
+            float tempCharge = PlayerClassScript.GetAmount();
+
+            float tmp = tempCharge - use;
+
+            // 残量があれば
+            if (tmp > 0)
+            {
+                // ビーム残量を減らして
+                tempCharge = tempCharge - use;
+                Debug.Log("使用量" + use);
+                Debug.Log("ビーム残り" + tempCharge);
+
+                // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
+                PlayerClassScript.SetAmount(tempCharge);
+
+                Debug.Log("メーターの中身" + PlayerClassScript.GetAmount());
+
+                // プレイヤーの角度をBeamParticleに代入する
+                // プレイヤーのZ軸を参考にする
+                float PlayerAngle = this.transform.localEulerAngles.z;
+
+                // BeamParticleのEffect角度を更新する
+                script.PlayerAngle = PlayerAngle;
+
+                // BeamParticleの角度を変更する
+                script.Angle = PlayerAngle - 90;
+
+                // BoxCastの幅を変更する
+                BoxCast.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
+
+                // BeamParticleのBeamMax(飛距離)を変更する
+                script.BeamMax = Distance;
+
+                // BeamParticleのチャージ段階を渡す
+                script.NowBeamLevel = BeamLevel;
+
+                // プレハブを指定位置に生成
+                Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);
+                // チャージ時間を戻す
+                ChargeTime = 0;
+
+
+            }
+            Debug.Log("ビームうった！！");
+        }
+    }
+
+    public void OnAccumulate(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                // ボタンが押された時の処理
+                _isPressed = true;
+                break;
+
+            case InputActionPhase.Canceled:
+                // ボタンが離された時の処理
+                _isPressed = false;
+                break;
+        }
+        if (context.phase == InputActionPhase.Performed)
+        {
+            // チャージエフェクト開始
+            beamChargeScript.Play();
+        }
+    }
+
+    public void OnWarpUP(InputAction.CallbackContext context)
+    {
+        //ワープ
+        if (Up == true)
+        {
+            //色変更
+            wallUp.GetComponent<Renderer>().material.color = Color.green;
+
+
+            this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z);
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        }
+        Debug.Log("上にワープする！");
+    }
+    public void OnWarpDown(InputAction.CallbackContext context)
+    {
+        if (Down == true)
+        {
+            //色変更
+            wallDown.GetComponent<Renderer>().material.color = Color.green;
+
+            this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z);
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+
+        }
+        Debug.Log("下にワープする！");
+    }
+    public void OnWarpRight(InputAction.CallbackContext context)
+    {
+        if (Right == true)
+        {
+            //色変更
+            wallRight.GetComponent<Renderer>().material.color = Color.green;
+
+            this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z);
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+
+        }
+    }
+    public void OnWarpLeft(InputAction.CallbackContext context)
+    {
+        if (Left == true)
+        {
+            //色変更
+            wallLeft.GetComponent<Renderer>().material.color = Color.green;
+
+            this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z);
+            this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+
+        }
+    }
 
 }
