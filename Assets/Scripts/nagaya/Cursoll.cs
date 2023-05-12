@@ -67,10 +67,10 @@ public class Cursoll : MonoBehaviour
         this.transform.position = iti[NowPosition].transform.position;
 
         // ステージ選択を非アクティブにしておく
-        World1.SetActive(false);
-        World2.SetActive(false);
-        World3.SetActive(false);
-        World4.SetActive(false);
+      // World1.SetActive(false);
+      // World2.SetActive(false);
+      // World3.SetActive(false);
+      // World4.SetActive(false);
 
         isPanel = true;
     }
