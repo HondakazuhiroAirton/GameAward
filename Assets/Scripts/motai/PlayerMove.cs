@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerMove : MonoBehaviour
 {
     private float speed = 5.0f;
-    public Slider slider;
+    [SerializeField] GameObject ball;
     void Update()
     {
         if (Input.GetKey("up"))
@@ -24,7 +24,9 @@ public class PlayerMove : MonoBehaviour
         {
             transform.position -= transform.right * speed * Time.deltaTime;
         }
-
-        
+        if (Input.GetKey("E"))
+        {
+            Instantiate(ball, transform.position, this.transform.rotation);
+        }
     }
 }
