@@ -3470,20 +3470,72 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e88448b9-c525-4d5f-b068-2157a8a5da83
     m_ActionName: player/warpup3[/DualSenseGamepadHID/dpad/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2076314516}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnLmove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 23f2a3d3-230d-4121-ba29-9a35725740f0
+    m_ActionName: player/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2076314516}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnUmove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 58594718-efcb-48e2-ac57-50cf866183e8
+    m_ActionName: player/LRmove1
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2076314516}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnRmove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4ecf7933-c6e8-4d99-9fff-6f268a889acf
+    m_ActionName: player/Lmove1
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2076314516}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnDmove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: be2086bc-c1f2-4351-ac34-cc989d84e36b
+    m_ActionName: player/Umove1
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2076314519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487891638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8fe433030b396743b7b4216850ac2f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

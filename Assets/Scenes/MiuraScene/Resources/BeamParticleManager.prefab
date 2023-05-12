@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7954957734673453955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7954957736179242919}
@@ -227,13 +227,13 @@ MonoBehaviour:
   NowBoxCast: {fileID: 0}
   StartPosition: {x: 0, y: 0, z: 0}
   moveDir: {x: 0, y: 0, z: 0}
-  BeamMax: 0
+  BeamMax: 5
   AngleHosei: 0
   BeamBoxCastReflect: {fileID: 3653431189480935985, guid: d7658118b82beb242b0ab4877e7ac34f,
     type: 3}
   Player: {fileID: 0}
   PlayerAngle: 0
-  NowBeamLevel: 0
+  NowBeamLevel: 1
 --- !u!135 &7954957735459857815
 SphereCollider:
   m_ObjectHideFlags: 0

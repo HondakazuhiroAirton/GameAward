@@ -108,6 +108,10 @@ public class PlayerMove_MIURA : MonoBehaviour
     //ゲームパッド
     [SerializeField] PlayerInput input;
     private bool _isPressed;
+    private bool _ismoveR;
+    private bool _ismoveL;
+    private bool _ismoveU;
+    private bool _ismoveD;
 
     void Start()
     {
@@ -202,6 +206,11 @@ public class PlayerMove_MIURA : MonoBehaviour
         input = this.GetComponent<PlayerInput>();
 
         _isPressed = false;
+        //移動フラグ
+        _ismoveR = false;
+        _ismoveL = false;
+        _ismoveU = false;
+        _ismoveD = false;
     }
 
 
@@ -238,12 +247,12 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
 
             //d入力で右向きに動く
-            if (Input.GetKey("d"))
+            if (Input.GetKey("d") || _ismoveR == true)
             {
                 this.gameObject.transform.position = new Vector3(pos.x + speed * DownSpeed, pos.y, pos.z);
             }
             //a入力で左向きに動く
-            else if (Input.GetKey("a"))
+            else if (Input.GetKey("a") || _ismoveL == true)
             {
                 this.gameObject.transform.position = new Vector3(pos.x - speed * DownSpeed, pos.y, pos.z);
             }
@@ -266,12 +275,12 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
 
             //d入力で右向きに動く
-            if (Input.GetKey("d"))
+            if (Input.GetKey("d") || _ismoveR == true)
             {
                 this.gameObject.transform.position = new Vector3(pos.x + speed * DownSpeed, pos.y, pos.z);
             }
             //a入力で左向きに動く
-            else if (Input.GetKey("a"))
+            else if (Input.GetKey("a") || _ismoveL == true)
             {
                 this.gameObject.transform.position = new Vector3(pos.x - speed * DownSpeed, pos.y, pos.z);
             }
@@ -294,12 +303,12 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
 
             //w入力で上向きに動く
-            if (Input.GetKey("w"))
+            if (Input.GetKey("w") || _ismoveU == true)
             {
                 this.gameObject.transform.position = new Vector3(pos.x, pos.y + speed * DownSpeed, pos.z);
             }
             //s入力で下向きに動く
-            else if (Input.GetKey("s"))
+            else if (Input.GetKey("s") || _ismoveD == true)
             {
                 this.gameObject.transform.position = new Vector3(pos.x, pos.y - speed * DownSpeed, pos.z);
             }
@@ -322,12 +331,12 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
 
             //w入力で上向きに動く
-            if (Input.GetKey("w"))
+            if (Input.GetKey("w") || _ismoveU == true)
             {
                 this.gameObject.transform.position = new Vector3(pos.x, pos.y + speed * DownSpeed, pos.z);
             }
             //s入力で下向きに動く
-            else if (Input.GetKey("s"))
+            else if (Input.GetKey("s") || _ismoveD == true)
             {
                 this.gameObject.transform.position = new Vector3(pos.x, pos.y - speed * DownSpeed, pos.z);
             }
@@ -761,6 +770,71 @@ public class PlayerMove_MIURA : MonoBehaviour
             this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
 
         }
+    }
+
+    public void OnLmove(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                // ボタンが押された時の処理
+                _ismoveL = true;
+                break;
+
+            case InputActionPhase.Canceled:
+                // ボタンが離された時の処理
+                _ismoveL = false;
+                break;
+        }
+        Debug.Log("左に動く！");
+    }
+    public void OnRmove(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                // ボタンが押された時の処理
+                _ismoveR = true;
+                break;
+
+            case InputActionPhase.Canceled:
+                // ボタンが離された時の処理
+                _ismoveR = false;
+                break;
+        }
+        Debug.Log("右に動く！");
+    }
+    public void OnUmove(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                // ボタンが押された時の処理
+                _ismoveU = true;
+                break;
+
+            case InputActionPhase.Canceled:
+                // ボタンが離された時の処理
+                _ismoveU = false;
+                break;
+        }
+        Debug.Log("上に動く！");
+    }
+    public void OnDmove(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                // ボタンが押された時の処理
+                _ismoveD = true;
+                break;
+
+            case InputActionPhase.Canceled:
+                // ボタンが離された時の処理
+                _ismoveD = false;
+                break;
+        }
+        Debug.Log("下に動く！");
     }
 
 }
