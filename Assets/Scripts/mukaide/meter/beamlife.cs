@@ -42,7 +42,8 @@ public class beamlife : MonoBehaviour
         // ƒr[ƒ€©‘R‰ñ•œ
         if (amount < 100)
         {
-            amount += recovery * Time.deltaTime;
+            //amount += recovery * Time.deltaTime;
+            amount = amount + recovery * Time.deltaTime;
         }
         // else
         // {
