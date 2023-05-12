@@ -51,7 +51,11 @@ MonoBehaviour:
   originenemy: {fileID: 6825728215260208665}
   AppearanceNoticeObj: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
     type: 3}
+  PhaseObj: {fileID: 6598390987276969489, guid: 31e0a1500da67bb4bb7ba3e19bbef102,
+    type: 3}
+  clearflag: 0
   Sprite: {fileID: 1514023431371668655}
+  Parent: {fileID: 0}
 --- !u!212 &1514023431371668655
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -219,6 +223,8 @@ MonoBehaviour:
   EnemyNo: 0
   EffectPos: {x: 0, y: 0, z: 0}
   explosion: {fileID: 0}
+  score: {fileID: 0}
+  scoreUI: {fileID: 0}
   explosionFlug: 0
 --- !u!114 &467950663399119424
 MonoBehaviour:
