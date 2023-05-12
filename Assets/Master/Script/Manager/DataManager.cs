@@ -2,47 +2,89 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState
+{
+    None,
+    Start,
+    InGame,
+    Pause,
+    End
+}
+
+ public class Counter<T>
+{
+    public Counter(T defaultVal)
+    {
+        _count = defaultVal;
+    }
+
+    private T _count;
+    public T Count => _count;
+
+    private T max;
+    private T min;
+
+};
+
+
 public class DataManager
 {
     int _score;
-    int _life;
     int _beamPower;
-    int _specialBeamCount;
-    int _specialBeam;
+    int _life;
+    
+    void Init()
+    {
+        
+
+        
+    }
 
 
-  
+    int _specialBeamCount = 0;
+   
+    int _totalScore = 0;
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    _beamPower = 10000;
-    //    _specialBeamCount = 0;
-    //}
+    /// <summary>
+    /// ƒXƒRƒA‚Ì‰ÁŽZ
+    /// </summary>
+    /// <param name="val"></param>
+    void AddScore(int val)
+    {
+        _score = val;
+    }
 
+    /// <summary>
+    /// ƒ‰ƒCƒt‚ðˆê‚ÂŒ¸‚ç‚·
+    /// </summary>
+    void LostLife()
+    {
+        _life--;
+    }
 
-    //public T SetValue(T Val, string dataName)
-    //{
-       
+    /// <summary>
+    /// “|‚µ‚½“G‚ÌƒJƒEƒ“ƒg‚Ì‰ÁŽZ 
+    /// </summary>
+   
 
-    //    return
-    //}
+    // Start is called before the first frame update
+    void Start()
+    {
+        _beamPower = 10000;
+        _specialBeamCount = 0;
+    }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="val"></param>
+    void AddSpecialBeamCount(int val)
+    {
+        _specialBeamCount += val;
+    }
 
-    //}
-
-    ////T GetDate<T>(string dataName)
-    ////{
-    ////    //T a = ;
-    ////    return
-    ////}
-
-
-    //public static T GetData()
-    //{
-
-    //}
+    void UseBeamPower(int val)
+    {
+        _beamPower -= val;
+    }
 }

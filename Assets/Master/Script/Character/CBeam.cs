@@ -46,6 +46,11 @@ public class CBeam : MonoBehaviour
     Vector3 pos;
     float rad;
 
+    int _destroyCount = 0;
+
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,8 +122,6 @@ public class CBeam : MonoBehaviour
 
     }
 
-
-
     private void OnDrawGizmos()
     {
         //if (beamlines.Count == 0) return;
@@ -129,5 +132,11 @@ public class CBeam : MonoBehaviour
         //    Gizmos.color = Color.white;
         //    Gizmos.DrawRay(line.startPos, line.direction * line.distance);
         //}
+    }
+
+
+    void AddDestroyCount()
+    {
+        _destroyCount++;
     }
 }

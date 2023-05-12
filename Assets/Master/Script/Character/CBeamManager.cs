@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CBeamManager : MonoBehaviour
 {
-
     float ChargeTime;       // “ü—ÍŠÔ 
     float maxChargeTime;    // Å‘å“ü—ÍŠÔ
 
@@ -21,7 +20,7 @@ public class CBeamManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -47,6 +46,8 @@ public class CBeamManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+
 
     }
 

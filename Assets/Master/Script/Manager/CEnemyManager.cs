@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CEnemy : MonoBehaviour
+public class CEnemyManager : MonoBehaviour
 {
+    bool endFlag;
+
+
     // Start is called before the first frame update
     void Start()
     {
+
+
+
+
 
     }
 
@@ -14,5 +21,14 @@ public class CEnemy : MonoBehaviour
     void Update()
     {
 
+    }
+
+
+    bool PhaseUpdate()
+    {
+
+
+
+        return true;
     }
 }
