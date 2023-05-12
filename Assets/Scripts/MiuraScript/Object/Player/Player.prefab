@@ -974,6 +974,7 @@ GameObject:
   - component: {fileID: 8270559691991886810}
   - component: {fileID: 8452226554908652884}
   - component: {fileID: 8452226554908652885}
+  - component: {fileID: 2044801690737576837}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1063,6 +1064,198 @@ MonoBehaviour:
   Right: 0
   Left: 0
   animator: {fileID: 0}
+  input: {fileID: 0}
+--- !u!114 &2044801690737576837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758725659647766880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 99b11224634e0bb448e78e1673dd8891,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnAttck
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 652df3ae-645d-40ae-ae2c-c581a3dd5c22
+    m_ActionName: player/attack
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnAccumulate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8a7010f9-e688-49aa-a0f1-a63dfee900cd
+    m_ActionName: player/accumulate
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnWarpUP
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2a484252-ebe6-40b9-9b57-b56e5466dbaf
+    m_ActionName: player/warpup
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnWarpDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0caf6a8e-e0c0-4209-9d03-ca7aa81d343e
+    m_ActionName: player/warpDown
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnWarpRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 68621216-eb96-4264-bb34-732010b35360
+    m_ActionName: player/warpRight
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnWarpLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e88448b9-c525-4d5f-b068-2157a8a5da83
+    m_ActionName: player/warpLeft
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnLmove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 23f2a3d3-230d-4121-ba29-9a35725740f0
+    m_ActionName: player/Lmove
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnRmove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4ecf7933-c6e8-4d99-9fff-6f268a889acf
+    m_ActionName: player/Rmove1
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnUmove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 58594718-efcb-48e2-ac57-50cf866183e8
+    m_ActionName: player/Umove
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8452226554908652885}
+        m_TargetAssemblyTypeName: PlayerMove_MIURA, Assembly-CSharp
+        m_MethodName: OnDmove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: be2086bc-c1f2-4351-ac34-cc989d84e36b
+    m_ActionName: player/Dmove1
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8977480395896891746
 GameObject:
   m_ObjectHideFlags: 0
