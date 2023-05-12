@@ -10,7 +10,7 @@ public class PlayerClass : MonoBehaviour
     public GameObject ButtonR;
     private int life;
     private float amount = 100;
-    private float bigamount = 100;
+    private float bigamount;
     public float recovery = 0.1f;
     
     // Žc‹@
@@ -45,7 +45,7 @@ public class PlayerClass : MonoBehaviour
     {
         SetLife(3);
 
-        SetBigAmount(50);
+        SetBigAmount(0);
     }
     void Update()
     {
