@@ -89,7 +89,6 @@ public class Bullet : MonoBehaviour
                 Destroy(other.gameObject);
             }
 
-            GameObject.Destroy(this.gameObject);
         }
     }
 }
