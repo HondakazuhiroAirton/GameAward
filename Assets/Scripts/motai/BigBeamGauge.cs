@@ -14,8 +14,9 @@ public class BigBeamGauge : MonoBehaviour
     private bool Beamdec = false;
 
     public float BigBeamAmount = 2.0f;
+    public float hit = 0.1f;
     private float HitAmount;
-    private float a = 0;
+    //private float a = 0;
 
 
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class BigBeamGauge : MonoBehaviour
     void Update()
     {
         BigBeam = PlayerBB.GetBigAmount();
+
         //Debug.Log(Random.Range(1.0f, 50.0f));
 
         if (Input.GetKey(KeyCode.Return))
@@ -56,58 +58,19 @@ public class BigBeamGauge : MonoBehaviour
             }
         }
 
-        //“G‚ð“|‚·‚ÆƒrƒbƒOƒr[ƒ€ƒQ[ƒW‚ª‘‚¦‚é
-        for (int i = 0; i > 10; i++)
-        {
-            if (enemy != null) return;
-
-            BigBeam = BigBeam * (1 + HitAmount);
-
-            slider.value = BigBeam;
-            PlayerBB.SetBigAmount(BigBeam);
-        }
-
+        //AddHit();
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (enemy == null)
-        {
-            a++;
-        }
 
-        switch(a)
-        {
-            case 1:
-                BigBeam = 2;
-                HitAmount = 0.0f;
-                break;
-            case 2:
-                HitAmount = 0.1f;
-                break;
-            case 3:
-                HitAmount = 0.2f;
-                break;
-            case 4:
-                HitAmount = 0.3f;
-                break;
-            case 5:
-                HitAmount = 0.4f;
-                break;
-            case 6:
-                HitAmount = 0.5f;
-                break;
-            case 7:
-                HitAmount = 0.6f;
-                break;
-            case 8:
-                HitAmount = 0.7f;
-                break;
-            case 9:
-                HitAmount = 0.8f;
-                break;
-            case 10:
-                HitAmount = 0.9f;
-                break;
-        }
+    void AddHit()// “G‚Ì“–‚½‚è”»’è‚É“ü‚ê‚Ä‰º‚³‚¢
+    {
+        BigBeam = BigBeam + BigBeamAmount * (1 + HitAmount);
+
+        slider.value = BigBeam;
+        PlayerBB.SetBigAmount(BigBeam);
+
+        HitAmount = HitAmount + hit;
+
+        Debug.Log(HitAmount);
+        Debug.Log(BigBeam);
     }
 }
