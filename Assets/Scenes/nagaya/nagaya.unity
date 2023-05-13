@@ -9004,14 +9004,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iti:
-  - {fileID: 0}
+  - {fileID: 461005918}
+  - {fileID: 596218591}
+  - {fileID: 575199578}
+  - {fileID: 1745912095}
+  - {fileID: 1285690577}
   NowPosition: 35
   cursol: {fileID: 2086739180}
   Worldsel: {fileID: 1603474957}
-  World1: {fileID: 596218591}
-  World2: {fileID: 575199578}
-  World3: {fileID: 1745912095}
-  World4: {fileID: 1285690577}
+  World1: {fileID: 786746282}
+  World2: {fileID: 1294797908}
+  World3: {fileID: 1717826960}
+  World4: {fileID: 303111490}
   Return: {fileID: 461005918}
   Cursolse: {fileID: 8300000, guid: b9d05986ed0389341b60caa17fd1b040, type: 3}
   SEscript: {fileID: 1103518547}
