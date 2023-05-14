@@ -1,2 +1,2 @@
-name,category,phase,HP,Size,StartPosX,StartPosY,StartPosZ,EntryPosX,EntryPosY,EntryPosZ,sideNo,Target1PosX,Target1PosY,Target1PosZ,TargetPosX,TargetPosY,TargetPosZ,sprite,Model,AppearanceTime,State,NextState
-,,,,,,,,,,,,,,,,,,,,,,
+name,category,phase,HP,Size,StartPosX,StartPosY,StartPosZ,EntryPosX,EntryPosY,EntryPosZ,sideNo,Target1PosX,Target1PosY,Target1PosZ,TargetPosX,TargetPosY,TargetPosZ,sprite,Model,AppearanceTime,State,NextState1,NextState2,NextState3,NextState4,NextState5
+,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
 {
     public int EnemyNo;
-    public Vector3 EffectPos;
     public Boomef explosion;
     public Score score;
     public GameObject scoreUI;
@@ -30,9 +29,6 @@ public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
         //if (explosionFlug) return;
         explosionFlug = true;
         //throw new System.NotImplementedException();
-        Debug.Log((EnemyNo + 1) + "を消すよ...!");
-        //EffectPos = EnemyManager.GetEnemyPos(EnemyNo);
-        /*if (EffectPos != Vector3.zero) */Debug.Log("enemy" + (EnemyNo + 1) + "が座標" + transform.position + "で消滅");
         score.AddScore();
         // ここで爆発のエフェクト再生
         explosion.BoomCreate();
@@ -45,7 +41,6 @@ public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
     {
         //throw new System.NotImplementedException();
         EnemyNo = no;
-        Debug.Log((EnemyNo + 1) + "をうけとった！");
     }
 
     // 敵情報取得
@@ -53,5 +48,4 @@ public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
     {
         return EnemyNo;
     }
-
 }

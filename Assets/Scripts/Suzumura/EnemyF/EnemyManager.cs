@@ -344,7 +344,6 @@ public class EnemyManager : MonoBehaviour
 
         if (CurrentPhase == 6)
         {
-            Debug.Log("あああああああああああああああああああ");
             clearflag = true;
         }
     }
@@ -359,7 +358,6 @@ public class EnemyManager : MonoBehaviour
             Quaternion.identity,
             transform
             );
-        Debug.Log((no + 1) + "を渡す");
         // インターフェイス
         enemy[no].GetComponent<EnemyInstance>().EnemyIns(no);
         // 名前をつける
@@ -407,13 +405,6 @@ public class EnemyManager : MonoBehaviour
         return EnemyIdx;
     }
 
-    // 敵座標
-    //public static Vector3 GetEnemyPos(int no)
-    //{
-    //    return enemy[no].transform.position;
-    //}
-
-
     // 敵削除
     public static void DestroyEnemy(int no)
     {
@@ -439,6 +430,11 @@ public class EnemyManager : MonoBehaviour
     public bool getclearflag()
     {
         return clearflag;
+    }
+
+    public EnemyCategory GetBulletType(int no)
+    {
+        return enemyData[no].category;
     }
 }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,17 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     // ÉLÉÖÅ[Éu(ìGÇ…)
-    [SerializeField] GameObject ball;
-    [SerializeField] GameObject player;
+    public GameObject ball1;
+    public GameObject ball2;
+    public GameObject ball3;
+    // íeNo
+    public int BallNo;
+    // ìGNo
+    public int EnemyNo;
+    public GameObject EnemyManager;
+    public GameObject Enemy;
+
+    GameObject player;
     Animator animator;
     public const float maxtime = 5.0f;
     public const float mintime = 2.0f;
@@ -18,6 +28,8 @@ public class EnemyBullet : MonoBehaviour
         animator = GetComponent<Animator>();
 
         player = GameObject.Find("Player");
+        Enemy = transform.parent.gameObject;
+        EnemyManager = GameObject.Find("EnemyGroup (Clone)");
     }
 
     void Update()
@@ -44,9 +56,22 @@ public class EnemyBullet : MonoBehaviour
 
     void BallShot()// ÉLÉÖÅ[Éu(ìGÇ…)
     {
-
         // ÇΩÇ‹Çê∂Ç›èoÇµÇƒÇÈ
-        Instantiate(ball, transform.position, this.transform.rotation);
-        
+        EnemyNo = Enemy.GetComponent<Enemy>().GetEnemyIndex();
+        BallNo = (int)EnemyManager.GetComponent<EnemyManager>().GetBulletType(EnemyNo);
+        switch (BallNo)
+        {
+            case 1:
+                Instantiate(ball1, transform.position, this.transform.rotation);
+                break;
+            case 2:
+                Instantiate(ball2, transform.position, this.transform.rotation);
+                break;
+            case 3:
+                Instantiate(ball3, transform.position, this.transform.rotation);
+                break;
+            default:
+                break;
+        }
     }
 }

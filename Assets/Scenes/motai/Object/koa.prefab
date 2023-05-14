@@ -120,8 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20dcbee2d23d0744b858e86023c6bbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 5207064910377938854, guid: b6f6f3a8032c0904994b5851e86bf1a8, type: 3}
-  player: {fileID: 0}
+  ball1: {fileID: 5207064910377938854, guid: ba96fe4af59c81845a303f751e310152, type: 3}
+  ball2: {fileID: 5207064910377938854, guid: 572534f4581de9e4a82dca1f8aaeeb93, type: 3}
+  ball3: {fileID: 5207064910377938854, guid: b6f6f3a8032c0904994b5851e86bf1a8, type: 3}
+  BallNo: 0
+  EnemyNo: 0
+  EnemyManager: {fileID: 5315390210836308574, guid: 6bf475000b99c6f42b5a855a656732ad,
+    type: 3}
   time: 0
 --- !u!65 &200252509350390091
 BoxCollider:
