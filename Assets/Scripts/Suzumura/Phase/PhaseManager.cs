@@ -14,6 +14,10 @@ public class PhaseManager : MonoBehaviour
     public GameObject phase4;
     public GameObject phase5;
 
+    // トリガー名をハッシュ値で取得
+    public static readonly string PhaseTrigger = "PhaseTrigger";
+    private static int PhaseID = Animator.StringToHash(PhaseTrigger);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +54,6 @@ public class PhaseManager : MonoBehaviour
             default:
                 return;
         }
-        animator.SetTrigger("PhaseTrigger");
+        animator.SetTrigger(PhaseID);
     }
 }
