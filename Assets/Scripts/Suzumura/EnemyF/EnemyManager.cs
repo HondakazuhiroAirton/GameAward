@@ -20,8 +20,8 @@ public class EnemyManager : MonoBehaviour
 
     public GameObject AppearanceNoticeObj;
     private AppearanceNotice appearanceNotice;
-    public GameObject PhaseObj;
-    private PhaseAnimation phase;
+    public GameObject PhaseUI;
+    private PhaseManager phase;
     public bool clearflag;
 
     // 出現用オブジェクト
@@ -138,7 +138,8 @@ public class EnemyManager : MonoBehaviour
         Sprite = GetComponent<SpriteRenderer>();
 
         appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
-        phase = PhaseObj.GetComponent<PhaseAnimation>();
+        PhaseUI = GameObject.Find("PhaseGroup");
+        phase = PhaseUI.GetComponent<PhaseManager>();
 
         // 初期設定
         for (i = 0; i < element; i++)
@@ -155,7 +156,7 @@ public class EnemyManager : MonoBehaviour
 
         // 最初はPhase1;
         CurrentPhase = 1;
-        phase.PlayPhase();
+        phase.PlayPhase(CurrentPhase);
         clearflag = false;
     }
 
@@ -337,7 +338,7 @@ public class EnemyManager : MonoBehaviour
         if (PhaseTransition)
         {
             CurrentPhase++;
-            phase.PlayPhase();
+            phase.PlayPhase(CurrentPhase);
             spawnRealTime = 0;
         }
 
