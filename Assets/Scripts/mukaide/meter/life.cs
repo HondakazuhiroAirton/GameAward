@@ -10,9 +10,21 @@ public class life : MonoBehaviour
     public GameObject Obj;
     int Life;
 
+    //Animator animator;
+    //GameObject LeftSolar;
+
     // Start is called before the first frame update
     void Start()
     {
+        //// animatorコンポーネントを取得
+        //LeftSolar = GameObject.Find("LeftSolar");
+        //Animator animator = LeftSolar.GetComponent<Animator>();
+        ////animator.SetBool("LeftSolarflag", false);
+
+        
+        //animator = GetComponent<Animator>();
+        
+
         life1 = GameObject.Find("life1");
         life2 = GameObject.Find("life2");
         life3 = GameObject.Find("life3");
