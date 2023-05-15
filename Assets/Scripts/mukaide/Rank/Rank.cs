@@ -92,7 +92,7 @@ public class Rank : MonoBehaviour
         if (Resulte.rankflag() == true)
         {
             //デバック用
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.O))
             {
                 rankpanel();
             }

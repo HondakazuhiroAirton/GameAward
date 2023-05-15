@@ -18,11 +18,15 @@ public class Continue : MonoBehaviour
 
     public GameObject Image;
 
+    ResultUI Resulte;
+
     // Start is called before the first frame update
     void Start()
     {
         //Fadeの取得
         Image = GameObject.Find("Image");
+
+        Resulte = GameObject.Find("Result").GetComponent<ResultUI>();
     }
 
     void Awake()
@@ -39,24 +43,27 @@ public class Continue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("v"))
+        if (Resulte.rankflag() == true)
         {
-
-            // パネルUIのアクティブ非アクティブを切り替え
-            Active();
-
-            //ボタンが選択された状態になる
-            retry.Select();      
-
-            //　ポーズUIが表示されてる時は停止
-            if (continueUI.activeSelf)
+            //デバック用
+            if (Input.GetKeyDown(KeyCode.O))
             {
-                Time.timeScale = 0f;
-                //　ポーズUIが表示されてなければ通常通り進行  
-            }
-            else
-            {
-                Time.timeScale = 1f;
+                // パネルUIのアクティブ非アクティブを切り替え
+                continueUI.SetActive(true);
+
+                //ボタンが選択された状態になる
+                retry.Select();
+
+                //　ポーズUIが表示されてる時は停止
+                if (continueUI.activeSelf)
+                {
+                    Time.timeScale = 0f;
+                    //　ポーズUIが表示されてなければ通常通り進行  
+                }
+                else
+                {
+                    Time.timeScale = 1f;
+                }
             }
 
         }
@@ -84,10 +91,5 @@ public class Continue : MonoBehaviour
     }
 
 
-   public void Active()
-   {
-       //パネルUIのアクティブ、非アクティブを切り替え
-       continueUI.SetActive(!continueUI.activeSelf);
-   }
 
 }
