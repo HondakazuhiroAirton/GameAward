@@ -142,7 +142,7 @@ public class ResultUI : MonoBehaviour
     }
 
     public void Active()
-    {
+    {   
         if (initflag) return;
         initflag = true;
 
@@ -279,5 +279,10 @@ public class ResultUI : MonoBehaviour
     public int TotalScore()
     {
        return totalscore;
+    }
+
+    public bool rankflag()
+    {
+        return initflag;
     }
 }

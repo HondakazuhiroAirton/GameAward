@@ -76,7 +76,7 @@ public class Fade : MonoBehaviour
     public void GameStart()
     {
         isFadeOut = true;
-        changeSceneName = "master Suzu";
+        changeSceneName = "Master";
     }
 
     public void GameSelect()

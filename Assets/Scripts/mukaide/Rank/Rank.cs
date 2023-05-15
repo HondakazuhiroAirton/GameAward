@@ -44,13 +44,13 @@ public class Rank : MonoBehaviour
 
     //ここでスコアを持ってくるオブジェクト取得
     [SerializeField]
-   // GameObject Obj;
+    GameObject Obj;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Obj = GameObject.Find("Result");
-        //Resulte = Obj.GetComponent<ResultUI>();
+        Obj = GameObject.Find("Result");
+        Resulte = Obj.GetComponent<ResultUI>();
     }
 
     void Awake()
@@ -88,11 +88,14 @@ public class Rank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
-        //デバック用
-        if(Input.GetKeyDown("q"))
+
+        if (Resulte.rankflag() == true)
         {
-            rankpanel();
+            //デバック用
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                rankpanel();
+            }
         }
 
     }
@@ -138,8 +141,7 @@ public class Rank : MonoBehaviour
     public void rankpanel()
     {
             //合計をもって来る
-            // FainalScore = Resulte.TotalScore();
-            FainalScore = 20;
+            FainalScore = Resulte.TotalScore();
 
             ranktxal = 1.0f;
             ranktx.GetComponent<TextMeshProUGUI>().color += new Color(0, 0, 0, ranktxal);
