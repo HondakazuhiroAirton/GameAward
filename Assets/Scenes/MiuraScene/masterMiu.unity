@@ -1699,12 +1699,12 @@ PrefabInstance:
     - target: {fileID: 9076612687466192049, guid: f04cdab2448d55042827a13377fabfda,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.23
+      value: -7.16
       objectReference: {fileID: 0}
     - target: {fileID: 9076612687466192049, guid: f04cdab2448d55042827a13377fabfda,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.94
+      value: -2.71
       objectReference: {fileID: 0}
     - target: {fileID: 9076612687466192049, guid: f04cdab2448d55042827a13377fabfda,
         type: 3}
@@ -2903,22 +2903,52 @@ PrefabInstance:
     - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
         type: 3}
       propertyPath: Lv0_Scale
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
         type: 3}
       propertyPath: Lv1_Scale
-      value: 0.75
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
+        type: 3}
+      propertyPath: Lv2_Scale
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
+        type: 3}
+      propertyPath: Lv3_Scale
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
+        type: 3}
+      propertyPath: Lv4_Scale
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
         type: 3}
       propertyPath: Lv0_Distance
-      value: 1
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
         type: 3}
       propertyPath: Lv1_Distance
-      value: 1.25
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
+        type: 3}
+      propertyPath: Lv2_Distance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
+        type: 3}
+      propertyPath: Lv3_Distance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
+        type: 3}
+      propertyPath: Lv4_Distance
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8758725659647766880, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
         type: 3}

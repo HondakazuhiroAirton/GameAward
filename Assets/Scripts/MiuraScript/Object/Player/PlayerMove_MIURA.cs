@@ -40,6 +40,9 @@ public class PlayerMove_MIURA : MonoBehaviour
     public bool Right;
     public bool Left;
 
+    // ビームのインターバル
+    public int Interbal = 60;
+
     // privateゾーン*************************************************************
     // ビームの1段階の時間*************************
     private int OneChargeFrame;
@@ -99,6 +102,9 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     // 巨大ビームプレハブ格納
     private GameObject BigBeamPrefabs;
+
+    // ビームのインターバルのマックス値
+    private int interbalMax;
 
     // このオブジェクトのアニメーター
     [SerializeField]Animator animator;
@@ -201,6 +207,9 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         //ビーム残量を100 % に設定
         PlayerClassScript.SetAmount(100);
+
+        // ビームのインターバルのマックス値を保存
+        interbalMax = Interbal;
 
         //ゲームパッド
         input = this.GetComponent<PlayerInput>();
@@ -391,6 +400,9 @@ public class PlayerMove_MIURA : MonoBehaviour
         // アニメーター通常状態はFalse
         animator.SetBool("fCharge", false);
 
+        // インターバルの時間を減らす
+        Interbal--;
+
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space) || _isPressed == true) // キーコードは変更してね(*^^*)
         {
@@ -437,8 +449,11 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space)) // Downと同じキーコードにしてね
+        if (Input.GetKeyUp(KeyCode.Space) && (Interbal <= 0) ) // Downと同じキーコードにしてね
         {
+            // インターバルを設定する
+            Interbal = interbalMax;
+
             // チャージエフェクトストップ
             beamChargeScript.Stop();
 
