@@ -13,21 +13,20 @@ public class Score : MonoBehaviour
     void Start()
     {
         this.textComponent = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
-        this.textComponent.text = "Score: " + score.ToString();
+        this.textComponent.text = score.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    
+
 
     }
 
     public void AddScore()
     {
         this.score += 10;
-        this.textComponent.text = "Score: " + score.ToString();
+        this.textComponent.text = score.ToString();
     }
 
     public int ResultScore()
