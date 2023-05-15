@@ -5,24 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Master/Scene/mTitleScene.unity
-    guid: 283278191c225e44596bd5cfd053b8b3
-  - enabled: 0
-    path: Assets/Master/Scene/mSelectScene.unity
-    guid: e5515e87cf2643147a0d0a55d8ac115a
-  - enabled: 0
-    path: Assets/Master/Scene/mGameScene.unity
-    guid: 11fbc3d479608a343ad8761006be919f
   - enabled: 1
     path: Assets/Scenes/nagaya/nagaya.unity
     guid: cd5a482316f4d5e419ca58d1c136b97c
   - enabled: 1
     path: Assets/Master/Scene/Debug/Master.unity
     guid: a9addbfbf3f43a6478ba169870eac209
-  - enabled: 0
-    path: Assets/Scenes/Suzumura/master Suzu.unity
-    guid: c46582250d14ab347bc6e8516cd242e4
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 4b7275ce2943e7048acaea11c3ca8283,
       type: 2}
