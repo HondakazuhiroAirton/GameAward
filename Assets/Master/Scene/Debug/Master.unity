@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00044300355, g: 0.0022189596, b: 0.011158503, a: 1}
+  m_IndirectSpecularColor: {r: 0.00029039412, g: 0.0014342034, b: 0.0071564782, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -255,6 +255,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 429766623}
     m_Modifications:
+    - target: {fileID: 5646808239828452945, guid: 0b0e221df4e896b4e81eccc4282b89d5,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5646808239828452947, guid: 0b0e221df4e896b4e81eccc4282b89d5,
         type: 3}
       propertyPath: m_Name
@@ -1051,6 +1056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 458388763}
   BigBeamAmount: 2
+  hit: 0.1
 --- !u!114 &458388763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1560,6 +1566,130 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &751610575
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275342, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_Name
+      value: Rank
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275342, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35774482aafbbc94fa301ddf3d42e8f0, type: 3}
 --- !u!1 &755123970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,6 +3084,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hari: {fileID: 261611853}
+  slider: {fileID: 0}
+  sliderimage: {fileID: 0}
   add: 0
   Obj: {fileID: 975235403}
 --- !u!1 &1571532021
