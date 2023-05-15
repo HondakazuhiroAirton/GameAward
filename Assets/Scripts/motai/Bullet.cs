@@ -5,6 +5,8 @@ using Effekseer;
 public class Bullet : MonoBehaviour
 {
     GameObject PD;
+    GameObject LeftSolar;
+    GameObject RightSolar;
     GameObject objects;
     beamlife PlayerClasslife;
     [SerializeField] GameObject player;
@@ -32,6 +34,11 @@ public class Bullet : MonoBehaviour
         PlayerClasslife = PD.GetComponent<beamlife>();
 
         player = GameObject.Find("Player");
+
+        RightSolar = GameObject.Find("RightSolar");
+        
+
+        LeftSolar = GameObject.Find("LeftSolar");
 
         if (player != null)
         {
@@ -83,11 +90,13 @@ public class Bullet : MonoBehaviour
 
                 PlayerClasslife.SetLife(LifePoint);
 
+                Destroy(LeftSolar);
             }
             else
             {
                 Destroy(other.gameObject);
             }
+
 
         }
     }
