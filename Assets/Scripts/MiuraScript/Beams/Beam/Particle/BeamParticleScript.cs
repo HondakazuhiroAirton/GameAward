@@ -210,10 +210,6 @@ public class BeamParticleScript : MonoBehaviour
 
     public void BeamEffect()
     {
-        // エフェクトの角度
-
-
-        
         //エフェクシアのエフェクトもらう
         //transformの位置でエフェクトを再生する
         //場所指定
@@ -224,6 +220,9 @@ public class BeamParticleScript : MonoBehaviour
         //角度指定
         handle.SetRotation(EffectRot);
     }
+
+
+    // コンボ数表示関数
 
 
 }

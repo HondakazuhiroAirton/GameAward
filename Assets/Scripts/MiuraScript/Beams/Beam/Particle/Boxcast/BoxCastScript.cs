@@ -37,6 +37,12 @@ public class BoxCastScript : MonoBehaviour
     // パーティクルの移動量(Vector x Speed)を取得
     public Vector3 moveDir;
 
+    // コンボテキスト表示プレハブ
+    public GameObject ComboTxt;
+
+    // キャンバス取得
+    public GameObject Canvas;
+
     // 現在の状態保存(大きくなる状態か/小さくなる状態か)
     public State NowState;
 
@@ -79,6 +85,9 @@ public class BoxCastScript : MonoBehaviour
 
         // BeamParticleの長さを取得する
         BeamMax = BeamParticleScript.BeamMax;
+
+        // キャンバス取得
+        Canvas = GameObject.Find("Canvas");
     }
 
     void Update()
@@ -191,6 +200,15 @@ public class BoxCastScript : MonoBehaviour
 
             // コンボ数を1増やす
             BeamParticleScript.combo++;
+
+            // 生み出す
+            var instance = Instantiate
+                           (ComboTxt, 
+                           Camera.main.WorldToScreenPoint(obj.transform.position),
+                           Quaternion.identity, Canvas.transform);
+
+            // 表示うまくいかないよぉ～～～～～～～～～～～！！！！！！！！！！
+            //instance.GetComponent<CombText>().SetComboText(BeamParticleScript.combo);
 
         }
 
