@@ -12,28 +12,6 @@ public class PlayerMove_MIURA : MonoBehaviour
     // ビームの最大溜め時間*************************
     public float MaxChargeTime = 8;// 少数第2位まで入力されると怪しい
 
-    // ビームの情報達(public嵐)********************************
-    // Lv0
-    public float Lv0_Scale;
-    public float Lv0_Distance;
-    public float Lv0_Use;
-    // Lv1
-    public float Lv1_Scale;
-    public float Lv1_Distance;
-    public float Lv1_Use;
-    // Lv2
-    public float Lv2_Scale;
-    public float Lv2_Distance;
-    public float Lv2_Use; 
-    // Lv3
-    public float Lv3_Scale;
-    public float Lv3_Distance;
-    public float Lv3_Use;
-    // Lv4
-    public float Lv4_Scale;
-    public float Lv4_Distance;
-    public float Lv4_Use;
-
     //ワープフラグ用
     public bool Up;
     public bool Down;
@@ -77,6 +55,27 @@ public class PlayerMove_MIURA : MonoBehaviour
     private Vector3 pos; // プレイヤーのポジション取得
     private Vector3 Scale; // プレイヤーの大きさ取得
 
+    // ビームの情報達
+    // Lv0
+    private float Lv0_Scale;
+    private float Lv0_Distance;
+    private float Lv0_Use;
+    // Lv1
+    private float Lv1_Scale;
+    private float Lv1_Distance;
+    private float Lv1_Use;
+    // Lv2
+    private float Lv2_Scale;
+    private float Lv2_Distance;
+    private float Lv2_Use;
+    // Lv3
+    private float Lv3_Scale;
+    private float Lv3_Distance;
+    private float Lv3_Use;
+    // Lv4
+    private float Lv4_Scale;
+    private float Lv4_Distance;
+    private float Lv4_Use;
 
     // ビームの情報達********************************
     // プレイヤーデータ保存用オブジェクト取得
@@ -107,7 +106,7 @@ public class PlayerMove_MIURA : MonoBehaviour
     private int interbalMax;
 
     // このオブジェクトのアニメーター
-    [SerializeField]Animator animator;
+    private Animator animator;
 
     //********************************************************************************
 
@@ -208,6 +207,27 @@ public class PlayerMove_MIURA : MonoBehaviour
         //ビーム残量を100 % に設定
         PlayerClassScript.SetAmount(100);
 
+        // ビーム初期化
+        Lv0_Scale = 0.4f;
+        Lv0_Distance = 1.8f;
+        Lv0_Use = 3.0f;
+
+        Lv1_Scale = 0.5f;
+        Lv1_Distance = 2.0f;
+        Lv1_Use = 5.0f;
+
+        Lv2_Scale = 0.8f;
+        Lv2_Distance = 3.0f;
+        Lv2_Use = 8.0f;
+
+        Lv3_Scale = 1.2f;
+        Lv3_Distance = 4.0f;
+        Lv3_Use = 15.0f;
+
+        Lv4_Scale = 1.5f;
+        Lv4_Distance = 5.0f;
+        Lv4_Use = 30.0f;
+
         // ビームのインターバルのマックス値を保存
         interbalMax = Interbal;
 
@@ -225,7 +245,6 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     void Update()
     {
-
         //プレイヤーの座標取得
         pos = this.gameObject.transform.position;
         //プレイヤーのスケール取得

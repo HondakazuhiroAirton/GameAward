@@ -9,6 +9,8 @@ using Effekseer;
 public class BeamParticleScript : MonoBehaviour
 {
     //publicゾーン***********************************************************
+    // コンボ数
+    public int combo;
 
     // ゲーム中の変数属性***********************
     // 移動する角度

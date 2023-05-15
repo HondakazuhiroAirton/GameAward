@@ -22,6 +22,9 @@ public class BoxCastScript : MonoBehaviour
     // BeamParticle取得
     public GameObject BeamParticle;
 
+    // BeamParticleのスクリプト取得
+    public BeamParticleScript BeamParticleScript;
+
     // パーティクルの位置取得
     public Vector3 ParticlePosition;
 
@@ -68,11 +71,14 @@ public class BoxCastScript : MonoBehaviour
         // BeamParticleオブジェクトを取得Managerから見て1番上の子
         BeamParticle = ParticleManager.transform.GetChild(0).gameObject;
 
+        // BeamParticleのスクリプトを取得
+        BeamParticleScript = BeamParticle.GetComponent<BeamParticleScript>();
+
         // BeamParticleのスピードを取得する
-        moveDir = BeamParticle.GetComponent<BeamParticleScript>().moveDir;
+        moveDir = BeamParticleScript.moveDir;
 
         // BeamParticleの長さを取得する
-        BeamMax = BeamParticle.GetComponent<BeamParticleScript>().BeamMax;
+        BeamMax = BeamParticleScript.BeamMax;
     }
 
     void Update()
@@ -182,7 +188,10 @@ public class BoxCastScript : MonoBehaviour
             Debug.Log("あたったよ");
             // インターフェスで渡して
             hitObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
-            
+
+            // コンボ数を1増やす
+            BeamParticleScript.combo++;
+
         }
 
 
