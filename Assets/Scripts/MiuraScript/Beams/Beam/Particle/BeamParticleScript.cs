@@ -71,6 +71,9 @@ public class BeamParticleScript : MonoBehaviour
     // エフェクトの回転計算
     private Quaternion EffectRot;
 
+    // Updateのエフェクト表示回数制御
+    private int effectCount; 
+
     // 当たり判定の拡大率を保存
     // private float xCollisionSize = 1.0f;
 
@@ -102,33 +105,45 @@ public class BeamParticleScript : MonoBehaviour
         // Beamの大きさに応じてswitchかけて大きさ調整
         effect = new EffekseerEffectAsset[5];
 
-        effect[0] = Resources.Load<EffekseerEffectAsset>("beam1");
-        effect[1] = Resources.Load<EffekseerEffectAsset>("beam2");
-        effect[2] = Resources.Load<EffekseerEffectAsset>("beam3");
-        effect[3] = Resources.Load<EffekseerEffectAsset>("beam4");
-        effect[4] = Resources.Load<EffekseerEffectAsset>("beam5");
+        effect[0] = Resources.Load<EffekseerEffectAsset>("beam0");
+        effect[1] = Resources.Load<EffekseerEffectAsset>("beam1");
+        effect[2] = Resources.Load<EffekseerEffectAsset>("beam2");
+        effect[3] = Resources.Load<EffekseerEffectAsset>("beam3");
+        effect[4] = Resources.Load<EffekseerEffectAsset>("beam4");
         // transformの位置でエフェクトを再生する
 
 
         handle = EffekseerSystem.PlayEffect(effect[NowBeamLevel], transform.position);
         // tramsformの回転を設定する
         EffectRot = Quaternion.Euler(0 , 0 , PlayerAngle);
-        Debug.Log(PlayerAngle);
 
-        handle.SetRotation(EffectRot);
-
+        //handle.SetRotation(EffectRot);
+        effectCount = 0;
     }
 
     void Update()
     {
         // 移動処理
         transform.position += moveDir;
-        //エフェクシアのエフェクトもらう
-        //transformの位置でエフェクトを再生する
-        //場所指定
-        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect[NowBeamLevel], transform.position);
-        //角度指定
-        handle.SetRotation(EffectRot);
+
+        // 表示回数制御処理
+        switch (NowBeamLevel)
+        {
+            case 0: // ビームが全然溜まってない時 5回に1回呼ぶ
+                effectCount++;
+                if (effectCount >= 3)
+                {
+                    BeamEffect();
+                    effectCount = 0;
+                }
+                break;
+            
+            default:
+                BeamEffect();
+
+                break;
+        }
+
     }
 
     public void CollisionEvent(GameObject obj)
@@ -165,7 +180,7 @@ public class BeamParticleScript : MonoBehaviour
 
 
                 // エフェクト角度も更新する
-                PlayerAngle = Angle;
+                PlayerAngle = Angle - 270;
 
                 // 前もってプレハブの大きさを変更しておく
                 BeamBoxCastReflect.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
@@ -190,6 +205,25 @@ public class BeamParticleScript : MonoBehaviour
     {
      
     }
+
+    public void BeamEffect()
+    {
+        // エフェクトの角度
+
+
+        
+        //エフェクシアのエフェクトもらう
+        //transformの位置でエフェクトを再生する
+        //場所指定
+        EffekseerHandle handle = EffekseerSystem.PlayEffect(effect[NowBeamLevel], transform.position);
+
+        // tramsformの回転を設定する
+        EffectRot = Quaternion.Euler(0, 0, PlayerAngle);
+        //角度指定
+        handle.SetRotation(EffectRot);
+    }
+
+
 }
 
 // 0301 三浦瞬
