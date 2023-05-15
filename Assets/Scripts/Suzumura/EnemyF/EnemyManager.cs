@@ -71,64 +71,64 @@ public class EnemyManager : MonoBehaviour
         switch (nextStageNo)
         {
             case StageNo.Stage1_1:
-                textasset = Resources.Load("CSV/Enemy11", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy11", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage1_2:
-                textasset = Resources.Load("CSV/Enemy12", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy12", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage1_3:
-                textasset = Resources.Load("CSV/Enemy13", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy13", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage1_4:
-                textasset = Resources.Load("CSV/Enemy14", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy14", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage1_5:
-                textasset = Resources.Load("CSV/Enemy15", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy15", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage2_1:
-                textasset = Resources.Load("CSV/Enemy21", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy21", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage2_2:
-                textasset = Resources.Load("CSV/Enemy22", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy22", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage2_3:
-                textasset = Resources.Load("CSV/Enemy23", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy23", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage2_4:
-                textasset = Resources.Load("CSV/Enemy24", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy24", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage2_5:
-                textasset = Resources.Load("CSV/Enemy25", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy25", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage3_1:
-                textasset = Resources.Load("CSV/Enemy31", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy31", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage3_2:
-                textasset = Resources.Load("CSV/Enemy32", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy32", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage3_3:
-                textasset = Resources.Load("CSV/Enemy33", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy33", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage3_4:
-                textasset = Resources.Load("CSV/Enemy34", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy34", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage3_5:
-                textasset = Resources.Load("CSV/Enemy35", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy35", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage4_1:
-                textasset = Resources.Load("CSV/Enemy41", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy41", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage4_2:
-                textasset = Resources.Load("CSV/Enemy42", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy42", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage4_3:
-                textasset = Resources.Load("CSV/Enemy43", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy43", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage4_4:
-                textasset = Resources.Load("CSV/Enemy44", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy44", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage4_5:
-                textasset = Resources.Load("CSV/Enemy45", typeof(TextAsset)) as TextAsset;
+                textasset = Resources.Load("CSV/enemy45", typeof(TextAsset)) as TextAsset;
                 break;
         }
         // CSVSerializerを用いてcsvファイルを配列に流し込む
