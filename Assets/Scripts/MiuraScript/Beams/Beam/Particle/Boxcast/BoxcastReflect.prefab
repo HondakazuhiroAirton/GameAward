@@ -112,10 +112,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParticleManager: {fileID: 0}
   BeamParticle: {fileID: 0}
+  BeamParticleScript: {fileID: 0}
   ParticlePosition: {x: 0, y: 0, z: 0}
   BeamMax: 3
   ParticleVector: {x: 0, y: 0, z: 0}
   moveDir: {x: 0, y: 0, z: 0}
+  ComboTxt: {fileID: 2274244689255845473, guid: fb14891fcb825264ab66a225e87d2ba5,
+    type: 3}
   NowState: 0
   ChildNo: 2
   LayerMask:
