@@ -58,7 +58,7 @@ public class ButtonTitle : MonoBehaviour
 
     public void ButtonRedo()
     {
-        Image.GetComponent<Fade>().GameStart();
+        Image.GetComponent<Fade>().GameSelect();
     }
 
     public void ButtonContinue()

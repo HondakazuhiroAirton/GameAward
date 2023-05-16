@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e85a7fd7c363855459211e5a52e8333b
+=======
+guid: 65c43df8439d81744b59692152c0350c
+>>>>>>> feature/mukaide
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
