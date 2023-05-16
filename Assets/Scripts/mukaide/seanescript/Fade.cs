@@ -82,7 +82,7 @@ public class Fade : MonoBehaviour
     public void GameSelect()
     {
         isFadeOut = true;
-        changeSceneName = "nagayacopy";     // 5/10•ÏX
+        changeSceneName = "nagaya";     // 5/10•ÏX
     }
 
     public void GameTitle()
