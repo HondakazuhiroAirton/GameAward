@@ -19,7 +19,7 @@ public class life : MonoBehaviour
         //// animatorコンポーネントを取得
         //LeftSolar = GameObject.Find("LeftSolar");
         //Animator animator = LeftSolar.GetComponent<Animator>();
-        ////animator.SetBool("LeftSolarflag", false);
+        //animator.SetBool("LeftSolarflag", false);
 
         
         //animator = GetComponent<Animator>();

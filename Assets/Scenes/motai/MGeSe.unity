@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0005611905, g: 0.0030211566, b: 0.014874541, a: 1}
+  m_IndirectSpecularColor: {r: 0.00033639057, g: 0.0016520579, b: 0.008232928, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4202,7 +4202,7 @@ MonoBehaviour:
     type: 3}
   StageManager: {fileID: 1496574426765086258, guid: 5727deeba03c5094ca4b92b34fb4b047,
     type: 3}
-  NextStage: 0
+  NextStage: 1
   changeStage: 0
 --- !u!4 &1637123873
 Transform:
