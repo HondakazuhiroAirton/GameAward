@@ -172,9 +172,7 @@ public class BoxCastScript : MonoBehaviour
                 }
 
                 break;
-
                 
-
         }
 
 
@@ -208,7 +206,7 @@ public class BoxCastScript : MonoBehaviour
                            Quaternion.identity, Canvas.transform);
 
             // ï\é¶Ç§Ç‹Ç≠Ç¢Ç©Ç»Ç¢ÇÊÇßÅ`Å`Å`Å`Å`Å`Å`Å`Å`Å`Å`ÅIÅIÅIÅIÅIÅIÅIÅIÅIÅI
-            //instance.GetComponent<CombText>().SetComboText(BeamParticleScript.combo);
+            instance.GetComponent<CombText>().SetComboText(BeamParticleScript.combo);
 
         }
 
@@ -224,7 +222,6 @@ public class BoxCastScript : MonoBehaviour
         Gizmos.DrawRay(transform.position, ParticleVector * maxDistance);
         // Ç‘Ç¬Ç©Ç¡ÇΩÇ∆Ç±ÇÎÇ…BoxÇìØÇ∂ëÂÇ´Ç≥Ç≈ï`Ç≠
         Gizmos.DrawWireCube(transform.position + ParticleVector * maxDistance, Vector3.one * scale * 2);
-
     }
 
     //public void CollisionEvent(GameObject obj)

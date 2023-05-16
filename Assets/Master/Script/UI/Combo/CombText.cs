@@ -9,12 +9,16 @@ public class CombText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        meshPro = GetComponent<TextMeshProUGUI>();
-        SetComboText(5);
+        
     }
 
     public void SetComboText(int val)
     {
         meshPro.text = val + "Combo!";
+    }
+
+    private void Awake()
+    {
+        meshPro = GetComponent<TextMeshProUGUI>();
     }
 }
