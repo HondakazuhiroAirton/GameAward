@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00044300355, g: 0.0022189596, b: 0.011158503, a: 1}
+  m_IndirectSpecularColor: {r: 0.00029039412, g: 0.0014342034, b: 0.0071564782, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -255,6 +255,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 429766623}
     m_Modifications:
+    - target: {fileID: 5646808239828452945, guid: 0b0e221df4e896b4e81eccc4282b89d5,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5646808239828452947, guid: 0b0e221df4e896b4e81eccc4282b89d5,
         type: 3}
       propertyPath: m_Name
@@ -494,6 +499,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 429766623}
     m_Modifications:
+    - target: {fileID: 2148709097209536533, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148709097209536533, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fc084d86dafe03f46afc4fbf75a56142,
+        type: 3}
+    - target: {fileID: 2148709097209536533, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.9411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148709097209536533, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148709097209536533, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148709097209536533, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2148709098092456014, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -612,6 +648,11 @@ PrefabInstance:
     - target: {fileID: 2148709098092456014, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148709098092456016, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2148709098092456018, guid: f9e7d65dbdc72ce478b0459635ec9ec4,
@@ -1051,6 +1092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 458388763}
   BigBeamAmount: 2
+  hit: 0.1
 --- !u!114 &458388763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2954,6 +2996,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hari: {fileID: 261611853}
+  slider: {fileID: 0}
+  sliderimage: {fileID: 0}
   add: 0
   Obj: {fileID: 975235403}
 --- !u!1 &1571532021
