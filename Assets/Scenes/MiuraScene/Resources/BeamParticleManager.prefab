@@ -119,6 +119,7 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0, z: 0}
   ComboTxt: {fileID: 2274244689255845473, guid: fb14891fcb825264ab66a225e87d2ba5,
     type: 3}
+  Canvas: {fileID: 0}
   NowState: 0
   ChildNo: 1
   LayerMask:

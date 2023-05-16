@@ -194,7 +194,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         // BeamParticle取得
         BeamParticleManager = BeamParticleManagerPrefab.gameObject.transform.GetChild(0).gameObject;
-        // BeamEffectScriptをキャッシ
+        // BeamEffectScriptをキャッシュ
         script = BeamParticleManager.GetComponent<BeamParticleScript>();
 
         // ビーム残量へのアクセス
@@ -421,6 +421,10 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         // インターバルの時間を減らす
         Interbal--;
+        if (Interbal < 0)// インターバルが0以下になったら補正する
+        {
+            Interbal = 0;
+        }
 
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space) || _isPressed == true) // キーコードは変更してね(*^^*)
