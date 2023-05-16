@@ -1634,6 +1634,7 @@ MonoBehaviour:
   world: {fileID: 1285690579}
   Stage4: {fileID: 303111490}
   Sel: {fileID: 1603474957}
+  SE: {fileID: 0}
 --- !u!1 &461005918
 GameObject:
   m_ObjectHideFlags: 0
@@ -3496,6 +3497,7 @@ MonoBehaviour:
   Stage1UI: {fileID: 786746282}
   Sel: {fileID: 1603474957}
   NowPosition: 1
+  SE: {fileID: 0}
 --- !u!1 &802053448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6136,6 +6138,7 @@ MonoBehaviour:
   world: {fileID: 575199580}
   Stage2: {fileID: 1294797908}
   Sel: {fileID: 1603474957}
+  SE: {fileID: 0}
 --- !u!1 &1328244945
 GameObject:
   m_ObjectHideFlags: 0
@@ -7486,6 +7489,7 @@ MonoBehaviour:
   world: {fileID: 1745912097}
   Stage3: {fileID: 1717826960}
   Sel: {fileID: 1603474957}
+  SE: {fileID: 0}
 --- !u!1 &1745912095
 GameObject:
   m_ObjectHideFlags: 0
