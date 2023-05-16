@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -11,6 +12,9 @@ public class EnemyManager : MonoBehaviour
 
     // CSVのデータを流し込む配列
     [SerializeField] public static EnemyData[] enemyData;
+
+    // テキストファイルの読み込みを行ってくれるクラス
+    TextAsset textasset;
 
     // StageChangerオブジェクト
     public GameObject StageChanger;
@@ -46,14 +50,13 @@ public class EnemyManager : MonoBehaviour
     private int CurrentPhase;               // 現在のフェーズ
 
     // 作るエネミーの番号
-    [SerializeField]private static int EnemyIdx;
-
+    [SerializeField] private static int EnemyIdx;
 
     // Start is called before the first frame update
     void Start()
     {
         // テキストファイルの読み込みを行ってくれるクラス
-        TextAsset textasset = new TextAsset();
+        textasset = new TextAsset();
 
         // 親のオブジェクト(StageChanger)を取得
         StageChanger = this.transform.root.gameObject;
@@ -71,68 +74,68 @@ public class EnemyManager : MonoBehaviour
         switch (nextStageNo)
         {
             case StageNo.Stage1_1:
-                textasset = Resources.Load("CSV/enemy11", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy11"));
+                //元のリソースロードを使った方法
+                //textasset = Resources.Load("CSV/enemy11", typeof(TextAsset)) as TextAsset;
                 break;
             case StageNo.Stage1_2:
-                textasset = Resources.Load("CSV/enemy12", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy12"));
                 break;
             case StageNo.Stage1_3:
-                textasset = Resources.Load("CSV/enemy13", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy13"));
                 break;
             case StageNo.Stage1_4:
-                textasset = Resources.Load("CSV/enemy14", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy14"));
                 break;
             case StageNo.Stage1_5:
-                textasset = Resources.Load("CSV/enemy15", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy15"));
                 break;
             case StageNo.Stage2_1:
-                textasset = Resources.Load("CSV/enemy21", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy21"));
                 break;
             case StageNo.Stage2_2:
-                textasset = Resources.Load("CSV/enemy22", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy22"));
                 break;
             case StageNo.Stage2_3:
-                textasset = Resources.Load("CSV/enemy23", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy23"));
                 break;
             case StageNo.Stage2_4:
-                textasset = Resources.Load("CSV/enemy24", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy24"));
                 break;
             case StageNo.Stage2_5:
-                textasset = Resources.Load("CSV/enemy25", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy25"));
                 break;
             case StageNo.Stage3_1:
-                textasset = Resources.Load("CSV/enemy31", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy31"));
                 break;
             case StageNo.Stage3_2:
-                textasset = Resources.Load("CSV/enemy32", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy32"));
                 break;
             case StageNo.Stage3_3:
-                textasset = Resources.Load("CSV/enemy33", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy33"));
                 break;
             case StageNo.Stage3_4:
-                textasset = Resources.Load("CSV/enemy34", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy34"));
                 break;
             case StageNo.Stage3_5:
-                textasset = Resources.Load("CSV/enemy35", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy35"));
                 break;
             case StageNo.Stage4_1:
-                textasset = Resources.Load("CSV/enemy41", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy41"));
                 break;
             case StageNo.Stage4_2:
-                textasset = Resources.Load("CSV/enemy42", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy42"));
                 break;
             case StageNo.Stage4_3:
-                textasset = Resources.Load("CSV/enemy43", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy43"));
                 break;
             case StageNo.Stage4_4:
-                textasset = Resources.Load("CSV/enemy44", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy44"));
                 break;
             case StageNo.Stage4_5:
-                textasset = Resources.Load("CSV/enemy45", typeof(TextAsset)) as TextAsset;
+                StartCoroutine(AddressableLoad("enemy45"));
                 break;
         }
-        // CSVSerializerを用いてcsvファイルを配列に流し込む
-        enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
 
         // SpriteRendererの初期化
         Sprite = GetComponent<SpriteRenderer>();
@@ -140,15 +143,6 @@ public class EnemyManager : MonoBehaviour
         appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
         PhaseUI = GameObject.Find("PhaseGroup");
         phase = PhaseUI.GetComponent<PhaseManager>();
-
-        // 初期設定
-        for (i = 0; i < element; i++)
-        {
-            enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
-            enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
-            enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
-            enemyData[i].Step = 0;
-        }
 
         // ビューポート取得(敵が消える境目、少し広く取っている)
         ViewportLB = Camera.main.ViewportToWorldPoint(new Vector3(-0.1f, -0.1f));
@@ -163,188 +157,191 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnRealTime += Time.deltaTime;    // 現在時間
-        PhaseTransition = true;
-        for (i = 0; i < element; i++)
+        if (textasset != null)      // CSVファイルを読み込めるまでUpdateは行わない
         {
-            // 敵が削除されていた場合はスキップ           ↓削除ステート
-            if (enemy[i] == null && enemyData[i].State == -1) continue;
-
-            // 現在のフェーズに出現する敵だけを出す
-            if (CurrentPhase != (int)enemyData[i].phase) continue;
-
-            // 敵出現時の共通処理
-            if (enemyData[i].State != 0)
+            spawnRealTime += Time.deltaTime;    // 現在時間
+            PhaseTransition = true;
+            for (i = 0; i < element; i++)
             {
-                enemyData[i].prevPosition = enemy[i].transform.position;    // 前フレームのワールド位置をとっておく
-                enemyData[i].Duration += Time.deltaTime;                    // 経過時間を取得
-            }
+                // 敵が削除されていた場合はスキップ           ↓削除ステート
+                if (enemy[i] == null && enemyData[i].State == -1) continue;
 
-            // 敵未出現
-            if (enemyData[i].State == 0)
-            {
-                // 時間になったら敵登場
-                if (spawnRealTime >= enemyData[i].AppearanceTime)
+                // 現在のフェーズに出現する敵だけを出す
+                if (CurrentPhase != (int)enemyData[i].phase) continue;
+
+                // 敵出現時の共通処理
+                if (enemyData[i].State != 0)
                 {
-                    SpawnNewEnemy(i);
-                    enemyData[i].State = SetState(i);
-                    enemyData[i].Duration = 0.0f;
+                    enemyData[i].prevPosition = enemy[i].transform.position;    // 前フレームのワールド位置をとっておく
+                    enemyData[i].Duration += Time.deltaTime;                    // 経過時間を取得
                 }
-            }
-            // 敵出現
-            // 1:Slerpによる二点間の球形移動
-            else if (enemyData[i].State == 1)
-            {
-                //二点間の距離を代入(スピード調整に使う)
-                enemyData[i].distance_two = Vector3.Distance(
-                    new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                    enemyData[i].target1
-                    );
 
-                // 現在の位置
-                enemyData[i].PresentLocation = (enemyData[i].Duration * 5) / enemyData[i].distance_two;
-
-                // 移動
-                enemy[i].transform.position = Vector3.Slerp(
-                    new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                    enemyData[i].target1,
-                    enemyData[i].PresentLocation
-                    );
-                //enemy[i].transform.Rotate(0f, 1.0f, 0f);      // おあそび
-
-                // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
-
-                // positionの値を四捨五入(現在は調整不要？)
-                //Vector3 roundposition;
-                //roundposition.x = Mathf.Round(enemy[i].transform.position.x);
-                //roundposition.y = Mathf.Round(enemy[i].transform.position.y);
-                //roundposition.z = Mathf.Round(enemy[i].transform.position.z);
-
-                // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyData[i].target1)
+                // 敵未出現
+                if (enemyData[i].State == 0)
                 {
-                    enemyData[i].State = SetState(i);
-                    enemyData[i].Duration = 0;
+                    // 時間になったら敵登場
+                    if (spawnRealTime >= enemyData[i].AppearanceTime)
+                    {
+                        SpawnNewEnemy(i);
+                        enemyData[i].State = SetState(i);
+                        enemyData[i].Duration = 0.0f;
+                    }
                 }
-            }
-            // 2:円を描く
-            else if (enemyData[i].State == 2)
-            {
-                // 移動
-                enemy[i].transform.RotateAround(
-                    new Vector3(enemyData[i].target1.x - 1.0f, enemyData[i].target1.y, enemyData[i].target1.z),
-                    Vector3.forward,        // Z軸
-                    Time.deltaTime * angle
-                    );
-
-                // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
-
-                // 2周したら次の動きに移行
-                if (enemyData[i].Duration * angle >= 720.0f)
+                // 敵出現
+                // 1:Slerpによる二点間の球形移動
+                else if (enemyData[i].State == 1)
                 {
-                    enemyData[i].State = SetState(i);
-                    enemyData[i].Duration = 0;
+                    //二点間の距離を代入(スピード調整に使う)
+                    enemyData[i].distance_two = Vector3.Distance(
+                        new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
+                        enemyData[i].target1
+                        );
+
+                    // 現在の位置
+                    enemyData[i].PresentLocation = (enemyData[i].Duration * 5) / enemyData[i].distance_two;
+
+                    // 移動
+                    enemy[i].transform.position = Vector3.Slerp(
+                        new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
+                        enemyData[i].target1,
+                        enemyData[i].PresentLocation
+                        );
+                    //enemy[i].transform.Rotate(0f, 1.0f, 0f);      // おあそび
+
+                    // 進行方向に向きを変える
+                    enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                    // positionの値を四捨五入(現在は調整不要？)
+                    //Vector3 roundposition;
+                    //roundposition.x = Mathf.Round(enemy[i].transform.position.x);
+                    //roundposition.y = Mathf.Round(enemy[i].transform.position.y);
+                    //roundposition.z = Mathf.Round(enemy[i].transform.position.z);
+
+                    // 指定場所についたら次の動きに移行
+                    if (enemy[i].transform.position == enemyData[i].target1)
+                    {
+                        enemyData[i].State = SetState(i);
+                        enemyData[i].Duration = 0;
+                    }
                 }
-            }
-            // 3:MoveTowardsで目標位置に
-            else if (enemyData[i].State == 3)
-            {
-                // 移動
-                enemy[i].transform.position = Vector3.MoveTowards(
-                   enemy[i].transform.position,
-                   new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 8
-                   );
-
-                // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
-
-                // 一定時間経過で次の動きに移行
-                if (enemyData[i].Duration >= 10.0f)
+                // 2:円を描く
+                else if (enemyData[i].State == 2)
                 {
-                    enemyData[i].State = SetState(i);
-                    enemyData[i].Duration = 0;
+                    // 移動
+                    enemy[i].transform.RotateAround(
+                        new Vector3(enemyData[i].target1.x - 1.0f, enemyData[i].target1.y, enemyData[i].target1.z),
+                        Vector3.forward,        // Z軸
+                        Time.deltaTime * angle
+                        );
+
+                    // 進行方向に向きを変える
+                    enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                    // 2周したら次の動きに移行
+                    if (enemyData[i].Duration * angle >= 720.0f)
+                    {
+                        enemyData[i].State = SetState(i);
+                        enemyData[i].Duration = 0;
+                    }
                 }
-            }
-            // 4:敵が逃げていく
-            else if (enemyData[i].State == 4)
-            {
-                // 移動
-                enemy[i].transform.position = Vector3.MoveTowards(
-                   enemy[i].transform.position,
-                   new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                   Time.deltaTime * 8
-                   );
-
-                // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
-
-                // 画面外に逃げたら削除
-                if (enemy[i].transform.position.x <= ViewportLB.x ||
-                    enemy[i].transform.position.x >= ViewportRT.x ||
-                    enemy[i].transform.position.y <= ViewportLB.y ||
-                    enemy[i].transform.position.y >= ViewportRT.y)
+                // 3:MoveTowardsで目標位置に
+                else if (enemyData[i].State == 3)
                 {
-                    DestroyEnemy(i);
+                    // 移動
+                    enemy[i].transform.position = Vector3.MoveTowards(
+                       enemy[i].transform.position,
+                       new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
+                       Time.deltaTime * 8
+                       );
+
+                    // 進行方向に向きを変える
+                    enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                    // 一定時間経過で次の動きに移行
+                    if (enemyData[i].Duration >= 10.0f)
+                    {
+                        enemyData[i].State = SetState(i);
+                        enemyData[i].Duration = 0;
+                    }
                 }
-            }
-
-            // 9:往復移動
-            else if (enemyData[i].State == 9)
-            {
-                // 移動
-                enemy[i].transform.position = Vector3.MoveTowards(
-                   enemy[i].transform.position,
-                   new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ),
-                   Time.deltaTime * 8
-                   );
-
-                // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
-
-                // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyData[i].target1)
+                // 4:敵が逃げていく
+                else if (enemyData[i].State == 4)
                 {
-                    enemyData[i].State = 10;
+                    // 移動
+                    enemy[i].transform.position = Vector3.MoveTowards(
+                       enemy[i].transform.position,
+                       new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
+                       Time.deltaTime * 8
+                       );
+
+                    // 進行方向に向きを変える
+                    enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                    // 画面外に逃げたら削除
+                    if (enemy[i].transform.position.x <= ViewportLB.x ||
+                        enemy[i].transform.position.x >= ViewportRT.x ||
+                        enemy[i].transform.position.y <= ViewportLB.y ||
+                        enemy[i].transform.position.y >= ViewportRT.y)
+                    {
+                        DestroyEnemy(i);
+                    }
                 }
-            }
-            // 10:往復移動
-            else if (enemyData[i].State == 10)
-            {
-                // 移動
-                enemy[i].transform.position = Vector3.MoveTowards(
-                   enemy[i].transform.position,
-                   new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 8
-                   );
 
-                // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
-
-                // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyData[i].target)
+                // 9:往復移動
+                else if (enemyData[i].State == 9)
                 {
-                    enemyData[i].State = 9;
+                    // 移動
+                    enemy[i].transform.position = Vector3.MoveTowards(
+                       enemy[i].transform.position,
+                       new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ),
+                       Time.deltaTime * 8
+                       );
+
+                    // 進行方向に向きを変える
+                    enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                    // 指定場所についたら次の動きに移行
+                    if (enemy[i].transform.position == enemyData[i].target1)
+                    {
+                        enemyData[i].State = 10;
+                    }
                 }
+                // 10:往復移動
+                else if (enemyData[i].State == 10)
+                {
+                    // 移動
+                    enemy[i].transform.position = Vector3.MoveTowards(
+                       enemy[i].transform.position,
+                       new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
+                       Time.deltaTime * 8
+                       );
+
+                    // 進行方向に向きを変える
+                    enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                    // 指定場所についたら次の動きに移行
+                    if (enemy[i].transform.position == enemyData[i].target)
+                    {
+                        enemyData[i].State = 9;
+                    }
+                }
+
+
+                PhaseTransition = false;  // 敵が残っていれば遷移しない
             }
 
+            // 全ての敵が倒されたor画面外に逃げたら次のフェーズに移行
+            if (PhaseTransition)
+            {
+                CurrentPhase++;
+                phase.PlayPhase(CurrentPhase);
+                spawnRealTime = 0;
+            }
 
-            PhaseTransition = false;  // 敵が残っていれば遷移しない
-        }
-
-        // 全ての敵が倒されたor画面外に逃げたら次のフェーズに移行
-        if (PhaseTransition)
-        {
-            CurrentPhase++;
-            phase.PlayPhase(CurrentPhase);
-            spawnRealTime = 0;
-        }
-
-        if (CurrentPhase == 6)
-        {
-            clearflag = true;
+            if (CurrentPhase == 6)
+            {
+                clearflag = true;
+            }
         }
     }
 
@@ -435,6 +432,36 @@ public class EnemyManager : MonoBehaviour
     public EnemyCategory GetBulletType(int no)
     {
         return enemyData[no].category;
+    }
+
+    //Addressableを使って読み込む
+    public IEnumerator AddressableLoad(string csv)
+    {
+        Debug.Log("コルーチン実行中");
+        textasset = null;
+        // Assetのロード
+        Addressables.LoadAssetAsync<TextAsset>(csv).Completed += op =>
+        {
+            // ロードに成功
+            Debug.Log("CSV:" + op.Result);
+            textasset = op.Result;
+            // CSVSerializerを用いてcsvファイルを配列に流し込む
+            enemyData = CSVSerializer.Deserialize<EnemyData>(textasset.text);
+            // 初期設定(Vector3として使いやすいようになど)
+            for (int i = 0; i < element; i++)
+            {
+                enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
+                enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
+                enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
+                enemyData[i].Step = 0;
+            }
+        };
+        //DL完了待合わせ
+        do
+        {
+            //ロード待ち、ロード不可の場合はずーっと抜けない。時間等で切るようにする必要がある
+            yield return null;
+        } while (textasset == null);
     }
 }
 
