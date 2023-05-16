@@ -109,7 +109,7 @@ public class Cursoll : MonoBehaviour
             if (NowPosition == 0)
             {
                 se.PlayOneShot(Cancelse);
-                SceneManager.LoadScene("nagaya");
+                SceneManager.LoadScene("Title");
             }
             else if (NowPosition == 1)
             {

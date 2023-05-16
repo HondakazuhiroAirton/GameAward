@@ -14,11 +14,18 @@ public class StageSelect3 : MonoBehaviour
 
     Image fadeImage;                //透明度を変更するパネルのイメージ
 
+    //SE
+    public AudioManager SE;
+    private Button buttonflag;//ぼたんを一回だけ押す処理
+
     // Start is called before the first frame update
     void Start()
     {
         SM = GameObject.Find("StageManager");
         fadeImage = GetComponent<Image>();
+
+        //SE
+        SE = GameObject.Find("AudioManage").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -29,30 +36,45 @@ public class StageSelect3 : MonoBehaviour
 
     public void onButtonStage3_1()
     {
+        buttonflag = GameObject.Find("3-1").GetComponent<Button>();
+        buttonflag.interactable = false;
+        SE.playselectSE();
         fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(10);
     }
 
     public void onButtonStage3_2()
     {
+        buttonflag = GameObject.Find("3-2").GetComponent<Button>();
+        buttonflag.interactable = false;
+        SE.playselectSE();
         fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(11);
     }
 
     public void onButtonStage3_3()
     {
+        buttonflag = GameObject.Find("3-3").GetComponent<Button>();
+        buttonflag.interactable = false;
+        SE.playselectSE();
         fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(12);
     }
 
     public void onButtonStage3_4()
     {
+        buttonflag = GameObject.Find("3-4").GetComponent<Button>();
+        buttonflag.interactable = false;
+        SE.playselectSE();
         fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(13);
     }
 
     public void onButtonStage3_5()
     {
+        buttonflag = GameObject.Find("3-5").GetComponent<Button>();
+        buttonflag.interactable = false;
+        SE.playselectSE();
         fadeImage.GetComponent<Fade>().GameStart();
         SM.GetComponent<StageManagerScript>().SetStageIndex(14);
     }

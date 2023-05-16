@@ -68,11 +68,6 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            SE.PlayOneShot(SelectSE);
-        }
-
 
 
     }
@@ -171,6 +166,11 @@ public class AudioManager : MonoBehaviour
     void playPauseSE()
     {
         SE.PlayOneShot(PauseSE);
+    }
+
+    public void playselectSE()
+    {
+        SE.PlayOneShot(SelectSE);
     }
 
 }
