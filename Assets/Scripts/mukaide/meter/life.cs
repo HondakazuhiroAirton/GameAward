@@ -42,7 +42,8 @@ public class life : MonoBehaviour
             EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
             // transformの位置でエフェクトを再生する
             EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, LeftSolar.transform.position);
-            Destroy(LeftSolar);
+
+            LeftSolar.SetActive(false);
         }
         if (Life == 1)
         {
@@ -51,7 +52,8 @@ public class life : MonoBehaviour
             EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
             // transformの位置でエフェクトを再生する
             EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, RightSolar.transform.position);
-            Destroy(RightSolar);
+
+            RightSolar.SetActive(false);
         }
         if (Life <= 0)
         {
@@ -60,7 +62,8 @@ public class life : MonoBehaviour
             EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
             // transformの位置でエフェクトを再生する
             EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, Player.transform.position);
-            Destroy(Player);
+            Player.SetActive(false);
+            
 
             Obj.GetComponent<beamlife>().GameOver();
         }
