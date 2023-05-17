@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Effekseer;
 
 public class life : MonoBehaviour
 {
@@ -10,18 +11,18 @@ public class life : MonoBehaviour
     public GameObject Obj;
     int Life;
 
-    GameObject player;
+    GameObject LeftSolar;
+    GameObject RightSolar;
+    GameObject Player;
     //Animator animator;
     //GameObject LeftSolar;
 
     // Start is called before the first frame update
     void Start()
     {
-        // animatorコンポーネントを取得
-        player = GameObject.Find("Player");
-        Animator animator = player.GetComponent<Animator>();
-        animator.SetBool("LeftSolar_flag", false);
-
+        LeftSolar = GameObject.Find("LeftSolar");
+        RightSolar = GameObject.Find("RightSolar");
+        Player = GameObject.Find("Player");
 
         life1 = GameObject.Find("life1");
         life2 = GameObject.Find("life2");
@@ -37,18 +38,39 @@ public class life : MonoBehaviour
         if(Life == 2)
         {
             life1.SetActive(false);
-            Animator animator = player.GetComponent<Animator>();
-            animator.SetBool("LeftSolar_flag", true);
+            // エフェクトを取得する。
+            EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
+            // transformの位置でエフェクトを再生する
+            EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, LeftSolar.transform.position);
+            Destroy(LeftSolar);
         }
         if (Life == 1)
         {
             life2.SetActive(false);
+            // エフェクトを取得する。
+            EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
+            // transformの位置でエフェクトを再生する
+            EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, RightSolar.transform.position);
+            Destroy(RightSolar);
         }
         if (Life <= 0)
         {
             life3.SetActive(false);
+            // エフェクトを取得する。
+            EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
+            // transformの位置でエフェクトを再生する
+            EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, Player.transform.position);
+            Destroy(Player);
+
             Obj.GetComponent<beamlife>().GameOver();
         }
+
+        //if(Input.GetKey(KeyCode.K))
+        //{
+        //    player = GameObject.Find("Player");
+        //    Animator animator = player.GetComponent<Animator>();
+        //    animator.SetBool("LeftSoalr_flag", true);
+        //}
 
     }
 }
