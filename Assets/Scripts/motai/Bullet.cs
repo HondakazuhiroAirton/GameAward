@@ -34,6 +34,10 @@ public class Bullet : MonoBehaviour
         //Geter / Seter使用用スクリプト保持
         PlayerClasslife = PD.GetComponent<beamlife>();
 
+        player = GameObject.Find("Player");
+
+        //Animator animator = player.GetComponent<Animator>();
+        //animator.SetBool("LeftSolar_flag", false);
         //RightSolar = GameObject.Find("RightSolar");
 
 
@@ -90,9 +94,9 @@ public class Bullet : MonoBehaviour
                 PlayerClasslife.SetLife(LifePoint);
 
                 //Destroy(LeftSolar);
-                player = GameObject.Find("Player");
-                Animator animator = player.GetComponent<Animator>();
-                animator.SetBool("LeftSolar_flag", true);
+                //player = GameObject.Find("Player");
+                //Animator animator = player.GetComponent<Animator>();
+                //animator.SetBool("LeftSolar_flag", true);
             }
             else
             {
