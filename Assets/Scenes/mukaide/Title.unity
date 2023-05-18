@@ -260,6 +260,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368606734}
   m_CullTransparentMesh: 1
+--- !u!1001 &811252618
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1586242838397724500, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724501, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36bcce3109d279143bf336b100f82bf7, type: 3}
 --- !u!1 &953665819
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +364,7 @@ MonoBehaviour:
   titleUI: {fileID: 1771987056}
   countdown: 5
   Image: {fileID: 0}
+  SE: {fileID: 0}
 --- !u!114 &953665821
 MonoBehaviour:
   m_ObjectHideFlags: 0

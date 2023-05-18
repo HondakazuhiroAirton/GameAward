@@ -18,6 +18,9 @@ public class ButtonTitle : MonoBehaviour
 
     public GameObject Image;
 
+    //SE
+    public AudioManager SE;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,8 @@ public class ButtonTitle : MonoBehaviour
         //ボタンの読み込み
         redo = GameObject.Find("Redo").GetComponent<Button>();
         Continue = GameObject.Find("Continue").GetComponent<Button>();
+        //SE
+        SE = GameObject.Find("AudioManage").GetComponent<AudioManager>();
 
         titleUI.SetActive(false);
 
@@ -44,6 +49,14 @@ public class ButtonTitle : MonoBehaviour
         //時間をカウントダウンする
         countdown -= Time.deltaTime;
 
+
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        {
+
+            SE.playCusolSE();
+        }
+    
 
         //countdownが0以下になったとき
         if (countdown <= 0)
@@ -58,11 +71,15 @@ public class ButtonTitle : MonoBehaviour
 
     public void ButtonRedo()
     {
+        redo.interactable = false;
+        SE.playselectSE();
         Image.GetComponent<Fade>().GameSelect();
     }
 
     public void ButtonContinue()
     {
+        Continue.interactable = false;
+        SE.playselectSE();
         Image.GetComponent<Fade>().GameSelect();
     }
 
