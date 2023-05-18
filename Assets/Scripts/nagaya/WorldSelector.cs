@@ -15,6 +15,8 @@ public class WorldSelector : MonoBehaviour
     public GameObject Stage3;
     public GameObject Stage4;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +28,7 @@ public class WorldSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            onButtonWorld1();
-        }
+
     }
 
     public void onButtonWorld1()
