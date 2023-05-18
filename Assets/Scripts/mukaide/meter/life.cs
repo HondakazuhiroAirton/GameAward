@@ -35,37 +35,37 @@ public class life : MonoBehaviour
     void Update()
     {
         Life = Obj.GetComponent<beamlife>().GetLife();
-        if(Life == 2)
+        if (Life == 2)
         {
             life1.SetActive(false);
             // エフェクトを取得する。
-            EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
-            // transformの位置でエフェクトを再生する
-            EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, LeftSolar.transform.position);
+            //EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
+            //// transformの位置でエフェクトを再生する
+            //EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, LeftSolar.transform.position);
 
-            LeftSolar.SetActive(false);
+            //LeftSolar.SetActive(false);
         }
         if (Life == 1)
         {
             life2.SetActive(false);
-            // エフェクトを取得する。
-            EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
-            // transformの位置でエフェクトを再生する
-            EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, RightSolar.transform.position);
+            //// エフェクトを取得する。
+            //EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
+            //// transformの位置でエフェクトを再生する
+            //EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, RightSolar.transform.position);
 
-            RightSolar.SetActive(false);
+            //RightSolar.SetActive(false);
         }
         if (Life <= 0)
         {
             life3.SetActive(false);
-            // エフェクトを取得する。
-            EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
-            // transformの位置でエフェクトを再生する
-            EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, Player.transform.position);
-            Player.SetActive(false);
-            
+            //// エフェクトを取得する。
+            //EffekseerEffectAsset effect = Resources.Load<EffekseerEffectAsset>("Explosion");
+            //// transformの位置でエフェクトを再生する
+            //EffekseerHandle handle = EffekseerSystem.PlayEffect(effect, Player.transform.position);
+            //Player.SetActive(false);
 
-            Obj.GetComponent<beamlife>().GameOver();
+
+            //Obj.GetComponent<beamlife>().GameOver();
         }
 
         //if(Input.GetKey(KeyCode.K))
@@ -76,4 +76,5 @@ public class life : MonoBehaviour
         //}
 
     }
+    
 }
