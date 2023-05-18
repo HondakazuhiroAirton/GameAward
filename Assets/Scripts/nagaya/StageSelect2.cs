@@ -18,6 +18,8 @@ public class StageSelect2 : MonoBehaviour
     public AudioManager SE;
     private Button buttonflag;//Ç⁄ÇΩÇÒÇàÍâÒÇæÇØâüÇ∑èàóù
 
+    private Cursoll cursoll;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,11 +28,14 @@ public class StageSelect2 : MonoBehaviour
 
         //SE
         SE = GameObject.Find("AudioManage").GetComponent<AudioManager>();
+        cursoll = GameObject.Find("Triangle").GetComponent<Cursoll>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
 
@@ -40,11 +45,15 @@ public class StageSelect2 : MonoBehaviour
 
     public void onButtonStage2_1()
     {
-        buttonflag = GameObject.Find("2-1").GetComponent<Button>();
-        buttonflag.interactable = false;
-        SE.playselectSE();
-        fadeImage.GetComponent<Fade>().GameStart();
-        SM.GetComponent<StageManagerScript>().SetStageIndex(5);
+        if (cursoll.Bflag() == true)
+        {
+
+            buttonflag = GameObject.Find("2-1").GetComponent<Button>();
+            buttonflag.interactable = false;
+            SE.playselectSE();
+            fadeImage.GetComponent<Fade>().GameStart();
+            SM.GetComponent<StageManagerScript>().SetStageIndex(5);
+        }
     }
 
     public void onButtonStage2_2()
@@ -88,5 +97,6 @@ public class StageSelect2 : MonoBehaviour
         Sel.SetActive(true);
         world.Select();
         Stage2.SetActive(false);
+        cursoll.Updateflag();
     }
 }

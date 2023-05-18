@@ -24,6 +24,8 @@ public class StageSelect : MonoBehaviour
     public AudioManager SE;
     private Button buttonflag;//Ç⁄ÇΩÇÒÇàÍâÒÇæÇØâüÇ∑èàóù
 
+    private Cursoll cursoll;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,6 +33,7 @@ public class StageSelect : MonoBehaviour
         fadeImage = GameObject.Find("Image").GetComponent<Image>();
         //SE
         SE = GameObject.Find("AudioManage").GetComponent<AudioManager>();
+        cursoll = GameObject.Find("Triangle").GetComponent<Cursoll>();
     }
 
 
@@ -48,15 +51,19 @@ public class StageSelect : MonoBehaviour
 
     public void onButtonStage1_1()
     {
-        buttonflag = GameObject.Find("1-1").GetComponent<Button>();
-        buttonflag.interactable = false;
-        SE.playselectSE();
-        fadeImage.GetComponent<Fade>().GameStart();
-        SM.GetComponent<StageManagerScript>().SetStageIndex(0);
+        if (cursoll.Bflag() == true)
+        {
+            buttonflag = GameObject.Find("1-1").GetComponent<Button>();
+            buttonflag.interactable = false;
+            SE.playselectSE();
+            fadeImage.GetComponent<Fade>().GameStart();
+            SM.GetComponent<StageManagerScript>().SetStageIndex(0);
+        }
     }
 
     public void onButtonStage1_2()
     {
+
         buttonflag = GameObject.Find("1-2").GetComponent<Button>();
         buttonflag.interactable = false;
         SE.playselectSE();
@@ -96,5 +103,6 @@ public class StageSelect : MonoBehaviour
         Sel.SetActive(true);
         world.Select();
         Stage1UI.SetActive(false);
+        cursoll.Updateflag();
     }
 }

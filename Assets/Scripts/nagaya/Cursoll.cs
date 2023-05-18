@@ -22,8 +22,6 @@ public class Cursoll : MonoBehaviour
     public GameObject World3;
     public GameObject World4;
 
-
-
     private Button Stage1_1;
     private Button Stage2_1;
     private Button Stage3_1;
@@ -43,7 +41,10 @@ public class Cursoll : MonoBehaviour
     public AudioClip Cancelse;
 
 
-    private bool isPanel;
+    private bool panelflag = true;
+
+    private int btime = 0;
+    private bool bflag = false;
 
     //ゲームパッド
     [SerializeField] PlayerInput input;
@@ -69,45 +70,48 @@ public class Cursoll : MonoBehaviour
         NowPosition = 1;
         this.transform.position = iti[NowPosition].transform.position;
 
-        // ステージ選択を非アクティブにしておく
-        // World1.SetActive(false);
-        // World2.SetActive(false);
-        // World3.SetActive(false);
-        // World4.SetActive(false);
 
         //ゲームパッド
         input = this.GetComponent<PlayerInput>();
-
-        isPanel = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        btime--;
+        if (btime <= 0)
         {
-            se.PlayOneShot(Cursolse);
-
-            NowPosition += 1;
-            if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
-            this.transform.position = iti[NowPosition].transform.position;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-        {
-            se.PlayOneShot(Cursolse);
-
-            NowPosition -= 1;
-            if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
-            this.transform.position = iti[NowPosition].transform.position;
-
+            btime = 0;
+            bflag = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (panelflag)
         {
-            WorldButton();
 
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+            {
+                se.PlayOneShot(Cursolse);
+
+                NowPosition += 1;
+                if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
+                this.transform.position = iti[NowPosition].transform.position;
+
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+            {
+                se.PlayOneShot(Cursolse);
+
+                NowPosition -= 1;
+                if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
+                this.transform.position = iti[NowPosition].transform.position;
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                WorldButton();
+
+            }
         }
     }
 
@@ -129,7 +133,9 @@ public class Cursoll : MonoBehaviour
             Stage1_1 = GameObject.Find("1-1").GetComponent<Button>();
             Stage1_1.Select();
             Worldsel.SetActive(false);
-            isPanel = false;
+            panelflag = false;
+            btime = 10;
+            bflag = false;
 
         }
         else if (NowPosition == 2)
@@ -140,6 +146,9 @@ public class Cursoll : MonoBehaviour
             Stage2_1 = GameObject.Find("2-1").GetComponent<Button>();
             Stage2_1.Select();
             Worldsel.SetActive(false);
+            panelflag = false;
+            btime = 10;
+            bflag = false;
         }
         else if (NowPosition == 3)
         {
@@ -149,6 +158,9 @@ public class Cursoll : MonoBehaviour
             Stage3_1 = GameObject.Find("3-1").GetComponent<Button>();
             Stage3_1.Select();
             Worldsel.SetActive(false);
+            panelflag = false;
+            btime = 10;
+            bflag = false;
         }
         else if (NowPosition == 4)
         {
@@ -158,54 +170,68 @@ public class Cursoll : MonoBehaviour
             Stage4_1 = GameObject.Find("4-1").GetComponent<Button>();
             Stage4_1.Select();
             Worldsel.SetActive(false);
+            panelflag = false;
+            btime = 10;
+            bflag = false;
         }
 
 
-        // if(isPanel)
-        // {
-        //     triangle.GetComponent<Cursoll>().enabled = false;
-        // }
-        // else
-        // {
-        //     triangle.GetComponent<Cursoll>().enabled = true;
-        // }
 
     }
 
     public void OnLeft(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
+        if (panelflag)
         {
-            se.PlayOneShot(Cursolse);
+            if (context.phase == InputActionPhase.Performed)
+            {
+                se.PlayOneShot(Cursolse);
 
-            NowPosition -= 1;
-            if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
-            this.transform.position = iti[NowPosition].transform.position;
+                NowPosition -= 1;
+                if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
+                this.transform.position = iti[NowPosition].transform.position;
+            }
         }
     }
 
 
     public void OnRight(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
-        {
-            se.PlayOneShot(Cursolse);
+        
+            if (panelflag)
+            {
+                if (context.phase == InputActionPhase.Performed)
+                {
+                    se.PlayOneShot(Cursolse);
 
-            NowPosition += 1;
-            if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
-            this.transform.position = iti[NowPosition].transform.position;
-        }
+                    NowPosition += 1;
+                    if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
+                    this.transform.position = iti[NowPosition].transform.position;
+                }
+            }
     }
 
     public void OnSelect(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
+        Debug.Log("おした！！");
+        if (panelflag)
         {
-            WorldButton();
+            if (context.phase == InputActionPhase.Performed)
+            {
+                WorldButton();
+            }
         }
     }
 
+    public void Updateflag()
+    {
+        panelflag = true;
+    }
 
+    public bool Bflag()
+    {
+        return bflag;
+    }
 }
 
 
