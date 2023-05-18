@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Effekseer;
 
 public class PlayerMove_GOMI : MonoBehaviour
 {
@@ -68,13 +69,14 @@ public class PlayerMove_GOMI : MonoBehaviour
     // チャージした時間を格納する変数(必要)
     public float ChargeTime = 0.0f;
 
-    // 巨大ビームプレハブ格納
-    private GameObject BigBeamPrefabs;
+
 
     //********************************************************************************
 
     void Start()
     {
+
+
         // 各種バー取得
         wallUp = GameObject.Find("UP");
         wallDown = GameObject.Find("Down");
@@ -131,7 +133,7 @@ public class PlayerMove_GOMI : MonoBehaviour
         BeamParticleManagerPrefab = Resources.Load<GameObject>("BeamParticleManager");
 
         // 巨大ビームをResourcesから取得
-        BigBeamPrefabs = Resources.Load<GameObject>("BigBeam");
+        //BigBeamPrefabs = Resources.Load<GameObject>("BigBeam");
 
         // ビーム残量へのアクセス
         //PlayerDateもってくる
@@ -413,7 +415,7 @@ public class PlayerMove_GOMI : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.K)) // Downと同じキーコードにしてね
         {
             // プレハブを指定位置に生成
-            Instantiate(BigBeamPrefabs, this.transform.position, gameObject.transform.localRotation);
+            //Instantiate(BigBeamPrefabs, this.transform.position, gameObject.transform.localRotation);
         }
 
     }
