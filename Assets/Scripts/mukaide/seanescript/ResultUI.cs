@@ -103,7 +103,7 @@ public class ResultUI : MonoBehaviour
         //çáåv
         Ts = GameObject.Find("TotalScore").GetComponent<TextMeshProUGUI>();
 
-        flag = GameObject.Find("EnemyGroup (Clone)");
+        flag = GameObject.Find("EnemyGroup(Clone)");
         clearflag = flag.GetComponent<EnemyManager>();
 
         resultUI.SetActive(false);

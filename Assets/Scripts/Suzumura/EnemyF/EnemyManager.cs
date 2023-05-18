@@ -350,7 +350,7 @@ public class EnemyManager : MonoBehaviour
     {
         // èoåª
         enemy[no] = Instantiate(
-            originenemy,
+            Resources.Load<GameObject>("enemy"),
             new Vector3(enemyData[no].StartPosX, enemyData[no].StartPosY, enemyData[no].StartPosZ),
             Quaternion.identity,
             transform
