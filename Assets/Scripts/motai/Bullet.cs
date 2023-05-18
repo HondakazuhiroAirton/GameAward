@@ -93,10 +93,6 @@ public class Bullet : MonoBehaviour
 
                 PlayerClasslife.SetLife(LifePoint);
 
-                //Destroy(LeftSolar);
-                //player = GameObject.Find("Player");
-                //Animator animator = player.GetComponent<Animator>();
-                //animator.SetBool("LeftSolar_flag", true);
             }
             else
             {
