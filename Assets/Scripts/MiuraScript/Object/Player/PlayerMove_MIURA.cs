@@ -151,7 +151,7 @@ public class PlayerMove_MIURA : MonoBehaviour
     {
         // 左右ソーラーキャッシュ
         rightSolar = GameObject.Find("RightSolar");
-        leftSolar = GameObject.Find("RightSolar");
+        leftSolar = GameObject.Find("LeftSolar");
 
         // 爆破エフェクトキャッシュ
         effect = Resources.Load<EffekseerEffectAsset>("Explosion");
@@ -933,8 +933,6 @@ public class PlayerMove_MIURA : MonoBehaviour
     // 弾を受けた時に呼ばれる処理
     public void Hidan()
     {
-        // 点滅状態にする
-        strobo = true;
         // 残りライフを参照して爆破
         int life = PlayerClassScript.GetLife();
         //Posを考える
@@ -945,6 +943,8 @@ public class PlayerMove_MIURA : MonoBehaviour
         // この辺にプレイヤーの処理を書く
         if (life == 2)
         {
+            // 点滅状態にする
+            strobo = true;
             // 右ソーラー爆破
             pos = rightSolar.transform.position;
             // 爆破エフェクト表示
@@ -954,16 +954,24 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
         else if(life == 1)
         {
+            // 点滅状態にする
+            strobo = true;
             // 左ソーラー爆破
             pos = leftSolar.transform.position;
             // 爆破エフェクト表示
             handle = EffekseerSystem.PlayEffect(effect, pos);
             // 非表示に
-            rightSolar.SetActive(false);
+            leftSolar.SetActive(false);
         }
         else if(life <= 0)
         {
+            foreach (var tmp in parsMesh)
+            {
+                tmp.enabled = false;
+            }
             // ここ大爆発
+            // 爆破エフェクト表示
+            handle = EffekseerSystem.PlayEffect(effect, transform.position);
         }
     }
 

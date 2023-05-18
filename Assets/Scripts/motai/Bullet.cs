@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour
     private float Wx;
     private float Wy;
 
+
     void Start()
     {
         //// エフェクトを取得する。
@@ -93,10 +94,9 @@ public class Bullet : MonoBehaviour
 
                 PlayerClasslife.SetLife(LifePoint);
 
-            }
-            else
-            {
-                Destroy(other.gameObject);
+                player.GetComponent<PlayerMove_MIURA>().Hidan();
+
+                Destroy(this.gameObject);
             }
         }
     }
