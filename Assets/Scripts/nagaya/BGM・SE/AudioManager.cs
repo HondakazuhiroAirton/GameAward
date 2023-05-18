@@ -143,27 +143,27 @@ public class AudioManager : MonoBehaviour
     //
     //
 
-    void playCusolSE()
+    public void playCusolSE()
     {
         SE.PlayOneShot(CursolSE);
     }
 
-    void playBeamSE()
+    public void playBeamSE()
     {
         SE.PlayOneShot(BeamSE);
     }
 
-    void playEnemyDefeatSE()
+    public void playEnemyDefeatSE()
     {
         SE.PlayOneShot(EnemyDefeatSE);
     }
 
-    void playPlayerMoveSE()
+    public void playPlayerMoveSE()
     {
         SE.PlayOneShot(PlayerMoveSE);
     }
 
-    void playPauseSE()
+    public void playPauseSE()
     {
         SE.PlayOneShot(PauseSE);
     }

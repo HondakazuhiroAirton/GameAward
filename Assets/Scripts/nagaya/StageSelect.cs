@@ -25,7 +25,7 @@ public class StageSelect : MonoBehaviour
     private Button buttonflag;//‚Ú‚½‚ñ‚ğˆê‰ñ‚¾‚¯‰Ÿ‚·ˆ—
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         SM = GameObject.Find("StageManager");
         fadeImage = GameObject.Find("Image").GetComponent<Image>();
@@ -37,6 +37,12 @@ public class StageSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        {
+
+            SE.playCusolSE();
+        }
 
     }
 
