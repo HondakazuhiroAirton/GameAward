@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using TMPro;
+using Effekseer;
 
 public class PlayerMove_MIURA : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     // ビームのインターバル
     public int Interbal = 60;
+
+    // 点滅時間
+    public int stroboTime;
 
     // privateゾーン*************************************************************
     // ビームの1段階の時間*************************
@@ -108,6 +112,31 @@ public class PlayerMove_MIURA : MonoBehaviour
     // このオブジェクトのアニメーター
     private Animator animator;
 
+    // 点滅に関わる変数
+    // 子のオブジェクトを取得
+    private MeshRenderer[] parsMesh;
+
+    // 1回に点滅するまでの時間
+    private int stroboOneTime;
+
+    // 点滅エフェクトするbool値
+    [SerializeField]private bool strobo;
+
+    // 点滅時間
+    private int stroboTimeMax;
+
+    // 爆破エフェクトゾーン
+    // 再生するアセット
+    private EffekseerEffectAsset effect;
+    // ハンドル
+    private EffekseerHandle handle;
+    // エフェクトの回転計算
+    private Quaternion EffectRot;
+
+    // 左右ソーラー
+    private GameObject rightSolar;
+    private GameObject leftSolar;
+
     //********************************************************************************
 
     //ゲームパッド
@@ -120,6 +149,25 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     void Start()
     {
+        // 左右ソーラーキャッシュ
+        rightSolar = GameObject.Find("RightSolar");
+        leftSolar = GameObject.Find("RightSolar");
+
+        // 爆破エフェクトキャッシュ
+        effect = Resources.Load<EffekseerEffectAsset>("Explosion");
+
+        // 子オブジェクトのメッシュを全部取得
+        parsMesh = GetComponentsInChildren<MeshRenderer>();
+
+        // ストロボ初期化
+        strobo = false;
+
+        // ストロボ最大時間を覚えておく
+        stroboTimeMax = stroboTime;
+
+        // ちかっとする時間を初期化
+        stroboOneTime = 5;
+
         // アニメーターを取得
         animator = this.GetComponent<Animator>();
 
@@ -127,6 +175,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         beamCharge = GameObject.Find("beamcharge");
         // そこのスクリプト取得
         beamChargeScript = beamCharge.GetComponent<charge>();
+
 
         // ビーム溜め時間計算********************************************
         // 入力された最大溜め時間の単位を秒からフレームに変更
@@ -245,6 +294,11 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     void Update()
     {
+        if (strobo) // ストロボフラグがTrueの時点滅させる
+        {
+            Strobo();
+        }
+
         //プレイヤーの座標取得
         pos = this.gameObject.transform.position;
         //プレイヤーのスケール取得
@@ -875,4 +929,70 @@ public class PlayerMove_MIURA : MonoBehaviour
         Debug.Log("下に動く！");
     }
 
+
+    // 弾を受けた時に呼ばれる処理
+    public void Hidan()
+    {
+        // 点滅状態にする
+        strobo = true;
+        // 残りライフを参照して爆破
+        int life = PlayerClassScript.GetLife();
+        //Posを考える
+        Vector3 pos = transform.position;
+        // 点滅時間をセットする
+        stroboTime = stroboTimeMax;
+
+        // この辺にプレイヤーの処理を書く
+        if (life == 2)
+        {
+            // 右ソーラー爆破
+            pos = rightSolar.transform.position;
+            // 爆破エフェクト表示
+            handle = EffekseerSystem.PlayEffect(effect, pos);
+            // 非表示に
+            rightSolar.SetActive(false);
+        }
+        else if(life == 1)
+        {
+            // 左ソーラー爆破
+            pos = leftSolar.transform.position;
+            // 爆破エフェクト表示
+            handle = EffekseerSystem.PlayEffect(effect, pos);
+            // 非表示に
+            rightSolar.SetActive(false);
+        }
+        else if(life <= 0)
+        {
+            // ここ大爆発
+        }
+    }
+
+    void Strobo()
+    {
+        // 点滅処理
+        stroboOneTime--;
+        if (stroboOneTime < 0)
+        {
+            // 表示を入れ替える
+            foreach (var tmp in parsMesh)
+            {
+                tmp.enabled = !tmp.enabled;
+            }
+
+            // 時間を最大にする
+            stroboOneTime = 5; // 5フレームで点滅を繰り返すと決めた
+        }
+
+        stroboTime--;
+        if (stroboTime < 0)
+        {
+            // 全部表示状態にする
+            foreach (var tmp in parsMesh)
+            {
+                tmp.enabled = true;
+            }
+            strobo = false;
+        }
+
+    }
 }
