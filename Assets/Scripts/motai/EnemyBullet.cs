@@ -29,7 +29,7 @@ public class EnemyBullet : MonoBehaviour
 
         player = GameObject.Find("Player");
         Enemy = transform.parent.gameObject;
-        EnemyManager = GameObject.Find("EnemyGroup (Clone)");
+        EnemyManager = GameObject.Find("EnemyGroup(Clone)");
     }
 
     void Update()

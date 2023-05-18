@@ -32,7 +32,7 @@ public enum StageNo
 public class StageChangerScript : MonoBehaviour
 {
     // ステージデータを入れる**************************************************
-    public GameObject StageData;
+    private GameObject StageData;
     public GameObject StageManager;
 
 
@@ -74,6 +74,8 @@ public class StageChangerScript : MonoBehaviour
     {
         // 前のエネミーを全部デリートする
         Destroy(this.transform.GetChild(0).gameObject);
+
+        StageData = Resources.Load<GameObject>("EnemyGroup");
 
         // 対応したステージデータのプレハブを作る
         Instantiate( StageData ,
