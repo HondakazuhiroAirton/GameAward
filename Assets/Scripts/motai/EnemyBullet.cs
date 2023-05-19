@@ -18,7 +18,7 @@ public class EnemyBullet : MonoBehaviour
 
     GameObject player;
     Animator animator;
-    public const float maxtime = 5.0f;
+    private int maxtime;
     public const float mintime = 2.0f;
     public float time;
 
@@ -30,6 +30,10 @@ public class EnemyBullet : MonoBehaviour
         player = GameObject.Find("Player");
         Enemy = transform.parent.gameObject;
         EnemyManager = GameObject.Find("EnemyGroup(Clone)");
+
+
+        maxtime = UnityEngine.Random.Range(5, 10);
+        Debug.Log("maxtime >" + maxtime);
     }
 
     void Update()
@@ -44,14 +48,11 @@ public class EnemyBullet : MonoBehaviour
         }
         if (time >= maxtime)// 5秒たったら弾が出てアニメーションストップ タイマー0
         {
-            BallShot();
             animator.SetBool("enemyS_flag", false);
+            BallShot();
             time = 0;
             return;
         }
-
-
-
     }
 
     void BallShot()// キューブ(敵に)
@@ -73,5 +74,7 @@ public class EnemyBullet : MonoBehaviour
             default:
                 break;
         }
+        maxtime = UnityEngine.Random.Range(5, 10);
+        Debug.Log("maxtime >" + maxtime);
     }
 }
