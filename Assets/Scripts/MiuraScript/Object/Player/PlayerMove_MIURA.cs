@@ -154,6 +154,11 @@ public class PlayerMove_MIURA : MonoBehaviour
     // まえのアングル
     private Quaternion beforeAngle;
 
+    // 音**************************************************************
+    private AudioSource beamChatgeAudio; // ビームのチャージ音
+
+
+
     void Start()
     {
         // ワープ前位置保存
@@ -301,6 +306,9 @@ public class PlayerMove_MIURA : MonoBehaviour
         _ismoveL = false;
         _ismoveU = false;
         _ismoveD = false;
+
+        // 音コンポーネント取得
+        beamChatgeAudio = this.gameObject.GetComponent<AudioSource>();
     }
 
 
@@ -503,6 +511,8 @@ public class PlayerMove_MIURA : MonoBehaviour
             {
                 // チャージエフェクト開始
                 beamChargeScript.Play();
+                //  チャージ音開始
+                beamChatgeAudio.Play();
             }
 
             // アニメーターぐるぐる状態はTrue
@@ -549,6 +559,9 @@ public class PlayerMove_MIURA : MonoBehaviour
 
             // チャージエフェクトストップ
             beamChargeScript.Stop();
+
+            // チャージ音ストップ
+            beamChatgeAudio.Stop();
 
             // 計測した時間から各種値を計算する
             float use = 0;
@@ -769,13 +782,13 @@ public class PlayerMove_MIURA : MonoBehaviour
             {
                 // ビーム残量を減らして
                 tempCharge = tempCharge - use;
-                Debug.Log("使用量" + use);
-                Debug.Log("ビーム残り" + tempCharge);
+                //Debug.Log("使用量" + use);
+                //Debug.Log("ビーム残り" + tempCharge);
 
                 // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
                 beamLifeScript.SetAmount(tempCharge);
 
-                Debug.Log("メーターの中身" + beamLifeScript.GetAmount());
+                //Debug.Log("メーターの中身" + beamLifeScript.GetAmount());
 
                 // プレイヤーの角度をBeamParticleに代入する
                 // プレイヤーのZ軸を参考にする
@@ -803,7 +816,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
 
             }
-            Debug.Log("ビームうった！！");
+           // Debug.Log("ビームうった！！");
         }
     }
 
