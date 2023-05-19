@@ -30,6 +30,7 @@ public class Rank : MonoBehaviour
     Image RankCPanel;
     Image RankDPanel;
     TextMeshProUGUI ranktxPanel;
+    Image rankPanel;
 
     float alfaS;
     float alfaA;
@@ -37,6 +38,7 @@ public class Rank : MonoBehaviour
     float alfaC;
     float alfaD;
     float ranktxal;
+    float alfa;
 
     //ÉXÉRÉAÇéùÇ¡ÇƒÇ´Çƒì¸ÇÍÇÈïœêî
     static int FainalScore;
@@ -67,6 +69,7 @@ public class Rank : MonoBehaviour
         RankDPanel = RankD.GetComponent<Image>();
         ranktx = GameObject.Find("ranktx");
         ranktxPanel = ranktx.GetComponent<TextMeshProUGUI>();
+        rankPanel = GameObject.Find("rankPanel").GetComponent<Image>();
 
         Time.timeScale = 1f;
 
@@ -82,7 +85,8 @@ public class Rank : MonoBehaviour
         alfaD = 0;
         ranktxal = ranktxPanel.color.a;
         ranktxal = 0;
-
+        alfa = rankPanel.color.a;
+        alfa = 0;
     }
 
     // Update is called once per frame
@@ -95,6 +99,8 @@ public class Rank : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.O))
             {
                 rankpanel();
+
+                Obj.SetActive(false);
             }
         }
 
@@ -107,31 +113,41 @@ public class Rank : MonoBehaviour
             case 0:
                 {
                     alfaS = 1.0f;
+                    alfa = 0.3f;
                     RankS.GetComponent<Image>().color += new Color(0, 0, 0, alfaS);
+                    rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
                 }
             case 1:
                 {
                     alfaA = 1.0f;
+                    alfa = 0.3f;
                     RankA.GetComponent<Image>().color += new Color(0, 0, 0, alfaA);
+                    rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
                 }
             case 2:
                 {
                     alfaB = 1.0f;
+                    alfa = 0.3f;
                     RankB.GetComponent<Image>().color += new Color(0, 0, 0, alfaB);
+                    rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
                 }
             case 3:
                 {
                     alfaC = 1.0f;
+                    alfa = 0.3f;
                     RankC.GetComponent<Image>().color += new Color(0, 0, 0, alfaC);
+                    rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
                 }
             case 4:
                 {
                     alfaD = 1.0f;
+                    alfa = 0.3f;
                     RankD.GetComponent<Image>().color += new Color(0, 0, 0, alfaD);
+                    rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
                 }
         }
