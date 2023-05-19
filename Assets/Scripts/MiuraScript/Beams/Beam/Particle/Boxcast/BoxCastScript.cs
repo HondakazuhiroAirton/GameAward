@@ -61,6 +61,10 @@ public class BoxCastScript : MonoBehaviour
     // BoxCastのMaxの長さ
     private float maxDistance = 1.0f;
 
+    // Sliderと連携
+    [SerializeField]private GameObject slider;
+    [SerializeField]private BigBeamGauge bigBeamGauge;
+
     // 何かオブジェクトにぶつかっているかどうか
     RaycastHit[] isHit;
 
@@ -88,6 +92,11 @@ public class BoxCastScript : MonoBehaviour
 
         // キャンバス取得
         Canvas = GameObject.Find("Canvas");
+
+        // スライダーを取得
+        slider = GameObject.Find("BigBeamGauge");
+
+        bigBeamGauge = slider.GetComponent<BigBeamGauge>();
     }
 
     void Update()
@@ -198,6 +207,9 @@ public class BoxCastScript : MonoBehaviour
 
             // コンボ数を1増やす
             BeamParticleScript.combo++;
+
+            // BigBeamのゲージを増やす
+            bigBeamGauge.AddHit();
 
             // 生み出す
             var instance = Instantiate

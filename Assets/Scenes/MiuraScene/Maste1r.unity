@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00046322675, g: 0.0024112256, b: 0.011788999, a: 1}
+  m_IndirectSpecularColor: {r: 0.0004457909, g: 0.0022196874, b: 0.01059865, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 458388763}
   - component: {fileID: 458388762}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: BigBeamGauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5453,7 +5453,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fd27c7be8d910439a67c19e715cf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  PlayerAngle: 0
   StopTime: 180
+  maxDistance: 10
+  boxCastVecor: {x: 0, y: 0, z: 0}
+  isEnable: 1
 --- !u!1 &1834784008
 GameObject:
   m_ObjectHideFlags: 0

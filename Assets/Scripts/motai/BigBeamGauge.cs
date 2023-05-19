@@ -61,7 +61,7 @@ public class BigBeamGauge : MonoBehaviour
         //AddHit();
     }
 
-    void AddHit()// “G‚Ì“–‚½‚è”»’è‚É“ü‚ê‚Ä‰º‚³‚¢
+    public void AddHit()// “G‚Ì“–‚½‚è”»’è‚É“ü‚ê‚Ä‰º‚³‚¢
     {
         BigBeam = BigBeam + BigBeamAmount * (1 + HitAmount);
 
