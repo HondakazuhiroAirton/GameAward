@@ -2,33 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum GameState
+{
+    None,
+    Start,
+    InGame,
+    Pause,
+    End
+}
+
 public class GameManager : MonoBehaviour
 {
     private static GameManager s_instance;
 
-    // ÉQÅ[ÉÄãNìÆéûÇ…åƒÇŒÇÍÇÈä÷êî
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    static void Initialize()
-    {
-        new GameObject("GameManager", typeof(GameManager));
-        new GameObject("GameManager", typeof(InputManager));
-
-
-
-
-    }
-
+    GameState gameState = GameState.None;
 
     protected void Awake()
-    {
-        Application.targetFrameRate = 60;
-
-        if (s_instance)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        DontDestroyOnLoad(this.gameObject);
+    {   
+        //if (s_instance)
+        //{
+        //    Destroy(this.gameObject);
+        //    return;
+        //}
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     // Start is called before the first frame update
@@ -40,11 +37,35 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        switch (gameState)
+        {
+            case GameState.InGame:
 
+
+                break;
+        }
     }
 
-    private void OnDestroy()
+
+    void Enter()
     {
 
     }
+
+    void Run()
+    {
+
+    }
+
+    void Exit()
+    {
+
+    }
+
 }
+
+
+
+
+
+
