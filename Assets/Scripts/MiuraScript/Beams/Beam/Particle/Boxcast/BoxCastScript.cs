@@ -40,9 +40,6 @@ public class BoxCastScript : MonoBehaviour
     // コンボテキスト表示プレハブ
     public GameObject ComboTxt;
 
-    // キャンバス取得
-    public GameObject Canvas;
-
     // 現在の状態保存(大きくなる状態か/小さくなる状態か)
     public State NowState;
 
@@ -60,6 +57,9 @@ public class BoxCastScript : MonoBehaviour
 
     // BoxCastのMaxの長さ
     private float maxDistance = 1.0f;
+
+    // キャンバスのコンボ入れるオブジェクトを取得
+    private GameObject comboBox;
 
     // Sliderと連携
     [SerializeField]private GameObject slider;
@@ -91,7 +91,7 @@ public class BoxCastScript : MonoBehaviour
         BeamMax = BeamParticleScript.BeamMax;
 
         // キャンバス取得
-        Canvas = GameObject.Find("Canvas");
+        comboBox = GameObject.Find("ComboBox");
 
         // スライダーを取得
         slider = GameObject.Find("BigBeamGauge");
@@ -215,7 +215,7 @@ public class BoxCastScript : MonoBehaviour
             var instance = Instantiate
                            (ComboTxt, 
                            Camera.main.WorldToScreenPoint(obj.transform.position),
-                           Quaternion.identity, Canvas.transform);
+                           Quaternion.identity, comboBox.transform);
 
             instance.GetComponent<CombText>().SetComboText(BeamParticleScript.combo);
 
