@@ -205,7 +205,6 @@ public class BoxCastScript : MonoBehaviour
                            Camera.main.WorldToScreenPoint(obj.transform.position),
                            Quaternion.identity, Canvas.transform);
 
-            // ï\é¶Ç§Ç‹Ç≠Ç¢Ç©Ç»Ç¢ÇÊÇßÅ`Å`Å`Å`Å`Å`Å`Å`Å`Å`Å`ÅIÅIÅIÅIÅIÅIÅIÅIÅIÅI
             instance.GetComponent<CombText>().SetComboText(BeamParticleScript.combo);
 
         }

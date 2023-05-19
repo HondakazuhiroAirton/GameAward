@@ -85,7 +85,8 @@ public class PlayerMove_MIURA : MonoBehaviour
     // プレイヤーデータ保存用オブジェクト取得
     private GameObject PlayerDate;
     // Geter/Seter用スクリプト保存
-    private beamlife PlayerClassScript;
+    private beamlife beamLifeScript;
+    private PlayerClass PlayerClassScript;
     // Charge用キラキラパーティクルシステムオブジェクト取得
     private GameObject beamCharge;
     private charge beamChargeScript;
@@ -128,6 +129,7 @@ public class PlayerMove_MIURA : MonoBehaviour
     // 爆破エフェクトゾーン
     // 再生するアセット
     private EffekseerEffectAsset effect;
+    private EffekseerEffectAsset effect2;
     // ハンドル
     private EffekseerHandle handle;
     // エフェクトの回転計算
@@ -147,14 +149,23 @@ public class PlayerMove_MIURA : MonoBehaviour
     private bool _ismoveU;
     private bool _ismoveD;
 
+    // プレイヤーの元の位置保存
+    private Vector3 beforePos ;
+    // まえのアングル
+    private Quaternion beforeAngle;
+
     void Start()
     {
+        // ワープ前位置保存
+        beforePos = new Vector3(0.0f, 0.0f, 0.0f);
+
         // 左右ソーラーキャッシュ
         rightSolar = GameObject.Find("RightSolar");
         leftSolar = GameObject.Find("LeftSolar");
 
         // 爆破エフェクトキャッシュ
         effect = Resources.Load<EffekseerEffectAsset>("Explosion");
+        effect2 = Resources.Load<EffekseerEffectAsset>("Warp");
 
         // 子オブジェクトのメッシュを全部取得
         parsMesh = GetComponentsInChildren<MeshRenderer>();
@@ -251,10 +262,11 @@ public class PlayerMove_MIURA : MonoBehaviour
         PlayerDate = GameObject.Find("PD");
 
         //Geter / Seter使用用スクリプト保持
-        PlayerClassScript = PlayerDate.GetComponent<beamlife>();
-
+        beamLifeScript = PlayerDate.GetComponent<beamlife>();
+        PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
+    
         //ビーム残量を100 % に設定
-        PlayerClassScript.SetAmount(100);
+        beamLifeScript.SetAmount(100);
 
         // ビーム初期化
         Lv0_Scale = 0.4f;
@@ -331,12 +343,12 @@ public class PlayerMove_MIURA : MonoBehaviour
             //d入力で右向きに動く
             if (Input.GetKey("d") || _ismoveR == true)
             {
-                this.gameObject.transform.position = new Vector3(pos.x + speed * DownSpeed, pos.y, pos.z);
+                this.gameObject.transform.position = new Vector3(pos.x + speed * DownSpeed * Time.deltaTime, pos.y, pos.z);
             }
             //a入力で左向きに動く
             else if (Input.GetKey("a") || _ismoveL == true)
             {
-                this.gameObject.transform.position = new Vector3(pos.x - speed * DownSpeed, pos.y, pos.z);
+                this.gameObject.transform.position = new Vector3(pos.x - speed * DownSpeed * Time.deltaTime, pos.y, pos.z);
             }
 
         }
@@ -359,12 +371,12 @@ public class PlayerMove_MIURA : MonoBehaviour
             //d入力で右向きに動く
             if (Input.GetKey("d") || _ismoveR == true)
             {
-                this.gameObject.transform.position = new Vector3(pos.x + speed * DownSpeed, pos.y, pos.z);
+                this.gameObject.transform.position = new Vector3(pos.x + speed * DownSpeed * Time.deltaTime, pos.y, pos.z);
             }
             //a入力で左向きに動く
             else if (Input.GetKey("a") || _ismoveL == true)
             {
-                this.gameObject.transform.position = new Vector3(pos.x - speed * DownSpeed, pos.y, pos.z);
+                this.gameObject.transform.position = new Vector3(pos.x - speed * DownSpeed * Time.deltaTime, pos.y, pos.z);
             }
 
         }
@@ -387,12 +399,12 @@ public class PlayerMove_MIURA : MonoBehaviour
             //w入力で上向きに動く
             if (Input.GetKey("w") || _ismoveU == true)
             {
-                this.gameObject.transform.position = new Vector3(pos.x, pos.y + speed * DownSpeed, pos.z);
+                this.gameObject.transform.position = new Vector3(pos.x, pos.y + speed * DownSpeed * Time.deltaTime, pos.z);
             }
             //s入力で下向きに動く
             else if (Input.GetKey("s") || _ismoveD == true)
             {
-                this.gameObject.transform.position = new Vector3(pos.x, pos.y - speed * DownSpeed, pos.z);
+                this.gameObject.transform.position = new Vector3(pos.x, pos.y - speed * DownSpeed * Time.deltaTime, pos.z);
             }
 
         }
@@ -415,58 +427,62 @@ public class PlayerMove_MIURA : MonoBehaviour
             //w入力で上向きに動く
             if (Input.GetKey("w") || _ismoveU == true)
             {
-                this.gameObject.transform.position = new Vector3(pos.x, pos.y + speed * DownSpeed, pos.z);
+                this.gameObject.transform.position = new Vector3(pos.x, pos.y + speed * DownSpeed * Time.deltaTime, pos.z);
             }
             //s入力で下向きに動く
             else if (Input.GetKey("s") || _ismoveD == true)
             {
-                this.gameObject.transform.position = new Vector3(pos.x, pos.y - speed * DownSpeed, pos.z);
+                this.gameObject.transform.position = new Vector3(pos.x, pos.y - speed * DownSpeed * Time.deltaTime, pos.z);
             }
 
         }
 
-        //ワープ
-        if (Up == true)
+        if (Time.deltaTime > 0)
         {
-            //色変更
-            wallUp.GetComponent<Renderer>().material.color = Color.green;
-            if (Input.GetKey("1"))//上
-            {
-                this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z );
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-        }
-        if (Down == true)
-        {
-            //色変更
-            wallDown.GetComponent<Renderer>().material.color = Color.green;
-            if (Input.GetKey("2"))//下
-            {
-                this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z );
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
-            }
-        }
-        if (Right == true)
-        {
-            //色変更
-            wallRight.GetComponent<Renderer>().material.color = Color.green;
-            if (Input.GetKey("3"))//右
-            {
-                this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z);
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
-            }
-        }
-        if (Left == true)
-        {
-            //色変更
-            wallLeft.GetComponent<Renderer>().material.color = Color.green;
-            if (Input.GetKey("4"))//左
-            {
-                this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z);
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
-            }
-        }
 
+            //ワープ
+            if (Up == true)
+            {
+                //色変更
+                wallUp.GetComponent<Renderer>().material.color = Color.green;
+                if (Input.GetKey("1"))//上
+                {
+                    this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z);
+                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+            }
+            if (Down == true)
+            {
+                //色変更
+                wallDown.GetComponent<Renderer>().material.color = Color.green;
+                if (Input.GetKey("2"))//下
+                {
+                    this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z);
+                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+                }
+            }
+            if (Right == true)
+            {
+                //色変更
+                wallRight.GetComponent<Renderer>().material.color = Color.green;
+                if (Input.GetKey("3"))//右
+                {
+                    this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z);
+                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+                }
+            }
+            if (Left == true)
+            {
+                //色変更
+                wallLeft.GetComponent<Renderer>().material.color = Color.green;
+                if (Input.GetKey("4"))//左
+                {
+                    this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z);
+                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+                }
+            }
+
+        }
         //0329_三浦瞬追記****************************************************************
 
 
@@ -600,7 +616,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
             // 減らす
             // ビーム残量取得
-            float tempCharge = PlayerClassScript.GetAmount();
+            float tempCharge = beamLifeScript.GetAmount();
 
             float tmp = tempCharge - use;
 
@@ -609,13 +625,9 @@ public class PlayerMove_MIURA : MonoBehaviour
             {
                 // ビーム残量を減らして
                 tempCharge = tempCharge - use;
-                Debug.Log("使用量" + use);
-                Debug.Log("ビーム残り" +tempCharge);
-
+ 
                 // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
-                PlayerClassScript.SetAmount(tempCharge);
-
-                Debug.Log("メーターの中身" + PlayerClassScript.GetAmount());
+                beamLifeScript.SetAmount(tempCharge);
 
                 // プレイヤーの角度をBeamParticleに代入する
                 // プレイヤーのZ軸を参考にする
@@ -647,11 +659,16 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         // ビーム発射処理(ここまで)*****************************************************************
 
+    
+        float amount = PlayerClassScript.GetBigAmount();
+
         // 巨大ビーム発射処理(ここから)*************************************************************
-        if (Input.GetKeyUp(KeyCode.K)) // Downと同じキーコードにしてね
+        if (Input.GetKeyUp(KeyCode.K) && (amount >= 100) ) // Downと同じキーコードにしてね
         {
-            // プレハブを指定位置に生成
-            Instantiate(BigBeamPrefabs, this.transform.position, gameObject.transform.localRotation);
+            // BigBeamを出す
+            GoBigBeam();
+            // 使用したらAmountを0にする
+            PlayerClassScript.SetBigAmount(0);
         }
 
 
@@ -743,7 +760,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
             // 減らす
             // ビーム残量取得
-            float tempCharge = PlayerClassScript.GetAmount();
+            float tempCharge = beamLifeScript.GetAmount();
 
             float tmp = tempCharge - use;
 
@@ -756,9 +773,9 @@ public class PlayerMove_MIURA : MonoBehaviour
                 Debug.Log("ビーム残り" + tempCharge);
 
                 // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
-                PlayerClassScript.SetAmount(tempCharge);
+                beamLifeScript.SetAmount(tempCharge);
 
-                Debug.Log("メーターの中身" + PlayerClassScript.GetAmount());
+                Debug.Log("メーターの中身" + beamLifeScript.GetAmount());
 
                 // プレイヤーの角度をBeamParticleに代入する
                 // プレイヤーのZ軸を参考にする
@@ -824,7 +841,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 
         }
-        Debug.Log("上にワープする！");
+
     }
     public void OnWarpDown(InputAction.CallbackContext context)
     {
@@ -837,7 +854,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
 
         }
-        Debug.Log("下にワープする！");
+
     }
     public void OnWarpRight(InputAction.CallbackContext context)
     {
@@ -934,7 +951,7 @@ public class PlayerMove_MIURA : MonoBehaviour
     public void Hidan()
     {
         // 残りライフを参照して爆破
-        int life = PlayerClassScript.GetLife();
+        int life = beamLifeScript.GetLife();
         //Posを考える
         Vector3 pos = transform.position;
         // 点滅時間をセットする
@@ -1003,4 +1020,21 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
 
     }
+
+    // 巨大ビーム発射処理
+    public void GoBigBeam()
+    {
+        BigBeamScript script = BigBeamPrefabs.GetComponent<BigBeamScript>();
+
+        // 進行方向を渡す
+        script.boxCastVecor = -this.transform.up;
+
+        // エフェクト回転方向を渡す
+        script.PlayerAngle = this.transform.localEulerAngles.z - 180;
+
+        // プレハブを指定位置に生成
+        Instantiate(BigBeamPrefabs, this.transform.position, gameObject.transform.localRotation);
+    }
+
+    
 }
