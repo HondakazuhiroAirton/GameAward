@@ -67,7 +67,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         // ‹Ê‚ğ–ˆƒtƒŒ[ƒ€‚ğ“®‚©‚µ‚Ä‚é
-        transform.position += moveVal;
+        transform.position += moveVal /** Time.deltaTime*/;
 
         Wx = Camera.main.WorldToViewportPoint(transform.position).x;
         Wy = Camera.main.WorldToViewportPoint(transform.position).y;
