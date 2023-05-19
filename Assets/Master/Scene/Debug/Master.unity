@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.00046322675, g: 0.0024112256, b: 0.011788999, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.0002990098, g: 0.0014644221, b: 0.0073870206, a: 1}
+>>>>>>> feature/KoutaMotai
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2343,7 +2347,7 @@ Transform:
   m_Children:
   - {fileID: 1571532022}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &776120525
 PrefabInstance:
@@ -5791,7 +5795,7 @@ Transform:
   - {fileID: 2076314511}
   - {fileID: 1937435877}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2076314511 stripped
 Transform:
