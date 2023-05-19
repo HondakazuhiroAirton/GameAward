@@ -96,7 +96,7 @@ public class StageSelect2 : MonoBehaviour
     {
         Sel.SetActive(true);
         world.Select();
-        Stage2.SetActive(false);
         cursoll.Updateflag();
+        Stage2.SetActive(false);
     }
 }
