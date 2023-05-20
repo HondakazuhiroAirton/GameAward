@@ -285,4 +285,9 @@ public class ResultUI : MonoBehaviour
     {
         return initflag;
     }
+
+    public void rankfragfalse()
+    {
+        initflag = false;
+    }
 }
