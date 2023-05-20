@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class Rank : MonoBehaviour
 {
@@ -48,6 +49,11 @@ public class Rank : MonoBehaviour
     [SerializeField]
     GameObject Obj;
 
+    //button 
+    Continue rankButton;
+    int Ctime = 0;
+    bool Cflag = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +98,11 @@ public class Rank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(Ctime <= 0)
+        {
+            Cflag = true;
+        }
 
         if (Resulte.rankflag() == true)
         {
@@ -184,6 +195,28 @@ public class Rank : MonoBehaviour
                 Rankselect(4);
             }
 
+    }
+    public void Ondecision(InputAction.CallbackContext context)
+    {
+
+        if (Resulte.rankflag() == true)
+        {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                rankpanel();
+                rankButton = this.GetComponent<Continue>();
+                rankButton.rankButton();
+                Cflag = false;
+                Ctime = 4;
+                Resulte.rankfragfalse();
+                Obj.SetActive(false);
+            }
+        }
+    }
+
+    public bool BCflag()
+    {
+        return Cflag;
     }
 
 }

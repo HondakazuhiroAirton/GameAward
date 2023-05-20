@@ -96,9 +96,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "puse",
+                    "name": "pouse",
                     "type": "Button",
                     "id": "8d987056-2d4e-4c93-b186-396fe7b09d35",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "decision",
+                    "type": "Button",
+                    "id": "642ef291-a5cb-48a8-aecf-1cef1120a67d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -223,7 +232,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "puse",
+                    "action": "pouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "75de2fca-cc94-40c9-bd70-0a785f06224e",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "decision",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

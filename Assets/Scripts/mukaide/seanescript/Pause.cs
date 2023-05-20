@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class Pause : MonoBehaviour
 {
@@ -100,5 +101,32 @@ public class Pause : MonoBehaviour
     public void ButtonRestart()
     {
         Image.GetComponent<Fade>().GameStart();
+    }
+
+    public void OnSelect(InputAction.CallbackContext context)
+    {
+        Debug.Log("おした！！");
+
+        if (context.phase == InputActionPhase.Performed)
+        {
+            //　ポーズUIのアクティブ、非アクティブを切り替え
+            pauseUI.SetActive(!pauseUI.activeSelf);
+
+
+            //ボタンが選択された状態になる
+            resume.Select();
+
+            //　ポーズUIが表示されてる時は停止
+            if (pauseUI.activeSelf)
+            {
+                Time.timeScale = 0f;
+                //　ポーズUIが表示されてなければ通常通り進行  
+
+            }
+            else
+            {
+                Time.timeScale = 1f;
+            }
+        }
     }
 }
