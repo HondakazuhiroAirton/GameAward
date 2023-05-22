@@ -456,50 +456,52 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
 
 
+        if (Time.deltaTime > 0)
+        {
 
             //ワープ
-        if (Up == true)
-        {
-            //色変更
-            wallUp.GetComponent<Renderer>().material.color = Color.green;
-            if (Input.GetKey("1"))//上
+            if (Up == true)
             {
-                this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z);
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                //色変更
+                wallUp.GetComponent<Renderer>().material.color = Color.green;
+                if (Input.GetKey("1"))//上
+                {
+                    this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z);
+                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
             }
-        }
-        if (Down == true)
-        {
-            //色変更
-            wallDown.GetComponent<Renderer>().material.color = Color.green;
-            if (Input.GetKey("2"))//下
+            if (Down == true)
             {
-                this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z);
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+                //色変更
+                wallDown.GetComponent<Renderer>().material.color = Color.green;
+                if (Input.GetKey("2"))//下
+                {
+                    this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z);
+                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
+                }
             }
-        }
-        if (Right == true)
-        {
-            //色変更
-            wallRight.GetComponent<Renderer>().material.color = Color.green;
-            if (Input.GetKey("3"))//右
+            if (Right == true)
             {
-                this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z);
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+                //色変更
+                wallRight.GetComponent<Renderer>().material.color = Color.green;
+                if (Input.GetKey("3"))//右
+                {
+                    this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z);
+                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
+                }
             }
-        }
-        if (Left == true)
-        {
-            //色変更
-            wallLeft.GetComponent<Renderer>().material.color = Color.green;
-            if (Input.GetKey("4"))//左
+            if (Left == true)
             {
-                this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z);
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+                //色変更
+                wallLeft.GetComponent<Renderer>().material.color = Color.green;
+                if (Input.GetKey("4"))//左
+                {
+                    this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z);
+                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+                }
             }
-        }
 
-        
+        }
         //0329_三浦瞬追記****************************************************************
 
 
@@ -514,7 +516,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
 
         // ビーム発射処理*************************************************************
-        if (Input.GetKey(KeyCode.Space) || _isPressed == true) // キーコードは変更してね(*^^*)
+        if (Input.GetKey(KeyCode.Space) || _isPressed == true ) // キーコードは変更してね(*^^*)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -561,7 +563,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) && (Interbal <= 0) ) // Downと同じキーコードにしてね
+        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKey(KeyCode.Q)) && (Interbal <= 0) ) // Downと同じキーコードにしてね
         {
             // インターバルを設定する
             Interbal = interbalMax;
