@@ -322,7 +322,13 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     void Update()
     {
-        if (Time.deltaTime <= 0) return;
+        if (Time.deltaTime <= 0)
+        {
+            // チャージエフェクトストップ
+            beamChatgeAudio.Stop();
+            beamChargeScript.Stop();
+            return;
+        }
 
         if (strobo) // ストロボフラグがTrueの時点滅させる
         {
@@ -516,7 +522,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
 
         // ビーム発射処理*************************************************************
-        if (Input.GetKey(KeyCode.Space) || _isPressed == true ) // キーコードは変更してね(*^^*)
+        if (Input.GetKey(KeyCode.Space)  || _isPressed == true ) // キーコードは変更してね(*^^*)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -563,7 +569,9 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
         }
 
-        if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKey(KeyCode.Q)) && (Interbal <= 0) ) // Downと同じキーコードにしてね
+        if (Input.GetKeyUp(KeyCode.Space) && (Interbal <= 0) 
+            || (  Input.GetKeyUp(KeyCode.Q) && (Interbal <= 0) && (ChargeTime > 0) )
+            ) // Downと同じキーコードにしてね
         {
             // インターバルを設定する
             Interbal = interbalMax;
