@@ -159,7 +159,8 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     // オーディオクリップ
     private AudioClip charge;
-    private AudioClip explosion;
+    private AudioClip explosion1;
+    private AudioClip explosion2;
 
     void Start()
     {
@@ -314,7 +315,8 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         // 音取得
         charge = Resources.Load<AudioClip>("ChargeBeamSE");
-        explosion = Resources.Load<AudioClip>("Explosion");
+        explosion1 = Resources.Load<AudioClip>("PlayerExplosiom1");
+        explosion2 = Resources.Load<AudioClip>("Explosion");
     }
 
 
@@ -970,7 +972,7 @@ public class PlayerMove_MIURA : MonoBehaviour
     // 弾を受けた時に呼ばれる処理
     public void Hidan()
     {
-        beamChatgeAudio.PlayOneShot(explosion);
+        
 
         // 残りライフを参照して爆破
         int life = beamLifeScript.GetLife();
@@ -986,6 +988,8 @@ public class PlayerMove_MIURA : MonoBehaviour
             strobo = true;
             // 右ソーラー爆破
             pos = rightSolar.transform.position;
+            // 爆発音再生
+            beamChatgeAudio.PlayOneShot(explosion1);
             // 爆破エフェクト表示
             handle = EffekseerSystem.PlayEffect(effect, pos);
             // 非表示に
@@ -997,6 +1001,8 @@ public class PlayerMove_MIURA : MonoBehaviour
             strobo = true;
             // 左ソーラー爆破
             pos = leftSolar.transform.position;
+            // 爆発音再生
+            beamChatgeAudio.PlayOneShot(explosion1);
             // 爆破エフェクト表示
             handle = EffekseerSystem.PlayEffect(effect, pos);
             // 非表示に
@@ -1009,6 +1015,8 @@ public class PlayerMove_MIURA : MonoBehaviour
                 tmp.enabled = false;
             }
             // ここ大爆発
+            // 爆発音再生
+            beamChatgeAudio.PlayOneShot(explosion2);
             // 爆破エフェクト表示
             handle = EffekseerSystem.PlayEffect(effect, transform.position);
         }
