@@ -14,7 +14,6 @@ public class ButtonTitle : MonoBehaviour
 
     //ボタン設定
     private Button redo;
-    private Button Continue;
 
     public GameObject Image;
 
@@ -35,7 +34,6 @@ public class ButtonTitle : MonoBehaviour
     {
         //ボタンの読み込み
         redo = GameObject.Find("Redo").GetComponent<Button>();
-        Continue = GameObject.Find("Continue").GetComponent<Button>();
         //SE
         SE = GameObject.Find("AudioManage").GetComponent<AudioManager>();
 
@@ -61,13 +59,6 @@ public class ButtonTitle : MonoBehaviour
     public void ButtonRedo()
     {
         redo.interactable = false;
-        SE.playselectSE();
-        Image.GetComponent<Fade>().GameSelect();
-    }
-
-    public void ButtonContinue()
-    {
-        Continue.interactable = false;
         SE.playselectSE();
         Image.GetComponent<Fade>().GameSelect();
     }
