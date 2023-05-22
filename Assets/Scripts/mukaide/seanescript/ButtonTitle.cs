@@ -39,17 +39,14 @@ public class ButtonTitle : MonoBehaviour
         //SE
         SE = GameObject.Find("AudioManage").GetComponent<AudioManager>();
 
-        titleUI.SetActive(false);
+     
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //時間をカウントダウンする
-        countdown -= Time.deltaTime;
-
-
+       
 
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
@@ -58,14 +55,6 @@ public class ButtonTitle : MonoBehaviour
         }
     
 
-        //countdownが0以下になったとき
-        if (countdown <= 0)
-        {
-            countdown = 0;
-
-            // パネルUIのアクティブ非アクティブを切り替え
-            Active();
-        }
 
     }
 
@@ -83,9 +72,4 @@ public class ButtonTitle : MonoBehaviour
         Image.GetComponent<Fade>().GameSelect();
     }
 
-    public void Active()
-    {
-        //パネルUIのアクティブ、非アクティブを切り替え
-        titleUI.SetActive(true);
-    }
 }
