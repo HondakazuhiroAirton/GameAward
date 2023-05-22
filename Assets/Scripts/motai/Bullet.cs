@@ -80,7 +80,6 @@ public class Bullet : MonoBehaviour
         {
             GameObject.Destroy(this.gameObject);
         }
-
     }
     private void OnTriggerEnter(Collider other)
     {
