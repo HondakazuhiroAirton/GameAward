@@ -4018,9 +4018,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c8bdf6d5cfa144f9fc6f381451d133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResultPanel: {fileID: 0}
   GameBGM: {fileID: 8300000, guid: 49194c4cc7bb0b64aaf7ddf086148743, type: 3}
   ResultBGM: {fileID: 8300000, guid: b57590210596b7b45a6885ec0105fb2c, type: 3}
+  GameOverBGM: {fileID: 8300000, guid: ce7b4d5a91b23f844815a6f0ab01a047, type: 3}
 --- !u!1 &1126610031
 GameObject:
   m_ObjectHideFlags: 0

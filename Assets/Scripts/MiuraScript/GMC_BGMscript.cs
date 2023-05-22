@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GMC_BGMscript : MonoBehaviour
 {
-    public GameObject ResultPanel;
+   // public GameObject ResultPanel;
 
     public AudioClip GameBGM;
     public AudioClip ResultBGM;
+    public AudioClip GameOverBGM;
 
     private AudioSource audioSource;
     // Start is called before the first frame update
@@ -22,15 +23,26 @@ public class GMC_BGMscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
+    // リザルト用BGM開始
     public void ResultBGMStart()
     {
         // BGM止める
         audioSource.Stop();
         // BGMの音を流す
         audioSource.clip = ResultBGM;
+        audioSource.Play();
+    }
+
+    // ゲームオーバー用用BGM開始
+    public void GameOverBGMStart()
+    {
+        // BGM止める
+        audioSource.Stop();
+        // BGMの音を流す
+        audioSource.clip = GameOverBGM;
         audioSource.Play();
     }
 }
