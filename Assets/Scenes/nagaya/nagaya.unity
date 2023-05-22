@@ -9452,6 +9452,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 02d2f40f-9995-4f5f-ab06-6fbd7a6acc09
     m_ActionName: stagesel/select[/DualSenseGamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2086739183}
+        m_TargetAssemblyTypeName: Cursoll, Assembly-CSharp
+        m_MethodName: OnUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a2b12578-5a9b-4727-b2e9-5ec5db059160
+    m_ActionName: stagesel/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2086739183}
+        m_TargetAssemblyTypeName: Cursoll, Assembly-CSharp
+        m_MethodName: OnDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 656b12d8-3dba-4c30-b519-ef218ac3d7b0
+    m_ActionName: stagesel/cursollmoveU1[/DualSenseGamepadHID/leftStick/up,/DualSenseGamepadHID/dpad/up]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: stagesel
@@ -9758,5 +9790,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724503, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: SelectSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e33a4f78be72e546a1b11fab163ef82, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36bcce3109d279143bf336b100f82bf7, type: 3}
