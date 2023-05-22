@@ -524,6 +524,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space)  || _isPressed == true ) // キーコードは変更してね(*^^*)
         {
+            
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 // チャージエフェクト開始
@@ -535,38 +536,44 @@ public class PlayerMove_MIURA : MonoBehaviour
             // アニメーターぐるぐる状態はTrue
             animator.SetBool("fCharge",true);
 
-  
+            // ビーム残量取得
+            float tempCharge = beamLifeScript.GetAmount();
 
-            // 毎フレーム1足すことによって時間を図る
-            ChargeTime = ChargeTime + 1; 
-
-            // 最大値設定 ←バグるならこの変か？？？？
-            if (ChargeTime >= MaxFrame)
+            // 最低ビーム量がなければチャージしない
+            if (tempCharge >= Lv0_Use)
             {
-                ChargeTime = (int)(MaxFrame + 1);
+                // 毎フレーム1足すことによって時間を図る
+                ChargeTime = ChargeTime + 1;
+                // 最大値設定 ←バグるならこの変か？？？？
+                if (ChargeTime >= MaxFrame)
+                {
+                    ChargeTime = (int)(MaxFrame + 1);
+                }
             }
+
+
             
             // 時間によって変わる(閾値)
-            if (0 <= ChargeTime && ChargeTime < OneChargeFrame) // 1段階目
-            {
-                Debug.Log("1段階目のチャージ");
-            }
-            else if (OneChargeFrame <= ChargeTime && ChargeTime < 2 * OneChargeFrame)// 2段階目
-            {
-                Debug.Log("2段階目のチャージ");
-            }
-            else if (2 * OneChargeFrame <= ChargeTime && ChargeTime < 3 * OneChargeFrame)// 3段階目
-            {
-                Debug.Log("3段階目のチャージ");
-            }
-            else if (3 * OneChargeFrame <= ChargeTime && ChargeTime < 4 * OneChargeFrame)// 4段階目
-            {
-                Debug.Log("4段階目のチャージ");
-            }
-            else if (4 * OneChargeFrame <= ChargeTime)// 5段階目
-            {
-                Debug.Log("5段階目のチャージ");
-            }
+            //if (0 <= ChargeTime && ChargeTime < OneChargeFrame) // 1段階目
+            //{
+            //    Debug.Log("1段階目のチャージ");
+            //}
+            //else if (OneChargeFrame <= ChargeTime && ChargeTime < 2 * OneChargeFrame)// 2段階目
+            //{
+            //    Debug.Log("2段階目のチャージ");
+            //}
+            //else if (2 * OneChargeFrame <= ChargeTime && ChargeTime < 3 * OneChargeFrame)// 3段階目
+            //{
+            //    Debug.Log("3段階目のチャージ");
+            //}
+            //else if (3 * OneChargeFrame <= ChargeTime && ChargeTime < 4 * OneChargeFrame)// 4段階目
+            //{
+            //    //Debug.Log("4段階目のチャージ");
+            //}
+            //else if (4 * OneChargeFrame <= ChargeTime)// 5段階目
+            //{
+            //    //Debug.Log("5段階目のチャージ");
+            //}
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && (Interbal <= 0) 
@@ -723,8 +730,15 @@ public class PlayerMove_MIURA : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Canceled)
         {
+
+            // インターバルを設定する
+            Interbal = interbalMax;
+
             // チャージエフェクトストップ
             beamChargeScript.Stop();
+
+            // チャージ音ストップ
+            beamChatgeAudio.Stop();
 
             // 計測した時間から各種値を計算する
             float use = 0;
@@ -855,6 +869,8 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
         if (context.phase == InputActionPhase.Performed)
         {
+            // チャージ音開始
+            beamChatgeAudio.Play();
             // チャージエフェクト開始
             beamChargeScript.Play();
         }
@@ -862,6 +878,9 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     public void OnWarpUP(InputAction.CallbackContext context)
     {
+        // 例外判定
+        if (Time.deltaTime <= 0) return;
+
         //ワープ
         if (Up == true)
         {
@@ -877,6 +896,10 @@ public class PlayerMove_MIURA : MonoBehaviour
     }
     public void OnWarpDown(InputAction.CallbackContext context)
     {
+        // 例外判定
+        if (Time.deltaTime <= 0) return;
+        
+
         if (Down == true)
         {
             //色変更
@@ -890,6 +913,9 @@ public class PlayerMove_MIURA : MonoBehaviour
     }
     public void OnWarpRight(InputAction.CallbackContext context)
     {
+        // 例外判定
+        if (Time.deltaTime <= 0) return;
+
         if (Right == true)
         {
             //色変更
@@ -902,6 +928,9 @@ public class PlayerMove_MIURA : MonoBehaviour
     }
     public void OnWarpLeft(InputAction.CallbackContext context)
     {
+        // 例外判定
+        if (Time.deltaTime <= 0) return;
+
         if (Left == true)
         {
             //色変更
