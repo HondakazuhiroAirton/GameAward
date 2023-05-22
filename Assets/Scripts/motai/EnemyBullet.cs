@@ -42,16 +42,15 @@ public class EnemyBullet : MonoBehaviour
 
         time += Time.deltaTime;
 
-        if (time >= mintime)// 2秒たったらアニメーションスタート
+        //if (time >= mintime)// 2秒たったらアニメーションスタート
+        //{
+        //    animator.SetBool("enemyS_flag", true);//3秒～4秒・4秒～5秒の2回
+        //}
+        if (time >= maxtime)// 5～10秒たったら弾が出てアニメーションストップ
         {
-            animator.SetBool("enemyS_flag", true);//3秒～4秒・4秒～5秒の2回
-        }
-        if (time >= maxtime)// 5秒たったら弾が出てアニメーションストップ タイマー0
-        {
-            animator.SetBool("enemyS_flag", false);
+            //animator.SetBool("enemyS_flag", false);
             BallShot();
             time = 0;
-            return;
         }
     }
 
