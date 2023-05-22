@@ -42,6 +42,8 @@ public class ResultUI : MonoBehaviour
 
     public int Second = 2;  //時間
 
+
+
     // 0503三浦追記
     // 何のスコアをぐるぐるして表示させるか覚えておく変数
     enum resultState
@@ -58,12 +60,11 @@ public class ResultUI : MonoBehaviour
 
     private bool initflag;
 
-    
+    // BGM用にメインカメラを取得
+    private GMC_BGMscript mainCameraBGMscript;
 
 
     // Start is called before the first frame update
-
-
 
     void Start()
     {
@@ -105,6 +106,9 @@ public class ResultUI : MonoBehaviour
 
         flag = GameObject.Find("EnemyGroup(Clone)");
         clearflag = flag.GetComponent<EnemyManager>();
+
+        // BGM用にメインカメラを取得
+        mainCameraBGMscript = GameObject.Find("MainCamera").GetComponent<GMC_BGMscript>();
 
         resultUI.SetActive(false);
     }
@@ -149,7 +153,10 @@ public class ResultUI : MonoBehaviour
         //パネルUIのアクティブ、非アクティブを切り替え
         resultUI.SetActive(true);
 
-     
+        // リザルトBGM始める
+        mainCameraBGMscript.ResultBGMStart();
+
+
         // trueの時だけ処理する
         if (resultUI.activeSelf == true)
         {
