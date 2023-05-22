@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class BeamManagerScript : MonoBehaviour
 {
+    // AudioSourceコンポーネント取得
+    private AudioSource audio;
     
     void Start()
     {
+        // AudioSource取得
+        audio = this.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -38,6 +42,16 @@ public class BeamManagerScript : MonoBehaviour
                 break;
             }
 
+        }
+
+
+        if (Time.deltaTime <= 0)
+        {
+            audio.enabled = false;
+        }
+        else
+        {
+            audio.enabled = true;
         }
 
         // 子オブジェクトが全部非アクティプの場合
