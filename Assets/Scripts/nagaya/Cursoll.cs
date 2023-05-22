@@ -210,6 +210,29 @@ public class Cursoll : MonoBehaviour
             }
     }
 
+    public void OnUp(InputAction.CallbackContext context)
+    {
+
+        if (panelflag == false)
+        {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                se.PlayOneShot(Cursolse);
+            }
+        }
+    }
+    public void OnDown(InputAction.CallbackContext context)
+    {
+
+        if (panelflag == false)
+        {
+            if (context.phase == InputActionPhase.Performed)
+            {
+                se.PlayOneShot(Cursolse);
+            }
+        }
+    }
+
     public void OnSelect(InputAction.CallbackContext context)
     {
         Debug.Log("Ç®ÇµÇΩÅIÅI");
