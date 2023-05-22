@@ -151,13 +151,15 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     // プレイヤーの元の位置保存
     private Vector3 beforePos ;
-    // まえのアングル
+    // 前のアングル
     private Quaternion beforeAngle;
-
+    
     // 音**************************************************************
     private AudioSource beamChatgeAudio; // ビームのチャージ音
 
-
+    // オーディオクリップ
+    private AudioClip charge;
+    private AudioClip explosion;
 
     void Start()
     {
@@ -309,6 +311,10 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         // 音コンポーネント取得
         beamChatgeAudio = this.gameObject.GetComponent<AudioSource>();
+
+        // 音取得
+        charge = Resources.Load<AudioClip>("ChargeBeamSE");
+        explosion = Resources.Load<AudioClip>("Explosion");
     }
 
 
@@ -450,46 +456,46 @@ public class PlayerMove_MIURA : MonoBehaviour
 
 
             //ワープ
-            if (Up == true)
+        if (Up == true)
+        {
+            //色変更
+            wallUp.GetComponent<Renderer>().material.color = Color.green;
+            if (Input.GetKey("1"))//上
             {
-                //色変更
-                wallUp.GetComponent<Renderer>().material.color = Color.green;
-                if (Input.GetKey("1"))//上
-                {
-                    this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z);
-                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-                }
+                this.gameObject.transform.position = new Vector3(Upos.x, Upos.y, Upos.z);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
-            if (Down == true)
+        }
+        if (Down == true)
+        {
+            //色変更
+            wallDown.GetComponent<Renderer>().material.color = Color.green;
+            if (Input.GetKey("2"))//下
             {
-                //色変更
-                wallDown.GetComponent<Renderer>().material.color = Color.green;
-                if (Input.GetKey("2"))//下
-                {
-                    this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z);
-                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
-                }
+                this.gameObject.transform.position = new Vector3(Dpos.x, Dpos.y, Dpos.z);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 180);
             }
-            if (Right == true)
+        }
+        if (Right == true)
+        {
+            //色変更
+            wallRight.GetComponent<Renderer>().material.color = Color.green;
+            if (Input.GetKey("3"))//右
             {
-                //色変更
-                wallRight.GetComponent<Renderer>().material.color = Color.green;
-                if (Input.GetKey("3"))//右
-                {
-                    this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z);
-                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
-                }
+                this.gameObject.transform.position = new Vector3(Rpos.x, Rpos.y, Rpos.z);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, -90);
             }
-            if (Left == true)
+        }
+        if (Left == true)
+        {
+            //色変更
+            wallLeft.GetComponent<Renderer>().material.color = Color.green;
+            if (Input.GetKey("4"))//左
             {
-                //色変更
-                wallLeft.GetComponent<Renderer>().material.color = Color.green;
-                if (Input.GetKey("4"))//左
-                {
-                    this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z);
-                    this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
-                }
+                this.gameObject.transform.position = new Vector3(Lpos.x, Lpos.y, Lpos.z);
+                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
             }
+        }
 
         
         //0329_三浦瞬追記****************************************************************
@@ -964,6 +970,8 @@ public class PlayerMove_MIURA : MonoBehaviour
     // 弾を受けた時に呼ばれる処理
     public void Hidan()
     {
+        beamChatgeAudio.PlayOneShot(explosion);
+
         // 残りライフを参照して爆破
         int life = beamLifeScript.GetLife();
         //Posを考える
