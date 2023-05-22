@@ -12,6 +12,9 @@ public class EnemyCount : MonoBehaviour
     public GameObject playerbeam;
     public GameObject Enemycount;
 
+    [SerializeField] private AudioSource SE;
+    [SerializeField] private AudioClip EnemyDefeatSE;
+
     private float _countdown=5.0f;    //繰り返す間隔
     private float _timeElapsed;   //経過時間
 
@@ -69,6 +72,7 @@ public class EnemyCount : MonoBehaviour
             //beingMeasured = !beingMeasured;
             // 衝突した相手オブジェクトを削除する
             Destroy(Enemy);
+            SE.PlayOneShot(EnemyDefeatSE);
 
             count++;
             enemycount.text = "Combo:" + count;
@@ -87,6 +91,7 @@ public class EnemyCount : MonoBehaviour
             else if(collision.gameObject.name == "PlayerBeam")
             {
                 Destroy(Enemy);
+                SE.PlayOneShot(EnemyDefeatSE);
 
                 count++;
                 enemycount.text = "Combo:" + count;
