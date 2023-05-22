@@ -15,7 +15,7 @@ public class WorldSelector : MonoBehaviour
     public GameObject Stage3;
     public GameObject Stage4;
 
-    
+    Fade fade;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +56,7 @@ public class WorldSelector : MonoBehaviour
 
     public void onButtonReturn()
     {
-        SceneManager.LoadScene("Title(Proto)");
+        fade = GameObject.Find("Image").GetComponent<Fade>();
+        fade.GameTitle();
     }
 }
