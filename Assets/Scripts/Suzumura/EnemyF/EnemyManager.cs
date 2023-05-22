@@ -9,11 +9,10 @@ using UnityEditor;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private float spawnRealTime = 0;            // タイマー
+    [SerializeField] private float spawnRealTime = 0;            // 生成タイマー
 
     // CSVのデータを流し込む配列
-    [SerializeField] public EnemyData[] enemyData;
-    [SerializeField] public EnemyDatas[] enemyDatas;
+    [SerializeField] public static EnemyData[] enemyData;
 
     // StageChangerオブジェクト
     public GameObject StageChanger;
@@ -25,18 +24,15 @@ public class EnemyManager : MonoBehaviour
     private AppearanceNotice appearanceNotice;
     public GameObject PhaseUI;
     private PhaseManager phase;
-    public GameObject StageData;
-    private Stage11 stage11;
     public bool clearflag;
 
     // 出現用オブジェクト
-    private int element = 2;
+    private int element;
     [SerializeField] private static GameObject[] enemy;
     [SerializeField] private static GameObject[] model;
     public SpriteRenderer Sprite;
     public GameObject Parent;
 
-    //private const float spawnRate = 2.0f;     // 出現間隔
     private int i;                              // 配列番号
 
     float angle = 400.0f;                       // 回転量(2で使用中)
@@ -54,14 +50,6 @@ public class EnemyManager : MonoBehaviour
     // 作るエネミーの番号
     [SerializeField] private static int EnemyIdx;
 
-    private void Awake()
-    {
-        //enemyDatas = new EnemyDatas[50];
-        StageData = GameObject.Find("StageData");
-        stage11 = StageData.GetComponent<Stage11>();
-
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -70,50 +58,85 @@ public class EnemyManager : MonoBehaviour
         // スクリプト上のNextStageを取得
         StageNo nextStageNo = StageChanger.GetComponent<StageChangerScript>().NextStage;
         Debug.Log(nextStageNo);
-        // 使用するCSVファイルの行数を取得
-        //element = CountNumberofLine.Main(nextStageNo);
-        // 配列の要素数を決定
-        enemy = new GameObject[element];
-        model = new GameObject[element];
-        enemyData = new EnemyData[50];
-        Debug.Log("長さ" + enemyData.Length);
-        // csvファイルを読み込ませる
+
         // NextStageの番号で読み込むファイルを分岐する
         switch (nextStageNo)
         {
             case StageNo.Stage1_1:
-                enemyData = stage11.enemydatas;
-                Debug.Log(enemyData[0].name);
-                //StartCoroutine(AddressableLoad("enemy11"));
-                //元のリソースロードを使った方法
-                //textasset = Resources.Load("CSV/enemy11", typeof(TextAsset)) as TextAsset;
+                enemyData = Stage11.enemydatas;
                 break;
             case StageNo.Stage1_2:
-                //StartCoroutine(AddressableLoad("enemy12"));
+                enemyData = Stage12.enemydatas;
                 break;
-            case StageNo.Stage1_3:
-                //StartCoroutine(AddressableLoad("enemy13"));
-                break;
+            //case StageNo.Stage1_3:
+            //    enemyData = Stage13.enemydatas;
+            //    break;
+            //case StageNo.Stage1_4:
+            //    enemyData = Stage14.enemydatas;
+            //    break;
+            //case StageNo.Stage1_5:
+            //    enemyData = Stage15.enemydatas;
+            //    break;
+            //case StageNo.Stage2_1:
+            //    enemyData = Stage21.enemydatas;
+            //    break;
+            //case StageNo.Stage2_2:
+            //    enemyData = Stage22.enemydatas;
+            //    break;
+            //case StageNo.Stage2_3:
+            //    enemyData = Stage23.enemydatas;
+            //    break;
+            //case StageNo.Stage2_4:
+            //    enemyData = Stage24.enemydatas;
+            //    break;
+            //case StageNo.Stage2_5:
+            //    enemyData = Stage25.enemydatas;
+            //    break;
+            //case StageNo.Stage3_1:
+            //    enemyData = Stage31.enemydatas;
+            //    break;
+            //case StageNo.Stage3_2:
+            //    enemyData = Stage32.enemydatas;
+            //    break;
+            //case StageNo.Stage3_3:
+            //    enemyData = Stage33.enemydatas;
+            //    break;
+            //case StageNo.Stage3_4:
+            //    enemyData = Stage34.enemydatas;
+            //    break;
+            //case StageNo.Stage3_5:
+            //    enemyData = Stage35.enemydatas;
+            //    break;
+            //case StageNo.Stage4_1:
+            //    enemyData = Stage41.enemydatas;
+            //    break;
+            //case StageNo.Stage4_2:
+            //    enemyData = Stage42.enemydatas;
+            //    break;
+            //case StageNo.Stage4_3:
+            //    enemyData = Stage43.enemydatas;
+            //    break;
+            //case StageNo.Stage4_4:
+            //    enemyData = Stage44.enemydatas;
+            //    break;
+            //case StageNo.Stage4_5:
+            //    enemyData = Stage45.enemydatas;
+            //    break;
         }
-        Debug.Log("pos" + enemyData[i].EntryPosX);
 
-        Debug.Log("ながさ" + enemyData.Length);
-        Debug.Log("datas" + enemyDatas.Length);
-        enemyDatas[0].Entry = new Vector3(enemyData[0].EntryPosX, enemyData[0].EntryPosY, enemyData[0].EntryPosZ);
-        Debug.Log("pos" + enemyDatas[0].Entry.x);
+        // 配列の要素数を決定
+        element = enemyData.Length;
+        enemy = new GameObject[element];
+        model = new GameObject[element];
 
         // 初期設定(Vector3として使いやすいようになど)
         for (int i = 0; i < enemyData.Length; i++)
         {
-            Debug.Log("pos" + enemyData[i].EntryPosX);
-            enemyDatas[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
-            enemyDatas[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
-            enemyDatas[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
-            enemyDatas[i].Step = 0;
+            enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
+            enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
+            enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
+            enemyData[i].Step = 0;
         }
-        Debug.Log(enemyDatas[0].Step);
-        // SpriteRendererの初期化
-        Sprite = GetComponent<SpriteRenderer>();
 
         appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
         PhaseUI = GameObject.Find("PhaseGroup");
@@ -146,8 +169,8 @@ public class EnemyManager : MonoBehaviour
             // 敵出現時の共通処理
             if (enemyData[i].State != 0)
             {
-                enemyDatas[i].prevPosition = enemy[i].transform.position;    // 前フレームのワールド位置をとっておく
-                enemyDatas[i].Duration += Time.deltaTime;                    // 経過時間を取得
+                enemyData[i].prevPosition = enemy[i].transform.position;    // 前フレームのワールド位置をとっておく
+                enemyData[i].Duration += Time.deltaTime;                    // 経過時間を取得
             }
 
             // 敵未出現
@@ -158,7 +181,7 @@ public class EnemyManager : MonoBehaviour
                 {
                     SpawnNewEnemy(i);
                     enemyData[i].State = SetState(i);
-                    enemyDatas[i].Duration = 0.0f;
+                    enemyData[i].Duration = 0.0f;
                 }
             }
             // 敵出現
@@ -166,24 +189,24 @@ public class EnemyManager : MonoBehaviour
             else if (enemyData[i].State == 1)
             {
                 //二点間の距離を代入(スピード調整に使う)
-                enemyDatas[i].distance_two = Vector3.Distance(
+                enemyData[i].distance_two = Vector3.Distance(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                    enemyDatas[i].target1
+                    enemyData[i].target1
                     );
 
                 // 現在の位置
-                enemyDatas[i].PresentLocation = (enemyDatas[i].Duration * 5) / enemyDatas[i].distance_two;
+                enemyData[i].PresentLocation = (enemyData[i].Duration * 5) / enemyData[i].distance_two;
 
                 // 移動
                 enemy[i].transform.position = Vector3.Slerp(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                    enemyDatas[i].target1,
-                    enemyDatas[i].PresentLocation
+                    enemyData[i].target1,
+                    enemyData[i].PresentLocation
                     );
                 //enemy[i].transform.Rotate(0f, 1.0f, 0f);      // おあそび
 
                 // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyDatas[i].prevPosition);
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 // positionの値を四捨五入(現在は調整不要？)
                 //Vector3 roundposition;
@@ -192,10 +215,10 @@ public class EnemyManager : MonoBehaviour
                 //roundposition.z = Mathf.Round(enemy[i].transform.position.z);
 
                 // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyDatas[i].target1)
+                if (enemy[i].transform.position == enemyData[i].target1)
                 {
                     enemyData[i].State = SetState(i);
-                    enemyDatas[i].Duration = 0;
+                    enemyData[i].Duration = 0;
                 }
             }
             // 2:円を描く
@@ -203,19 +226,19 @@ public class EnemyManager : MonoBehaviour
             {
                 // 移動
                 enemy[i].transform.RotateAround(
-                    new Vector3(enemyDatas[i].target1.x - 1.0f, enemyDatas[i].target1.y, enemyDatas[i].target1.z),
+                    new Vector3(enemyData[i].target1.x - 1.0f, enemyData[i].target1.y, enemyData[i].target1.z),
                     Vector3.forward,        // Z軸
                     Time.deltaTime * angle
                     );
 
                 // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyDatas[i].prevPosition);
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 // 2周したら次の動きに移行
-                if (enemyDatas[i].Duration * angle >= 720.0f)
+                if (enemyData[i].Duration * angle >= 720.0f)
                 {
                     enemyData[i].State = SetState(i);
-                    enemyDatas[i].Duration = 0;
+                    enemyData[i].Duration = 0;
                 }
             }
             // 3:MoveTowardsで目標位置に
@@ -229,15 +252,15 @@ public class EnemyManager : MonoBehaviour
                    );
 
                 // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyDatas[i].prevPosition);
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 EnemyAnimation = true;
 
                 // 一定時間経過で次の動きに移行
-                if (enemyDatas[i].Duration >= 10.0f)
+                if (enemyData[i].Duration >= 10.0f)
                 {
                     enemyData[i].State = SetState(i);
-                    enemyDatas[i].Duration = 0;
+                    enemyData[i].Duration = 0;
                 }
             }
             // 4:敵が逃げていく
@@ -251,7 +274,7 @@ public class EnemyManager : MonoBehaviour
                    );
 
                 // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyDatas[i].prevPosition);
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 // 画面外に逃げたら削除
                 if (enemy[i].transform.position.x <= ViewportLB.x ||
@@ -274,10 +297,10 @@ public class EnemyManager : MonoBehaviour
                    );
 
                 // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyDatas[i].prevPosition);
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyDatas[i].target1)
+                if (enemy[i].transform.position == enemyData[i].target1)
                 {
                     enemyData[i].State = 10;
                 }
@@ -293,10 +316,10 @@ public class EnemyManager : MonoBehaviour
                    );
 
                 // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyDatas[i].prevPosition);
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyDatas[i].target)
+                if (enemy[i].transform.position == enemyData[i].target)
                 {
                     enemyData[i].State = 9;
                 }
@@ -337,8 +360,6 @@ public class EnemyManager : MonoBehaviour
         enemy[no].name = enemyData[no].name;
         // サイズ設定
         enemy[no].transform.localScale = new Vector3(enemyData[no].Size, enemyData[no].Size, enemyData[no].Size);
-        // テクスチャ設定(仮)
-        //enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
         // モデル設定
         model[no] = Instantiate(
             Resources.Load(enemyData[no].model, typeof(GameObject)) as GameObject,
@@ -348,7 +369,7 @@ public class EnemyManager : MonoBehaviour
         Parent = GameObject.Find(enemyData[no].name);
         model[no].transform.parent = Parent.transform;
         // 敵予告のフェードを始める
-        appearanceNotice.StartFade(enemyDatas[no].Entry, enemyData[no].sideNo);
+        appearanceNotice.StartFade(enemyData[no].Entry, enemyData[no].sideNo);
     }
 
     // 進行方向に向きを変える関数
@@ -381,15 +402,15 @@ public class EnemyManager : MonoBehaviour
     // 敵削除
     public static void DestroyEnemy(int no)
     {
-        //enemyData[no].State = -1;
+        enemyData[no].State = -1;
         Destroy(enemy[no]);
     }
 
     // 次のステートをセット
     public int SetState(int no)
     {
-        enemyDatas[no].Step++;
-        switch (enemyDatas[no].Step)
+        enemyData[no].Step++;
+        switch (enemyData[no].Step)
         {
             case 1: return enemyData[no].NextState1;
             case 2: return enemyData[no].NextState2;

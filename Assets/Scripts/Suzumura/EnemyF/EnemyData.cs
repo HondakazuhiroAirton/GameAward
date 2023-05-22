@@ -30,11 +30,7 @@ public class EnemyData
     public int NextState3;               // Ÿ‚Ìó‘Ô3
     public int NextState4;               // Ÿ‚Ìó‘Ô4
     public int NextState5;               // Ÿ‚Ìó‘Ô5
-}
 
-[System.Serializable]
-public class EnemyDatas
-{
     public Vector3 prevPosition;
     public float distance_two;         //“ñ“_ŠÔ‚Ì‹——£‚ğ“ü‚ê‚é
     public float Duration;
@@ -44,6 +40,19 @@ public class EnemyDatas
     public Vector3 target;
     public int Step;
 }
+
+//[System.Serializable]
+//public class EnemyDatas
+//{
+//    public Vector3 prevPosition;
+//    public float distance_two;         //“ñ“_ŠÔ‚Ì‹——£‚ğ“ü‚ê‚é
+//    public float Duration;
+//    public float PresentLocation;
+//    public Vector3 Entry;
+//    public Vector3 target1;
+//    public Vector3 target;
+//    public int Step;
+//}
 
 // “GƒJƒeƒSƒŠ[—ñ‹“Œ^
 public enum EnemyCategory
