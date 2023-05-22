@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,10 @@ using UnityEditor;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private float spawnRealTime = 0;            // タイマー
+    [SerializeField] private float spawnRealTime = 0;            // 生成タイマー
 
     // CSVのデータを流し込む配列
-    [SerializeField] public EnemyData[] enemyData;
+    [SerializeField] public static EnemyData[] enemyData;
 
     // StageChangerオブジェクト
     public GameObject StageChanger;
@@ -26,13 +27,12 @@ public class EnemyManager : MonoBehaviour
     public bool clearflag;
 
     // 出現用オブジェクト
-    private int element = 1;
+    private int element;
     [SerializeField] private static GameObject[] enemy;
     [SerializeField] private static GameObject[] model;
     public SpriteRenderer Sprite;
     public GameObject Parent;
 
-    //private const float spawnRate = 2.0f;     // 出現間隔
     private int i;                              // 配列番号
 
     float angle = 400.0f;                       // 回転量(2で使用中)
@@ -58,40 +58,85 @@ public class EnemyManager : MonoBehaviour
         // スクリプト上のNextStageを取得
         StageNo nextStageNo = StageChanger.GetComponent<StageChangerScript>().NextStage;
         Debug.Log(nextStageNo);
-        // 使用するCSVファイルの行数を取得
-        //element = CountNumberofLine.Main(nextStageNo);
-        // 配列の要素数を決定
-        enemy = new GameObject[element];
-        model = new GameObject[element];
 
-        // csvファイルを読み込ませる
         // NextStageの番号で読み込むファイルを分岐する
         switch (nextStageNo)
         {
             case StageNo.Stage1_1:
-                //StartCoroutine(AddressableLoad("enemy11"));
-                //元のリソースロードを使った方法
-                //textasset = Resources.Load("CSV/enemy11", typeof(TextAsset)) as TextAsset;
+                enemyData = Stage11.enemydatas;
                 break;
             case StageNo.Stage1_2:
-                //StartCoroutine(AddressableLoad("enemy12"));
+                enemyData = Stage12.enemydatas;
                 break;
-            case StageNo.Stage1_3:
-                //StartCoroutine(AddressableLoad("enemy13"));
-                break;
+            //case StageNo.Stage1_3:
+            //    enemyData = Stage13.enemydatas;
+            //    break;
+            //case StageNo.Stage1_4:
+            //    enemyData = Stage14.enemydatas;
+            //    break;
+            //case StageNo.Stage1_5:
+            //    enemyData = Stage15.enemydatas;
+            //    break;
+            //case StageNo.Stage2_1:
+            //    enemyData = Stage21.enemydatas;
+            //    break;
+            //case StageNo.Stage2_2:
+            //    enemyData = Stage22.enemydatas;
+            //    break;
+            //case StageNo.Stage2_3:
+            //    enemyData = Stage23.enemydatas;
+            //    break;
+            //case StageNo.Stage2_4:
+            //    enemyData = Stage24.enemydatas;
+            //    break;
+            //case StageNo.Stage2_5:
+            //    enemyData = Stage25.enemydatas;
+            //    break;
+            //case StageNo.Stage3_1:
+            //    enemyData = Stage31.enemydatas;
+            //    break;
+            //case StageNo.Stage3_2:
+            //    enemyData = Stage32.enemydatas;
+            //    break;
+            //case StageNo.Stage3_3:
+            //    enemyData = Stage33.enemydatas;
+            //    break;
+            //case StageNo.Stage3_4:
+            //    enemyData = Stage34.enemydatas;
+            //    break;
+            //case StageNo.Stage3_5:
+            //    enemyData = Stage35.enemydatas;
+            //    break;
+            //case StageNo.Stage4_1:
+            //    enemyData = Stage41.enemydatas;
+            //    break;
+            //case StageNo.Stage4_2:
+            //    enemyData = Stage42.enemydatas;
+            //    break;
+            //case StageNo.Stage4_3:
+            //    enemyData = Stage43.enemydatas;
+            //    break;
+            //case StageNo.Stage4_4:
+            //    enemyData = Stage44.enemydatas;
+            //    break;
+            //case StageNo.Stage4_5:
+            //    enemyData = Stage45.enemydatas;
+            //    break;
         }
 
+        // 配列の要素数を決定
+        element = enemyData.Length;
+        enemy = new GameObject[element];
+        model = new GameObject[element];
+
         // 初期設定(Vector3として使いやすいようになど)
-        for (int i = 0; i < element; i++)
+        for (int i = 0; i < enemyData.Length; i++)
         {
             enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
             enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
             enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
             enemyData[i].Step = 0;
         }
-
-        // SpriteRendererの初期化
-        Sprite = GetComponent<SpriteRenderer>();
 
         appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
         PhaseUI = GameObject.Find("PhaseGroup");
@@ -315,8 +360,6 @@ public class EnemyManager : MonoBehaviour
         enemy[no].name = enemyData[no].name;
         // サイズ設定
         enemy[no].transform.localScale = new Vector3(enemyData[no].Size, enemyData[no].Size, enemyData[no].Size);
-        // テクスチャ設定(仮)
-        //enemy[no].GetComponent<SpriteRenderer>().sprite = enemyData[no].sprite;
         // モデル設定
         model[no] = Instantiate(
             Resources.Load(enemyData[no].model, typeof(GameObject)) as GameObject,
@@ -359,7 +402,7 @@ public class EnemyManager : MonoBehaviour
     // 敵削除
     public static void DestroyEnemy(int no)
     {
-        //enemyData[no].State = -1;
+        enemyData[no].State = -1;
         Destroy(enemy[no]);
     }
 

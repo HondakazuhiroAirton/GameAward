@@ -7,7 +7,6 @@ public class EnemyData
     public string name;                 // 名前(No.)
     public EnemyCategory category;      // カテゴリー
     public Phase phase;                 // 出現フェーズ
-    public int HP;                      // HP
     public float Size;                  // 大きさ
     public int StartPosX;               // 出現位置
     public int StartPosY;               // 
@@ -22,7 +21,7 @@ public class EnemyData
     public int TargetPosX;              // 目標地点
     public int TargetPosY;              //
     public int TargetPosZ;              //
-    public Sprite sprite;               // 画像読み込み(パス)
+    //public Sprite sprite;               // 画像読み込み(パス)
     public string model;            // モデル読み込み(パス)
     public float AppearanceTime;        // 出現時間
     public int State;                   // 状態
@@ -38,9 +37,22 @@ public class EnemyData
     public float PresentLocation;
     public Vector3 Entry;
     public Vector3 target1;
-    public Vector3 target;          
-    public int Step;              
+    public Vector3 target;
+    public int Step;
 }
+
+//[System.Serializable]
+//public class EnemyDatas
+//{
+//    public Vector3 prevPosition;
+//    public float distance_two;         //二点間の距離を入れる
+//    public float Duration;
+//    public float PresentLocation;
+//    public Vector3 Entry;
+//    public Vector3 target1;
+//    public Vector3 target;
+//    public int Step;
+//}
 
 // 敵カテゴリー列挙型
 public enum EnemyCategory
