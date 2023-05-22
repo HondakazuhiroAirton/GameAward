@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class EnemyBullet : MonoBehaviour
 {
     // キューブ(敵に)
@@ -17,15 +16,15 @@ public class EnemyBullet : MonoBehaviour
     public GameObject Enemy;
 
     GameObject player;
-    Animator animator;
+    Animator animatior;
     private int maxtime;
-    public const float mintime = 2.0f;
+    private float mintime;
     public float time;
 
     void Start()
     {
         // animatorコンポーネントを取得
-        animator = GetComponent<Animator>();
+        animatior = GetComponent<Animator>();
 
         player = GameObject.Find("Player");
         Enemy = transform.parent.gameObject;
@@ -42,18 +41,18 @@ public class EnemyBullet : MonoBehaviour
 
         time += Time.deltaTime;
 
-        //if (time >= mintime)// 2秒たったらアニメーションスタート
-        //{
-        //    animator.SetBool("enemyS_flag", true);//3秒～4秒・4秒～5秒の2回
-        //}
+        if (time >= maxtime - 1)
+        {
+            animatior.SetBool("enemyS_flag", true);
+        }
         if (time >= maxtime)// 5～10秒たったら弾が出てアニメーションストップ
         {
-            //animator.SetBool("enemyS_flag", false);
+            animatior.SetBool("enemyS_flag", false);
             BallShot();
             time = 0;
         }
-    }
 
+    }
     void BallShot()// キューブ(敵に)
     {
         // たまを生み出してる
