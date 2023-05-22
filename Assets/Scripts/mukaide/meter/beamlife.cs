@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class beamlife : MonoBehaviour
 {
     public GameObject Gameover;
+　　// BGM用にメインカメラを取得
+    private GMC_BGMscript mainCameraBGMscript;
     private int life = 3;
     private float amount = 100;
     public float recovery = 0.1f;
@@ -34,8 +36,11 @@ public class beamlife : MonoBehaviour
     }
     void Start()
     {
+        // BGM用にメインカメラを取得
+        mainCameraBGMscript = GameObject.Find("MainCamera").GetComponent<GMC_BGMscript>();
         //Gameover = GameObject.Find("Gameover");
         SetLife(3);
+
     }
     void Update()
     {
@@ -63,7 +68,9 @@ public class beamlife : MonoBehaviour
         // Game Over
         if (life == 0)
         {
+            mainCameraBGMscript.GameOverBGMStart();
             Gameover.SetActive(true);
+
         }
         else
         {
