@@ -47,42 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRealTime: 0
-  enemyData:
-  - name: enemy01
-    category: 1
-    phase: 1
-    HP: 10
-    Size: 0.1
-    StartPosX: 0
-    StartPosY: 0
-    StartPosZ: 0
-    EntryPosX: 0
-    EntryPosY: 0
-    EntryPosZ: 0
-    sideNo: 1
-    Target1PosX: 0
-    Target1PosY: 0
-    Target1PosZ: 0
-    TargetPosX: 3
-    TargetPosY: 0
-    TargetPosZ: 0
-    sprite: {fileID: 0}
-    model: koa
-    AppearanceTime: 0
-    State: 0
-    NextState1: 1
-    NextState2: 2
-    NextState3: 3
-    NextState4: 4
-    NextState5: -1
-    prevPosition: {x: 0, y: 0, z: 0}
-    distance_two: 0
-    Duration: 0
-    PresentLocation: 0
-    Entry: {x: 0, y: 0, z: 0}
-    target1: {x: 0, y: 0, z: 0}
-    target: {x: 0, y: 0, z: 0}
-    Step: 0
+  enemyData: []
+  enemyDatas: []
   StageChanger: {fileID: 0}
   originenemy: {fileID: 6825728215260208665}
   AppearanceNoticeObj: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
@@ -91,6 +57,7 @@ MonoBehaviour:
   clearflag: 0
   Sprite: {fileID: 1514023431371668655}
   Parent: {fileID: 0}
+  EnemyAnimation: 0
 --- !u!212 &1514023431371668655
 SpriteRenderer:
   m_ObjectHideFlags: 0
