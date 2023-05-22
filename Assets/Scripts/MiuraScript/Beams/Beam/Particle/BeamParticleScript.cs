@@ -125,6 +125,8 @@ public class BeamParticleScript : MonoBehaviour
 
     void Update()
     {
+        if (Time.deltaTime <= 0) return;
+
         // ˆÚ“®ˆ—
         transform.position += moveDir;
 

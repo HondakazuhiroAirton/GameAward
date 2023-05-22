@@ -314,6 +314,8 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     void Update()
     {
+        if (Time.deltaTime <= 0) return;
+
         if (strobo) // ストロボフラグがTrueの時点滅させる
         {
             Strobo();
@@ -445,8 +447,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         }
 
-        if (Time.deltaTime > 0)
-        {
+
 
             //ワープ
             if (Up == true)
@@ -490,7 +491,7 @@ public class PlayerMove_MIURA : MonoBehaviour
                 }
             }
 
-        }
+        
         //0329_三浦瞬追記****************************************************************
 
 

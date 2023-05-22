@@ -101,6 +101,8 @@ public class BoxCastScript : MonoBehaviour
 
     void Update()
     {
+        if (Time.deltaTime <= 0) return;
+
         // BoxCast計算ゾーン*************************************************************************
         // 当たり判定の大きさ->箱の大きさの半分の引数を渡す必要があるため*0.5している
         scale = transform.lossyScale.x * 0.5f;
@@ -134,7 +136,7 @@ public class BoxCastScript : MonoBehaviour
             case State.SCALE_UPandDOWN:
 
                 // 縮小
-                transform.position += moveDir;
+                transform.position += moveDir ;
 
                 // 拡大状態の時はBeamParticleのポジションを取得する
                 ParticlePosition = BeamParticle.transform.position;
@@ -226,6 +228,8 @@ public class BoxCastScript : MonoBehaviour
 
     void OnDrawGizmos()
     {
+        if (Time.deltaTime <= 0) return;
+
         // 可視化するかどうか
         if (isEnable == false)return;
 
