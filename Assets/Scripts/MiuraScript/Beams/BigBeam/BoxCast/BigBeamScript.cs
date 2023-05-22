@@ -72,6 +72,10 @@ public class BigBeamScript : MonoBehaviour
         // BoxCastにあたったオブジェクトの処理
         foreach (var obj in isHit)
         {
+            // エネミー爆発音を鳴らす
+            AudioSource audio = this.GetComponent<AudioSource>();
+            audio.Play();
+
             GameObject hitObject = obj.collider.gameObject;
             // インターフェスで渡して
             hitObject.GetComponent<CollisionAction>().CollisionEvent(this.gameObject);
