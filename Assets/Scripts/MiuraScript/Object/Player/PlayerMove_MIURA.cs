@@ -322,6 +322,10 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     void Update()
     {
+
+        if (beamLifeScript.GetLife() <= 0) return;
+        
+
         if (Time.deltaTime <= 0)
         {
             // チャージエフェクトストップ
@@ -524,7 +528,8 @@ public class PlayerMove_MIURA : MonoBehaviour
         // ビーム発射処理*************************************************************
         if (Input.GetKey(KeyCode.Space)  || _isPressed == true ) // キーコードは変更してね(*^^*)
         {
-            
+ 
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 // チャージエフェクト開始
@@ -730,6 +735,8 @@ public class PlayerMove_MIURA : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Canceled)
         {
+            if (beamLifeScript.GetLife() <= 0) return;
+
 
             // インターバルを設定する
             Interbal = interbalMax;
