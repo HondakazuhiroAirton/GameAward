@@ -60,6 +60,8 @@ public class Bullet : MonoBehaviour
             moveVal.y *= ballSpeed;
             moveVal.z *= ballSpeed;
         }
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Play();
     }
 
 
