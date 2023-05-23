@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00029597717, g: 0.0014310081, b: 0.0071523166, a: 1}
+  m_IndirectSpecularColor: {r: 0.00029319554, g: 0.0014482603, b: 0.0071619838, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2859,6 +2859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FadePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450894892168117850, guid: 491ad71279594a445877e7f01a25f650,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2450894892168117853, guid: 491ad71279594a445877e7f01a25f650,
         type: 3}
