@@ -10,9 +10,7 @@ public class SetUp
         new GameObject("GameManager", typeof(GameManager));
         new GameObject("InputManager", typeof(InputManager));
 
-
-
+        Screen.SetResolution(1920, 1080, false);
         Application.targetFrameRate = 60;
-
     }
 }

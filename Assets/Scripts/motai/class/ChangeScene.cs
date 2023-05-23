@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    // インスペクタービューから設定するシーン名
+    public string sceneName;
     //ボタン設定
     private Button Retry;
     private Button StageSelect;
@@ -34,6 +36,11 @@ public class ChangeScene : MonoBehaviour
         //GameOver.SetActive(false);
     }
     // インスペクタービューから設定したシーンを読み込む
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void ButtonStageSelect()
     {
         Image.GetComponent<Fade>().GameSelect();
