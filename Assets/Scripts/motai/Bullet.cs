@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     public Vector3 moveVal;
     private float Wx;
     private float Wy;
-
+    private int LifePoint;
 
     void Start()
     {
@@ -34,6 +34,8 @@ public class Bullet : MonoBehaviour
 
         //Geter / Seter使用用スクリプト保持
         PlayerClasslife = PD.GetComponent<beamlife>();
+
+        LifePoint = PlayerClasslife.GetLife();
 
         player = GameObject.Find("Player");
 
@@ -68,6 +70,8 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (LifePoint == 0) return;
+
         // 玉を毎フレームを動かしてる
         transform.position += moveVal * Time.deltaTime;
 
@@ -85,7 +89,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        int LifePoint = PlayerClasslife.GetLife();
+        
         if (other.gameObject.tag == "Player")
         {
             Debug.Log(LifePoint);
