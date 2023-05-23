@@ -25,7 +25,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject PhaseUI;
     private PhaseManager phase;
     private bool clearflag;
-    private bool overflag;
+    private bool stopflag;
 
     // 出現用オブジェクト
     private int element;
@@ -151,13 +151,13 @@ public class EnemyManager : MonoBehaviour
         CurrentPhase = 1;
         phase.PlayPhase(CurrentPhase);
         clearflag = false;
-        overflag = false;
+        stopflag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (overflag) return;
+        if (stopflag) return;
         spawnRealTime += Time.deltaTime;    // 現在時間
         PhaseTransition = true;
         EnemyAnimation = false;
@@ -428,9 +428,9 @@ public class EnemyManager : MonoBehaviour
         return clearflag;
     }
 
-    public void GameOverflug()
+    public void EnemyMoveStop()
     {
-        overflag = true;
+        stopflag = true;
     }
 
     public EnemyCategory GetBulletType(int no)

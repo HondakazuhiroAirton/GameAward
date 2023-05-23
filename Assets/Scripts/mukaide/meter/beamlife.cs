@@ -74,7 +74,7 @@ public class beamlife : MonoBehaviour
         {
             mainCameraBGMscript.GameOverBGMStart();
             Gameover.SetActive(true);
-            gameoverflug.GameOverflug();
+            gameoverflug.EnemyMoveStop();
         }
         else
         {
