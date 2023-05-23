@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0003641632, g: 0.0015764532, b: 0.0077173244, a: 1}
+  m_IndirectSpecularColor: {r: 0.0003111202, g: 0.0014761981, b: 0.007284645, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -819,7 +819,7 @@ PrefabInstance:
     - target: {fileID: 8758725659647766880, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a52a07fd35b50c04cb3e005aeeea7ea3, type: 3}
@@ -1316,6 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gameover: {fileID: 119954274}
+  enemyManager: {fileID: 0}
   recovery: 1
 --- !u!1 &526904368
 GameObject:
