@@ -65,6 +65,7 @@ public class Cursoll : MonoBehaviour
         se = audioManage.GetComponent<AudioSource>();
         SEscript = audioManage.GetComponent<AudioManager>();
 
+        panelflag = true;
 
         // Å‰‚Íƒ[ƒ‹ƒh1
         NowPosition = 1;
@@ -121,6 +122,7 @@ public class Cursoll : MonoBehaviour
 
         if (NowPosition == 0)
         {
+            panelflag = false;
             se.PlayOneShot(Cancelse);
         }
         else if (NowPosition == 1)

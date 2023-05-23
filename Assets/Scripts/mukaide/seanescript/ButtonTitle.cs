@@ -45,6 +45,12 @@ public class ButtonTitle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            redo.interactable = false;
+            SE.playselectSE();
+            Image.GetComponent<Fade>().GameSelect();
+        }
 
         //ƒ{ƒ^ƒ“‚ª‘I‘ğ‚³‚ê‚½ó‘Ô‚É‚È‚é
         redo.Select();
