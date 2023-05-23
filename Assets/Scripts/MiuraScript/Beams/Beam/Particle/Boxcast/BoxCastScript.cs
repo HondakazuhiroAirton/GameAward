@@ -71,6 +71,11 @@ public class BoxCastScript : MonoBehaviour
     [SerializeField] // privateだけど表示
     bool isEnable = false; // ギズモに線を表示するかどうか
 
+    // PDにアクセス
+    private GameObject PlayerDate;
+    private PlayerClass PlayerClassScript;
+
+
     void Start()
     {
         // 最初は拡大状態
@@ -97,6 +102,12 @@ public class BoxCastScript : MonoBehaviour
         slider = GameObject.Find("BigBeamGauge");
 
         bigBeamGauge = slider.GetComponent<BigBeamGauge>();
+
+        //PlayerDateもってくる
+        PlayerDate = GameObject.Find("PD");
+
+        //Geter / Seter使用用スクリプト保持
+        PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
     }
 
     void Update()
@@ -215,6 +226,11 @@ public class BoxCastScript : MonoBehaviour
 
             // BigBeamのゲージを増やす
             bigBeamGauge.AddHit();
+
+            // 敵のデストロイ総数を変える
+            int DestroyTotal = PlayerClassScript.GetDestroyTotal();
+            DestroyTotal++;
+            PlayerClassScript.SetDestroyTotal(DestroyTotal);
 
             // 生み出す
             var instance = Instantiate

@@ -12,7 +12,10 @@ public class PlayerClass : MonoBehaviour
     private float amount = 100;
     private float bigamount;
     public float recovery = 0.1f;
-    
+
+    // ì|ÇµÇΩìGÇÃëçêî
+    [SerializeField] private int destroyTotal;
+
     // écã@
     public int GetLife()
     {
@@ -41,10 +44,23 @@ public class PlayerClass : MonoBehaviour
     {
         bigamount = value;
     }
+
+
+    public int GetDestroyTotal()
+    {
+        return destroyTotal;
+    }
+
+    public void SetDestroyTotal(int value)
+    {
+        destroyTotal = value;
+    }
+
+
     void Start()
     {
         SetLife(3);
-
+        destroyTotal = 0;
         SetBigAmount(0);
     }
     void Update()
