@@ -132,8 +132,8 @@ public class EnemyManager : MonoBehaviour
         // 初期設定(Vector3として使いやすいようになど)
         for (int i = 0; i < enemyData.Length; i++)
         {
-            enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, enemyData[i].EntryPosZ);
-            enemyData[i].target1 = new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ);
+            enemyData[i].Entry = new Vector3(enemyData[i].EntryPosX, enemyData[i].EntryPosY, 0);
+            enemyData[i].First = new Vector3(enemyData[i].FirstPosX, enemyData[i].FirstPosY, enemyData[i].FirstPosZ);
             enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
             enemyData[i].Step = 0;
         }
@@ -191,7 +191,7 @@ public class EnemyManager : MonoBehaviour
                 //二点間の距離を代入(スピード調整に使う)
                 enemyData[i].distance_two = Vector3.Distance(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                    enemyData[i].target1
+                    enemyData[i].First
                     );
 
                 // 現在の位置
@@ -200,7 +200,7 @@ public class EnemyManager : MonoBehaviour
                 // 移動
                 enemy[i].transform.position = Vector3.Slerp(
                     new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                    enemyData[i].target1,
+                    enemyData[i].First,
                     enemyData[i].PresentLocation
                     );
                 //enemy[i].transform.Rotate(0f, 1.0f, 0f);      // おあそび
@@ -215,7 +215,7 @@ public class EnemyManager : MonoBehaviour
                 //roundposition.z = Mathf.Round(enemy[i].transform.position.z);
 
                 // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyData[i].target1)
+                if (enemy[i].transform.position == enemyData[i].First)
                 {
                     enemyData[i].State = SetState(i);
                     enemyData[i].Duration = 0;
@@ -226,7 +226,7 @@ public class EnemyManager : MonoBehaviour
             {
                 // 移動
                 enemy[i].transform.RotateAround(
-                    new Vector3(enemyData[i].target1.x - 1.0f, enemyData[i].target1.y, enemyData[i].target1.z),
+                    new Vector3(enemyData[i].First.x - 1.0f, enemyData[i].First.y, enemyData[i].First.z),
                     Vector3.forward,        // Z軸
                     Time.deltaTime * angle
                     );
@@ -292,7 +292,7 @@ public class EnemyManager : MonoBehaviour
                 // 移動
                 enemy[i].transform.position = Vector3.MoveTowards(
                    enemy[i].transform.position,
-                   new Vector3(enemyData[i].Target1PosX, enemyData[i].Target1PosY, enemyData[i].Target1PosZ),
+                   new Vector3(enemyData[i].FirstPosX, enemyData[i].FirstPosY, enemyData[i].FirstPosZ),
                    Time.deltaTime * 8
                    );
 
@@ -300,7 +300,7 @@ public class EnemyManager : MonoBehaviour
                 enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyData[i].target1)
+                if (enemy[i].transform.position == enemyData[i].First)
                 {
                     enemyData[i].State = 10;
                 }

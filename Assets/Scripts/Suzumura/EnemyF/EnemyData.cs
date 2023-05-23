@@ -5,25 +5,23 @@ using UnityEngine;
 public class EnemyData
 {
     public string name;                 // 名前(No.)
-    public EnemyCategory category;      // カテゴリー
     public Phase phase;                 // 出現フェーズ
-    public float Size;                  // 大きさ
     public int StartPosX;               // 出現位置
     public int StartPosY;               // 
     public int StartPosZ;               // 
-    public float EntryPosX;             // 画面内に入る位置
-    public float EntryPosY;             //
-    public float EntryPosZ;             //
-    public int sideNo;                  // 辺
-    public int Target1PosX;             // 目標地点1
-    public int Target1PosY;             //
-    public int Target1PosZ;             //
+    public int FirstPosX;               // 目標地点1
+    public int FirstPosY;               //
+    public int FirstPosZ;               //
     public int TargetPosX;              // 目標地点
     public int TargetPosY;              //
     public int TargetPosZ;              //
-    //public Sprite sprite;               // 画像読み込み(パス)
-    public string model;            // モデル読み込み(パス)
+    public float EntryPosX;             // 画面内に入る位置
+    public float EntryPosY;             //
+    public int sideNo;                  // 辺
     public float AppearanceTime;        // 出現時間
+    public string model;                // モデル読み込み(パス)
+    public EnemyCategory category;      // カテゴリー
+    public float Size;                  // 大きさ
     public int State;                   // 状態
     public int NextState1;               // 次の状態1
     public int NextState2;               // 次の状態2
@@ -36,7 +34,7 @@ public class EnemyData
     public float Duration;
     public float PresentLocation;
     public Vector3 Entry;
-    public Vector3 target1;
+    public Vector3 First;
     public Vector3 target;
     public int Step;
 }

@@ -36,8 +36,8 @@ public class AppearanceNotice : MonoBehaviour
     // 敵出現予告「!」+ フェード
     public void StartFade(Vector3 Entry, int sideNo)
     {
-        // 未使用処理　<< EntryPosZが-1であるデータは出現させない
-        if (Entry.z == -1) return;
+        // 未使用処理　<< SideNoが0であるデータは出現させない
+        if (sideNo == 0) return;
 
         // 画面の端の位置によって角度を変える(「！」はそのまま)
         switch (sideNo)
