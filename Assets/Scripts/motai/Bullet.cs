@@ -91,16 +91,7 @@ public class Bullet : MonoBehaviour
             Debug.Log(LifePoint);
             if (LifePoint > 0)
             {
-                bool Muteki = player.GetComponent<PlayerMove_MIURA>().Hidan();
-
-                if (Muteki == false)
-                {
-
-                    LifePoint = LifePoint - 1;
-
-                    PlayerClasslife.SetLife(LifePoint);
-
-                }
+                player.GetComponent<PlayerMove_MIURA>().Hidan();
 
                 Destroy(this.gameObject);
             }

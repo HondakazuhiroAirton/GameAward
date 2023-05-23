@@ -21,7 +21,6 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     // ビームのインターバル
     public int Interbal = 60;
-    
 
     // 点滅時間
     public int stroboTime;
@@ -1026,13 +1025,12 @@ public class PlayerMove_MIURA : MonoBehaviour
 
 
     // 弾を受けた時に呼ばれる処理
-    public bool Hidan()
+    public void Hidan()
     {
         // 無敵中は被弾処理スルー
-        if (muteki == true) { return true; }
+        if (muteki == true) return ; 
 
         muteki = true;
-        Debug.Log("無敵になります");
 
         MutekiTime = mutekiTimeMax;
 
@@ -1042,6 +1040,10 @@ public class PlayerMove_MIURA : MonoBehaviour
         Vector3 pos = transform.position;
         // 点滅時間をセットする
         stroboTime = stroboTimeMax;
+
+        // HPを減らす
+        life = life - 1;
+        beamLifeScript.SetLife(life);
 
         // この辺にプレイヤーの処理を書く
         if (life == 2)
@@ -1083,7 +1085,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             handle = EffekseerSystem.PlayEffect(effect, transform.position);
         }
 
-        return false;
+        return;
     }
 
     void Strobo()
