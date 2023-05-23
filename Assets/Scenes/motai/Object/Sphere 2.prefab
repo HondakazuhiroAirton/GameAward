@@ -234,5 +234,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  ballSpeed: 2
+  ballSpeed: 5
   moveVal: {x: 0, y: 0, z: 0}
