@@ -4569,6 +4569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
         type: 3}
+      propertyPath: MutekiTime
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452226554908652885, guid: a52a07fd35b50c04cb3e005aeeea7ea3,
+        type: 3}
       propertyPath: stroboTime
       value: 60
       objectReference: {fileID: 0}

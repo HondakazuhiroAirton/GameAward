@@ -21,9 +21,13 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     // ビームのインターバル
     public int Interbal = 60;
+    
 
     // 点滅時間
     public int stroboTime;
+
+    // 無敵時間
+    public int MutekiTime = 60;
 
     // privateゾーン*************************************************************
     // ビームの1段階の時間*************************
@@ -121,10 +125,19 @@ public class PlayerMove_MIURA : MonoBehaviour
     private int stroboOneTime;
 
     // 点滅エフェクトするbool値
-    [SerializeField]private bool strobo;
+    private bool strobo;
+
+    // 点滅時に当たり判定を取って無敵にする
+    private BoxCollider boxCollider;
+
+    // 無敵時間かどうか
+    private bool muteki;
 
     // 点滅時間
     private int stroboTimeMax;
+
+    // 無敵時間の最大値
+    private int mutekiTimeMax;
 
     // 爆破エフェクトゾーン
     // 再生するアセット
@@ -184,8 +197,17 @@ public class PlayerMove_MIURA : MonoBehaviour
         // ストロボ最大時間を覚えておく
         stroboTimeMax = stroboTime;
 
+        // 無敵モード初期化
+        muteki = false;
+
+        // 無敵時間最大値
+        mutekiTimeMax = MutekiTime;
+
         // ちかっとする時間を初期化
         stroboOneTime = 5;
+
+        // 当たり判定を取得
+        boxCollider = this.gameObject.GetComponent<BoxCollider>();
 
         // アニメーターを取得
         animator = this.GetComponent<Animator>();
@@ -276,6 +298,8 @@ public class PlayerMove_MIURA : MonoBehaviour
         //ビーム残量を100 % に設定
         beamLifeScript.SetAmount(100);
 
+
+
         // ビーム初期化
         Lv0_Scale = 0.4f;
         Lv0_Distance = 1.8f;
@@ -303,6 +327,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         //ゲームパッド
         input = this.GetComponent<PlayerInput>();
 
+
         _isPressed = false;
         //移動フラグ
         _ismoveR = false;
@@ -321,12 +346,8 @@ public class PlayerMove_MIURA : MonoBehaviour
 
 
     void Update()
-    {
-
-        if (beamLifeScript.GetLife() <= 0) return;
-        
-
-        if (Time.deltaTime <= 0)
+    {     
+        if (Time.deltaTime <= 0 || beamLifeScript.GetLife() <= 0)
         {
             // チャージエフェクトストップ
             beamChatgeAudio.Stop();
@@ -337,6 +358,16 @@ public class PlayerMove_MIURA : MonoBehaviour
         if (strobo) // ストロボフラグがTrueの時点滅させる
         {
             Strobo();
+        }
+
+        // 無敵時間の更新*****************
+        if (muteki == true)
+        {
+            MutekiTime--;
+            if (MutekiTime < 0)
+            {
+                muteki = false;
+            }
         }
 
         //プレイヤーの座標取得
@@ -556,29 +587,6 @@ public class PlayerMove_MIURA : MonoBehaviour
                 }
             }
 
-
-            
-            // 時間によって変わる(閾値)
-            //if (0 <= ChargeTime && ChargeTime < OneChargeFrame) // 1段階目
-            //{
-            //    Debug.Log("1段階目のチャージ");
-            //}
-            //else if (OneChargeFrame <= ChargeTime && ChargeTime < 2 * OneChargeFrame)// 2段階目
-            //{
-            //    Debug.Log("2段階目のチャージ");
-            //}
-            //else if (2 * OneChargeFrame <= ChargeTime && ChargeTime < 3 * OneChargeFrame)// 3段階目
-            //{
-            //    Debug.Log("3段階目のチャージ");
-            //}
-            //else if (3 * OneChargeFrame <= ChargeTime && ChargeTime < 4 * OneChargeFrame)// 4段階目
-            //{
-            //    //Debug.Log("4段階目のチャージ");
-            //}
-            //else if (4 * OneChargeFrame <= ChargeTime)// 5段階目
-            //{
-            //    //Debug.Log("5段階目のチャージ");
-            //}
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && (Interbal <= 0) 
@@ -733,9 +741,11 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     public void OnAttck(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Canceled)
+        if (context.phase == InputActionPhase.Canceled 
+            && (Interbal <= 0) && (ChargeTime > 0))
         {
             if (beamLifeScript.GetLife() <= 0) return;
+
 
 
             // インターバルを設定する
@@ -1016,9 +1026,15 @@ public class PlayerMove_MIURA : MonoBehaviour
 
 
     // 弾を受けた時に呼ばれる処理
-    public void Hidan()
+    public bool Hidan()
     {
-        
+        // 無敵中は被弾処理スルー
+        if (muteki == true) { return true; }
+
+        muteki = true;
+        Debug.Log("無敵になります");
+
+        MutekiTime = mutekiTimeMax;
 
         // 残りライフを参照して爆破
         int life = beamLifeScript.GetLife();
@@ -1066,6 +1082,8 @@ public class PlayerMove_MIURA : MonoBehaviour
             // 爆破エフェクト表示
             handle = EffekseerSystem.PlayEffect(effect, transform.position);
         }
+
+        return false;
     }
 
     void Strobo()
@@ -1093,6 +1111,7 @@ public class PlayerMove_MIURA : MonoBehaviour
                 tmp.enabled = true;
             }
             strobo = false;
+
         }
 
     }
