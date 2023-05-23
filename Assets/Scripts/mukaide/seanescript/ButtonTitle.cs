@@ -27,8 +27,6 @@ public class ButtonTitle : MonoBehaviour
         //Fadeの取得
         Image = GameObject.Find("Image");
 
-        //ボタンが選択された状態になる
-        redo.Select();
     }
 
     void Awake()
@@ -38,22 +36,22 @@ public class ButtonTitle : MonoBehaviour
         //SE
         SE = GameObject.Find("AudioManage").GetComponent<AudioManager>();
 
-     
+        //ボタンが選択された状態になる
+        redo.Select();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        //ボタンが選択された状態になる
+        redo.Select();
         if (Input.GetKeyDown(KeyCode.Return))
         {
             redo.interactable = false;
             SE.playselectSE();
             Image.GetComponent<Fade>().GameSelect();
         }
-
-        //ボタンが選択された状態になる
-        redo.Select();
 
     }
 
