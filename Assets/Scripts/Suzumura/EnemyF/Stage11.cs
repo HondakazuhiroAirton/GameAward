@@ -25,7 +25,6 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -51,7 +50,6 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -77,7 +75,6 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -103,7 +100,6 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -130,7 +126,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -156,7 +152,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -182,7 +178,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -208,7 +204,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -235,7 +231,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -261,7 +257,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -287,7 +283,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -313,7 +309,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -340,7 +336,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -366,7 +362,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -392,7 +388,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -418,7 +414,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -445,7 +441,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -471,7 +467,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -497,7 +493,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -523,7 +519,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -549,7 +545,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -575,7 +571,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -601,7 +597,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -627,7 +623,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -653,7 +649,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -679,7 +675,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -705,7 +701,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -731,7 +727,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -757,7 +753,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,
@@ -783,7 +779,7 @@ public class Stage11 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            State = 0,
+
             NextState1 = 1,
             NextState2 = 2,
             NextState3 = 3,

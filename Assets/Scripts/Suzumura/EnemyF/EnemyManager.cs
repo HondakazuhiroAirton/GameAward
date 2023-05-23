@@ -137,6 +137,7 @@ public class EnemyManager : MonoBehaviour
             enemyData[i].First = new Vector3(enemyData[i].FirstPosX, enemyData[i].FirstPosY, enemyData[i].FirstPosZ);
             enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
             enemyData[i].Step = 0;
+            enemyData[i].State = 0;
         }
 
         appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
@@ -442,6 +443,8 @@ public class EnemyManager : MonoBehaviour
     {
         return EnemyAnimation;
     }
+
+
 }
 
 
