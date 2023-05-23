@@ -30,6 +30,7 @@ public class ButtonTitle : MonoBehaviour
         //ボタンが選択された状態になる
         redo.Select();
     }
+
     void Awake()
     {
         //ボタンの読み込み
@@ -44,15 +45,9 @@ public class ButtonTitle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-        {
-
-            SE.playCusolSE();
-        }
-    
-
+        //ボタンが選択された状態になる
+        redo.Select();
 
     }
 
