@@ -2985,6 +2985,7 @@ MonoBehaviour:
   ButtonS: {fileID: 0}
   ButtonR: {fileID: 0}
   recovery: 0.1
+  destroyTotal: 0
 --- !u!4 &975235405
 Transform:
   m_ObjectHideFlags: 0
