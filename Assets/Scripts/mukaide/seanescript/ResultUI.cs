@@ -15,9 +15,7 @@ public class ResultUI : MonoBehaviour
 
     //変数取得のためのオブジェクト取得
     //＜関数読み取りのためゲームオブジェクト取得してます＞
-     GameObject Combo;
-     GameObject Numenemy;
-     GameObject Beam;
+     GameObject PD;
      TextMeshProUGUI Score;
 
 
@@ -86,15 +84,13 @@ public class ResultUI : MonoBehaviour
         Second = Second * 60;
 
         //コンボ
-        //Combo = GameObject.Find("");
         Cm = GameObject.Find("Combo").GetComponent<TextMeshProUGUI>();
 
         //倒した敵
-        //Numenemy = GameObject.Find("");
+        PD = GameObject.Find("PD");
         Ne = GameObject.Find("NumEnemy").GetComponent<TextMeshProUGUI>();
 
         //ビーム
-        //Beam = GameObject.Find("");
         Bm = GameObject.Find("Beam").GetComponent<TextMeshProUGUI>();
 
         //スコアの取得
@@ -132,7 +128,7 @@ public class ResultUI : MonoBehaviour
             // ↑今は暫定機に…
             if (panelState == resultState.None)
             {
-                panelState = resultState.score;
+                panelState = resultState.combo;
             }
         }
 
@@ -162,9 +158,9 @@ public class ResultUI : MonoBehaviour
         {
             // 三浦)この辺で全部の変数に最終の値入れちゃう
 
-            //combo = ??;//<<<コンボの数を持ってくる関数
-            //numenemy = ??;//<<<倒した敵の数を持って来る関数
-            //beam = ??;//<<<ビーム残量をもって来る関数
+            combo = PD.GetComponent<PlayerClass>().GetLife();//<<<コンボの数を持ってくる関数
+            numenemy = PD.GetComponent<PlayerClass>().GetDestroyTotal();//<<<倒した敵の数を持って来る関数
+            beam = (int)PD.GetComponent<PlayerClass>().GetAmount();//<<<ビーム残量をもって来る関数
             score = Score.GetComponent<Score>().ResultScore();
             totalscore = combo + numenemy + beam + score; // トータル計算
 
@@ -191,54 +187,54 @@ public class ResultUI : MonoBehaviour
                 break;
             case resultState.combo: //コンボ
                 {
-                    // if (i < combo)
-                    // {
-                    //       i = i + comboPlus;
-                    //     Cm.text = combo.ToString();
-                    // }else if (i >= combo)
-                    //{
-                    //Cm.text = combo.ToString();
-                    //     // 次のステイトへ(次はnumenemy表示)   
-                    //     panelState = resultState.numenemy;
-                    //     // iを初期化
-                    //     // i = 0;
-                    //}
+                    if (i < combo)
+                    {
+                          i = i + comboPlus;
+                        Cm.text = combo.ToString();
+                    }else if (i >= combo)
+                   {
+                   Cm.text = combo.ToString();
+                        // 次のステイトへ(次はnumenemy表示)   
+                        panelState = resultState.numenemy;
+                        // iを初期化
+                        i = 0;
+                   }
                     break;
                 }
             case resultState.numenemy:
                 {
                     //倒した敵の数
-                    //if (i < numenemy)
-                    //{
-                    //      i = i + numenemyPlus;
-                    //    Ne.text = numenemy.ToString();
-                    //}
-                    // }else if (i >= numenemy)
-                    //{
-                    // Ne.text = numenemy.ToString();
-                    //     // 次のステイトへ(次はbeam表示)   
-                    //     panelState = resultState.beam;
-                    //     // iを初期化
-                    //     // i = 0;
-                    //}
+                    if (i < numenemy)
+                    {
+                        i = i + numenemyPlus;
+                        Ne.text = numenemy.ToString();
+                    }
+                    else if (i >= numenemy)
+                    {
+                        Ne.text = numenemy.ToString();
+                        // 次のステイトへ(次はbeam表示)   
+                        panelState = resultState.beam;
+                        // iを初期化
+                        i = 0;
+                    }
                     break;
                 }
             case resultState.beam:
                 {
                     //ビーム残量
-                    //if (i < beam)
-                    //{
-                    //      i = i + beamPlus;
-                    //    Bm.text = beam.ToString();
-                    //}
-                    //else if (i >= beam)
-                    //{
-                    // Bm.text = beam.ToString();
-                    //     // 次のステイトへ(次はscore表示)   
-                    //     panelState = resultState.score;
-                    //     // iを初期化
-                    //     // i = 0;
-                    //}
+                   if (i < beam)
+                   {
+                         i = i + beamPlus;
+                       Bm.text = beam.ToString();
+                   }
+                   else if (i >= beam)
+                   {
+                    Bm.text = beam.ToString();
+                        // 次のステイトへ(次はscore表示)   
+                        panelState = resultState.score;
+                        // iを初期化
+                         i = 0;
+                   }
                     break;
                 }
             case resultState.score://スコア
