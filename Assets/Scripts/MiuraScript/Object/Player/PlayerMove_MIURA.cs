@@ -1031,9 +1031,16 @@ public class PlayerMove_MIURA : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Performed)
         {
-
             //＜＜ビックビームの処理入れてください！！！
-
+            //ありがとう！！入れました！！！
+            float amount = PlayerClassScript.GetBigAmount();
+            if (amount >= 100)
+            {
+                // BigBeamを出す
+                GoBigBeam();
+                // 使用したらAmountを0にする
+                PlayerClassScript.SetBigAmount(0);
+            }
         }
     }
 
