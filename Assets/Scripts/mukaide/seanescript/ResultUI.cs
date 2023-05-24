@@ -158,11 +158,11 @@ public class ResultUI : MonoBehaviour
         {
             // 三浦)この辺で全部の変数に最終の値入れちゃう
 
-            combo = PD.GetComponent<PlayerClass>().GetLife();//<<<コンボの数を持ってくる関数
+            combo = PD.GetComponent<beamlife>().GetLife();//<<<コンボの数を持ってくる関数
             numenemy = PD.GetComponent<PlayerClass>().GetDestroyTotal();//<<<倒した敵の数を持って来る関数
-            beam = (int)PD.GetComponent<PlayerClass>().GetAmount();//<<<ビーム残量をもって来る関数
+            beam = (int)PD.GetComponent<beamlife>().GetAmount();//<<<ビーム残量をもって来る関数
             score = Score.GetComponent<Score>().ResultScore();
-            totalscore = combo + numenemy + beam + score; // トータル計算
+            totalscore = combo*1000 + numenemy*1000 + beam*1000 + score; // トータル計算
 
             comboPlus = combo / Second;
             if (comboPlus <= 0) comboPlus = 1;
@@ -190,10 +190,10 @@ public class ResultUI : MonoBehaviour
                     if (i < combo)
                     {
                           i = i + comboPlus;
-                        Cm.text = combo.ToString();
+                        Cm.text = combo.ToString() + "×1000";
                     }else if (i >= combo)
                    {
-                   Cm.text = combo.ToString();
+                   Cm.text = combo.ToString() + "×1000";
                         // 次のステイトへ(次はnumenemy表示)   
                         panelState = resultState.numenemy;
                         // iを初期化
@@ -207,11 +207,11 @@ public class ResultUI : MonoBehaviour
                     if (i < numenemy)
                     {
                         i = i + numenemyPlus;
-                        Ne.text = numenemy.ToString();
+                        Ne.text = numenemy.ToString() + "×1000";
                     }
                     else if (i >= numenemy)
                     {
-                        Ne.text = numenemy.ToString();
+                        Ne.text = numenemy.ToString() + "×1000";
                         // 次のステイトへ(次はbeam表示)   
                         panelState = resultState.beam;
                         // iを初期化
@@ -225,11 +225,11 @@ public class ResultUI : MonoBehaviour
                    if (i < beam)
                    {
                          i = i + beamPlus;
-                       Bm.text = beam.ToString();
+                       Bm.text = beam.ToString() + "×1000";
                    }
                    else if (i >= beam)
                    {
-                    Bm.text = beam.ToString();
+                    Bm.text = beam.ToString() + "×1000";
                         // 次のステイトへ(次はscore表示)   
                         panelState = resultState.score;
                         // iを初期化
