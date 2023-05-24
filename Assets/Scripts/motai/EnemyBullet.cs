@@ -21,6 +21,10 @@ public class EnemyBullet : MonoBehaviour
     private float mintime;
     public float time;
 
+    GameObject PD;
+    beamlife PlayerClasslife;
+    private int life;
+
     void Start()
     {
         // animatorコンポーネントを取得
@@ -30,6 +34,10 @@ public class EnemyBullet : MonoBehaviour
         Enemy = transform.parent.gameObject;
         EnemyManager = GameObject.Find("EnemyGroup(Clone)");
 
+        PD = GameObject.Find("PD");
+        PlayerClasslife = PD.GetComponent<beamlife>();
+        life = PlayerClasslife.GetLife();
+
 
         maxtime = UnityEngine.Random.Range(5, 10);
         Debug.Log("maxtime >" + maxtime);
@@ -37,10 +45,10 @@ public class EnemyBullet : MonoBehaviour
 
     void Update()
     {
-        if (player == null) return;
+        if (life == 0) return;
 
         time += Time.deltaTime;
-
+          
         if (time >= maxtime - 1)
         {
             animatior.SetBool("enemyS_flag", true);
@@ -51,7 +59,6 @@ public class EnemyBullet : MonoBehaviour
             BallShot();
             time = 0;
         }
-
     }
     void BallShot()// キューブ(敵に)
     {
