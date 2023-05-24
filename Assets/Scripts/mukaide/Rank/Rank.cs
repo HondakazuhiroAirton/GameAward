@@ -124,7 +124,7 @@ public class Rank : MonoBehaviour
             case 0:
                 {
                     alfaS = 1.0f;
-                    alfa = 0.3f;
+                    alfa = 0.8f;
                     RankS.GetComponent<Image>().color += new Color(0, 0, 0, alfaS);
                     rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
@@ -132,7 +132,7 @@ public class Rank : MonoBehaviour
             case 1:
                 {
                     alfaA = 1.0f;
-                    alfa = 0.3f;
+                    alfa = 0.8f;
                     RankA.GetComponent<Image>().color += new Color(0, 0, 0, alfaA);
                     rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
@@ -140,7 +140,7 @@ public class Rank : MonoBehaviour
             case 2:
                 {
                     alfaB = 1.0f;
-                    alfa = 0.3f;
+                    alfa = 0.8f;
                     RankB.GetComponent<Image>().color += new Color(0, 0, 0, alfaB);
                     rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
@@ -148,7 +148,7 @@ public class Rank : MonoBehaviour
             case 3:
                 {
                     alfaC = 1.0f;
-                    alfa = 0.3f;
+                    alfa = 0.8f;
                     RankC.GetComponent<Image>().color += new Color(0, 0, 0, alfaC);
                     rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
@@ -156,7 +156,7 @@ public class Rank : MonoBehaviour
             case 4:
                 {
                     alfaD = 1.0f;
-                    alfa = 0.3f;
+                    alfa = 0.8f;
                     RankD.GetComponent<Image>().color += new Color(0, 0, 0, alfaD);
                     rankPanel.GetComponent<Image>().color += new Color(0, 0, 0, alfa);
                     break;
