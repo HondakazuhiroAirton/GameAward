@@ -1482,6 +1482,7 @@ GameObject:
   - component: {fileID: 458388761}
   - component: {fileID: 458388763}
   - component: {fileID: 458388762}
+  - component: {fileID: 458388764}
   m_Layer: 5
   m_Name: BigBeamGauge
   m_TagString: Untagged
@@ -1578,6 +1579,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &458388764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458388760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15be70f9111c66345b55382a18d26d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderImage: {fileID: 1041286566}
+  slider: {fileID: 458388763}
 --- !u!1001 &474879480
 PrefabInstance:
   m_ObjectHideFlags: 0
