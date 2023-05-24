@@ -742,15 +742,10 @@ public class PlayerMove_MIURA : MonoBehaviour
 
     public void OnAttck(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Canceled 
-            && (Interbal <= 0) && (ChargeTime > 0))
+        if (context.phase == InputActionPhase.Canceled)
         {
             if (beamLifeScript.GetLife() <= 0) return;
 
-
-
-            // インターバルを設定する
-            Interbal = interbalMax;
 
             // チャージエフェクトストップ
             beamChargeScript.Stop();
@@ -758,116 +753,122 @@ public class PlayerMove_MIURA : MonoBehaviour
             // チャージ音ストップ
             beamChatgeAudio.Stop();
 
-            // 計測した時間から各種値を計算する
-            float use = 0;
-            float BoxCastScale = 0;
-            float Distance = 0;
-            int BeamLevel = 0;
-            // チャージした時間によってビームの大きさが変わるサイズ変更用の変数
-
-            // 時間によって変わる(閾値)
-            if (0 <= ChargeTime && ChargeTime < OneChargeFrame) // 無チャージ
+            if ((Interbal <= 0) && (ChargeTime > 0))
             {
-                // 1.サイズを入れる
-                BoxCastScale = Lv0_Scale;
-                // 2.最大飛距離距離を入れる
-                Distance = Lv0_Distance;
-                // 3.消費エネルギーを決める
-                use = Lv0_Use;
-                // ビームの種類を教える
-                BeamLevel = 0;
+                // インターバルを設定する
+                Interbal = interbalMax;
+
+                // 計測した時間から各種値を計算する
+                float use = 0;
+                float BoxCastScale = 0;
+                float Distance = 0;
+                int BeamLevel = 0;
+                // チャージした時間によってビームの大きさが変わるサイズ変更用の変数
+
+                // 時間によって変わる(閾値)
+                if (0 <= ChargeTime && ChargeTime < OneChargeFrame) // 無チャージ
+                {
+                    // 1.サイズを入れる
+                    BoxCastScale = Lv0_Scale;
+                    // 2.最大飛距離距離を入れる
+                    Distance = Lv0_Distance;
+                    // 3.消費エネルギーを決める
+                    use = Lv0_Use;
+                    // ビームの種類を教える
+                    BeamLevel = 0;
+                }
+                else if (OneChargeFrame <= ChargeTime && ChargeTime < 2 * OneChargeFrame)// 1階目
+                {
+                    // 1.サイズを入れる
+                    BoxCastScale = Lv1_Scale;
+                    // 2.最大飛距離距離を入れる
+                    Distance = Lv1_Distance;
+                    // 3.消費エネルギーを決める
+                    use = Lv1_Use;
+                    // ビームの種類を教える
+                    BeamLevel = 1;
+                }
+                else if (2 * OneChargeFrame <= ChargeTime && ChargeTime < 3 * OneChargeFrame)// 2段階目
+                {
+                    // 1.サイズを入れる
+                    BoxCastScale = Lv2_Scale;
+                    // 2.最大飛距離距離を入れる
+                    Distance = Lv2_Distance;
+                    // 3.消費エネルギーを決める
+                    use = Lv2_Use;
+                    // ビームの種類を教える
+                    BeamLevel = 2;
+                }
+                else if (3 * OneChargeFrame <= ChargeTime && ChargeTime < 4 * OneChargeFrame)// 3段階目
+                {
+                    // 1.サイズを入れる
+                    BoxCastScale = Lv3_Scale;
+                    // 2.最大飛距離距離を入れる
+                    Distance = Lv3_Distance;
+                    // 3.消費エネルギーを決める
+                    use = Lv3_Use;
+                    // ビームの種類を教える
+                    BeamLevel = 3;
+                }
+                else if (4 * OneChargeFrame <= ChargeTime)// 4段階目
+                {
+                    // 1.サイズを入れる
+                    BoxCastScale = Lv4_Scale;
+                    // 2.最大飛距離距離を入れる
+                    Distance = Lv4_Distance;
+                    // 3.消費エネルギーを決める
+                    use = Lv4_Use;
+                    // ビームの種類を教える
+                    BeamLevel = 4;
+                }
+
+                // 減らす
+                // ビーム残量取得
+                float tempCharge = beamLifeScript.GetAmount();
+
+                float tmp = tempCharge - use;
+
+                // 残量があれば
+                if (tmp > 0)
+                {
+                    // ビーム残量を減らして
+                    tempCharge = tempCharge - use;
+                    //Debug.Log("使用量" + use);
+                    //Debug.Log("ビーム残り" + tempCharge);
+
+                    // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
+                    beamLifeScript.SetAmount(tempCharge);
+
+                    //Debug.Log("メーターの中身" + beamLifeScript.GetAmount());
+
+                    // プレイヤーの角度をBeamParticleに代入する
+                    // プレイヤーのZ軸を参考にする
+                    float PlayerAngle = this.transform.localEulerAngles.z;
+
+                    // BeamParticleのEffect角度を更新する
+                    script.PlayerAngle = PlayerAngle;
+
+                    // BeamParticleの角度を変更する
+                    script.Angle = PlayerAngle - 90;
+
+                    // BoxCastの幅を変更する
+                    BoxCast.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
+
+                    // BeamParticleのBeamMax(飛距離)を変更する
+                    script.BeamMax = Distance;
+
+                    // BeamParticleのチャージ段階を渡す
+                    script.NowBeamLevel = BeamLevel;
+
+                    // プレハブを指定位置に生成
+                    Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);
+
+                }
+                // Debug.Log("ビームうった！！");
             }
-            else if (OneChargeFrame <= ChargeTime && ChargeTime < 2 * OneChargeFrame)// 1階目
-            {
-                // 1.サイズを入れる
-                BoxCastScale = Lv1_Scale;
-                // 2.最大飛距離距離を入れる
-                Distance = Lv1_Distance;
-                // 3.消費エネルギーを決める
-                use = Lv1_Use;
-                // ビームの種類を教える
-                BeamLevel = 1;
-            }
-            else if (2 * OneChargeFrame <= ChargeTime && ChargeTime < 3 * OneChargeFrame)// 2段階目
-            {
-                // 1.サイズを入れる
-                BoxCastScale = Lv2_Scale;
-                // 2.最大飛距離距離を入れる
-                Distance = Lv2_Distance;
-                // 3.消費エネルギーを決める
-                use = Lv2_Use;
-                // ビームの種類を教える
-                BeamLevel = 2;
-            }
-            else if (3 * OneChargeFrame <= ChargeTime && ChargeTime < 4 * OneChargeFrame)// 3段階目
-            {
-                // 1.サイズを入れる
-                BoxCastScale = Lv3_Scale;
-                // 2.最大飛距離距離を入れる
-                Distance = Lv3_Distance;
-                // 3.消費エネルギーを決める
-                use = Lv3_Use;
-                // ビームの種類を教える
-                BeamLevel = 3;
-            }
-            else if (4 * OneChargeFrame <= ChargeTime)// 4段階目
-            {
-                // 1.サイズを入れる
-                BoxCastScale = Lv4_Scale;
-                // 2.最大飛距離距離を入れる
-                Distance = Lv4_Distance;
-                // 3.消費エネルギーを決める
-                use = Lv4_Use;
-                // ビームの種類を教える
-                BeamLevel = 4;
-            }
 
-            // 減らす
-            // ビーム残量取得
-            float tempCharge = beamLifeScript.GetAmount();
-
-            float tmp = tempCharge - use;
-
-            // 残量があれば
-            if (tmp > 0)
-            {
-                // ビーム残量を減らして
-                tempCharge = tempCharge - use;
-                //Debug.Log("使用量" + use);
-                //Debug.Log("ビーム残り" + tempCharge);
-
-                // プレイヤーデータオブジェクトのビーム残量(Amount)を更新する
-                beamLifeScript.SetAmount(tempCharge);
-
-                //Debug.Log("メーターの中身" + beamLifeScript.GetAmount());
-
-                // プレイヤーの角度をBeamParticleに代入する
-                // プレイヤーのZ軸を参考にする
-                float PlayerAngle = this.transform.localEulerAngles.z;
-
-                // BeamParticleのEffect角度を更新する
-                script.PlayerAngle = PlayerAngle;
-
-                // BeamParticleの角度を変更する
-                script.Angle = PlayerAngle - 90;
-
-                // BoxCastの幅を変更する
-                BoxCast.transform.localScale = new Vector3(BoxCastScale, BoxCastScale, BoxCastScale);
-
-                // BeamParticleのBeamMax(飛距離)を変更する
-                script.BeamMax = Distance;
-
-                // BeamParticleのチャージ段階を渡す
-                script.NowBeamLevel = BeamLevel;
-
-                // プレハブを指定位置に生成
-                Instantiate(BeamParticleManagerPrefab, this.transform.position, gameObject.transform.localRotation);
-                // チャージ時間を戻す
-                ChargeTime = 0;
-
-
-            }
-           // Debug.Log("ビームうった！！");
+            // チャージ時間を戻す
+            ChargeTime = 0;
         }
     }
 
