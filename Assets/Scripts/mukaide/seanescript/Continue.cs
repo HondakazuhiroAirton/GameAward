@@ -54,6 +54,7 @@ public class Continue : MonoBehaviour
         rank = this.GetComponent<Rank>();
         if (rank.BCflag())
         {
+            Debug.Log("Ç®ÇµÇΩÅIÅI");
             Image.GetComponent<Fade>().GameStart();
         }
     }
