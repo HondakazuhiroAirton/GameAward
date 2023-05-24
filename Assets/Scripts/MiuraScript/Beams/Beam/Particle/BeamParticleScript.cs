@@ -224,9 +224,6 @@ public class BeamParticleScript : MonoBehaviour
     }
 
 
-    // コンボ数表示関数
-
-
 }
 
 // 0301 三浦瞬
