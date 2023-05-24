@@ -42,6 +42,9 @@ public class StageChangerScript : MonoBehaviour
     // 次のステージNo
     public StageNo NextStage;
 
+    // フェーズ選択
+    public PhaseNo NextPhase;
+
     [SerializeField]
     // Stageを切り替えるかどうかフラグ
     private bool changeStage = false;
@@ -86,4 +89,11 @@ public class StageChangerScript : MonoBehaviour
         // ステージ変更フラグをfalseにする
         changeStage = false;
     }
+
+    // フェーズ取得
+    public int GetPhaseNo()
+    {
+        return (int)NextPhase;
+    }
+
 }

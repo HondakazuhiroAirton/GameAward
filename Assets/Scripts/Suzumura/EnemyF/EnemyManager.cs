@@ -7,6 +7,16 @@ using UnityEngine.AddressableAssets;
 using UnityEditor;
 #endif
 
+// フェーズ列挙型(Unityエディターのプルダウン用)
+public enum PhaseNo
+{
+    Phase1 = 1,
+    Phase2,
+    Phase3,
+    Phase4,
+    Phase5
+}
+
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private float spawnRealTime = 0;            // 生成タイマー
@@ -152,7 +162,11 @@ public class EnemyManager : MonoBehaviour
 
         // 最初はPhase1;
         CurrentPhase = 1;
+        // デバック用
+        CurrentPhase = StageChanger.GetComponent<StageChangerScript>().GetPhaseNo();
+        // フェーズ再生
         phase.PlayPhase(CurrentPhase);
+
         clearflag = false;
         stopflag = false;
     }
@@ -191,7 +205,6 @@ public class EnemyManager : MonoBehaviour
                     // 出現タイミングを少し遅らせる
                     if (enemyData[i].Duration >= 3.0f)
                     {
-                        Debug.Log(enemy[i].name + "移動開始");
                         enemyData[i].State = SetState(i);
                         enemyData[i].Duration = 0.0f;
                     }
@@ -208,7 +221,7 @@ public class EnemyManager : MonoBehaviour
                     );
 
                 // 現在の位置
-                enemyData[i].PresentLocation = (enemyData[i].Duration * 5) / enemyData[i].distance_two;
+                enemyData[i].PresentLocation = (enemyData[i].Duration * 20) / enemyData[i].distance_two;
 
                 // 移動
                 enemy[i].transform.position = Vector3.Slerp(
@@ -298,7 +311,16 @@ public class EnemyManager : MonoBehaviour
                     DestroyEnemy(i);
                 }
             }
-
+            // 5:その場待機
+            else if (enemyData[i].State == 5)
+            {
+                // 一定時間経過で次の動きに移行
+                if (enemyData[i].Duration >= 1.0f)
+                {
+                    enemyData[i].State = SetState(i);
+                    enemyData[i].Duration = 0;
+                }
+            }
             // 9:往復移動
             else if (enemyData[i].State == 9)
             {
@@ -371,7 +393,7 @@ public class EnemyManager : MonoBehaviour
         // 名前をつける
         enemy[no].name = enemyData[no].name;
         // サイズ設定
-        enemy[no].transform.localScale = new Vector3(enemyData[no].Size, enemyData[no].Size, enemyData[no].Size);
+        //enemy[no].transform.localScale = new Vector3(enemyData[no].Size, enemyData[no].Size, enemyData[no].Size);
         // モデル設定
         model[no] = Instantiate(
             Resources.Load(enemyData[no].model, typeof(GameObject)) as GameObject,
@@ -380,6 +402,8 @@ public class EnemyManager : MonoBehaviour
             );
         Parent = GameObject.Find(enemyData[no].name);
         model[no].transform.parent = Parent.transform;
+        // サイズ設定
+        model[no].transform.localScale = new Vector3(enemyData[no].Size, enemyData[no].Size, enemyData[no].Size);
         // 敵予告のフェードを始める
         appearanceNotice.StartFade(enemyData[no].Entry, enemyData[no].sideNo);
     }
