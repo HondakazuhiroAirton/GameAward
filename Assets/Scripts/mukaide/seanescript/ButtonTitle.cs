@@ -16,6 +16,7 @@ public class ButtonTitle : MonoBehaviour
     private Button redo;
 
     public GameObject Image;
+    private Fade fade;
 
     //SE
     public AudioManager SE;
@@ -26,6 +27,7 @@ public class ButtonTitle : MonoBehaviour
     {
         //Fade�̎擾
         Image = GameObject.Find("Image");
+        fade = Image.GetComponent<Fade>();
 
     }
 
@@ -50,16 +52,19 @@ public class ButtonTitle : MonoBehaviour
         {
             redo.interactable = false;
             SE.playselectSE();
-            Image.GetComponent<Fade>().GameSelect();
+            fade.GameSelect();
         }
 
     }
 
     public void ButtonRedo()
     {
-        redo.interactable = false;
-        SE.playselectSE();
-        Image.GetComponent<Fade>().GameSelect();
+        if (fade.Fadeflag() == false)
+        {
+            redo.interactable = false;
+            SE.playselectSE();
+            fade.GameSelect();
+        }
     }
 
 }

@@ -15,6 +15,7 @@ public class Fade : MonoBehaviour
 
     Image fadeImage;                //透明度を変更するパネルのイメージ
 
+    public bool isfade;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class Fade : MonoBehaviour
         green = fadeImage.color.g;
         blue = fadeImage.color.b;
         alfa = fadeImage.color.a;
+        isfade = false;
     }
 
     void Update()
@@ -46,11 +48,13 @@ public class Fade : MonoBehaviour
         if (alfa <= 0)
         {                    //c)完全に透明になったら処理を抜ける
             isFadeIn = false;
+            isfade = false;
         }
     }
 
     void StartFadeOut()
     {
+        isfade = true;
         fadeImage.enabled = true;  // a)パネルの表示をオンにする
         alfa += fadeSpeed;         // b)不透明度を徐々にあげる
         SetAlpha();               // c)変更した透明度をパネルに反映する
@@ -75,25 +79,34 @@ public class Fade : MonoBehaviour
     //　スタートボタンを押したら実行する
     public void GameStart()
     {
+        if (isfade) return;
         isFadeOut = true;
         changeSceneName = "Master_Final";
     }
 
     public void GameSelect()
     {
+        if (isfade) return;
         isFadeOut = true;
         changeSceneName = "nagaya";
     }
 
     public void GameTitle()
     {
+        if (isfade) return;
         isFadeOut = true;
         changeSceneName = "Title";
     }
 
     public void GameOver()
     {
+        if (isfade) return;
         isFadeOut = true;
         changeSceneName = "GameOver";
+    }
+
+    public bool Fadeflag()
+    {
+        return isfade;
     }
 }
