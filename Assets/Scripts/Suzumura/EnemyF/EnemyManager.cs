@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour
 
     // CSVのデータを流し込む配列
     [SerializeField] public static EnemyData[] enemyData;
+    //[SerializeField] public EnemyData[] enemyData;
 
     // StageChangerオブジェクト
     public GameObject StageChanger;
@@ -138,6 +139,7 @@ public class EnemyManager : MonoBehaviour
             enemyData[i].target = new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ);
             enemyData[i].Step = 0;
             enemyData[i].State = 0;
+            enemyData[i].Duration = 0.0f;
         }
 
         appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
@@ -173,7 +175,7 @@ public class EnemyManager : MonoBehaviour
             // 敵出現時の共通処理
             if (enemyData[i].State != 0)
             {
-                enemyData[i].prevPosition = enemy[i].transform.position;    // 前フレームのワールド位置をとっておく
+                enemyData[i].prevPosition = enemy[i].transform.position;    // 前フレームのワールド位置をとっておく                                                         
                 enemyData[i].Duration += Time.deltaTime;                    // 経過時間を取得
             }
 
@@ -183,9 +185,16 @@ public class EnemyManager : MonoBehaviour
                 // 時間になったら敵登場
                 if (spawnRealTime >= enemyData[i].AppearanceTime)
                 {
-                    SpawnNewEnemy(i);
-                    enemyData[i].State = SetState(i);
-                    enemyData[i].Duration = 0.0f;
+                    if (enemy[i] == null) SpawnNewEnemy(i);                  // 敵出現
+                    enemyData[i].Duration += Time.deltaTime;                 // 経過時間を取得
+
+                    // 出現タイミングを少し遅らせる
+                    if (enemyData[i].Duration >= 3.0f)
+                    {
+                        Debug.Log(enemy[i].name + "移動開始");
+                        enemyData[i].State = SetState(i);
+                        enemyData[i].Duration = 0.0f;
+                    }
                 }
             }
             // 敵出現
