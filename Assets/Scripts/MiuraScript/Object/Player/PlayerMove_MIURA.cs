@@ -1026,6 +1026,17 @@ public class PlayerMove_MIURA : MonoBehaviour
         Debug.Log("下に動く！");
     }
 
+    //ビックビーム
+    public void OnBigbeam(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+
+            //＜＜ビックビームの処理入れてください！！！
+
+        }
+    }
+
 
     // 弾を受けた時に呼ばれる処理
     public void Hidan()
