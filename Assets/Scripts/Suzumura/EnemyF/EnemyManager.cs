@@ -151,7 +151,7 @@ public class EnemyManager : MonoBehaviour
         ViewportRT = Camera.main.ViewportToWorldPoint(new Vector3(1.1f, 1.1f));
 
         // ç≈èâÇÕPhase1;
-        CurrentPhase = 1;
+        CurrentPhase = 5;
         phase.PlayPhase(CurrentPhase);
         clearflag = false;
         stopflag = false;
