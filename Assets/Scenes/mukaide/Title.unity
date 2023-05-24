@@ -190,8 +190,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724502, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586242838397724503, guid: 36bcce3109d279143bf336b100f82bf7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36bcce3109d279143bf336b100f82bf7, type: 3}
+--- !u!1 &811252619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1586242838397724500, guid: 36bcce3109d279143bf336b100f82bf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 811252618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &811252620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811252619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d9065c7e6244dddaffda63eb37d64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 0}
+  _isAutoPlay: 0
+  _volumeRate: 1
+  _delay: 0
+  _pitch: 1
+  _fadeInDuration: 0
+  _fadeOutDuration: 0
+  _isLoop: 1
+  _isAutoStop: 1
 --- !u!1 &953665819
 GameObject:
   m_ObjectHideFlags: 0
