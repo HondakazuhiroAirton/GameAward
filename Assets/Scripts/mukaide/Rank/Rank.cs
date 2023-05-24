@@ -98,10 +98,10 @@ public class Rank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(Ctime <= 0)
+        Cflag = true; 
+        if (Ctime >= 0)
         {
-            Cflag = true;
+            Ctime--;
         }
 
         if (Resulte.rankflag() == true)
