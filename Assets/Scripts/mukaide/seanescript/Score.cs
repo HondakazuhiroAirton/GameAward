@@ -25,7 +25,7 @@ public class Score : MonoBehaviour
 
     public void AddScore()
     {
-        this.score += 10;
+        this.score += 100;
         this.textComponent.text = score.ToString();
     }
 
