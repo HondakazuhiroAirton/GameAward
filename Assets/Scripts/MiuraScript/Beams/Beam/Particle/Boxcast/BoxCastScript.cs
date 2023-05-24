@@ -74,7 +74,7 @@ public class BoxCastScript : MonoBehaviour
     // PDにアクセス
     private GameObject PlayerDate;
     private PlayerClass PlayerClassScript;
-
+    private beamlife beamLifeScript;
 
     void Start()
     {
@@ -108,6 +108,7 @@ public class BoxCastScript : MonoBehaviour
 
         //Geter / Seter使用用スクリプト保持
         PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
+        beamLifeScript = PlayerDate.GetComponent<beamlife>();
     }
 
     void Update()
@@ -226,6 +227,15 @@ public class BoxCastScript : MonoBehaviour
 
             // BigBeamのゲージを増やす
             bigBeamGauge.AddHit();
+
+            // beamlifeを敵を倒した数によって増やす*********************
+            // ライフを持ってくる
+            float amount = beamLifeScript.GetAmount();
+            // 敵を一体倒すと1ライフ回復* コンボ数
+            amount = amount + 1 * BeamParticleScript.combo;
+            // 回復
+            beamLifeScript.SetAmount(amount);
+
 
             // 敵のデストロイ総数を変える
             int DestroyTotal = PlayerClassScript.GetDestroyTotal();
