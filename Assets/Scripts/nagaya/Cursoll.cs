@@ -49,6 +49,7 @@ public class Cursoll : MonoBehaviour
     //ゲームパッド
     [SerializeField] PlayerInput input;
 
+    Fade fade;
 
 
     void Start()
@@ -74,6 +75,7 @@ public class Cursoll : MonoBehaviour
 
         //ゲームパッド
         input = this.GetComponent<PlayerInput>();
+        fade = GameObject.Find("Image").GetComponent<Fade>();
     }
 
     // Update is called once per frame
@@ -110,6 +112,7 @@ public class Cursoll : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                if (fade.Fadeflag() == false) return;
                 WorldButton();
 
             }
@@ -123,10 +126,12 @@ public class Cursoll : MonoBehaviour
         if (NowPosition == 0)
         {
             panelflag = false;
-            se.PlayOneShot(Cancelse);
+            SEscript.playselectSE();
         }
         else if (NowPosition == 1)
         {
+            if (fade.Fadeflag()) return;
+
             SEscript.playselectSE();
 
             World1.SetActive(true);
@@ -237,12 +242,16 @@ public class Cursoll : MonoBehaviour
 
     public void OnSelect(InputAction.CallbackContext context)
     {
-        Debug.Log("おした！！");
-        if (panelflag)
+
+        if (fade.Fadeflag() == false)
         {
-            if (context.phase == InputActionPhase.Performed)
+            Debug.Log("おした！！");
+            if (panelflag)
             {
-                WorldButton();
+                if (context.phase == InputActionPhase.Performed)
+                {
+                    WorldButton();
+                }
             }
         }
     }
