@@ -4172,6 +4172,7 @@ GameObject:
   - component: {fileID: 1114434562}
   - component: {fileID: 1114434563}
   - component: {fileID: 1114434564}
+  - component: {fileID: 1114434565}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -4341,9 +4342,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c8bdf6d5cfa144f9fc6f381451d133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TitleBgm: {fileID: 0}
+  SelectBgm: {fileID: 0}
   GameBGM: {fileID: 8300000, guid: 49194c4cc7bb0b64aaf7ddf086148743, type: 3}
   ResultBGM: {fileID: 8300000, guid: b57590210596b7b45a6885ec0105fb2c, type: 3}
   GameOverBGM: {fileID: 8300000, guid: ce7b4d5a91b23f844815a6f0ab01a047, type: 3}
+--- !u!114 &1114434565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114434560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d9065c7e6244dddaffda63eb37d64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 0}
+  _isAutoPlay: 0
+  _volumeRate: 1
+  _delay: 0
+  _pitch: 1
+  _fadeInDuration: 0
+  _fadeOutDuration: 0
+  _isLoop: 1
+  _isAutoStop: 1
 --- !u!1 &1126610031
 GameObject:
   m_ObjectHideFlags: 0
