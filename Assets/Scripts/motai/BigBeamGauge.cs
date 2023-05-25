@@ -40,8 +40,15 @@ public class BigBeamGauge : MonoBehaviour
         BigBeam = PlayerBB.GetBigAmount();
 
         //Debug.Log(Random.Range(1.0f, 50.0f));
+        if (Beamdec)
+        {
+            slider.value = slider.value - 1f;
+            if (slider.value == 0)
+            {
+                Beamdec = false;
+            }
+        }
 
-        
 
         //AddHit();
     }
@@ -61,19 +68,9 @@ public class BigBeamGauge : MonoBehaviour
 
     public void AddBigBeamGauge()
     {
-        
         if (slider.value == 100)
         {
             Beamdec = true;
-        }
-
-        if (Beamdec)
-        {
-            slider.value = slider.value - 1f;
-            if (slider.value == 0)
-            {
-                Beamdec = false;
-            }
         }
     }
 }
