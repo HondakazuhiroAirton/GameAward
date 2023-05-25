@@ -221,7 +221,7 @@ public class EnemyManager : MonoBehaviour
                     );
 
                 // åªç›ÇÃà íu
-                enemyData[i].PresentLocation = (enemyData[i].Duration * 20) / enemyData[i].distance_two;
+                enemyData[i].PresentLocation = (enemyData[i].Duration * 10) / enemyData[i].distance_two;
 
                 // à⁄ìÆ
                 enemy[i].transform.position = Vector3.Slerp(
