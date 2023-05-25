@@ -28,41 +28,44 @@ public class GMC_BGMscript : MonoBehaviour
     // public GameObject ResultPanel;
 
     //BGM集
-    [SerializeField] private AudioSource BGM;
-    [SerializeField] private AudioClip TitleBgm;
-    [SerializeField] private AudioClip SelectBgm;
-    [SerializeField] private AudioClip GameBGM;
-    [SerializeField] private AudioClip ResultBGM;
-    [SerializeField] private AudioClip GameOverBGM;
+    public AudioClip TitleBgm;
+    public AudioClip SelectBgm;
+    public AudioClip GameBGM;
+    public AudioClip ResultBGM;
+    public AudioClip GameOverBGM;
 
     private string beforeScene;//string型の変数beforeSceneを宣言 
 
     private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
 
-        BGM=this.GetComponent<AudioSource>();
 
-
-        beforeScene = "Title";
-        BGM.PlayOneShot(TitleBgm);
+        //シーンが切り替わった時に呼ばれるメソッドを登録
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
 
         // BGMの音を流す
         audioSource = this.GetComponent<AudioSource>();
         audioSource.clip = GameBGM;
         audioSource.Play();
-     }
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (beforeScene == "Title")
+        {
+            audioSource.clip = TitleBgm;
+            audioSource.Play();
+        }
 
     }
 
-   // リザルト用BGM開始
-   public void ResultBGMStart()
+    // リザルト用BGM開始
+    public void ResultBGMStart()
    {
        // BGM止める
        audioSource.Stop();
@@ -87,23 +90,25 @@ public class GMC_BGMscript : MonoBehaviour
         //タイトルからステージセレクトへ
         if (beforeScene == "Title" && nextScene.name == "nagaya")
         {
-            BGM.Stop();
-            BGM.PlayOneShot(SelectBgm);
+            audioSource.clip = SelectBgm;
+            audioSource.Play();
         }
 
         // ステージセレクトからゲーム画面へ(予定）
         if (beforeScene == "nagaya" && nextScene.name == "Master_Final")
         {
-            BGM.PlayOneShot(GameBGM);
-            BGM.Stop();
+            audioSource.Stop();
+            audioSource.clip =GameBGM;
+            audioSource.Play();
         }
 
         //ステージセレクトからタイトル画面へ
         if (beforeScene == "nagaya" && nextScene.name == "Title")
         {
             //if()//タイトルへ戻るボタンを押したとき
-            BGM.Stop();
-            BGM.PlayOneShot(TitleBgm);
+            audioSource.Stop();
+            audioSource.clip = TitleBgm;
+            audioSource.Play();
         }
         
         //遷移後のシーン名を「１つ前のシーン名」として保持

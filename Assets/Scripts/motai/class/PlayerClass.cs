@@ -65,6 +65,11 @@ public class PlayerClass : MonoBehaviour
     }
     void Update()
     {
+        if (amount < 100)
+        {
+            amount = 100;
+        }
+
         // ƒr[ƒ€Ž©‘R‰ñ•œ
         if (amount < 100)
         {
