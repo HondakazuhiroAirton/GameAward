@@ -9,6 +9,8 @@ public class StageManagerScript : MonoBehaviour
     // 現在のステージ
     [SerializeField]private int StageIndex;
 
+    private static GameObject instance;
+
     // Geter/Seterその他関数**************************************************************
     // ステージ全情報取得
     public StageClearDate[] GetStageInformation()
@@ -49,6 +51,12 @@ public class StageManagerScript : MonoBehaviour
         AllStage[stageNo + 1].State = StageClearState.CHALLENGE;
     }
 
+    void Awake()
+    {
+        CheckInstance();
+    }
+
+
     // スタート
     void Start()
     {
@@ -60,5 +68,17 @@ public class StageManagerScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void CheckInstance()
+    {
+        if (instance == null)
+        {
+            instance = this.gameObject;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
