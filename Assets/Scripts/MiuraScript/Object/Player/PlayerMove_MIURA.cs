@@ -489,10 +489,10 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
 
             //w入力で上向きに動く
-            //if (Input.GetKey("w") || _ismoveU == true)
-            //{
-            //    this.gameObject.transform.position = new Vector3(pos.x, pos.y + speed * DownSpeed * Time.deltaTime, pos.z);
-            //}
+            if (/*Input.GetKey("w") ||*/ _ismoveU == true)
+            {
+                this.gameObject.transform.position = new Vector3(pos.x, pos.y + speed * DownSpeed * Time.deltaTime, pos.z);
+            }
             //s入力で下向きに動く
             else if (/*Input.GetKey("s") ||*/ _ismoveD == true)
             {
@@ -562,37 +562,37 @@ public class PlayerMove_MIURA : MonoBehaviour
         }
 
         //// ビーム発射処理*************************************************************
-        //if (Input.GetKey(KeyCode.Space)  || _isPressed == true ) // キーコードは変更してね(*^^*)
-        //{
- 
+        if (/*Input.GetKey(KeyCode.Space) ||*/ _isPressed == true) // キーコードは変更してね(*^^*)
+        {
 
-        //    if (Input.GetKeyDown(KeyCode.Space))
-        //    {
-        //        // チャージエフェクト開始
-        //        beamChargeScript.Play();
-        //        //  チャージ音開始
-        //        beamChatgeAudio.Play();
-        //    }
 
-        //    // アニメーターぐるぐる状態はTrue
-        //    animator.SetBool("fCharge",true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // チャージエフェクト開始
+                beamChargeScript.Play();
+                //  チャージ音開始
+                beamChatgeAudio.Play();
+            }
 
-        //    // ビーム残量取得
-        //    float tempCharge = beamLifeScript.GetAmount();
+            // アニメーターぐるぐる状態はTrue
+            animator.SetBool("fCharge", true);
 
-        //    // 最低ビーム量がなければチャージしない
-        //    if (tempCharge >= Lv0_Use)
-        //    {
-        //        // 毎フレーム1足すことによって時間を図る
-        //        ChargeTime = ChargeTime + 1;
-        //        // 最大値設定 ←バグるならこの変か？？？？
-        //        if (ChargeTime >= MaxFrame)
-        //        {
-        //            ChargeTime = (int)(MaxFrame + 1);
-        //        }
-        //    }
+            // ビーム残量取得
+            float tempCharge = beamLifeScript.GetAmount();
 
-        //}
+            // 最低ビーム量がなければチャージしない
+            if (tempCharge >= Lv0_Use)
+            {
+                // 毎フレーム1足すことによって時間を図る
+                ChargeTime = ChargeTime + 1;
+                // 最大値設定 ←バグるならこの変か？？？？
+                if (ChargeTime >= MaxFrame)
+                {
+                    ChargeTime = (int)(MaxFrame + 1);
+                }
+            }
+
+        }
 
         //if (Input.GetKeyUp(KeyCode.Space) || (Input.GetKeyUp(KeyCode.Q))) 
         //{
@@ -718,7 +718,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         //}
         // ビーム発射処理(ここまで)*****************************************************************
 
-    
+
         //float amount = PlayerClassScript.GetBigAmount();
 
         //// 巨大ビーム発射処理(ここから)*************************************************************
