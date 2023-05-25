@@ -36,7 +36,7 @@ public class EnemyBullet : MonoBehaviour
 
         PD = GameObject.Find("PD");
         PlayerClasslife = PD.GetComponent<beamlife>();
-        life = PlayerClasslife.GetLife();
+        
 
 
         maxtime = UnityEngine.Random.Range(5, 10);
@@ -45,6 +45,7 @@ public class EnemyBullet : MonoBehaviour
 
     void Update()
     {
+        life = PlayerClasslife.GetLife();
         if (life == 0) return;
 
         time += Time.deltaTime;
