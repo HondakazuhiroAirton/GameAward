@@ -41,22 +41,7 @@ public class BigBeamGauge : MonoBehaviour
 
         //Debug.Log(Random.Range(1.0f, 50.0f));
 
-        if (Input.GetKey(KeyCode.Return))
-        {
-            if (slider.value == 100)
-            {
-                Beamdec = true;
-            }
-        }
-
-        if(Beamdec)
-        {
-            slider.value = slider.value - 1f;
-            if(slider.value == 0)
-            {
-                Beamdec = false;
-            }
-        }
+        
 
         //AddHit();
     }
@@ -72,5 +57,23 @@ public class BigBeamGauge : MonoBehaviour
 
         Debug.Log(HitAmount);
         Debug.Log(BigBeam);
+    }
+
+    public void AddBigBeamGauge()
+    {
+        
+        if (slider.value == 100)
+        {
+            Beamdec = true;
+        }
+
+        if (Beamdec)
+        {
+            slider.value = slider.value - 1f;
+            if (slider.value == 0)
+            {
+                Beamdec = false;
+            }
+        }
     }
 }
