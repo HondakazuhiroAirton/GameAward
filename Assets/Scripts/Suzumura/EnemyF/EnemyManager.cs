@@ -221,7 +221,7 @@ public class EnemyManager : MonoBehaviour
                     );
 
                 // 現在の位置
-                enemyData[i].PresentLocation = (enemyData[i].Duration * 10) / enemyData[i].distance_two;
+                enemyData[i].PresentLocation = (enemyData[i].Duration * SetData(i)) / enemyData[i].distance_two;
 
                 // 移動
                 enemy[i].transform.position = Vector3.Slerp(
@@ -252,7 +252,7 @@ public class EnemyManager : MonoBehaviour
             {
                 // 移動
                 enemy[i].transform.RotateAround(
-                    new Vector3(enemyData[i].First.x - 1.0f, enemyData[i].First.y, enemyData[i].First.z),
+                    new Vector3(enemyData[i].First.x + SetData(i), enemyData[i].First.y, enemyData[i].First.z),
                     Vector3.forward,        // Z軸
                     Time.deltaTime * angle
                     );
@@ -274,7 +274,7 @@ public class EnemyManager : MonoBehaviour
                 enemy[i].transform.position = Vector3.MoveTowards(
                    enemy[i].transform.position,
                    new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 8
+                   Time.deltaTime * SetData(i)
                    );
 
                 // 進行方向に向きを変える
@@ -296,7 +296,7 @@ public class EnemyManager : MonoBehaviour
                 enemy[i].transform.position = Vector3.MoveTowards(
                    enemy[i].transform.position,
                    new Vector3(enemyData[i].StartPosX, enemyData[i].StartPosY, enemyData[i].StartPosZ),
-                   Time.deltaTime * 8
+                   Time.deltaTime * SetData(i)
                    );
 
                 // 進行方向に向きを変える
@@ -315,50 +315,50 @@ public class EnemyManager : MonoBehaviour
             else if (enemyData[i].State == 5)
             {
                 // 一定時間経過で次の動きに移行
-                if (enemyData[i].Duration >= 1.0f)
+                if (enemyData[i].Duration >= SetData(i))
                 {
                     enemyData[i].State = SetState(i);
                     enemyData[i].Duration = 0;
                 }
             }
-            // 9:往復移動
-            else if (enemyData[i].State == 9)
-            {
-                // 移動
-                enemy[i].transform.position = Vector3.MoveTowards(
-                   enemy[i].transform.position,
-                   new Vector3(enemyData[i].FirstPosX, enemyData[i].FirstPosY, enemyData[i].FirstPosZ),
-                   Time.deltaTime * 8
-                   );
+            //// 9:往復移動
+            //else if (enemyData[i].State == 9)
+            //{
+            //    // 移動
+            //    enemy[i].transform.position = Vector3.MoveTowards(
+            //       enemy[i].transform.position,
+            //       new Vector3(enemyData[i].FirstPosX, enemyData[i].FirstPosY, enemyData[i].FirstPosZ),
+            //       Time.deltaTime * 8
+            //       );
 
-                // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+            //    // 進行方向に向きを変える
+            //    enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
-                // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyData[i].First)
-                {
-                    enemyData[i].State = 10;
-                }
-            }
-            // 10:往復移動
-            else if (enemyData[i].State == 10)
-            {
-                // 移動
-                enemy[i].transform.position = Vector3.MoveTowards(
-                   enemy[i].transform.position,
-                   new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
-                   Time.deltaTime * 8
-                   );
+            //    // 指定場所についたら次の動きに移行
+            //    if (enemy[i].transform.position == enemyData[i].First)
+            //    {
+            //        enemyData[i].State = 10;
+            //    }
+            //}
+            //// 10:往復移動
+            //else if (enemyData[i].State == 10)
+            //{
+            //    // 移動
+            //    enemy[i].transform.position = Vector3.MoveTowards(
+            //       enemy[i].transform.position,
+            //       new Vector3(enemyData[i].TargetPosX, enemyData[i].TargetPosY, enemyData[i].TargetPosZ),
+            //       Time.deltaTime * 8
+            //       );
 
-                // 進行方向に向きを変える
-                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+            //    // 進行方向に向きを変える
+            //    enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
-                // 指定場所についたら次の動きに移行
-                if (enemy[i].transform.position == enemyData[i].target)
-                {
-                    enemyData[i].State = 9;
-                }
-            }
+            //    // 指定場所についたら次の動きに移行
+            //    if (enemy[i].transform.position == enemyData[i].target)
+            //    {
+            //        enemyData[i].State = 9;
+            //    }
+            //}
 
 
             PhaseTransition = false;  // 敵が残っていれば遷移しない
@@ -454,6 +454,20 @@ public class EnemyManager : MonoBehaviour
             case 4: return enemyData[no].NextState4;
             case 5: return enemyData[no].NextState5;
             default: return -1;
+        }
+    }
+
+    // ステートに対するデータをセット
+    public float SetData(int no)
+    {
+        switch (enemyData[no].Step)
+        {
+            case 1: return enemyData[no].Data1;
+            case 2: return enemyData[no].Data2;
+            case 3: return enemyData[no].Data3;
+            case 4: return enemyData[no].Data4;
+            case 5: return enemyData[no].Data5;
+            default: return 0;
         }
     }
 
