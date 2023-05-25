@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class Cursoll : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class Cursoll : MonoBehaviour
 
     Fade fade;
 
+    //説明用
+    TextMeshProUGUI textComponent;
 
     void Start()
     {
@@ -76,6 +79,9 @@ public class Cursoll : MonoBehaviour
         //ゲームパッド
         input = this.GetComponent<PlayerInput>();
         fade = GameObject.Find("Image").GetComponent<Fade>();
+
+        textComponent = GameObject.Find("setumei").GetComponent<TextMeshProUGUI>();
+        textComponent.text = "world1";
     }
 
     // Update is called once per frame
@@ -115,6 +121,27 @@ public class Cursoll : MonoBehaviour
                 if (fade.Fadeflag() == false) return;
                 WorldButton();
 
+            }
+
+            if (NowPosition == 0)
+            {
+                textComponent.text = "Title";
+            }
+            else if (NowPosition == 1)
+            {
+                textComponent.text = "world1";
+            }
+            else if (NowPosition == 2)
+            {
+                textComponent.text = "world2";
+            }
+            else if (NowPosition == 3)
+            {
+                textComponent.text = "world3";
+            }
+            else if (NowPosition == 4)
+            {
+                textComponent.text = "world4";
             }
         }
     }
