@@ -54,20 +54,7 @@ public class beamlife : MonoBehaviour
             //amount += recovery * Time.deltaTime;
             amount = amount + recovery * Time.deltaTime;
         }
-        // else
-        // {
-        //     //return;
-        // }
-        //デバック用
-        if (Input.GetKey(KeyCode.B))
-        {
-            amount--;
 
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            life--;
-        }
 
         // Game Over
         if (life == 0)
