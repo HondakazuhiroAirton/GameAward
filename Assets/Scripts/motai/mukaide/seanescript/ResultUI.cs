@@ -161,6 +161,7 @@ public class ResultUI : MonoBehaviour
             combo = PD.GetComponent<beamlife>().GetLife();//<<<コンボの数を持ってくる関数
             numenemy = PD.GetComponent<PlayerClass>().GetDestroyTotal();//<<<倒した敵の数を持って来る関数
             beam = (int)PD.GetComponent<beamlife>().GetAmount();//<<<ビーム残量をもって来る関数
+            if (beam >= 100) beam = 100;
             score = Score.GetComponent<Score>().ResultScore();
             totalscore = combo*1000 + numenemy*1000 + beam*1000 + score; // トータル計算
 
