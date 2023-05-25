@@ -7,20 +7,20 @@ using KanKikuchi.AudioManager;
 public class GMC_BGMscript : MonoBehaviour
 {
     //シングルトン設定ここから
-    public static GMC_BGMscript instance;
-
+       public static GMC_BGMscript instance;
+   
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-
+   
         }
         else
         {
             Destroy(this.gameObject);
         }
-
+   
     }
     //シングルトン設定ここまで
 
@@ -56,11 +56,7 @@ public class GMC_BGMscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (beforeScene == "Title")
-        {
-            audioSource.clip = TitleBgm;
-            audioSource.Play();
-        }
+
 
     }
 
@@ -88,31 +84,27 @@ public class GMC_BGMscript : MonoBehaviour
     {
         //シーンがどう変わったかで判定
         //タイトルからステージセレクトへ
-        if (beforeScene == "Title" && nextScene.name == "nagaya")
-        {
-            audioSource.clip = SelectBgm;
-            audioSource.Play();
-        }
+       if (beforeScene == "Title" && nextScene.name == "nagaya")
+       {
+           audioSource.clip = SelectBgm;
+           audioSource.Play();
+       }
 
-        // ステージセレクトからゲーム画面へ(予定）
-        if (beforeScene == "nagaya" && nextScene.name == "Master_Final")
-        {
-            audioSource.Stop();
-            audioSource.clip =GameBGM;
-            audioSource.Play();
-        }
+       // ステージセレクトからゲーム画面へ(予定）
+       if (beforeScene == "nagaya" && nextScene.name == "Master_Final")
+       {
+           audioSource.clip =GameBGM;
+           audioSource.Play();
+       }
 
-        //ステージセレクトからタイトル画面へ
-        if (beforeScene == "nagaya" && nextScene.name == "Title")
-        {
-            //if()//タイトルへ戻るボタンを押したとき
-            audioSource.Stop();
-            audioSource.clip = TitleBgm;
-            audioSource.Play();
-        }
-        
-        //遷移後のシーン名を「１つ前のシーン名」として保持
-        beforeScene = nextScene.name;
-    }
+       //ステージセレクトからタイトル画面へ
+       if (beforeScene == "nagaya" && nextScene.name == "Title")
+       {
+           //if()//タイトルへ戻るボタンを押したとき
+       }
+       
+       //遷移後のシーン名を「１つ前のシーン名」として保持
+       beforeScene = nextScene.name;
+   }
 
 }
