@@ -6,6 +6,8 @@ using TMPro;
 public class setumei : MonoBehaviour
 {
     TextMeshProUGUI Text;
+    EnemyManager count;
+    GameObject Enemyobject;
 
     int fase = 0;
 
@@ -13,13 +15,21 @@ public class setumei : MonoBehaviour
     void Start()
     {
         Text = this.GetComponent<TextMeshProUGUI>();
+        Enemyobject = GameObject.Find("EnemyGroup(Clone)");
+        count = Enemyobject.GetComponent<EnemyManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        fase = count.textcount() - 1;
 
-        switch(fase)
+        if(count.getclearflag())
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        switch (fase)
         {
             case 0: { Text.text = "0Aボタンでビーム発射"; break; }
             case 1: { Text.text = "1十字キーでワープ"; break; }
