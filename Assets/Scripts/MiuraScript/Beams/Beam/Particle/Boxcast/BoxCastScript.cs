@@ -76,6 +76,8 @@ public class BoxCastScript : MonoBehaviour
     private PlayerClass PlayerClassScript;
     private beamlife beamLifeScript;
 
+    private GameObject oidComboText = null;
+
     void Start()
     {
         // ç≈èâÇÕägëÂèÛë‘
@@ -242,11 +244,15 @@ public class BoxCastScript : MonoBehaviour
             DestroyTotal++;
             PlayerClassScript.SetDestroyTotal(DestroyTotal);
 
+            if (oidComboText) Destroy(oidComboText); 
+
             // ê∂Ç›èoÇ∑
             var instance = Instantiate
                            (ComboTxt, 
                            Camera.main.WorldToScreenPoint(obj.transform.position),
                            Quaternion.identity, comboBox.transform);
+
+            oidComboText = instance;
 
             instance.GetComponent<CombText>().SetComboText(BeamParticleScript.combo);
 
