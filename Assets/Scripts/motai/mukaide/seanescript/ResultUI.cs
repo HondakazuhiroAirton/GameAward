@@ -142,9 +142,8 @@ public class ResultUI : MonoBehaviour
     }
 
     public void Active()
-    {   
+    {
         if (initflag) return;
-        initflag = true;
 
         //パネルUIのアクティブ、非アクティブを切り替え
         resultUI.SetActive(true);
@@ -268,6 +267,7 @@ public class ResultUI : MonoBehaviour
                         Ts.text = totalscore.ToString();
                         // トータルスコアを表示しておわり(最後はNoneにする)   
                         panelState = resultState.end;
+                        initflag = true;
                     }
                     break;
                 }
