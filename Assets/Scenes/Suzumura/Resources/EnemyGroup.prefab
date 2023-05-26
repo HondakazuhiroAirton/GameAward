@@ -51,7 +51,6 @@ MonoBehaviour:
   AppearanceNoticeObj: {fileID: 3920941145128739718, guid: 8b3c8828e266c6d4db424e2136b8a488,
     type: 3}
   PhaseUI: {fileID: 0}
-  clearflag: 0
   Sprite: {fileID: 1514023431371668655}
   Parent: {fileID: 0}
   EnemyAnimation: 0

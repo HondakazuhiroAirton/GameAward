@@ -1212,6 +1212,14 @@ public class Stage11 : MonoBehaviour
             NextStep5 = -1
         },  // enemy46
     };
+    public static ReflectorData[] reflectordatas = new ReflectorData[]{
+        new ReflectorData()
+        {
+            PosX = 1,
+            PosY = 1,
+            PosZ = 0,
+        },
+    };
 }
 
 
