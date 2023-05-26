@@ -11,7 +11,7 @@ public class beamlife : MonoBehaviour
     public GameObject enemyManager;
     private EnemyManager gameoverflug;
     private int life = 3;
-    private float amount = 100;
+    private float amount = 90;
     public float recovery = 0.1f;
     
     // 残機
@@ -49,7 +49,7 @@ public class beamlife : MonoBehaviour
     void Update()
     {
         // ビーム自然回復
-        if (amount < 100)
+        if (amount < 90)
         {
             //amount += recovery * Time.deltaTime;
             amount = amount + recovery * Time.deltaTime;
