@@ -80,60 +80,60 @@ public class EnemyManager : MonoBehaviour
             case StageNo.Stage1_2:
                 enemyData = Stage12.enemydatas;
                 break;
-            //case StageNo.Stage1_3:
-            //    enemyData = Stage13.enemydatas;
-            //    break;
-            //case StageNo.Stage1_4:
-            //    enemyData = Stage14.enemydatas;
-            //    break;
-            //case StageNo.Stage1_5:
-            //    enemyData = Stage15.enemydatas;
-            //    break;
-            //case StageNo.Stage2_1:
-            //    enemyData = Stage21.enemydatas;
-            //    break;
-            //case StageNo.Stage2_2:
-            //    enemyData = Stage22.enemydatas;
-            //    break;
-            //case StageNo.Stage2_3:
-            //    enemyData = Stage23.enemydatas;
-            //    break;
-            //case StageNo.Stage2_4:
-            //    enemyData = Stage24.enemydatas;
-            //    break;
-            //case StageNo.Stage2_5:
-            //    enemyData = Stage25.enemydatas;
-            //    break;
-            //case StageNo.Stage3_1:
-            //    enemyData = Stage31.enemydatas;
-            //    break;
-            //case StageNo.Stage3_2:
-            //    enemyData = Stage32.enemydatas;
-            //    break;
-            //case StageNo.Stage3_3:
-            //    enemyData = Stage33.enemydatas;
-            //    break;
-            //case StageNo.Stage3_4:
-            //    enemyData = Stage34.enemydatas;
-            //    break;
-            //case StageNo.Stage3_5:
-            //    enemyData = Stage35.enemydatas;
-            //    break;
-            //case StageNo.Stage4_1:
-            //    enemyData = Stage41.enemydatas;
-            //    break;
-            //case StageNo.Stage4_2:
-            //    enemyData = Stage42.enemydatas;
-            //    break;
-            //case StageNo.Stage4_3:
-            //    enemyData = Stage43.enemydatas;
-            //    break;
-            //case StageNo.Stage4_4:
-            //    enemyData = Stage44.enemydatas;
-            //    break;
-            //case StageNo.Stage4_5:
-            //    enemyData = Stage45.enemydatas;
-            //    break;
+            case StageNo.Stage1_3:
+                enemyData = Stage13.enemydatas;
+                break;
+                //case StageNo.Stage1_4:
+                //    enemyData = Stage14.enemydatas;
+                //    break;
+                //case StageNo.Stage1_5:
+                //    enemyData = Stage15.enemydatas;
+                //    break;
+                //case StageNo.Stage2_1:
+                //    enemyData = Stage21.enemydatas;
+                //    break;
+                //case StageNo.Stage2_2:
+                //    enemyData = Stage22.enemydatas;
+                //    break;
+                //case StageNo.Stage2_3:
+                //    enemyData = Stage23.enemydatas;
+                //    break;
+                //case StageNo.Stage2_4:
+                //    enemyData = Stage24.enemydatas;
+                //    break;
+                //case StageNo.Stage2_5:
+                //    enemyData = Stage25.enemydatas;
+                //    break;
+                //case StageNo.Stage3_1:
+                //    enemyData = Stage31.enemydatas;
+                //    break;
+                //case StageNo.Stage3_2:
+                //    enemyData = Stage32.enemydatas;
+                //    break;
+                //case StageNo.Stage3_3:
+                //    enemyData = Stage33.enemydatas;
+                //    break;
+                //case StageNo.Stage3_4:
+                //    enemyData = Stage34.enemydatas;
+                //    break;
+                //case StageNo.Stage3_5:
+                //    enemyData = Stage35.enemydatas;
+                //    break;
+                //case StageNo.Stage4_1:
+                //    enemyData = Stage41.enemydatas;
+                //    break;
+                //case StageNo.Stage4_2:
+                //    enemyData = Stage42.enemydatas;
+                //    break;
+                //case StageNo.Stage4_3:
+                //    enemyData = Stage43.enemydatas;
+                //    break;
+                //case StageNo.Stage4_4:
+                //    enemyData = Stage44.enemydatas;
+                //    break;
+                //case StageNo.Stage4_5:
+                //    enemyData = Stage45.enemydatas;
+                //    break;
         }
 
         // ”z—ñ‚Ì—v‘f”‚ğŒˆ’è
