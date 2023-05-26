@@ -24,7 +24,7 @@ public class StageSelect3 : MonoBehaviour
     void Awake()
     {
         SM = GameObject.Find("StageManager");
-        fadeImage = GetComponent<Image>();
+        fadeImage = GameObject.Find("Image").GetComponent<Image>();
 
         //SE
         SE = GameObject.Find("AudioManage").GetComponent<AudioManager>();
