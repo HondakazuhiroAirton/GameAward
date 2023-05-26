@@ -25,11 +25,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },
         new EnemyData(){
             name = "enemy02",
@@ -50,11 +50,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },
         new EnemyData(){
             name = "enemy03",
@@ -75,11 +75,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },
         new EnemyData(){
             name = "enemy04",
@@ -100,11 +100,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },
 //***********************************************************
         new EnemyData(){
@@ -126,11 +126,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },
         new EnemyData(){
             name = "enemy06",
@@ -151,11 +151,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },
         new EnemyData(){
             name = "enemy07",
@@ -176,11 +176,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },
         new EnemyData(){
             name = "enemy08",
@@ -201,11 +201,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 0.2f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },
 
         new EnemyData(){
@@ -227,11 +227,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy21
         new EnemyData()
 {
@@ -253,11 +253,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy22
         new EnemyData()
 {
@@ -279,11 +279,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy23
         new EnemyData()
 {
@@ -305,11 +305,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy24
         new EnemyData()
 {
@@ -331,11 +331,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy25
         new EnemyData()
 {
@@ -357,11 +357,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy26
         new EnemyData()
 {
@@ -383,11 +383,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy27
         new EnemyData()
 {
@@ -409,11 +409,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy28
         new EnemyData()
 {
@@ -435,11 +435,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy29
         new EnemyData()
 {
@@ -461,11 +461,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy30
         new EnemyData()
 {
@@ -487,11 +487,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy31
         new EnemyData()
 {
@@ -513,11 +513,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy32
         new EnemyData()
 {
@@ -539,11 +539,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type1,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy33
 
 //***********************************************************
@@ -569,11 +569,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy34
         new EnemyData()
 {
@@ -595,11 +595,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy35
         new EnemyData()
 {
@@ -621,11 +621,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy36
         new EnemyData()
 {
@@ -647,11 +647,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy37
         new EnemyData()
 {
@@ -673,11 +673,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy38
         new EnemyData()
 {
@@ -699,11 +699,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type2,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy39
         new EnemyData()
 {
@@ -725,11 +725,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy40
         new EnemyData()
 {
@@ -751,11 +751,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy41
         new EnemyData()
 {
@@ -777,11 +777,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy42
         new EnemyData()
 {
@@ -803,11 +803,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy43
         new EnemyData()
 {
@@ -829,11 +829,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy44
         new EnemyData()
 {
@@ -855,11 +855,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy45
         new EnemyData()
 {
@@ -881,11 +881,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy46
         new EnemyData()
 {
@@ -907,11 +907,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy47
         new EnemyData()
 {
@@ -933,11 +933,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy48
         new EnemyData()
 {
@@ -959,11 +959,11 @@ public class Stage12 : MonoBehaviour
             model = "koa",
             category = EnemyCategory.type3,
             Size = 5.0f,
-            NextState1 = 1,
-            NextState2 = 2,
-            NextState3 = 3,
-            NextState4 = 4,
-            NextState5 = -1
+            NextStep1 = 1,
+            NextStep2 = 2,
+            NextStep3 = 3,
+            NextStep4 = 4,
+            NextStep5 = -1
         },  // enemy49
 
     };

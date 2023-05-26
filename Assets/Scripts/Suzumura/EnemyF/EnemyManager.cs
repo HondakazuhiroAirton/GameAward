@@ -448,11 +448,11 @@ public class EnemyManager : MonoBehaviour
         enemyData[no].Step++;
         switch (enemyData[no].Step)
         {
-            case 1: return enemyData[no].NextState1;
-            case 2: return enemyData[no].NextState2;
-            case 3: return enemyData[no].NextState3;
-            case 4: return enemyData[no].NextState4;
-            case 5: return enemyData[no].NextState5;
+            case 1: return enemyData[no].NextStep1;
+            case 2: return enemyData[no].NextStep2;
+            case 3: return enemyData[no].NextStep3;
+            case 4: return enemyData[no].NextStep4;
+            case 5: return enemyData[no].NextStep5;
             default: return -1;
         }
     }
