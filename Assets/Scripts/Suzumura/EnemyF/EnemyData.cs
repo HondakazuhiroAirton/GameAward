@@ -15,22 +15,22 @@ public class EnemyData
     public int TargetPosX;              // 目標地点
     public int TargetPosY;              //
     public int TargetPosZ;              //
-    public float EntryPosX;             // 画面内に入る位置
+    public float EntryPosX;             // 画面内に入る位置 「!」
     public float EntryPosY;             //
     public int sideNo;                  // 辺
     public float AppearanceTime;        // 出現時間
     public string model;                // モデル読み込み(パス)
     public EnemyCategory category;      // カテゴリー
     public float Size;                  // 大きさ
-    public int NextState1;              // 次の状態1
+    public int NextStep1;              // 次の状態1
     public float Data1;                 // Step1で使うデータ1
-    public int NextState2;              // 次の状態2
+    public int NextStep2;              // 次の状態2
     public float Data2;                 // Step2で使うデータ2
-    public int NextState3;              // 次の状態3
+    public int NextStep3;              // 次の状態3
     public float Data3;                 // Step3で使うデータ3
-    public int NextState4;              // 次の状態4
+    public int NextStep4;              // 次の状態4
     public float Data4;                 // Step4で使うデータ4
-    public int NextState5;              // 次の状態5
+    public int NextStep5;              // 次の状態5
     public float Data5;                 // Step5で使うデータ5
 
     //*************************************************************
