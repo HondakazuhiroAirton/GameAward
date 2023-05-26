@@ -491,6 +491,10 @@ public class EnemyManager : MonoBehaviour
         return EnemyAnimation;
     }
 
+    public int textcount()
+    {
+       return CurrentPhase;
+    }
 
 }
 

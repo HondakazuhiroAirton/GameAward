@@ -149,9 +149,148 @@ public class Stage14 : MonoBehaviour
             NextStep5 = -1
         },  // enemy01
           
+
+
+
+
  //＜＜＜フェーズ２ 
         new EnemyData(){
             name = "enemy06",
+            phase = Phase.phase2,
+            StartPosX = 12,//はじめ
+            StartPosY = 3,
+            StartPosZ = 0,
+            FirstPosX = 3,
+            FirstPosY = 0,
+            FirstPosZ = 0,
+            TargetPosX = -2,
+            TargetPosY = 0,
+            TargetPosZ = 0,
+            EntryPosX = 8.1f,//ビックリマーク
+            EntryPosY = 2,
+            sideNo = 2,
+            AppearanceTime = 0,//出現時間
+            model = "koa",
+            category = EnemyCategory.typeNone,//球の速度
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,　　　　//state３速度
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },  // enemy01
+        new EnemyData(){
+            name = "enemy07",
+            phase = Phase.phase2,
+            StartPosX = 12,//はじめ
+            StartPosY = 3,
+            StartPosZ = 0,
+            FirstPosX = 3,
+            FirstPosY = 0,
+            FirstPosZ = 0,
+            TargetPosX = -2,
+            TargetPosY = 0,
+            TargetPosZ = 0,
+            EntryPosX = 8.1f,//ビックリマーク
+            EntryPosY = 2,
+            sideNo = 2,
+            AppearanceTime = 0,//出現時間
+            model = "koa",
+            category = EnemyCategory.typeNone,//球の速度
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,　　　　//state３速度
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },  // enemy01
+        new EnemyData(){
+            name = "enemy08",
+            phase = Phase.phase2,
+            StartPosX = 12,//はじめ
+            StartPosY = 3,
+            StartPosZ = 0,
+            FirstPosX = 3,
+            FirstPosY = 0,
+            FirstPosZ = 0,
+            TargetPosX = -2,
+            TargetPosY = 0,
+            TargetPosZ = 0,
+            EntryPosX = 8.1f,//ビックリマーク
+            EntryPosY = 2,
+            sideNo = 2,
+            AppearanceTime = 0,//出現時間
+            model = "koa",
+            category = EnemyCategory.typeNone,//球の速度
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,　　　　//state３速度
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },  // enemy01
+        new EnemyData(){
+            name = "enemy09",
+            phase = Phase.phase2,
+            StartPosX = 12,//はじめ
+            StartPosY = 3,
+            StartPosZ = 0,
+            FirstPosX = 3,
+            FirstPosY = 0,
+            FirstPosZ = 0,
+            TargetPosX = -2,
+            TargetPosY = 0,
+            TargetPosZ = 0,
+            EntryPosX = 8.1f,//ビックリマーク
+            EntryPosY = 2,
+            sideNo = 2,
+            AppearanceTime = 0,//出現時間
+            model = "koa",
+            category = EnemyCategory.typeNone,//球の速度
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,　　　　//state３速度
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },  // enemy01
+        new EnemyData(){
+            name = "enemy10",
+            phase = Phase.phase2,
+            StartPosX = 12,//はじめ
+            StartPosY = 3,
+            StartPosZ = 0,
+            FirstPosX = 3,
+            FirstPosY = 0,
+            FirstPosZ = 0,
+            TargetPosX = -2,
+            TargetPosY = 0,
+            TargetPosZ = 0,
+            EntryPosX = 8.1f,//ビックリマーク
+            EntryPosY = 2,
+            sideNo = 2,
+            AppearanceTime = 0,//出現時間
+            model = "koa",
+            category = EnemyCategory.typeNone,//球の速度
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,　　　　//state３速度
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },  // enemy01
+        new EnemyData(){
+            name = "enemy11",
             phase = Phase.phase2,
             StartPosX = 12,//はじめ
             StartPosY = 3,
