@@ -307,7 +307,7 @@ public class PlayerMove_MIURA : MonoBehaviour
         PlayerClassScript = PlayerDate.GetComponent<PlayerClass>();
     
         //ƒr[ƒ€c—Ê‚ğ100 % ‚Éİ’è
-        beamLifeScript.SetAmount(100);
+        beamLifeScript.SetAmount(90);
 
 
 
