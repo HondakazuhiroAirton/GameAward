@@ -83,9 +83,9 @@ public class EnemyManager : MonoBehaviour
             case StageNo.Stage1_3:
                 enemyData = Stage13.enemydatas;
                 break;
-                //case StageNo.Stage1_4:
-                //    enemyData = Stage14.enemydatas;
-                //    break;
+                case StageNo.Stage1_4:
+                    enemyData = Stage14.enemydatas;
+                    break;
                 //case StageNo.Stage1_5:
                 //    enemyData = Stage15.enemydatas;
                 //    break;
