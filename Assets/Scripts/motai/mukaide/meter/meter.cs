@@ -36,7 +36,7 @@ public class meter : MonoBehaviour
 
 
         //add = bm;
-        if (add <= 100 && add >= -100)
+        if (add <= 90 && add >= -90)
         {          
             hari.transform.eulerAngles = new Vector3(0, 0, -add);
         }
