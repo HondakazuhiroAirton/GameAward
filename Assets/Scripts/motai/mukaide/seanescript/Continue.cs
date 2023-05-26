@@ -18,6 +18,8 @@ public class Continue : MonoBehaviour
 
     public GameObject Image;
 
+    private StageChangerScript stageChangerScript;
+
     Rank rank;
 
     // Start is called before the first frame update
@@ -34,6 +36,8 @@ public class Continue : MonoBehaviour
         stageselect = GameObject.Find("ReturnSelect").GetComponent<Button>();
         retry = GameObject.Find("Retry").GetComponent<Button>();
         nextstage = GameObject.Find("NextStage").GetComponent<Button>();
+
+        stageChangerScript = GameObject.Find("StageChanger").GetComponent<StageChangerScript>();
 
         continueUI.SetActive(false);
     }
@@ -61,6 +65,9 @@ public class Continue : MonoBehaviour
 
     public void ButtonNextStage()
     {
+        // ‚·‚Ä[‚¶‚¿‚¥‚ñ‚¶‚á[‚ğ‚Â‚¬‚Ì‚·‚Ä[‚¶‚É‚·‚é
+        stageChangerScript.GoToNextStage();
+
         Image.GetComponent<Fade>().GameStart();
     }
 
