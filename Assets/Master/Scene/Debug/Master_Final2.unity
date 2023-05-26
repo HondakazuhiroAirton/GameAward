@@ -1601,8 +1601,8 @@ RectTransform:
   - {fileID: 1834784013}
   - {fileID: 1002177983}
   - {fileID: 1980256187}
-  - {fileID: 439987243}
   - {fileID: 1867493916}
+  - {fileID: 439987243}
   m_Father: {fileID: 1571532022}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1683,6 +1683,7 @@ GameObject:
   - component: {fileID: 439987243}
   - component: {fileID: 439987245}
   - component: {fileID: 439987244}
+  - component: {fileID: 439987246}
   m_Layer: 5
   m_Name: setumei
   m_TagString: Untagged
@@ -1703,11 +1704,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 429766623}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9999692, y: 0.000025431313}
+  m_AnchoredPosition: {x: 219, y: -198}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439987244
@@ -1732,8 +1733,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "A\u307C\u305F\u3093"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 929e8bb0051e5d146911b5a6e975fca8, type: 2}
+  m_sharedMaterial: {fileID: -1630184077784405776, guid: 929e8bb0051e5d146911b5a6e975fca8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1757,13 +1759,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1793,7 +1795,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -198.563, y: -56.81721, z: -292.80386, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1807,6 +1809,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439987242}
   m_CullTransparentMesh: 1
+--- !u!114 &439987246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439987242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7d0c8f90ae4c745a95eddb4b8de8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458388760
 GameObject:
   m_ObjectHideFlags: 0
@@ -3009,7 +3023,7 @@ PrefabInstance:
     - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8552172972245275339, guid: 35774482aafbbc94fa301ddf3d42e8f0,
         type: 3}
