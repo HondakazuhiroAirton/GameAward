@@ -61,7 +61,7 @@ public class Continue : MonoBehaviour
 
     public void ButtonNextStage()
     {
-        SceneManager.LoadScene("GameScene");
+        Image.GetComponent<Fade>().GameStart();
     }
 
     public void rankButton()
