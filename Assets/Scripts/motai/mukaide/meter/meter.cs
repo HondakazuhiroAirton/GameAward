@@ -31,7 +31,7 @@ public class meter : MonoBehaviour
         bm = beamlife.GetAmount();
         slider.value = beamlife.GetAmount();
         //”’l‚Ì•â³    
-        add = bm * 2 - 100;
+        add = (bm-10) * 2 - 90;
 
 
 
