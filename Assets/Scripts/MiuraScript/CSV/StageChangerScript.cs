@@ -96,4 +96,16 @@ public class StageChangerScript : MonoBehaviour
         return (int)NextPhase;
     }
 
+    public void GoToNextStage()
+    {
+        StageNo Now = (StageNo)StageManager.GetComponent<StageManagerScript>().GetStageIndex(); 
+        // 最終ステージだったらスルー
+        if (Now == StageNo.Stage4_5) return;
+
+        // 次のステージに変更
+        Now = Now + 1;
+        // Indexにセットする
+        StageManager.GetComponent<StageManagerScript>().SetStageIndex((int)Now);
+    }
+
 }

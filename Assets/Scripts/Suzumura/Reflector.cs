@@ -29,12 +29,12 @@ public class Reflector : MonoBehaviour
                 break;
         }
         // èoåª
-        Object[0] = Instantiate(
-            reflector,
-            new Vector3(reflectorData[0].PosX, reflectorData[0].PosY, reflectorData[0].PosZ),
-            Quaternion.identity,
-            transform
-            );
+        //Object[0] = Instantiate(
+        //    reflector,
+        //    new Vector3(reflectorData[0].PosX, reflectorData[0].PosY, reflectorData[0].PosZ),
+        //    Quaternion.identity,
+        //    transform
+        //    );
     }
 
     // Update is called once per frame

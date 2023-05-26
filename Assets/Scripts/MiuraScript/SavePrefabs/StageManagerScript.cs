@@ -49,6 +49,7 @@ public class StageManagerScript : MonoBehaviour
         AllStage[stageNo].State = StageClearState.CLEAR;
         // 次のステージをチャレンジの変更
         AllStage[stageNo + 1].State = StageClearState.CHALLENGE;
+
     }
 
     void Awake()
@@ -70,6 +71,7 @@ public class StageManagerScript : MonoBehaviour
         
     }
 
+    // 1個しかできない
     void CheckInstance()
     {
         if (instance == null)
