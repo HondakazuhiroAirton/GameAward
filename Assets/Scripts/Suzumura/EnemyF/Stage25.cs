@@ -39,7 +39,7 @@ public class Stage25 : MonoBehaviour
         },  // enemy01
         new EnemyData(){
             name = "enemy02",
-            phase = Phase.phase2,
+            phase = Phase.phase1,
             StartPosX = -12,
             StartPosY = -3,
             StartPosZ = 0,
@@ -67,7 +67,7 @@ public class Stage25 : MonoBehaviour
         },  // enemy02
         new EnemyData(){
             name = "enemy03",
-            phase = Phase.phase3,
+            phase = Phase.phase1,
             StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
@@ -95,7 +95,7 @@ public class Stage25 : MonoBehaviour
         },  // enemy03
         new EnemyData(){
             name = "enemy04",
-            phase = Phase.phase4,
+            phase = Phase.phase1,
             StartPosX = 12,
             StartPosY = -3,
             StartPosZ = 0,
@@ -123,7 +123,7 @@ public class Stage25 : MonoBehaviour
         },  // enemy04
         new EnemyData(){
             name = "enemy05",
-            phase = Phase.phase5,
+            phase = Phase.phase1,
             StartPosX = 12,
             StartPosY = 0,
             StartPosZ = 0,
