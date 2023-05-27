@@ -4,6 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyData
 {
+    // ステージクラスから値をもらってくるデータ
     public string name;                 // 名前(No.)
     public Phase phase;                 // 出現フェーズ
     public int StartPosX;               // 出現位置
@@ -42,14 +43,20 @@ public class EnemyData
     // Stete5：その場所での待機時間
     //*************************************************************
 
+    // オプションデータ
+    public float RotateSpeed;             // State2の回転スピード
+    public float RotateYData;           // State2の原点補正
+
+    // 値を挿入しないデータ
     public int State;                   // 状態
     public Vector3 prevPosition;
     public float distance_two;          //二点間の距離を入れる
     public float Duration;
     public float PresentLocation;
+    public Vector3 Start;
     public Vector3 Entry;
     public Vector3 First;
-    public Vector3 target;
+    public Vector3 Target;
     public int Step;
 }
 
