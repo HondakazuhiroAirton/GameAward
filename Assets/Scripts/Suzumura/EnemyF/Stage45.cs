@@ -1,3 +1,6 @@
+// 0527_三浦瞬作成中
+// テーマはおふれのせきしつ
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,21 +12,22 @@ public class Stage45 : MonoBehaviour
 //  Phase1
 //***********************************************************
         new EnemyData(){
-            name = "enemy01",
+            // 左上
+            name = "Regirock01",
             phase = Phase.phase1,
-            StartPosX = 12,
-            StartPosY = 3,
-            StartPosZ = 0,
-            FirstPosX = 3,
-            FirstPosY = 0,
-            FirstPosZ = 0,
-            TargetPosX = -2,
-            TargetPosY = 0,
-            TargetPosZ = 0,
-            EntryPosX = 8.1f,
-            EntryPosY = 2,
+            // 出現位置、なるべく画面外
+            StartPosX = 12,     StartPosY = 3,     StartPosZ = 0,
+            // 目標地点1
+            FirstPosX = 3,      FirstPosY = 0,     FirstPosZ = 0,
+            // 目標位置
+            TargetPosX = -2,    TargetPosY = 0,    TargetPosZ = 0,
+            // !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+            // 角度(0:未出現 1:)
             sideNo = 2,
+            // 出現時間
             AppearanceTime = 0,
+
             model = "koa",
             category = EnemyCategory.typeNone,
             Size = 5.0f,

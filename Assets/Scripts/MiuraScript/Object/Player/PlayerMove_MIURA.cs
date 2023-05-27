@@ -274,7 +274,7 @@ public class PlayerMove_MIURA : MonoBehaviour
 
         SetWallFlag(0, true);
         SetWallFlag(1, true);
-        SetWallFlag(2, false);
+        SetWallFlag(2, true);
         SetWallFlag(3, true);
 
         //0402_éOâYèuí«ãL****************************************************************
