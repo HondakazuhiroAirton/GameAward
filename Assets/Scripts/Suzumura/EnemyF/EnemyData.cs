@@ -44,9 +44,13 @@ public class EnemyData
     //*************************************************************
 
     // オプションデータ
-    public float RotateSpeed;             // State2の回転スピード
-    public float RotateYData;           // State2の原点補正
+    public float RotateSpeed;            // State2の回転スピード
+    public float RotateYData;            // State2の原点補正
 
+    public int SecondPosX;               // 目標地点2
+    public int SecondPosY;               //
+    public int SecondPosZ;               //
+    public Vector3 Second;
     // 値を挿入しないデータ
     public int State;                   // 状態
     public Vector3 prevPosition;
