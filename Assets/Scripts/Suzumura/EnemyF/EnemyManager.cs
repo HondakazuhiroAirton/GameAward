@@ -154,6 +154,7 @@ public class EnemyManager : MonoBehaviour
 
             // デフォルトデータ
             if (enemyData[i].RotateSpeed == 0) enemyData[i].RotateSpeed = angle;
+            enemyData[i].Second = new Vector3(enemyData[i].SecondPosX, enemyData[i].SecondPosY, enemyData[i].SecondPosZ);
         }
 
         appearanceNotice = AppearanceNoticeObj.GetComponent<AppearanceNotice>();
@@ -324,6 +325,29 @@ public class EnemyManager : MonoBehaviour
                     enemyData[i].State = SetState(i);
                     enemyData[i].Duration = 0;
                 }
+            }
+            // 6:三浦特注　3つ目の座標にも動きたい
+            else if (enemyData[i].State == 6)
+            {
+                // 移動
+                enemy[i].transform.position = Vector3.MoveTowards(
+                   enemy[i].transform.position,
+                   enemyData[i].Second,
+                   Time.deltaTime * SetData(i)
+                   );
+
+                // 進行方向に向きを変える
+                enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
+
+                EnemyAnimation = true;
+
+                // 一定時間経過で次の動きに移行
+                if (enemyData[i].Duration >= 10.0f)
+                {
+                    enemyData[i].State = SetState(i);
+                    enemyData[i].Duration = 0;
+                }
+
             }
             //// 9:往復移動
             //else if (enemyData[i].State == 9)
