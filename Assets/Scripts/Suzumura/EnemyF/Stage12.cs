@@ -6,6 +6,8 @@ public class Stage12 : MonoBehaviour
 {
     public static EnemyData[] enemydatas = new EnemyData[]{
 //***********************************************************
+//  Phase1
+//***********************************************************
         new EnemyData(){
             name = "enemy01",
             phase = Phase.phase1,
@@ -265,7 +267,6 @@ public class Stage12 : MonoBehaviour
             RotateSpeed = 100,
             RotateYData = 2
         },  // enemy09
-
 //***********************************************************
         new EnemyData(){
             name = "enemy10",
@@ -526,33 +527,41 @@ public class Stage12 : MonoBehaviour
             RotateSpeed = -100,
             RotateYData = 2
         },  // enemy18
-
-
-//        new EnemyData(){
-//            name = "enemy21",
-//            phase = Phase.phase4,
-//            StartPosX = 12,
-//            StartPosY = 3,
-//            StartPosZ = 0,
-//            FirstPosX = 5,
-//            FirstPosY = 2,
-//            FirstPosZ = 0,
-//            TargetPosX = -1,
-//            TargetPosY = -3,
-//            TargetPosZ = 0,
-//            EntryPosX = 0,
-//            EntryPosY = 0,
-//            sideNo = 0,
-//            AppearanceTime = 0.3f,
-//            model = "koa",
-//            category = EnemyCategory.type1,
-//            Size = 5.0f,
-//            NextStep1 = 1,
-//            NextStep2 = 2,
-//            NextStep3 = 3,
-//            NextStep4 = 4,
-//            NextStep5 = -1
-//        },  // enemy21
+//***********************************************************
+//  Phase2
+//***********************************************************
+        new EnemyData(){
+            name = "enemy19",
+            phase = Phase.phase2,
+            StartPosX = 12,
+            StartPosY = 3,
+            StartPosZ = 0,
+            FirstPosX = 5,
+            FirstPosY = 2,
+            FirstPosZ = 0,
+            TargetPosX = -1,
+            TargetPosY = -3,
+            TargetPosZ = 0,
+            EntryPosX = 0,
+            EntryPosY = 0,
+            sideNo = 0,
+            AppearanceTime = 0.3f,
+            model = "koa",
+            category = EnemyCategory.type1,
+            Size = 5.0f,
+            NextStep1 = 1,
+            Data1 = 4,
+            NextStep2 = 6,
+            Data2 = 4,
+            SecondPosX = -3,
+            SecondPosY = 3,
+            SecondPosZ = 0,
+            NextStep3 = 3,
+            Data3 = 4,
+            NextStep4 = 4,
+            Data4 = 4,
+            NextStep5 = -1
+        },  // enemy19
 //        new EnemyData()
 //{
 //    name = "enemy22",

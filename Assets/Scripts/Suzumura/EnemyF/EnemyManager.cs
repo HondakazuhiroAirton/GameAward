@@ -326,7 +326,7 @@ public class EnemyManager : MonoBehaviour
                     enemyData[i].Duration = 0;
                 }
             }
-            // 6:三浦特注　3つ目の座標にも動きたい
+            // 6:三浦特注　3つの座標へ動きたい
             else if (enemyData[i].State == 6)
             {
                 // 移動
@@ -342,7 +342,7 @@ public class EnemyManager : MonoBehaviour
                 EnemyAnimation = true;
 
                 // 一定時間経過で次の動きに移行
-                if (enemyData[i].Duration >= 10.0f)
+                if (enemy[i].transform.position == enemyData[i].Second)
                 {
                     enemyData[i].State = SetState(i);
                     enemyData[i].Duration = 0;
