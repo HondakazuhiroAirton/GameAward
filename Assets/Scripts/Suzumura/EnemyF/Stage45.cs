@@ -9404,7 +9404,7 @@ new EnemyData(){ name = "enemy3_150",  phase = Phase.phase3,
 
 
 //<<Phas4
-     new EnemyData(){ name = "enemy4_3",  phase = Phase.phase3,
+     new EnemyData(){ name = "enemy4_3",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -7,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9430,7 +9430,7 @@ new EnemyData(){ name = "enemy3_150",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_4",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_4",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -6,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9456,7 +9456,7 @@ new EnemyData(){ name = "enemy4_4",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_5",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_5",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -5,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9482,7 +9482,7 @@ new EnemyData(){ name = "enemy4_5",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_6",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_6",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -4,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9508,7 +9508,7 @@ new EnemyData(){ name = "enemy4_6",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_7",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_7",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -3,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9534,7 +9534,7 @@ new EnemyData(){ name = "enemy4_7",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_8",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_8",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -2,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9560,7 +9560,7 @@ new EnemyData(){ name = "enemy4_8",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_9",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_9",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -1,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9586,7 +9586,7 @@ new EnemyData(){ name = "enemy4_9",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_10",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_10",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 0,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9612,7 +9612,7 @@ new EnemyData(){ name = "enemy4_10",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_11",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_11",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 1,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9638,7 +9638,7 @@ new EnemyData(){ name = "enemy4_11",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_12",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_12",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 2,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9664,7 +9664,7 @@ new EnemyData(){ name = "enemy4_12",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_13",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_13",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 3,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9690,7 +9690,7 @@ new EnemyData(){ name = "enemy4_13",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_14",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_14",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 4,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9716,7 +9716,7 @@ new EnemyData(){ name = "enemy4_14",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_15",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_15",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 5,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9742,7 +9742,7 @@ new EnemyData(){ name = "enemy4_15",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_16",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_16",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 6,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9768,7 +9768,7 @@ new EnemyData(){ name = "enemy4_16",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_17",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_17",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 7,     StartPosY = 3,     StartPosZ = 0,
 // 目標地点1
@@ -9794,7 +9794,7 @@ new EnemyData(){ name = "enemy4_17",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_22",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_22",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -7,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -9820,7 +9820,7 @@ new EnemyData(){ name = "enemy4_22",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_23",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_23",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -6,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -9846,7 +9846,7 @@ new EnemyData(){ name = "enemy4_23",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_24",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_24",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -5,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -9872,7 +9872,7 @@ new EnemyData(){ name = "enemy4_24",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_25",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_25",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -4,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -9898,7 +9898,7 @@ new EnemyData(){ name = "enemy4_25",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_26",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_26",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -3,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -9924,7 +9924,7 @@ new EnemyData(){ name = "enemy4_26",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_27",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_27",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -2,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -9950,7 +9950,7 @@ new EnemyData(){ name = "enemy4_27",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_28",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_28",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -1,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -9976,7 +9976,7 @@ new EnemyData(){ name = "enemy4_28",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_29",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_29",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 0,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -10002,7 +10002,7 @@ new EnemyData(){ name = "enemy4_29",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_30",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_30",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 1,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -10028,7 +10028,7 @@ new EnemyData(){ name = "enemy4_30",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_31",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_31",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 2,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -10054,7 +10054,7 @@ new EnemyData(){ name = "enemy4_31",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_32",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_32",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 3,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -10080,7 +10080,7 @@ new EnemyData(){ name = "enemy4_32",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_33",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_33",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 4,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -10106,7 +10106,7 @@ new EnemyData(){ name = "enemy4_33",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_34",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_34",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 5,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -10132,7 +10132,7 @@ new EnemyData(){ name = "enemy4_34",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_35",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_35",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 6,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -10158,7 +10158,7 @@ new EnemyData(){ name = "enemy4_35",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_36",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_36",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 7,     StartPosY = 2,     StartPosZ = 0,
 // 目標地点1
@@ -10184,7 +10184,7 @@ new EnemyData(){ name = "enemy4_36",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_41",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_41",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -7,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10210,7 +10210,7 @@ new EnemyData(){ name = "enemy4_41",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_42",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_42",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -6,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10236,7 +10236,7 @@ new EnemyData(){ name = "enemy4_42",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_43",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_43",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -5,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10262,7 +10262,7 @@ new EnemyData(){ name = "enemy4_43",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_44",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_44",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -4,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10288,7 +10288,7 @@ new EnemyData(){ name = "enemy4_44",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_45",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_45",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -3,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10314,7 +10314,7 @@ new EnemyData(){ name = "enemy4_45",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_46",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_46",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -2,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10340,7 +10340,7 @@ new EnemyData(){ name = "enemy4_46",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_47",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_47",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -1,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10366,7 +10366,7 @@ new EnemyData(){ name = "enemy4_47",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_48",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_48",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 0,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10392,7 +10392,7 @@ new EnemyData(){ name = "enemy4_48",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_49",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_49",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 1,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10418,7 +10418,7 @@ new EnemyData(){ name = "enemy4_49",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_50",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_50",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 2,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10444,7 +10444,7 @@ new EnemyData(){ name = "enemy4_50",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_51",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_51",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 3,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10470,7 +10470,7 @@ new EnemyData(){ name = "enemy4_51",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_52",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_52",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 4,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10496,7 +10496,7 @@ new EnemyData(){ name = "enemy4_52",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_53",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_53",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 5,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10522,7 +10522,7 @@ new EnemyData(){ name = "enemy4_53",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_54",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_54",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 6,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10548,7 +10548,7 @@ new EnemyData(){ name = "enemy4_54",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_55",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_55",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 7,     StartPosY = 1,     StartPosZ = 0,
 // 目標地点1
@@ -10574,7 +10574,7 @@ new EnemyData(){ name = "enemy4_55",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_60",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_60",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -7,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10600,7 +10600,7 @@ new EnemyData(){ name = "enemy4_60",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_61",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_61",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -6,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10626,7 +10626,7 @@ new EnemyData(){ name = "enemy4_61",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_62",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_62",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -5,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10652,7 +10652,7 @@ new EnemyData(){ name = "enemy4_62",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_63",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_63",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -4,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10678,7 +10678,7 @@ new EnemyData(){ name = "enemy4_63",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_64",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_64",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -3,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10704,7 +10704,7 @@ new EnemyData(){ name = "enemy4_64",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_65",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_65",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -2,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10730,7 +10730,7 @@ new EnemyData(){ name = "enemy4_65",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_66",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_66",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -1,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10756,7 +10756,7 @@ new EnemyData(){ name = "enemy4_66",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_67",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_67",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 0,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10782,7 +10782,7 @@ new EnemyData(){ name = "enemy4_67",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_68",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_68",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 1,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10808,7 +10808,7 @@ new EnemyData(){ name = "enemy4_68",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_69",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_69",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 2,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10835,7 +10835,7 @@ new EnemyData(){ name = "enemy4_69",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_70",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_70",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 3,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10861,7 +10861,7 @@ new EnemyData(){ name = "enemy4_70",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_71",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_71",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 4,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10887,7 +10887,7 @@ new EnemyData(){ name = "enemy4_71",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_72",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_72",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 5,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10913,7 +10913,7 @@ new EnemyData(){ name = "enemy4_72",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_73",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_73",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 6,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10939,7 +10939,7 @@ new EnemyData(){ name = "enemy4_73",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_74",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_74",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 7,     StartPosY = 0,     StartPosZ = 0,
 // 目標地点1
@@ -10966,7 +10966,7 @@ new EnemyData(){ name = "enemy4_74",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_79",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_79",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -7,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -10992,7 +10992,7 @@ new EnemyData(){ name = "enemy4_79",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_80",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_80",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -6,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11018,7 +11018,7 @@ new EnemyData(){ name = "enemy4_80",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_81",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_81",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -5,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11045,7 +11045,7 @@ new EnemyData(){ name = "enemy4_81",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_82",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_82",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -4,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11071,7 +11071,7 @@ new EnemyData(){ name = "enemy4_82",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_83",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_83",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -3,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11097,7 +11097,7 @@ new EnemyData(){ name = "enemy4_83",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_84",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_84",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -2,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11123,7 +11123,7 @@ new EnemyData(){ name = "enemy4_84",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_85",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_85",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -1,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11149,7 +11149,7 @@ new EnemyData(){ name = "enemy4_85",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_86",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_86",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 0,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11175,7 +11175,7 @@ new EnemyData(){ name = "enemy4_86",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_87",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_87",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 1,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11201,7 +11201,7 @@ new EnemyData(){ name = "enemy4_87",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_88",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_88",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 2,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11228,7 +11228,7 @@ new EnemyData(){ name = "enemy4_88",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_89",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_89",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 3,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11254,7 +11254,7 @@ new EnemyData(){ name = "enemy4_89",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_90",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_90",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 4,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11280,7 +11280,7 @@ new EnemyData(){ name = "enemy4_90",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_91",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_91",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 5,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11306,7 +11306,7 @@ new EnemyData(){ name = "enemy4_91",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_92",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_92",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 6,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11332,7 +11332,7 @@ new EnemyData(){ name = "enemy4_92",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_93",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_93",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 7,     StartPosY = -1,     StartPosZ = 0,
 // 目標地点1
@@ -11358,7 +11358,7 @@ new EnemyData(){ name = "enemy4_93",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_98",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_98",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -7,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11384,7 +11384,7 @@ new EnemyData(){ name = "enemy4_98",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_99",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_99",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -6,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11410,7 +11410,7 @@ new EnemyData(){ name = "enemy4_99",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_100",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_100",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -5,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11437,7 +11437,7 @@ new EnemyData(){ name = "enemy4_100",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_101",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_101",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -4,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11463,7 +11463,7 @@ new EnemyData(){ name = "enemy4_101",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_102",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_102",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -3,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11489,7 +11489,7 @@ new EnemyData(){ name = "enemy4_102",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_103",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_103",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -2,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11515,7 +11515,7 @@ new EnemyData(){ name = "enemy4_103",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "eneme104",  phase = Phase.phase3,
+new EnemyData(){ name = "eneme104",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -1,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11541,7 +11541,7 @@ new EnemyData(){ name = "eneme104",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_105",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_105",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 0,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11567,7 +11567,7 @@ new EnemyData(){ name = "enemy4_105",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_106",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_106",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 1,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11593,7 +11593,7 @@ new EnemyData(){ name = "enemy4_106",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_107",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_107",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 2,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11620,7 +11620,7 @@ new EnemyData(){ name = "enemy4_107",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_108",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_108",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 3,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11646,7 +11646,7 @@ new EnemyData(){ name = "enemy4_108",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_109",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_109",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 4,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11672,7 +11672,7 @@ new EnemyData(){ name = "enemy4_109",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_110",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_110",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 5,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11698,7 +11698,7 @@ new EnemyData(){ name = "enemy4_110",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_111",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_111",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 6,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11724,7 +11724,7 @@ new EnemyData(){ name = "enemy4_111",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_112",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_112",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 7,     StartPosY = -2,     StartPosZ = 0,
 // 目標地点1
@@ -11750,7 +11750,7 @@ new EnemyData(){ name = "enemy4_112",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_117",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_117",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -7,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -11776,7 +11776,7 @@ new EnemyData(){ name = "enemy4_117",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_118",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_118",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -6,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -11802,7 +11802,7 @@ new EnemyData(){ name = "enemy4_118",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_119",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_119",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -5,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -11829,7 +11829,7 @@ new EnemyData(){ name = "enemy4_119",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_120",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_120",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -4,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -11855,7 +11855,7 @@ new EnemyData(){ name = "enemy4_120",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_121",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_121",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -3,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -11881,7 +11881,7 @@ new EnemyData(){ name = "enemy4_121",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_122",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_122",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -2,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -11907,7 +11907,7 @@ new EnemyData(){ name = "enemy4_122",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_123",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_123",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -1,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -11933,7 +11933,7 @@ new EnemyData(){ name = "enemy4_123",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_124",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_124",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 0,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -11959,7 +11959,7 @@ new EnemyData(){ name = "enemy4_124",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_125",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_125",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 1,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -11985,7 +11985,7 @@ new EnemyData(){ name = "enemy4_125",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_126",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_126",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 2,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -12012,7 +12012,7 @@ new EnemyData(){ name = "enemy4_126",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_127",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_127",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 3,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -12038,7 +12038,7 @@ new EnemyData(){ name = "enemy4_127",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_128",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_128",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 4,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -12064,7 +12064,7 @@ new EnemyData(){ name = "enemy4_128",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_129",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_129",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 5,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -12090,7 +12090,7 @@ new EnemyData(){ name = "enemy4_129",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_130",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_130",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 6,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -12116,7 +12116,7 @@ new EnemyData(){ name = "enemy4_130",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_131",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_131",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 7,     StartPosY = -3,     StartPosZ = 0,
 // 目標地点1
@@ -12142,7 +12142,7 @@ new EnemyData(){ name = "enemy4_131",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_136",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_136",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -7,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12168,7 +12168,7 @@ new EnemyData(){ name = "enemy4_136",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_137",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_137",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -6,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12194,7 +12194,7 @@ new EnemyData(){ name = "enemy4_137",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_138",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_138",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -5,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12221,7 +12221,7 @@ new EnemyData(){ name = "enemy4_138",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_139",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_139",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -4,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12247,7 +12247,7 @@ new EnemyData(){ name = "enemy4_139",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_140",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_140",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -3,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12273,7 +12273,7 @@ new EnemyData(){ name = "enemy4_140",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_141",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_141",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -2,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12299,7 +12299,7 @@ new EnemyData(){ name = "enemy4_141",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_142",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_142",  phase = Phase.phase4,
 // 出現位置
             StartPosX = -1,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12325,7 +12325,7 @@ new EnemyData(){ name = "enemy4_142",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_143",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_143",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 0,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12351,7 +12351,7 @@ new EnemyData(){ name = "enemy4_143",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_144",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_144",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 1,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12377,7 +12377,7 @@ new EnemyData(){ name = "enemy4_144",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_145",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_145",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 2,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12404,7 +12404,7 @@ new EnemyData(){ name = "enemy4_145",  phase = Phase.phase3,
         },
 
 
-new EnemyData(){ name = "enemy4_146",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_146",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 3,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12430,7 +12430,7 @@ new EnemyData(){ name = "enemy4_146",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_147",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_147",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 4,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12456,7 +12456,7 @@ new EnemyData(){ name = "enemy4_147",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_148",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_148",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 5,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12482,7 +12482,7 @@ new EnemyData(){ name = "enemy4_148",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_149",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_149",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 6,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12508,7 +12508,7 @@ new EnemyData(){ name = "enemy4_149",  phase = Phase.phase3,
             NextStep5 = -1
         },
 
-new EnemyData(){ name = "enemy4_150",  phase = Phase.phase3,
+new EnemyData(){ name = "enemy4_150",  phase = Phase.phase4,
 // 出現位置
             StartPosX = 7,     StartPosY = -4,     StartPosZ = 0,
 // 目標地点1
@@ -12535,22 +12535,20 @@ new EnemyData(){ name = "enemy4_150",  phase = Phase.phase3,
         },
 
  //<<Phase5
-         new EnemyData(){
-            name = "enemy05",
-            phase = Phase.phase5,
-            StartPosX = 12,
-            StartPosY = 3,
-            StartPosZ = 0,
-            FirstPosX = 3,
-            FirstPosY = 0,
-            FirstPosZ = 0,
-            TargetPosX = -2,
-            TargetPosY = 0,
-            TargetPosZ = 0,
-            EntryPosX = 8.1f,
-            EntryPosY = 2,
+     new EnemyData(){ name = "enemy5_3",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -7,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -7,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -7,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
             sideNo = 2,
+// 出現時間
             AppearanceTime = 0,
+
             model = "koa",
             category = EnemyCategory.typeNone,
             Size = 5.0f,
@@ -12561,6 +12559,3110 @@ new EnemyData(){ name = "enemy4_150",  phase = Phase.phase3,
             NextStep3 = -1,
             NextStep4 = -1,
             NextStep5 = -1
-        },  // enemy01
+        },
+
+new EnemyData(){ name = "enemy5_4",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -6,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -6,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -6,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_5",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -5,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -5,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -5,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_6",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -4,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -4,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -4,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_7",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -3,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -3,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -3,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_8",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -2,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -2,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -2,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_9",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -1,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -1,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -1,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_10",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 0,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 0,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 0,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_11",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 1,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 1,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 1,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_12",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 2,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 2,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 2,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_13",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 3,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 3,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 3,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_14",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 4,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 4,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 4,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_15",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 5,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 5,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 5,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_16",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 6,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 6,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 6,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_17",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 7,     StartPosY = 3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 7,     FirstPosY = 3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 7,    TargetPosY = 3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_22",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -7,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -7,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -7,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_23",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -6,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -6,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -6,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_24",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -5,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -5,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -5,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_25",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -4,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -4,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -4,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_26",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -3,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -3,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -3,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_27",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -2,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -2,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -2,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_28",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -1,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -1,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -1,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_29",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 0,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 0,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 0,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_30",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 1,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 1,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 1,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_31",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 2,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 2,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 2,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_32",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 3,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 3,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 3,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_33",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 4,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 4,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 4,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_34",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 5,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 5,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 5,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_35",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 6,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 6,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 6,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_36",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 7,     StartPosY = 2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 7,     FirstPosY = 2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 7,    TargetPosY = 2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_41",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -7,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -7,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -7,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_42",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -6,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -6,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -6,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_43",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -5,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -5,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -5,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_44",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -4,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -4,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -4,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_45",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -3,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -3,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位Z
+            TargetPosX = -3,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_46",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -2,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -2,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -2,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_47",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -1,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -1,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -1,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_48",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 0,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 0,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 0,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_49",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 1,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 1,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 1,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_50",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 2,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 2,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 2,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_51",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 3,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 3,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 3,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_52",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 4,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 4,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 4,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_53",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 5,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 5,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 5,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_54",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 6,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 6,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 6,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_55",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 7,     StartPosY = 1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 7,     FirstPosY = 1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 7,    TargetPosY = 1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_60",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -7,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -7,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -7,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_61",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -6,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -6,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -6,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_62",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -5,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -5,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -5,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_63",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -4,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -4,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -4,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_64",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -3,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -3,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -3,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_65",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -2,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -2,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -2,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_66",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -1,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -1,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -1,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_67",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 0,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 0,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 0,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_68",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 1,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 1,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 1,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_69",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 2,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 2,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 2,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_70",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 3,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 3,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 3,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_71",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 4,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 4,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 4,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_72",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 5,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 5,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 5,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_73",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 6,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 6,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 6,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_74",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 7,     StartPosY = 0,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 7,     FirstPosY = 0,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 7,    TargetPosY = 0,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_79",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -7,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -7,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -7,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_80",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -6,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -6,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -6,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_81",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -5,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -5,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -5,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_82",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -4,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -4,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -4,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_83",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -3,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -3,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -3,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_84",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -2,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -2,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -2,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_85",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -1,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -1,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -1,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_86",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 0,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 0,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 0,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_87",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 1,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 1,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 1,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_88",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 2,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 2,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 2,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_89",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 3,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 3,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 3,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_90",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 4,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 4,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 4,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_91",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 5,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 5,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 5,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_92",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 6,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 6,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 6,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_93",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 7,     StartPosY = -1,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 7,     FirstPosY = -1,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 7,    TargetPosY = -1,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_98",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -7,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -7,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -7,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_99",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -6,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -6,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -6,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_100",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -5,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -5,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -5,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_101",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -4,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -4,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -4,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_102",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -3,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -3,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -3,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_103",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -2,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -2,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -2,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "eneme104",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -1,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -1,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -1,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_105",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 0,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 0,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 0,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_106",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 1,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 1,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 1,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_107",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 2,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 2,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 2,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_108",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 3,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 3,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 3,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_109",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 4,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 4,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 4,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_110",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 5,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 5,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 5,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_111",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 6,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 6,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 6,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_112",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 7,     StartPosY = -2,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 7,     FirstPosY = -2,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 7,    TargetPosY = -2,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_117",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -7,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -7,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -7,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_118",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -6,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -6,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -6,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_119",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -5,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -5,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -5,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_120",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -4,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -4,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -4,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_121",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -3,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -3,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -3,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_122",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -2,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -2,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -2,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_123",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -1,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -1,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -1,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_124",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 0,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 0,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 0,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_125",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 1,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 1,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 1,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_126",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 2,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 2,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 2,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_127",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 3,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 3,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 3,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_128",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 4,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 4,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 4,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_129",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 5,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 5,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 5,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_130",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 6,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 6,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 6,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_131",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 7,     StartPosY = -3,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 7,     FirstPosY = -3,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 7,    TargetPosY = -3,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_136",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -7,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -7,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -7,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_137",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -6,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -6,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -6,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_138",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -5,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -5,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -5,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_139",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -4,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -4,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -4,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_140",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -3,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -3,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -3,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_141",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -2,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -2,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -2,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_142",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = -1,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = -1,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = -1,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_143",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 0,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 0,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 0,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_144",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 1,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 1,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 1,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_145",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 2,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 2,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 2,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+
+new EnemyData(){ name = "enemy5_146",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 3,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 3,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 3,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_147",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 4,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 4,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 4,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_148",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 5,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 5,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 5,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_149",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 6,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 6,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 6,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
+
+new EnemyData(){ name = "enemy5_150",  phase = Phase.phase5,
+// 出現位置
+            StartPosX = 7,     StartPosY = -4,     StartPosZ = 0,
+// 目標地点1
+            FirstPosX = 7,     FirstPosY = -4,     FirstPosZ = 0,
+// 目標位置
+            TargetPosX = 7,    TargetPosY = -4,    TargetPosZ = 0,
+// !
+            EntryPosX = 8.1f,   EntryPosY = 2,
+// 角度(0:未出現 1:)
+            sideNo = 2,
+// 出現時間
+            AppearanceTime = 0,
+
+            model = "koa",
+            category = EnemyCategory.typeNone,
+            Size = 5.0f,
+            NextStep1 = 3,
+            Data1 = 3,
+            NextStep2 = 4,
+            Data2 = 5,
+            NextStep3 = -1,
+            NextStep4 = -1,
+            NextStep5 = -1
+        },
     };
 }
