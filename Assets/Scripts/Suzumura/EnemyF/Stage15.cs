@@ -361,10 +361,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -389,10 +390,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 3,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -417,10 +419,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -445,10 +448,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 3,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -473,10 +477,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -502,10 +507,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 3,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -530,10 +536,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -558,10 +565,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 3,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -586,10 +594,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -613,10 +622,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 3,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -644,13 +654,12 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.type1,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,　　　　//state３速度
-            NextStep2 = 2,
-            Data2 = 1,
-            NextStep3 = 5,
-            Data3 = 10,
-            NextStep4 = 4,
-            Data4 = 5,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
+            NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
         new EnemyData(){
@@ -673,13 +682,12 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.type1,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,　　　　//state３速度
-            NextStep2 = 2,
-            Data2 = 1,
-            NextStep3 = 5,
-            Data3 = 10,
-            NextStep4 = 4,
-            Data4 = 5,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
+            NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
         new EnemyData(){
@@ -702,13 +710,12 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.type1,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,　　　　//state３速度
-            NextStep2 = 2,
-            Data2 = 1,
-            NextStep3 = 5,
-            Data3 = 10,
-            NextStep4 = 4,
-            Data4 = 5,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
+            NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
 
@@ -735,10 +742,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.type1,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -763,10 +771,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.type1,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 3,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
@@ -791,10 +800,11 @@ public class Stage15 : MonoBehaviour
             category = EnemyCategory.type1,
             Size = 5.0f,
             NextStep1 = 3,
-            Data1 = 5,
-            NextStep2 = 4,
-            Data2 = 5,
-            NextStep3 = -1,
+            Data1 = 8,　　　　//state３速度
+            NextStep2 = 5,
+            Data2 = 10,
+            NextStep3 = 4,
+            Data3 = 5,
             NextStep4 = -1,
             NextStep5 = -1
         },  // enemy01
