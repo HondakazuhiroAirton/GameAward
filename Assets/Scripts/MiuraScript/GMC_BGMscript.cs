@@ -76,8 +76,8 @@ public class GMC_BGMscript : MonoBehaviour
        // BGMŽ~‚ß‚é
        audioSource.Stop();
        // BGM‚Ì‰¹‚ð—¬‚·
-       audioSource.clip = GameOverBGM;
-       audioSource.Play();
+       //audioSource.clip = GameOverBGM;
+       //audioSource.Play();
    }
 
     void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
