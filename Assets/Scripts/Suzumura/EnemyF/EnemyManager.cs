@@ -266,7 +266,7 @@ public class EnemyManager : MonoBehaviour
                 enemy[i].transform.rotation = RotateToMovementDirection(enemy[i].transform.position, enemyData[i].prevPosition);
 
                 // 2Žü‚µ‚½‚çŽŸ‚Ì“®‚«‚ÉˆÚs
-                if (enemyData[i].Duration * enemyData[i].RotateSpeed >= 720.0f)
+                if (Mathf.Abs(enemyData[i].Duration * enemyData[i].RotateSpeed) >= 720.0f)
                 {
                     enemyData[i].State = SetState(i);
                     enemyData[i].Duration = 0;
