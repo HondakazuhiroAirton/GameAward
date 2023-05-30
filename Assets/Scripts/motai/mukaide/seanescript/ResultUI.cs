@@ -162,7 +162,7 @@ public class ResultUI : MonoBehaviour
             beam = (int)PD.GetComponent<beamlife>().GetAmount();//<<<ビーム残量をもって来る関数
             if (beam >= 100) beam = 100;
             score = Score.GetComponent<Score>().ResultScore();
-            totalscore = combo*1000 + numenemy*1000 + beam*1000 + score; // トータル計算
+            totalscore = combo * 3000 + numenemy * 1000 + beam*100 + score; // トータル計算
 
             comboPlus = combo / Second;
             if (comboPlus <= 0) comboPlus = 1;
@@ -190,10 +190,10 @@ public class ResultUI : MonoBehaviour
                     if (i < combo)
                     {
                           i = i + comboPlus;
-                        Cm.text = combo.ToString() + "×1000";
+                        Cm.text = combo.ToString() + "×3000";
                     }else if (i >= combo)
                    {
-                   Cm.text = combo.ToString() + "×1000";
+                   Cm.text = combo.ToString() + "×3000";
                         // 次のステイトへ(次はnumenemy表示)   
                         panelState = resultState.numenemy;
                         // iを初期化
@@ -225,11 +225,11 @@ public class ResultUI : MonoBehaviour
                    if (i < beam)
                    {
                          i = i + beamPlus;
-                       Bm.text = beam.ToString() + "×1000";
+                       Bm.text = beam.ToString() + "×100";
                    }
                    else if (i >= beam)
                    {
-                    Bm.text = beam.ToString() + "×1000";
+                    Bm.text = beam.ToString() + "×100";
                         // 次のステイトへ(次はscore表示)   
                         panelState = resultState.score;
                         // iを初期化
