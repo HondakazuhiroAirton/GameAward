@@ -233,26 +233,26 @@ public class Rank : MonoBehaviour
 
     public RankBorder[] rankborders = new RankBorder[]
     {
-        new RankBorder() {HiScore = 200000},    //1-1
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},    //2-1
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 160000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},    //3-1
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},    //4-1
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
-        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 52525},    //1-1
+        new RankBorder() {HiScore = 63450},
+        new RankBorder() {HiScore = 82300},
+        new RankBorder() {HiScore = 52550},
+        new RankBorder() {HiScore = 60825},
+        new RankBorder() {HiScore = 71100},    //2-1
+        new RankBorder() {HiScore = 74600},
+        new RankBorder() {HiScore = 74050},
+        new RankBorder() {HiScore = 91950},
+        new RankBorder() {HiScore = 83175},
+        new RankBorder() {HiScore = 108250},    //3-1
+        new RankBorder() {HiScore = 50750},
+        new RankBorder() {HiScore = 93950},
+        new RankBorder() {HiScore = 83500},
+        new RankBorder() {HiScore = 41825},
+        new RankBorder() {HiScore = 53075},    //4-1
+        new RankBorder() {HiScore = 100425},
+        new RankBorder() {HiScore = 249850},
+        new RankBorder() {HiScore = 384300},
+        new RankBorder() {HiScore = 1245950},
     };
 }
 
