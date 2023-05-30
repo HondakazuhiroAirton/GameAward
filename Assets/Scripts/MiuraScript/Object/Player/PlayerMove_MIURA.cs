@@ -950,7 +950,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             // 右ソーラー爆破
             pos = rightSolar.transform.position;
             // 爆発音再生
-            beamChatgeAudio.PlayOneShot(explosion1);
+            beamChatgeAudio.PlayOneShot(explosion1,0.03f);
             // 爆破エフェクト表示
             handle = EffekseerSystem.PlayEffect(effect, pos);
             // 非表示に
@@ -963,7 +963,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             // 左ソーラー爆破
             pos = leftSolar.transform.position;
             // 爆発音再生
-            beamChatgeAudio.PlayOneShot(explosion1);
+            beamChatgeAudio.PlayOneShot(explosion1, 0.03f);
             // 爆破エフェクト表示
             handle = EffekseerSystem.PlayEffect(effect, pos);
             // 非表示に
@@ -977,7 +977,7 @@ public class PlayerMove_MIURA : MonoBehaviour
             }
             // ここ大爆発
             // 爆発音再生
-            beamChatgeAudio.PlayOneShot(explosion2);
+            beamChatgeAudio.PlayOneShot(explosion2, 0.03f);
             // 爆破エフェクト表示
             handle = EffekseerSystem.PlayEffect(effect, transform.position);
         }

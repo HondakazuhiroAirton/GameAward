@@ -72,7 +72,7 @@ public class EnemyCount : MonoBehaviour
             //beingMeasured = !beingMeasured;
             // 衝突した相手オブジェクトを削除する
             Destroy(Enemy);
-            SE.PlayOneShot(EnemyDefeatSE);
+            SE.PlayOneShot(EnemyDefeatSE, 0.03f);
 
             count++;
             enemycount.text = "Combo:" + count;
@@ -85,13 +85,13 @@ public class EnemyCount : MonoBehaviour
             if (_timeElapsed <= 0)
             {
                 Debug.Log("TimeOut"); // ログを表示する
-                _timeElapsed = 0;   //経過時間をリセットする
+                _timeElapsed = 0;   // 経過時間をリセットする
                 enemycount.enabled = false;
             }
             else if(collision.gameObject.name == "PlayerBeam")
             {
                 Destroy(Enemy);
-                SE.PlayOneShot(EnemyDefeatSE);
+                SE.PlayOneShot(EnemyDefeatSE, 0.03f);
 
                 count++;
                 enemycount.text = "Combo:" + count;

@@ -99,7 +99,7 @@ public class Cursoll : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
-                se.PlayOneShot(Cursolse);
+                se.PlayOneShot(Cursolse, 0.03f);
 
                 NowPosition += 1;
                 if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
@@ -108,7 +108,7 @@ public class Cursoll : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
-                se.PlayOneShot(Cursolse);
+                se.PlayOneShot(Cursolse, 0.03f);
 
                 NowPosition -= 1;
                 if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
@@ -218,7 +218,7 @@ public class Cursoll : MonoBehaviour
         {
             if (context.phase == InputActionPhase.Performed)
             {
-                se.PlayOneShot(Cursolse);
+                se.PlayOneShot(Cursolse, 0.03f);
 
                 NowPosition -= 1;
                 if (NowPosition < 0) NowPosition = 4;/*<-マジックナンバー ワールドの合計の数-1を入れたい*/
@@ -235,7 +235,7 @@ public class Cursoll : MonoBehaviour
             {
                 if (context.phase == InputActionPhase.Performed)
                 {
-                    se.PlayOneShot(Cursolse);
+                    se.PlayOneShot(Cursolse, 0.03f);
 
                     NowPosition += 1;
                     if (NowPosition > 4/*<-マジックナンバー ワールドの合計の数-1を入れたい*/) NowPosition = 0;
@@ -251,7 +251,7 @@ public class Cursoll : MonoBehaviour
         {
             if (context.phase == InputActionPhase.Performed)
             {
-                se.PlayOneShot(Cursolse);
+                se.PlayOneShot(Cursolse, 0.03f);
             }
         }
     }
@@ -262,7 +262,7 @@ public class Cursoll : MonoBehaviour
         {
             if (context.phase == InputActionPhase.Performed)
             {
-                se.PlayOneShot(Cursolse);
+                se.PlayOneShot(Cursolse, 0.03f);
             }
         }
     }
