@@ -29,7 +29,12 @@ public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
         //if (explosionFlug) return;
         explosionFlug = true;
         //throw new System.NotImplementedException();
-        score.AddScore();
+        var combo = obj.GetComponent<BoxCastScript>().BeamParticleScript.combo;
+
+
+        var addScore = (1 + combo) * 75;
+
+        score.AddScore(addScore);
         // ここで爆発のエフェクト再生
         explosion.BoomCreate();
 
