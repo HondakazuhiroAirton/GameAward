@@ -183,7 +183,7 @@ public class Stage21 : MonoBehaviour
 new EnemyData(){
             name = "enemy07",
             phase = Phase.phase2,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -210,7 +210,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy08",
             phase = Phase.phase2,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -237,7 +237,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy09",
             phase = Phase.phase2,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
             FirstPosX = 3,
@@ -264,7 +264,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy10",
             phase = Phase.phase2,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 0,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -291,7 +291,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy11",
             phase = Phase.phase2,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = -3,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -318,7 +318,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy12",
             phase = Phase.phase2,
-            StartPosX = 10,
+            StartPosX = 12,
             StartPosY = -3,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -345,7 +345,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy13",
             phase = Phase.phase2,
-            StartPosX = 10,
+            StartPosX = 12,
             StartPosY = -3,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -372,7 +372,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy14",
             phase = Phase.phase2,
-            StartPosX = 10,
+            StartPosX = 12,
             StartPosY = -3,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -402,7 +402,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy15",
             phase = Phase.phase3,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -952,7 +952,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy35",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -979,7 +979,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy36",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1006,7 +1006,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy37",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1034,7 +1034,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy38",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1061,7 +1061,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy39",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1088,7 +1088,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy40",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1116,7 +1116,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy41",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1143,7 +1143,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy42",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1170,7 +1170,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy43",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1198,7 +1198,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy44",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = -5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1225,7 +1225,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy45",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = 5,
             StartPosZ = 0,
             FirstPosX = 0,
@@ -1252,7 +1252,7 @@ new EnemyData(){
 new EnemyData(){
             name = "enemy46",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -12,
             StartPosY = -5,
             StartPosZ = 0,
             FirstPosX = 0,
