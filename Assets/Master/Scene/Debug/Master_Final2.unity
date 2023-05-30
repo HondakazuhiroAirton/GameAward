@@ -4059,7 +4059,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gameover: {fileID: 1002177979}
-  enemyManager: {fileID: 0}
   recovery: 1
 --- !u!1 &993743147
 GameObject:
