@@ -901,7 +901,7 @@ public class Stage15 : MonoBehaviour
          new EnemyData(){
             name = "enemy27",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 11,
             StartPosY = 3,
             StartPosZ = 0,
             FirstPosX = 1,
