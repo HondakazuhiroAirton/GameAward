@@ -28,7 +28,7 @@ public class Stage34 : MonoBehaviour
             sideNo = 2,
             AppearanceTime = 0,
             model = "koa",
-            category = EnemyCategory.type1,
+            category = EnemyCategory.typeNone,
             Size = 5.0f,
             NextStep1 = 1,
             Data1 = 4,
