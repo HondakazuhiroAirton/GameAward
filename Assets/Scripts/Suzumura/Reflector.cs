@@ -19,7 +19,7 @@ public class Reflector : MonoBehaviour
         StageChanger = GameObject.Find("StageChanger");
         // スクリプト上のNextStageを取得
         StageNo nextStageNo = StageChanger.GetComponent<StageChangerScript>().NextStage;
-        Debug.Log(nextStageNo);
+        //Debug.Log(nextStageNo);
 
         // NextStageの番号で読み込むファイルを分岐する
         switch (nextStageNo)
