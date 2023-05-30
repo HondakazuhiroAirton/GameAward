@@ -323,8 +323,8 @@ public class Stage33 : MonoBehaviour
 //***********************************************************
 //  Phase2
 //***********************************************************
-          new EnemyData(){
-            name = "enemy12",
+        new EnemyData(){
+            name = "enemy20",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = 6,
@@ -352,7 +352,7 @@ public class Stage33 : MonoBehaviour
             NextStep5 = -1
         },  // enemy12
         new EnemyData(){
-            name = "enemy13",
+            name = "enemy21",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = 6,
@@ -380,7 +380,7 @@ public class Stage33 : MonoBehaviour
             NextStep5 = -1
         },  // enemy13
         new EnemyData(){
-            name = "enemy14",
+            name = "enemy22",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = 6,
@@ -408,7 +408,7 @@ public class Stage33 : MonoBehaviour
             NextStep5 = -1
         },  // enemy14
         new EnemyData(){
-            name = "enemy15",
+            name = "enemy23",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = 6,
@@ -436,7 +436,7 @@ public class Stage33 : MonoBehaviour
             NextStep5 = -1
         },  // enemy15
         new EnemyData(){
-            name = "enemy16",
+            name = "enemy24",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = 6,
@@ -464,7 +464,7 @@ public class Stage33 : MonoBehaviour
             NextStep5 = -1
         },  // enemy16
         new EnemyData(){
-            name = "enemy17",
+            name = "enemy25",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = 6,
@@ -492,7 +492,7 @@ public class Stage33 : MonoBehaviour
             NextStep5 = -1
         },  // enemy17
         new EnemyData(){
-            name = "enemy18",
+            name = "enemy26",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = 6,
@@ -518,6 +518,189 @@ public class Stage33 : MonoBehaviour
             Data3 = 5,
             NextStep4 = -1, 
         },
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    new EnemyData(){
+            name = "enemy27",
+            phase = Phase.phase2,
+            StartPosX = 0,
+            StartPosY = -8,
+            StartPosZ = 0,
+            FirstPosX = 1,
+            FirstPosY = 2,
+            FirstPosZ = 0,
+            TargetPosX = -3,
+            TargetPosY = -1,
+            TargetPosZ = 0,
+            EntryPosX = 0f,
+            EntryPosY = -4,
+            sideNo = 3,
+            AppearanceTime = 9,
+            model = "koa",
+            category = EnemyCategory.type1,
+            Size = 5.0f,
+            NextStep1 = 1,
+            Data1 = 3,
+            NextStep2 = 5,
+            Data2 = 5,
+            NextStep3 = 3,
+            Data3 = 3,
+            NextStep4 = 4,
+            Data4 = 3,
+            NextStep5 = 0,
+            Data5 = 0
+        },  // enemy12
+        new EnemyData(){
+            name = "enemy28",
+            phase = Phase.phase2,
+            StartPosX = 0,
+            StartPosY = -8,
+            StartPosZ = 0,
+            FirstPosX = -3,
+            FirstPosY = -3,
+            FirstPosZ = 0,
+            TargetPosX =-2,
+            TargetPosY = -1,
+            TargetPosZ = 0,
+            EntryPosX = 0f,
+            EntryPosY = -4,
+            sideNo = 3,
+            AppearanceTime = 10,
+            model = "koa",
+            category = EnemyCategory.type2,
+            Size = 5.0f,
+            NextStep1 = 1,
+            Data1 = 3,
+            NextStep2 = 5,
+            Data2 = 5,
+            NextStep3 = 3,
+            Data3 = 3,
+            NextStep4 = 4,
+            Data4 = 3,
+            NextStep5 = 0,
+            Data5 = 0
+        },  // enemy13
+        new EnemyData(){
+            name = "enemy29",
+            phase = Phase.phase2,
+            StartPosX = 0,
+            StartPosY = -8,
+            StartPosZ = 0,
+            FirstPosX = 3,
+            FirstPosY = -1,
+            FirstPosZ = 0,
+            TargetPosX = -1,
+            TargetPosY = -1,
+            TargetPosZ = 0,
+            EntryPosX = 0f,
+            EntryPosY = -4,
+            sideNo = 3,
+            AppearanceTime = 11,
+            model = "koa",
+            category = EnemyCategory.type1,
+            Size = 5.0f,
+            NextStep1 = 1,
+            Data1 = 3,
+            NextStep2 = 5,
+            Data2 = 5,
+            NextStep3 = 3,
+            Data3 = 3,
+            NextStep4 = 4,
+            Data4 = 3,
+            NextStep5 = 0,
+            Data5 = 0
+        },  // enemy14
+
+          new EnemyData(){
+            name = "enemy27",
+            phase = Phase.phase2,
+            StartPosX = 0,
+            StartPosY = -8,
+            StartPosZ = 0,
+            FirstPosX = 1,
+            FirstPosY = 1,
+            FirstPosZ = 0,
+            TargetPosX = 3,
+            TargetPosY = 1,
+            TargetPosZ = 0,
+            EntryPosX = 0f,
+            EntryPosY = -4,
+            sideNo = 3,
+            AppearanceTime = 15,
+            model = "koa",
+            category = EnemyCategory.type1,
+            Size = 5.0f,
+            NextStep1 = 1,
+            Data1 = 3,
+            NextStep2 = 5,
+            Data2 = 5,
+            NextStep3 = 3,
+            Data3 = 3,
+            NextStep4 = 4,
+            Data4 = 3,
+            NextStep5 = 0,
+            Data5 = 0
+        },  // enemy12
+        new EnemyData(){
+            name = "enemy28",
+            phase = Phase.phase2,
+            StartPosX = 0,
+            StartPosY = -8,
+            StartPosZ = 0,
+            FirstPosX = -3,
+            FirstPosY = -2,
+            FirstPosZ = 0,
+            TargetPosX =2,
+            TargetPosY = 1,
+            TargetPosZ = 0,
+            EntryPosX = 0f,
+            EntryPosY = -4,
+            sideNo = 3,
+            AppearanceTime = 16,
+            model = "koa",
+            category = EnemyCategory.type2,
+            Size = 5.0f,
+            NextStep1 = 1,
+            Data1 = 3,
+            NextStep2 = 5,
+            Data2 = 5,
+            NextStep3 = 3,
+            Data3 = 3,
+            NextStep4 = 4,
+            Data4 = 3,
+            NextStep5 = 0,
+            Data5 = 0
+        },  // enemy13
+        new EnemyData(){
+            name = "enemy29",
+            phase = Phase.phase2,
+            StartPosX = 0,
+            StartPosY = -8,
+            StartPosZ = 0,
+            FirstPosX = -3,
+            FirstPosY = -1,
+            FirstPosZ = 0,
+            TargetPosX = 1,
+            TargetPosY = 1,
+            TargetPosZ = 0,
+            EntryPosX = 0f,
+            EntryPosY = -4,
+            sideNo = 3,
+            AppearanceTime = 17,
+            model = "koa",
+            category = EnemyCategory.type1,
+            Size = 5.0f,
+            NextStep1 = 1,
+            Data1 = 3,
+            NextStep2 = 5,
+            Data2 = 5,
+            NextStep3 = 3,
+            Data3 = 3,
+            NextStep4 = 4,
+            Data4 = 3,
+            NextStep5 = 0,
+            Data5 = 0
+        },  // enemy14
 //***********************************************************
 //  Phase1
 //***********************************************************
