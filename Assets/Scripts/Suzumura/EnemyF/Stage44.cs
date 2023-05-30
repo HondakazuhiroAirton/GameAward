@@ -762,7 +762,7 @@ public class Stage44 : MonoBehaviour
         },// phase2_enemy01
 
 
-//<<Phas4
+//<<Phase4
 
 // ‰º
         new EnemyData(){
@@ -1433,7 +1433,7 @@ public class Stage44 : MonoBehaviour
                                 
         new EnemyData(){
             name = "phase5_enemy05",
-            phase = Phase.phase4,
+            phase = Phase.phase5,
             StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
@@ -1549,7 +1549,7 @@ public class Stage44 : MonoBehaviour
                                                                 
         new EnemyData(){
             name = "phase5_enemy08",
-            phase = Phase.phase4,
+            phase = Phase.phase5,
             StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
@@ -1578,7 +1578,7 @@ public class Stage44 : MonoBehaviour
                                                                         
         new EnemyData(){
             name = "phase5_enemy09",
-            phase = Phase.phase4,
+            phase = Phase.phase5,
             StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
@@ -1607,7 +1607,7 @@ public class Stage44 : MonoBehaviour
                                                                                 
         new EnemyData(){
             name = "phase5_enemy10",
-            phase = Phase.phase4,
+            phase = Phase.phase5,
             StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
@@ -1636,7 +1636,7 @@ public class Stage44 : MonoBehaviour
                                                                                         
         new EnemyData(){
             name = "phase5_enemy11",
-            phase = Phase.phase4,
+            phase = Phase.phase5,
             StartPosX = -12,
             StartPosY = 3,
             StartPosZ = 0,
