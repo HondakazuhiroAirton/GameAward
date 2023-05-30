@@ -6,7 +6,7 @@ using UnityEngine;
 //  ˆÏˆõ’·‚ªl‚¦‚½ŠÈ’PƒXƒe[ƒW‚P|‚Q‚R‚S‚TŒó•â
 //***********************************************************
 
-public class Stage15 : MonoBehaviour
+public class Stage1_2 : MonoBehaviour
 {
     public static EnemyData[] enemydatas = new EnemyData[] {
 //***********************************************************
