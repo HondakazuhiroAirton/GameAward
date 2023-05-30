@@ -8,7 +8,6 @@ public class beamlife : MonoBehaviour
     public GameObject Gameover;
 　　// BGM用にメインカメラを取得
     private GMC_BGMscript mainCameraBGMscript;
-    public GameObject enemyManager;
     private EnemyManager gameoverflug;
     private int life = 3;
     private float amount = 90;
@@ -40,8 +39,6 @@ public class beamlife : MonoBehaviour
     {
         // BGM用にメインカメラを取得
         mainCameraBGMscript = GameObject.Find("MainCamera").GetComponent<GMC_BGMscript>();
-        // EnemyManagerの関数取得
-        gameoverflug = GameObject.Find("EnemyGroup(Clone)").GetComponent<EnemyManager>();
         //Gameover = GameObject.Find("Gameover");
         SetLife(3);
 
@@ -61,6 +58,8 @@ public class beamlife : MonoBehaviour
         {
             mainCameraBGMscript.GameOverBGMStart();
             Gameover.SetActive(true);
+            // EnemyManagerの関数取得
+            gameoverflug = GameObject.Find("EnemyGroup(Clone)").GetComponent<EnemyManager>();
             gameoverflug.EnemyMoveStop();
         }
         else
