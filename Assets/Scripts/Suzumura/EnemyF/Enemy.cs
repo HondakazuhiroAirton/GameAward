@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour, CollisionAction, EnemyInstance
         //throw new System.NotImplementedException();
         var combo = obj.GetComponent<BoxCastScript>()?.BeamParticleScript.combo;
 
-        if (combo == null) combo = 1;
+        if (combo == null) combo = 4;
 
         var addScore = (int)(1 + combo) * 75;
 
