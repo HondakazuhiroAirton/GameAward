@@ -3290,6 +3290,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8552172972245275343, guid: 35774482aafbbc94fa301ddf3d42e8f0,
+        type: 3}
+      propertyPath: StageChanger
+      value: 
+      objectReference: {fileID: 2054491779}
     - target: {fileID: 8552172972294359933, guid: 35774482aafbbc94fa301ddf3d42e8f0,
         type: 3}
       propertyPath: m_RootOrder
