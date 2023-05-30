@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage22 : MonoBehaviour
+public class Stage2_4 : MonoBehaviour
 {
     public static EnemyData[] enemydatas = new EnemyData[] {
         //***********************************************************

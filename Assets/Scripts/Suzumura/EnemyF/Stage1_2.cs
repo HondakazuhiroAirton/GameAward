@@ -6,7 +6,7 @@ using UnityEngine;
 //  ˆÏˆõ’·‚ªl‚¦‚½ŠÈ’PƒXƒe[ƒW‚P|‚Q‚R‚S‚TŒó•â
 //***********************************************************
 
-public class Stage15 : MonoBehaviour
+public class Stage1_2 : MonoBehaviour
 {
     public static EnemyData[] enemydatas = new EnemyData[] {
 //***********************************************************
@@ -901,7 +901,7 @@ public class Stage15 : MonoBehaviour
          new EnemyData(){
             name = "enemy27",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 11,
             StartPosY = 3,
             StartPosZ = 0,
             FirstPosX = 1,

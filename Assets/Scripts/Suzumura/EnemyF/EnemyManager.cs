@@ -75,64 +75,64 @@ public class EnemyManager : MonoBehaviour
         switch (nextStageNo)
         {
             case StageNo.Stage1_1:
-                enemyData = Stage11.enemydatas;
+                enemyData = Stage1_1.enemydatas;
                 break;
             case StageNo.Stage1_2:
-                enemyData = Stage12.enemydatas;
+                enemyData = Stage1_2.enemydatas;
                 break;
             case StageNo.Stage1_3:
-                enemyData = Stage13.enemydatas;
+                enemyData = Stage1_3.enemydatas;
                 break;
             case StageNo.Stage1_4:
-                enemyData = Stage14.enemydatas;
+                enemyData = Stage1_4.enemydatas;
                 break;
             case StageNo.Stage1_5:
-                enemyData = Stage15.enemydatas;
+                enemyData = Stage1_5.enemydatas;
                 break;
             case StageNo.Stage2_1:
-                enemyData = Stage21.enemydatas;
+                enemyData = Stage2_1.enemydatas;
                 break;
             case StageNo.Stage2_2:
-                enemyData = Stage22.enemydatas;
+                enemyData = Stage2_2.enemydatas;
                 break;
             case StageNo.Stage2_3:
-                enemyData = Stage23.enemydatas;
+                enemyData = Stage2_3.enemydatas;
                 break;
             case StageNo.Stage2_4:
-                enemyData = Stage24.enemydatas;
+                enemyData = Stage2_4.enemydatas;
                 break;
             case StageNo.Stage2_5:
-                enemyData = Stage25.enemydatas;
+                enemyData = Stage2_5.enemydatas;
                 break;
             case StageNo.Stage3_1:
-                enemyData = Stage31.enemydatas;
+                enemyData = Stage3_1.enemydatas;
                 break;
             case StageNo.Stage3_2:
-                enemyData = Stage32.enemydatas;
+                enemyData = Stage3_2.enemydatas;
                 break;
             case StageNo.Stage3_3:
-                enemyData = Stage33.enemydatas;
+                enemyData = Stage3_3.enemydatas;
                 break;
             case StageNo.Stage3_4:
-                enemyData = Stage34.enemydatas;
+                enemyData = Stage3_4.enemydatas;
                 break;
             case StageNo.Stage3_5:
-                enemyData = Stage35.enemydatas;
+                enemyData = Stage3_5.enemydatas;
                 break;
             case StageNo.Stage4_1:
-                enemyData = Stage41.enemydatas;
+                enemyData = Stage4_1.enemydatas;
                 break;
             case StageNo.Stage4_2:
-                enemyData = Stage42.enemydatas;
+                enemyData = Stage4_2.enemydatas;
                 break;
             case StageNo.Stage4_3:
-                enemyData = Stage43.enemydatas;
+                enemyData = Stage4_3.enemydatas;
                 break;
             case StageNo.Stage4_4:
-                enemyData = Stage44.enemydatas;
+                enemyData = Stage4_4.enemydatas;
                 break;
             case StageNo.Stage4_5:
-                enemyData = Stage45.enemydatas;
+                enemyData = Stage4_5.enemydatas;
                 break;
         }
 

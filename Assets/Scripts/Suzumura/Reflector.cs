@@ -22,12 +22,12 @@ public class Reflector : MonoBehaviour
         //Debug.Log(nextStageNo);
 
         // NextStageの番号で読み込むファイルを分岐する
-        switch (nextStageNo)
-        {
-            case StageNo.Stage1_1:
-                reflectorData = Stage11.reflectordatas;
-                break;
-        }
+        //switch (nextStageNo)
+        //{
+        //    case StageNo.Stage1_1:
+        //        reflectorData = Stage1_1.reflectordatas;
+        //        break;
+        //}
         // 出現
         //Object[0] = Instantiate(
         //    reflector,
