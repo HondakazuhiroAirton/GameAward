@@ -54,11 +54,23 @@ public class Rank : MonoBehaviour
     int Ctime = 0;
     bool Cflag = true;
 
+    // StageChangerオブジェクト
+    public GameObject StageChanger;
+    public RankBorder[] rb;
+
     // Start is called before the first frame update
     void Start()
     {
         Obj = GameObject.Find("Result");
         Resulte = Obj.GetComponent<ResultUI>();
+
+        // スクリプト上のNextStageを取得
+        StageNo nextStageNo = StageChanger.GetComponent<StageChangerScript>().NextStage;
+        rb = rankborders;
+        S = rb[(int)nextStageNo].HiScore /10 * 9;
+        A = rb[(int)nextStageNo].HiScore /10 * 7;
+        B = rb[(int)nextStageNo].HiScore /10 * 5;
+        C = rb[(int)nextStageNo].HiScore /10 * 3;
     }
 
     void Awake()
@@ -219,4 +231,32 @@ public class Rank : MonoBehaviour
         return Cflag;
     }
 
+    public RankBorder[] rankborders = new RankBorder[]
+    {
+        new RankBorder() {HiScore = 200000},    //1-1
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},    //2-1
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 160000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},    //3-1
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},    //4-1
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+        new RankBorder() {HiScore = 100000},
+    };
+}
+
+public class RankBorder
+{
+    public int HiScore;
 }

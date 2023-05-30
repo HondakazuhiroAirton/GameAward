@@ -1334,7 +1334,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy49",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = -5,
@@ -1359,7 +1359,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy50",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = -4,
@@ -1381,7 +1381,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy51",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = -4,
@@ -1403,7 +1403,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy52",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = -3,
@@ -1425,7 +1425,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy53",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = -2,
@@ -1447,7 +1447,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy54",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = -1,
@@ -1469,7 +1469,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy55",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = -1,
@@ -1491,7 +1491,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy56",
             phase = Phase.phase5,
-            StartPosX = -10,
+            StartPosX = -11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = 0,
@@ -1514,7 +1514,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy57",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = 5,
@@ -1539,7 +1539,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy58",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = 4,
@@ -1561,7 +1561,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy59",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = 4,
@@ -1583,7 +1583,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy60",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = 3,
@@ -1605,7 +1605,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy61",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = 2,
@@ -1627,7 +1627,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy62",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = 1,
@@ -1649,7 +1649,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy63",
             phase = Phase.phase5,
-            StartPosX = 10,
+            StartPosX = 11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = 1,
@@ -1671,7 +1671,7 @@ public class Stage23 : MonoBehaviour
          new EnemyData(){
             name = "enemy64",
             phase = Phase.phase5,
-            StartPosX =10,
+            StartPosX = 11,
             StartPosY = -2,
             StartPosZ = 0,
             SecondPosX = 0,
