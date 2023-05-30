@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         beforeScene = "mTitleScene";
-        BGM.PlayOneShot(TitleBgm);
+        BGM.PlayOneShot(TitleBgm, 0.03f);
 
         //シーンが切り替わった時に呼ばれるメソッドを登録
         SceneManager.activeSceneChanged += OnActiveSceneChanged;
@@ -79,13 +79,13 @@ public class AudioManager : MonoBehaviour
         if (beforeScene == "mTitleScene" && nextScene.name == "mSelectScene")
         {
             BGM.Stop();
-            BGM.PlayOneShot(SelectBgm);
+            BGM.PlayOneShot(SelectBgm, 0.03f);
         }
 
         // ステージセレクトからゲーム画面へ(予定）
         if (beforeScene == "mSelectScene" && nextScene.name == "mGameScene")
         {
-            BGM.PlayOneShot(GameBgm);
+            BGM.PlayOneShot(GameBgm, 0.03f);
             BGM.Stop();
         }
 
@@ -94,7 +94,7 @@ public class AudioManager : MonoBehaviour
         {
             //if()//タイトルへ戻るボタンを押したとき
             BGM.Stop();
-            BGM.PlayOneShot(TitleBgm);
+            BGM.PlayOneShot(TitleBgm, 0.03f);
         }
 
 
@@ -145,32 +145,32 @@ public class AudioManager : MonoBehaviour
 
     public void playCusolSE()
     {
-        SE.PlayOneShot(CursolSE);
+        SE.PlayOneShot(CursolSE, 0.03f);
     }
 
     public void playBeamSE()
     {
-        SE.PlayOneShot(BeamSE);
+        SE.PlayOneShot(BeamSE, 0.03f);
     }
 
     public void playEnemyDefeatSE()
     {
-        SE.PlayOneShot(EnemyDefeatSE);
+        SE.PlayOneShot(EnemyDefeatSE, 0.03f);
     }
 
     public void playPlayerMoveSE()
     {
-        SE.PlayOneShot(PlayerMoveSE);
+        SE.PlayOneShot(PlayerMoveSE, 0.03f);
     }
 
     public void playPauseSE()
     {
-        SE.PlayOneShot(PauseSE);
+        SE.PlayOneShot(PauseSE, 0.03f);
     }
 
     public void playselectSE()
     {
-        SE.PlayOneShot(SelectSE);
+        SE.PlayOneShot(SelectSE, 0.03f);
     }
 
 }
