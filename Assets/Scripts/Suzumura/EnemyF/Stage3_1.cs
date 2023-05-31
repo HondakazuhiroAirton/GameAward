@@ -612,7 +612,7 @@ public class Stage3_1 : MonoBehaviour
         },  // enemy14
 
           new EnemyData(){
-            name = "enemy27",
+            name = "enemy271",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = -8,
@@ -642,7 +642,7 @@ public class Stage3_1 : MonoBehaviour
             Data5 = 0
         },  // enemy12
         new EnemyData(){
-            name = "enemy28",
+            name = "enemy281",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = -8,
@@ -672,7 +672,7 @@ public class Stage3_1 : MonoBehaviour
             Data5 = 0
         },  // enemy13
         new EnemyData(){
-            name = "enemy29",
+            name = "enemy291",
             phase = Phase.phase2,
             StartPosX = 0,
             StartPosY = -8,
