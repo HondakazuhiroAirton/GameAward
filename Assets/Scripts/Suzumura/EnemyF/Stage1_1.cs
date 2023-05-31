@@ -53,7 +53,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 2,
             model = "koa",
             category = EnemyCategory.typeNone,
@@ -81,7 +81,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 4,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -109,7 +109,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 6,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -137,7 +137,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 8,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -199,7 +199,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 2,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -227,7 +227,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 4,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -255,7 +255,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 6,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -283,7 +283,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 8,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -311,7 +311,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 10,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -339,7 +339,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 12,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -399,7 +399,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 2,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -427,7 +427,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 4,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -455,7 +455,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 6,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -483,7 +483,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 8,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -511,7 +511,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 10,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -571,7 +571,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 2,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -599,7 +599,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 4,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -627,7 +627,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 6,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -655,7 +655,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 8,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -683,7 +683,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 10,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -742,7 +742,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 2,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -770,7 +770,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 4,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -798,7 +798,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 6,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -826,7 +826,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 8,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -854,7 +854,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 10,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -883,7 +883,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 0,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -911,7 +911,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 2,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -939,7 +939,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 4,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -967,7 +967,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 6,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -995,7 +995,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 8,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
@@ -1023,7 +1023,7 @@ public class Stage1_1 : MonoBehaviour
             TargetPosZ = 0,
             EntryPosX = 8.1f,//ビックリマーク
             EntryPosY = 2,
-            sideNo = 2,
+            sideNo = 0,
             AppearanceTime = 10,//出現時間
             model = "koa",
             category = EnemyCategory.typeNone,//球の速度
