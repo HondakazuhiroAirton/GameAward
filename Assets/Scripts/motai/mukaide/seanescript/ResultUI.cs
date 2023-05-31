@@ -294,4 +294,6 @@ public class ResultUI : MonoBehaviour
     {
         initflag = false;
     }
+
+    
 }
