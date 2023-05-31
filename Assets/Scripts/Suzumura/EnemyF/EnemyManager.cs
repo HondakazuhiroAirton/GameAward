@@ -62,6 +62,9 @@ public class EnemyManager : MonoBehaviour
     // 作るエネミーの番号
     [SerializeField] private static int EnemyIdx;
 
+    private float time = 0;
+    private bool Slowl = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -402,7 +405,18 @@ public class EnemyManager : MonoBehaviour
 
         if (CurrentPhase == 6)
         {
+            Time.timeScale = 0.1f;
+            Slowl = true;
+        }
+        if(Slowl)
+        {
+            time += 0.25f;
+        }
+        if (time == 10)
+        {
+            Slowl = false;
             clearflag = true;
+            
         }
     }
 
